@@ -1,0 +1,50 @@
+{% extends "aristotle_mdr/base.html" %}
+
+{% block content %}
+<h1>{% block title %}Aristotle Extensions{% endblock %}</h1>
+
+{% if content_extensions or download_extensions %}
+    <p>
+    Below is a complete listing of the extensions that are used in {{ config.SITE_NAME }},
+    click any of the headings below for more information.
+    </p>
+    {% if content_extensions %}
+        <h2>The following content extensions are available in this registry</h2>
+        <dl>
+        {% for ext in content_extensions %}
+            <dt>
+                {% if ext.about_url %}
+                    <a href="{{ ext.about_url }}">{{ ext.verbose_name }}</a>
+                {% else %}
+                    {{ ext.verbose_name }}
+                {% endif %}
+            </dt>
+            <dd>{{ ext.description | safe }}</dd>
+        {% endfor %}
+        </dl>
+    {% endif %}
+
+    {% if download_extensions %}
+        <h2>The following download formats are available in this registry</h2>
+        {% for key,ext in download_extensions.items %}
+        <strong>
+            {% if ext.about_url %}
+                <a href="{{ ext.about_url }}">{{ ext.app.verbose_name }}</a>
+            {% else %}
+                {{ ext.app.verbose_name }}
+            {% endif %}
+        </strong>
+        <p>{{ ext.app.description | safe}}</p>
+        <dl>
+        {% for d in ext.downloads %}
+            <dt><i class="fa {{d.2}}"></i> {{ d.1 }}</dt>
+            <dd>{{ d.4 | safe}}</dd>
+        {% endfor %}
+        </dl>
+        {% endfor %}
+    {% endif %}
+{% else %}
+    No extensions have been installed on this site.
+{% endif %}
+
+{% endblock %}

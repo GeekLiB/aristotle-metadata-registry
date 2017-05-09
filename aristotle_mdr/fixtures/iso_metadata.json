@@ -1,0 +1,681 @@
+[
+  {
+    "fields": {
+      "definition": "ISO\/IEC",
+      "name": "ISO\/IEC",
+      "created": "2016-05-02T22:23:10.181Z",
+      "modified": "2016-05-02T22:23:10.181Z",
+      "managers": [
+      ]
+    },
+    "model": "aristotle_mdr.organization",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "organization_ptr": 1,
+      "notprogressed": "",
+      "candidate": "",
+      "created": "2016-05-02T22:23:10.181Z",
+      "locked_state": 2,
+      "public_state": 3,
+      "superseded": "",
+      "recorded": "",
+      "modified": "2016-05-02T22:23:10.181Z",
+      "preferred": "",
+      "standard": "",
+      "qualified": "",
+      "registrars": [
+      ],
+      "retired": "",
+      "incomplete": ""
+    },
+    "model": "aristotle_mdr.registrationauthority",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "definition": "A binary value expressed using a string (e.g. true or false).",
+      "created": "2016-05-02T22:23:10.208Z",
+      "modified": "2016-05-02T22:23:10.209Z",
+      "name": "Boolean"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "definition": "A numeric value expressed using a particular medium of exchange.",
+      "created": "2016-05-02T22:23:10.235Z",
+      "modified": "2016-05-02T22:23:10.235Z",
+      "name": "Currency"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "definition": "A specific instance of time expressed in numeric form.",
+      "created": "2016-05-02T22:23:10.259Z",
+      "modified": "2016-05-02T22:23:10.260Z",
+      "name": "Date\/Time"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "definition": "A sequence of numeric characters which may contain decimals, excluding codes with 'leading' characters e.g. '01','02','03'. ",
+      "created": "2016-05-02T22:23:10.284Z",
+      "modified": "2016-05-02T22:23:10.284Z",
+      "name": "Number"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "definition": "A sequence of alphabetic and\/or numeric characters, including 'leading' characters e.g. '01','02','03'.",
+      "created": "2016-05-02T22:23:10.308Z",
+      "modified": "2016-05-02T22:23:10.309Z",
+      "name": "String"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.359Z",
+      "modified": "2016-05-02T22:23:10.359Z",
+      "name": "Centimetre"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.379Z",
+      "modified": "2016-05-02T22:23:10.379Z",
+      "name": "Millimetre"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.410Z",
+      "modified": "2016-05-02T22:23:10.411Z",
+      "name": "Degree"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.443Z",
+      "modified": "2016-05-02T22:23:10.444Z",
+      "name": "Second"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.460Z",
+      "modified": "2016-05-02T22:23:10.460Z",
+      "name": "Minute"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.479Z",
+      "modified": "2016-05-02T22:23:10.479Z",
+      "name": "Hour"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.499Z",
+      "modified": "2016-05-02T22:23:10.499Z",
+      "name": "Day"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.519Z",
+      "modified": "2016-05-02T22:23:10.519Z",
+      "name": "Year"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.550Z",
+      "modified": "2016-05-02T22:23:10.551Z",
+      "name": "Gram"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "definition": "",
+      "created": "2016-05-02T22:23:10.571Z",
+      "modified": "2016-05-02T22:23:10.571Z",
+      "name": "Kilogram"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "concept": 1,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 2,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 3,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 4,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 5,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 6,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 7,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 8,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 9,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 10,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 11,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 12,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 13,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 14,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "concept": 15,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 1,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": null
+  },
+  {
+    "fields": {
+      "definition": "",
+      "modified": "2016-05-02T22:23:10.344Z",
+      "name": "Length",
+      "created": "2016-05-02T22:23:10.344Z"
+    },
+    "model": "aristotle_mdr.measure",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "definition": "",
+      "modified": "2016-05-02T22:23:10.398Z",
+      "name": "Temperature",
+      "created": "2016-05-02T22:23:10.398Z"
+    },
+    "model": "aristotle_mdr.measure",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "definition": "",
+      "modified": "2016-05-02T22:23:10.430Z",
+      "name": "Time",
+      "created": "2016-05-02T22:23:10.430Z"
+    },
+    "model": "aristotle_mdr.measure",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "definition": "",
+      "modified": "2016-05-02T22:23:10.538Z",
+      "name": "Weight",
+      "created": "2016-05-02T22:23:10.538Z"
+    },
+    "model": "aristotle_mdr.measure",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "cm",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 1
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "mm",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 1
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "Celsius",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 2
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "s",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 3
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "min",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 3
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "h",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 3
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "D",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 3
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "Y",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 3
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "g",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 4
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "Kg",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 4
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.datatype",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.datatype",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.datatype",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.datatype",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.datatype",
+    "pk": 5
+  }
+]

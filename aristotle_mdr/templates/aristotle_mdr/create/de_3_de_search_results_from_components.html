@@ -1,0 +1,46 @@
+{% extends "aristotle_mdr/create/de_template_wrapper.html" %}
+{% load aristotle_tags i18n %}
+
+{% block formarea %}
+    {% if wizard.form.errors %}
+        <div class="alert alert-danger">
+        There were errors saving your {{ model_name }}, please review the errors shown below.
+        {{ wizard.form.errors }}
+            {% if duplicate_items or similar_items %}
+                {% if wizard.form.fields.make_new_item.errors %}
+                    <strong>There were similar items shown on the previous page.
+                    To save this item acknowledge that none of these are suitable or press back to review them again.</strong>
+                    <div class="panel-footer">
+                        {{ wizard.form.make_new_item }}
+                        {{ wizard.form.make_new_item.label }}
+                        {{ wizard.form.make_new_item.errors }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endif %}
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            There are already Data Elements based on a
+            "<em>{{ oc_match.name }}</em>", "<em>{{ pr_match.name }}</em>" and "<em>{{ vd_match.name }}</em>".
+        </div>
+        <div class="panel-body">
+            Reusing existing content makes comparing items in the future easier.
+            <br>Consider reviewing these items to see if an existing piece of content meets your needs.
+            <ol class="searchResults">
+                {% for obj in de_matches %}
+                <li>
+                    {% include "search/searchItem.html" with item=obj %}
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="panel-footer">
+            <label>
+            {{ wizard.form.make_new_item }}
+            {{ wizard.form.make_new_item.label }}
+            </label>
+            {{ wizard.form.make_new_item.errors }}
+        </div>
+    </div>
+{% endblock %}

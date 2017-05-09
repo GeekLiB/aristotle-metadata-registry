@@ -1,0 +1,58 @@
+{% load aristotle_tags %}
+{% load i18n %}
+
+{% if page.has_other_pages %}
+Showing {{ page.start_index }} - {{ page.end_index }} of {{ page.paginator.count }} results.
+{% else %}
+Showing {{ page.paginator.count }} results.
+{% endif %}
+
+<table class="table">
+<thead>
+    <tr>
+        <th>{% trans "Comment" %}</th>
+        <th>{% trans "Updated" %}</th>
+        <th>{% trans "Items" %}</th>
+        {% comment %}
+        {% if sort == "mod_asc" %}
+        <th>
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=mod_desc"><i class="fa fa-sort-asc"></i></a>
+        {% elif sort == "mod_desc" %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=mod_asc"><i class="fa fa-sort-desc"></i></a>
+        {% else %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=mod_desc"><i class="fa fa-sort"></i></a>
+        {% endif %}
+        Last modified</th>
+        {% endcomment %}
+    </tr>
+</thead>
+<tbody>
+    {% for revision in page %}
+    <tr>
+        {% with versions=revision.version_set.all|unique_recent %}
+            {% if versions|length > 0 %}
+                <td>{% firstof revision.comment _('No version comment made') %}</td>
+                <td>{{ revision.date_created }}</td>
+                <td>
+                    {% if versions|length == 1 %}
+                        {% with item=revision.version_set.first %}
+                            <a href="{{ item.object.get_absolute_url }}">{{ item }}</a>
+                        {% endwith %}
+                    {% else %}
+                        <ul>
+                            {% for item in versions %}
+                                <li><a href="{{ item.object.get_absolute_url }}">{{ item }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </td>
+                {# <td><a href='' title="{% trans 'Compare to previous' %}"><i class="fa fa-copy"></i></a></td> #}
+            {% endif %}
+        {% endwith %}
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+{% include "aristotle_mdr/helpers/paginator.html" with page=page %}
+

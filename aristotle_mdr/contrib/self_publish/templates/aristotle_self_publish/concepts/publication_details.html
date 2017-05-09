@@ -1,0 +1,12 @@
+{% load i18n %}
+<dt>
+    <span>{% trans 'Published by' %}</span>
+</dt>
+<dd>
+    {% with record=item.publicationrecord %}
+    <span>{{record.user.username}}
+    
+    ({{record.get_visibility_display}})
+    </span>
+    {% endwith %}
+</dd>

@@ -1,0 +1,114 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+{% load compile_static i18n %}
+{% load static from staticfiles %}
+
+{% block title %}{{ form_title}} for {{ item.name }}{% endblock %}
+{% block content %}
+    {% block extra_head_scripts %}
+        <script src="{% static 'aristotle_mdr/jqueryui/jquery-ui.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'aristotle_mdr/aristotle.moveable.js' %}" type="text/javascript"></script>
+        <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.moveable.less'|compile %}" />
+        {% if request.is_ajax %}
+            {{ form.media }}
+            {{ formset.media }}
+        {% endif %}
+    {% endblock %}
+
+
+
+<a class="sr-only" onclick="addCode()" href="?extra=1" accesskey='r'>Add a code (adding a row does not save changes)</a>
+<form method="post" action="{{ submit_url }}" >
+    <div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:item' item.id %}">{{ item.name }}</a></li>
+          <li class="active">{{ form_title }}</li>
+        </ol>
+
+        {% if formset.errors %}
+        <div class="alert alert-danger">
+            {{formset.errors}}
+        </div>
+        {% endif %}
+
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {{ formset.non_form_errors.as_ul }}
+    <div style="overflow:auto">
+    <table id="formset" class="form table  table-hover">
+    {% with formset.forms.0 as form %}
+      <thead><tr>
+          <th></th>
+        {% for field in form.visible_fields %}
+        <th><div>{{ field.label|capfirst }}</div>
+        <small title="{{ field.help_text }}">{{ field.help_text|truncatewords:10 }}</small>
+        </th>
+        {% endfor %}
+      </tr></thead>
+    {% endwith %}
+    <tbody id="draggableTable">
+    {% for form in formset.forms %}
+    {% if not forloop.last %}
+    <p>{{form.errors}}</p>
+      <tr class="moveablerow">
+          <td title="Drag to reorder"><i class="fa fa-bars grabber"></i>
+              {% for hidden in form.hidden_fields %}
+              {{ hidden }}
+              {% endfor %}
+          </td>
+          {% for field in form.visible_fields %}
+            <td>
+            {# Include the hidden fields in the form #}
+              {% if field.errors %}
+                  <div class="alert alert-danger">
+              {% endif %}
+              {{ field }}
+              {% if field.errors %}
+                  {{ field.errors.as_ul }}
+                  </div>
+              {% endif %}
+            </td>
+          {% endfor %}
+      </tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+    </table>
+    </div>
+    <a class="btn btn-primary" onclick="addCode()">
+        <i class="fa fa-plus-circle"></i> {{ form_add_another_text }}</a>
+    </div>
+
+    <div class="modal-footer">
+        {% if request.is_ajax %}
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+                <i class="fa fa-times"></i>Cancel</button>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'aristotle:item' item.id %}">
+                <i class="fa fa-times"></i>
+                Cancel</a>
+        {% endif %}
+        <button type="submit" class="btn btn-primary" value="Save" accesskey='s'>
+            <i class="fa fa-save"></i> Save
+        </button>
+    </div>
+</form>
+
+<table id="formstage">
+    {% with formset.forms|last as form %}
+      <tr class="moveablerow">
+          <td title="Drag to reorder"><i class="fa fa-bars grabber"></i>
+              {% for hidden in form.hidden_fields %}
+              {{ hidden }}
+              {% endfor %}
+          </td>
+          {% for field in form.visible_fields %}
+            <td>
+            {# Include the hidden fields in the form #}
+              {{ field.errors.as_ul }}
+              {{ field }}
+            </td>
+          {% endfor %}
+      </tr>
+    {% endwith %}
+</table>
+{% endblock %}

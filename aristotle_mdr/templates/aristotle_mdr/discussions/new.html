@@ -1,0 +1,23 @@
+{% extends "aristotle_mdr/discussions/base.html" %}
+
+{% block title %}New post{% endblock %}
+
+{% block breadcrumbs %}
+    <li>
+        New Post
+    </li>
+{% endblock %}
+
+{% block discussions_header %}New Post{% endblock %}
+
+{% block discussion_content %}
+<div>
+<form method='post'>
+    {% csrf_token %}
+        {% include "aristotle_mdr/helpers/fancy_form.html" with form=form %}
+
+    <button class="btn btn-primary" type='submit' value='Submit'><i class="fa fa-pencil  fa-fw"></i>New post</button>
+    <a class="btn btn-default" href="{% url 'aristotle:discussions' %}"><i class="fa fa-times fa-fw"></i>Cancel</a>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "aristotle_mdr/concepts/managedContent.html" %}
+
+{% load aristotle_tags %}
+
+{% block type %}conceptualdomain{% endblock %}
+{% block includes %}
+    <dd>
+        {% with total=item.dataelementconcept_set.count %}
+        {{ total }} Data Element Concept{{ total|pluralize }}
+        {% endwith %}
+        <br/>
+        {% with total=item.valuedomain_set.count %}
+        {{ total }} Value Domain{{ total|pluralize }}
+        {% endwith %}
+    </dd>
+{% endblock %}
+
+{% block objSpecific %}
+{% endblock %}
+
+{% block relationships %}
+    {% with total=item.dataelementconcept_set.count %}
+            <h3>Data Element Concepts implementing this Conceptual Domain</h3>
+            <ul>
+            {% for dec in item.dataelementconcept_set.all|can_view_iter:request.user %}
+                <li>
+                    {% include "aristotle_mdr/helpers/inlineDetails.html" with item=dec %}
+                </li>
+            {% empty %}
+                <li><em>None</em></li>
+            {% endfor %}
+            </ul>
+    {% endwith %}
+    {% with total=item.valuedomain_set.count %}
+            <h3>Value Domains implementing this Conceptual Domain</h3>
+            <ul>
+            {% for vd in item.valuedomain_set.all|can_view_iter:request.user %}
+                <li>
+                    {% include "aristotle_mdr/helpers/inlineDetails.html" with item=vd %}
+                </li>
+            {% empty %}
+                <li><em>None</em></li>
+            {% endfor %}
+            </ul>
+    {% endwith %}
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "aristotle_mdr/base.html" %}
+{% load compile_static i18n humanize %}
+{% load aristotle_tags %}
+
+{% block title %}Request review for multiple items{% endblock %}
+{% block content %}
+<form method="post" action="{% url 'aristotle:bulk_action' %}?next={{next}}">{% csrf_token %}
+    <input type="hidden" name="bulkaction" value="request_review"/>
+    <div class="modal-body">
+        <header>This form allows you to request a registrar review this metadata for endorsement.
+        </header>
+        {{ reviews }}
+        {{ reviews.count }}
+        {% with count=reviews.count %}
+        {% if count > 0 %}
+        <div class='alert alert-warning'>
+            <strong>Note:</strong> There {{ count|pluralize:"is,are" }} currently {{count}} outstanding review{{ count|pluralize }}
+            for this item.
+        </div>
+        {% endif %}
+        {% endwith %}
+        <div>
+            {{form.errors}}
+        </div>
+        <div id="visibilty">
+            This item is currently {{visibility}}.
+        </div>
+        <div>
+            {{ form.items.label }}
+            {{ form.items }}
+        </div>
+        <section>
+        <div id="changeStatus">
+            <div>
+                <span>
+                    {{ form.state.label }}
+                    {{ form.state.errors }}
+                </span>
+                <span>
+                    {{ form.registration_authority.label }}
+                    {{ form.registration_authority.errors }}
+                </span>
+            </div>
+            <div>
+                <div>
+                {{ form.state }}
+                </div>
+                <ul>
+                {% for val,label_text in form.registration_authority.field.choices %}
+                {% if val %}
+                    <li>
+                        <input type="radio" id="registration_authority_{{val}}" name="registration_authority" value="{{val}}">
+                        <label for="registration_authority_{{val}}">{{label_text}}</label>
+                        <a href="{% url 'aristotle_mdr:registrationAuthority' iid=val %}" title="Visit the registration authority page to learn more about state meanings for this authority" class="pull-right">
+                            <i class="fa fa-fw fa-university"></i>
+                        </a>
+                    </li>
+                {% endif %}
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="status_change_description">
+            <label for='id_message'>{{ form.message.label }}:</label> {{ form.message.help_text }} 
+            {{ form.message }}
+        </div>
+        {% block save %}
+        {% endblock %}
+        </section>
+    </div>
+    <div class="modal-footer">
+        {% if request.is_ajax %}
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        {% else %}
+            <a class="btn btn-default" href="{{ next }}">Cancel</a>
+        {% endif %}
+        <input type="submit" name="confirmed" class="btn btn-primary" value="Request Review" />
+    </div>
+</form>
+{% include 'autocomplete_light/static.html' %}
+{% endblock %}

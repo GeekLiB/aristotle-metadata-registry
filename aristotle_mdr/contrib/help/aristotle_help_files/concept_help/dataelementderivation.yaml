@@ -1,0 +1,63 @@
+- model: aristotle_mdr_help.concepthelp
+  fields:
+    app_label: aristotle_mdr
+    concept_type: dataelementderivation
+    language: en
+    brief: application of a derivation rule to one or more input
+        [[data element|s]] to derive one or more output data elements.
+    offical_definition: >
+        application of a derivation rule to one or more input [[data element|s]]
+        to derive one or more output data elements.
+    official_reference: ISO/IEC 11179 - Clause 3.2.33
+    official_link:
+    body: >
+        <p>A data element derivation is a formal description of how a particular
+        [[data element]] can be calculated based on the values of other
+        data elements.
+        </p>
+        <p>For example, a data element describing a
+        <em>Person-Body Mass Index, BMI Value</em> can be derived from
+        the data elements <em>Person-Weight, Kg</em> and
+        <em>Person-Height, cm</em> according to the derivation rule
+        <tt>BMI = Weight/Height<sup>2</sup></tt>.
+        </p> 
+        <blockquote>
+        <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+        ISO/IEC 11179-3 Section 11.5.2.6</a></cite>
+        <p>Data_Element_Derivation is a class each instance of which models a 
+        data element derivation (3.2.33), the application of a derivation rule (3.2.45)
+        to one or more input data elements (3.2.28) to derive one or more output data elements.
+        </p>
+        <p>Data_Element_Derivation is a class that associates the Data_Element(s) (11.5.2.1)
+        that serve as sources or inputs with a Derivation_Rule (11.5.2.5) and the
+        Data_Element(s) that are the products or outputs of the Derivation_Rule.
+        </p>
+        </blockquote>
+
+
+        <blockquote>
+        <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+        ISO/IEC 11179-3 Section 11.5.2.5</a></cite>
+
+        <p>Derivation_Rule is a class each instance of which models a derivation rule (3.2.45),
+        logical, mathematical, and/or other operations specifying derivation.
+        The Derivation_Rule may range from a simple operation such as subtraction to a 
+        very complex set of derivations (derivation being defined as a relationship 
+        between a Derivation_Rule and an input set upon which it acts). 
+        Derivation_Rules are not limited to arithmetic and logical operations.
+        </p>
+        <p>A Derivation_Rule may have a derivation_rule_application association with zero or more application 
+        Data_Element_Derivations, where the Derivation_Rule provides the rule for the associated Data_Element_Derivation.
+        </p>
+        <p>A Derivation_Rule may be registered as a Registered_Item without necessarily being associated with any
+        Data_Element_Derivation. As a Registered_Item, a Derivation_Rule is directly or indirectly
+        associated with an Administration_Record and can be identified, named, defined and optionally 
+        classified as a Classifiable_Item in a Classification_Scheme.
+        </p>
+        <p>Every Derivation_Rule must have exactly one derivation_rule_specification of
+        type Text that specifies the rule semantics.
+        </p>
+        <p>Every Derivation_Rule must have exactly one derivation_rule_notation of type Notation that specifies
+        the syntax and semantics used in the derivation_rule_specification.
+        </p>
+        </blockquote>

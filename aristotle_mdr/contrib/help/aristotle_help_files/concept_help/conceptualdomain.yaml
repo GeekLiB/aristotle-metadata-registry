@@ -1,0 +1,34 @@
+- model: aristotle_mdr_help.concepthelp
+  fields:
+    app_label: aristotle_mdr
+    concept_type: conceptualdomain
+    language: en
+    brief: A concept that expresses its description or valid instance meanings
+    offical_definition: >
+        A concept that expresses its description or valid instance meanings
+    official_reference: ISO/IEC 11179 - Clause 3.2.21
+    official_link:
+    body: >
+        <P>A conceptual domain may be associated with either a data element concept or a value domain. A conceptual domain is not a
+        mandatory association, and there may be a one-to-many relationship between a data element concept and a conceptual domain, or
+        a value domain and a conceptual domain.</P>
+        <P>Countries of the world can be expressed as a conceptual domain. The concept of countries can be measured by both enumerated
+        and non-enumerated value domains. An enumerated value domain may reference the Australian Standard Classification of Countries
+        (2011) and provide a four digit code (i.e. NNNN). A non-enumerated value domain may still reference the same classification,
+        but collect country names using a textual field instead (i.e Text X[X(99)]. Both the enumerated and non-enumerated value domains could be
+        associated with the conceptual domain for countries. The conceptual domain might also be associated with several data element
+        concepts which incorporate country as a central theme, such as <em>Person</em> &mdash;<em>country of birth</em>,
+        <em>Person</em> &mdash; <em>country of residence</em>, or <em>Person</em> &mdash; <em>country of citizenship</em>.</P>  
+
+        <blockquote>
+        <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+        ISO/IEC 11179-3 Section 11.3.2.1</a></cite>
+
+        <p>Conceptual_Domain is a class, each instance of which models a conceptual domain (3.2.21), 
+        a set of value meanings (3.2.141) which may either be enumerated or expressed via a description. 
+        Conceptual_Domain is an abstract class, which has two possible subclasses: 
+        Enumerated_Conceptual_Domain (11.3.2.2) and Described Conceptual_Domain (11.3.2.4). 
+        Every Conceptual_Domain instance must be either an Enumerated_Conceptual_Domain or a 
+        Described Conceptual_Domain or a combination of the two.
+        
+        </blockquote>

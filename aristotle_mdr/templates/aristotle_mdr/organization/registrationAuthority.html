@@ -1,0 +1,44 @@
+{% extends "aristotle_mdr/unmanagedContent.html" %}
+{% load aristotle_tags %}
+
+{% block title %}{{ item.name }} {% endblock %}
+
+{% block objSpecific %}
+    <p>
+        The following list gives a description of the context of the 11179-6 status
+        levels according to this Registration Authority.
+    </p>
+    <dl class="status_definitions">
+        {% for visiblity,descriptions in item.statusDescriptions %}
+            <dt>
+                {{ visiblity|title }}
+
+                {% if visiblity == "unlocked" %}
+                <i class="fa fa-unlock"></i>
+                {% elif visiblity == "locked" %}
+                <i class="fa fa-lock"></i>
+                {% elif visiblity == "public" %}
+                <i class="fa fa-eye"></i>
+                {% else %}
+                <i class="fa fa-bug"></i>
+                {% endif %}
+            </dt>
+            <dd>
+            <dl>
+                {% for val,state_name,text in descriptions %}
+                <dt id='state_{{ val }}'>{{ state_name }}</dt>
+                <dd>
+                {% if text %}
+                    {{ text | linebreaks }}
+                {% else %}
+                    <em>No description given</em>
+                {% endif %}
+                </dd>
+                {% endfor %}
+            </dl>
+            </dd>
+        {% endfor %}
+    </dl>
+
+{% endblock %}
+

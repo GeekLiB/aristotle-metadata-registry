@@ -1,0 +1,75 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+{% load compile_static i18n %}
+{% load aristotle_tags %}
+
+{% block title %}Check related items {{ item.name }}{% endblock %}
+{% block content %}
+    <div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:item' item.id %}">{{ item.name }}</a></li>
+          <li class="active">Check related items</li>
+        </ol>
+
+
+        <header>This form allows you to review the status of items related to the metadata item <em>{{item.name}}</em>.
+        </header>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    {% for s in known_states %}
+                    <th>{{s.registrationAuthority}}</th>
+                    {% endfor %}
+                    <th>Extra statuses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{item.name}}</td>
+                {% for s in item.current_statuses.all %}
+                    <td>{{s.get_state_display}}</td>
+                {% endfor %}
+                <td></td>
+                </tr>
+            </tbody>
+            <tbody>
+                {% for i,states,extra in state_matrix %}
+                <tr>
+                <td>{% include "aristotle_mdr/helpers/itemLink.html" with item=i %}
+                <!-- small>{{item.type}}</small -->
+                </td>
+                {% for s,parent in states %}
+                    <td>
+                        {% if s == None %}
+                            <i class="fa fa-times fa-fw"></i>
+                        {% elif s.state == parent.state %}
+                            <i class="fa fa-check fa-fw"></i>
+                        {% else %}
+                            <i class="fa fa-times fa-fw"></i>
+                        {% endif %}
+                        {{s.get_state_display}}
+                    </td>
+                {% endfor %}
+                <td><ul>
+                {% for s in extra %}
+                    <li>{{s.get_state_display}} in {{s.registrationAuthority}}</li>
+                {% empty %}
+                <li>No extras</li>
+                {% endfor %}
+                </ul></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="modal-footer">
+        {% if request.is_ajax %}
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'aristotle:item' item.id %}">Return to item</a>
+        {% endif %}
+        <!-- input type="submit" class="btn btn-primary" value="Update Status" / -->
+    </div>
+
+{% endblock %}

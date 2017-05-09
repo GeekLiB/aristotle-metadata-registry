@@ -1,0 +1,28 @@
+{% extends "aristotle_mdr/user/userHome.html" %}
+
+{% load static from staticfiles %}
+{% load compile_static %}
+
+{% block title %}All Discussions{% endblock %}
+
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.dashboard.less'|compile %}" />
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle_discussions.less'|compile %}" />
+{% endblock %}
+
+{% block sidebar %}
+    {% include "aristotle_mdr/user/userSideBar.html" with activeTab='discussions' %}
+{% endblock %}
+
+{% block page %}
+    <h1>{% block discussions_header %}All Discussions{% endblock %}</h1>
+
+    <ol class="breadcrumb">
+        <li><a href="{% url 'aristotle:discussions' %}">All Discussions</a></li>
+        {% block breadcrumbs %}
+        {% endblock %}
+    </ol>
+
+    {% block discussion_content %}
+    {% endblock %}
+{% endblock %}

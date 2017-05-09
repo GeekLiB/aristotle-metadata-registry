@@ -1,0 +1,43 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+{% load i18n static compile_static %}
+{% load static from staticfiles %}
+
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.help.less'|compile %}" />
+{% endblock %}
+
+{% block content %}
+{% if not request.is_ajax %}
+
+    <ul class="breadcrumb">
+    {% block breadcumbs %}
+        <li class="active">Help</li>
+    {% endblock %}
+    </ul>
+
+    <div class="col-sm-12 col-md-3">
+    {% block sidebar %}
+    <form id="helpSearch" action="{% url 'aristotle:search' %}" method="get"
+    role="search">
+        <label style="display:none" for="searchHelp">{% trans 'Search help' %}</label>
+        <input type="hidden" name="models" value="aristotle_mdr_help.concepthelp"></input>
+        <input type="hidden" name="models" value="aristotle_mdr_help.helppage"></input>
+        <input type="text" class="form-control" id="searchHelp" name="q" accesskey="h"></input>
+        <button style="margin:2px auto" class="center-block btn btn-sm btn-primary" type="submit" title="{% trans 'Search' %}">
+            Search Help <i class="fa fa-search"></i>
+        </button>
+    </form>
+    {% endblock %}
+    </div>
+    <div class="col-sm-12 col-md-9">
+    <h1>{% block title %}Help{% endblock %}</h1>
+{% else %}
+    <div class="modal-body">
+{% endif %}
+
+    {% block help_content %}
+    {% endblock %}
+
+    </div>
+
+{% endblock %}

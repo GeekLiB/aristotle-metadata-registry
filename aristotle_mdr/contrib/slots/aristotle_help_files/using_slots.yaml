@@ -1,0 +1,14 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: Using 'Slots' to annotate metadata
+    language: en
+    body: >
+      <h2>Restricting search with the advanced search options</h2>
+      <blockquote>
+      Slot instances provide a dynamic way to add arbitrary attributes to instances of on Identified_Item (7.2.2.1).
+      A Slot instance is associated with exactly one Identified_Item instance, through the association item_slot (7.2.3.3).
+      An Identified_Item instance may be associated with zero, one or more Slot instances.
+      All Slot instances associated with a particular Identified_Item instance must 
+      have a distinct name to allow each Slot instance to be unambiguously identified. 
+      <cite>ISO/IEC 11179:2013 Part 3, Section 7.2.2.4</cite>
+      </blockquote>

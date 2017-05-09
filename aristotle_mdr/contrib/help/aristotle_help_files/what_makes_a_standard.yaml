@@ -1,0 +1,13 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: What makes metadata standard?
+    language: en
+    body: >
+        <p>
+        A "standard" is a way for content experts to quickly state that some information is
+        of an agreed quality, stored in an understood way and sharable to ensure
+        that others can independently verify that information that is stated to meets a standard
+        does so in a way that is fit for purpose and easily understood.
+        </p>
+        <p>
+        </p>

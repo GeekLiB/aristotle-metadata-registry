@@ -1,0 +1,149 @@
+{% load aristotle_tags %}
+{% load humanize i18n %}
+
+<aside id="infobox-wrap" class="col-xs-12 col-sm-4 pull-right navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#infobox">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand visible-xs" style="float:none;">
+        {% block collapse-link %}
+        <i class="fa fa-info-circle fa-fw"></i>More details...
+        {% endblock %}
+      </a>
+    </div>
+    <div id="infobox" class="collapse navbar-collapse" >
+        <header class="hidden-xs">{{ item.name }}</header>
+        <dl>
+            <dt>{% trans 'Type' context "Object Type" %}</dt>
+            <dd>
+                <a href="{% url 'aristotle_help:concept_help' item.meta.app_label item.meta.model_name %}"
+                    title="{% trans 'Learn about this metadata type' %}"
+                    data-toggle="modal" data-target="#infobox_modal"
+                >{{ item.get_verbose_name }}</a>
+            </dd>
+            <!-- dt>Aristotle ID</dt><dd>{{ item.id }}</dd -->
+            <dt>Identifiers</dt>
+            <dd>UUID - <span title='{{ item.uuid }}'>{{ item.uuid }}</span></dd>
+            {% for ident in item.identifiers.all %}
+                <dd><a href="{{ident.namespace.naming_authority.get_absolute_url}}">{{ ident.prefix }}</a>:{{ ident.identifier }}:{{ ident.version }}</dd>
+            {% endfor %}
+            {% if item.short_name %}
+            <dt class="visible-xs">{% trans 'Short name'%}</dt><dd class="visible-xs">{{ item.short_name }}</dd>
+            {% endif %}
+            {% if item.version %}
+            <dt class="visible-xs">{% trans 'Version'%}</dt><dd class="visible-xs">{{ item.version }}</dd>
+            {% endif %}
+            {% if item.synonyms %}
+            <dt class="visible-xs">{% trans 'Synonyms'%}</dt><dd class="visible-xs">{{ item.synonyms }}</dd>
+            {% endif %}
+            {% if item.origin_URI %}
+            <dt title="{{ item.origin_URI.help_text }}">{% trans 'Origin URI'%}</dt><dd><a title="This link will exit this site" href="{{ item.origin_URI }}">Jump to original <i class="fa fa-external-link"></i></a></dd>
+            {% endif %}
+            {% comment %}
+            {# These may yet be removed, I don't like it #}
+            <dt>Included in</dt>
+            {% block includes %}{% endblock %}
+            {% endcomment %}
+            
+            {% if item.registerable %}
+            {% include "aristotle_mdr/infobox_statuses.html" with statuses=item.current_statuses %}
+            {% endif %}
+            
+            {% if item.publicationrecord and not item.current_statuses %}
+                {% include "aristotle_self_publish/concepts/publication_details.html" with item=item %}
+            {% endif %}
+
+            <dt>{% trans 'Last updated'%}</dt>
+            <dd>
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser or request.user.is_staff and item.workgroup in request.user.workgroups %}
+                        <time title="{{ item.modified|date:'o-m-d H:i e' }}" datetime="{{ item.modified|date:'c' }}">
+                            <a href="{% historyLink item %}">{{item.modified|naturaltime}}</a>
+                        </time>
+                    {% elif item.workgroup in request.user.workgroups or item.submitter == request.user %}
+                        <time title="{{ item.modified|date:'o-m-d H:i e' }}" datetime="{{ item.modified|date:'c' }}">
+                            <a href="{% url 'aristotle:item_history' iid=item.id %}">{{item.modified|naturaltime}}</a>
+                        </time>
+                    {% endif %}
+                {% else %}
+                    <time title="{{ item.modified|date:'o-m-d H:i e' }}" datetime="{{ item.modified|date:'c' }}">
+                        {{item.modified|naturaltime}}
+                    </time>
+                {% endif %}
+                {% if request.user.is_superuser or request.user.is_active and item.workgroup in request.user.workgroups %}
+                <span style="display:inline-block">By {% with name=last_edit.revision.user.get_username %}
+                        {% if name %}{{ name }}{% else %}<em title="{% trans 'This may have been added during an import.'%}">{% trans 'Unknown' context "Unknown import user"%}</em>{% endif %}
+                        {% endwith %}
+                </span>
+                {% endif %}
+            </dd>
+            <dt>{% trans 'Created'%}</dt>
+            <dd><time title="{{ item.created|date:'o-m-d' }}" datetime="{{ item.created|date:'c' }}">{{ item.created|date:'o-m-d' }}</time></dd>
+
+        {% block asideContent %}{% endblock %}
+
+        {% with total=item.supersedes.count %}
+            <dt class="large">{% trans 'Supersedes'%}
+            {% if item|can_edit:request.user %}
+                <a class="inline_action" href="{% url 'aristotle:deprecate' iid=item.id %}"
+                    data-toggle="modal" data-target="#infobox_modal">{% ternary total 'Change' 'Add'%}</a>
+            {% endif %}</dt>
+            <dd class="large">
+            <ul>
+                {% for sup in item.supersedes.all|can_view_iter:user %}
+                    <li>
+                      <a href="{% url 'aristotle:item' iid=sup.id %}/">
+                        {{ sup }}
+                      </a>
+                    </li>
+                {% empty %}
+                    <li><em>{% trans 'None' context 'No older objects' %}</em></li>
+                {% endfor %}
+            </ul>
+            </dd>
+        {% endwith %}
+            <dt class="large">{% trans 'Superseded by'%}
+                {% if item|can_edit:request.user %}
+                    <a class="inline_action" href="{% url 'aristotle:supersede' iid=item.id %}"
+                       data-toggle="modal" data-target="#infobox_modal">{% ternary item.superseded_by 'Change' 'Add'%}</a>
+                {% endif %}</dt>
+            <dd class="large">
+            <ul><li>
+                {% if item.superseded_by %}
+                    <a href="{% url 'aristotle:item' iid=item.superseded_by.id %}">{{ item.superseded_by }}</a>
+                {% else %}
+                    <em>{% trans 'None' context 'No newer objects'%}</em>
+                {% endif %}
+            </li></ul>
+            </dd>
+        {% if item.workgroup and request.user|in_workgroup:item.workgroup %}
+            <hr>
+            <dt>{% trans 'Workgroup' %}</dt>
+            <dd><a href="{% url 'aristotle:workgroup' iid=item.workgroup.id %}">{{ item.workgroup.name }}</a></dd>
+            <dt>{% trans 'History' %}</dt>
+            <dd><a href="{% url 'aristotle:item_history' iid=item.id %}">{% trans "View history" %}</a></dd>
+            <dt>{% trans 'Discussions' %}</dt>
+            <dd>{% if item.relatedDiscussions.exists %}
+                <ul>
+                    {% for discussion in item.relatedDiscussions.all %}
+                    <li>
+                        <a href="{% url 'aristotle:discussionsPost' pid=discussion.id %}">{{ discussion.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <a href="{% url 'aristotle:discussionsNew' %}?workgroup={{item.workgroup.id}}&item={{item.id}}">{% trans "Start a new discussion about this item" %}</a>
+            </dd>
+        {% elif item.submitter == request.user %}
+            <hr>
+            <dt>{% trans 'Workgroup' %} </dt>
+            <dd><a href="{% url 'aristotle:userSandbox' %}">{% trans "Sandboxed Item" %}</a></dd>
+        {% endif %}
+        </dl>
+        {% bootstrap_modal "infobox_modal" size='lg' %}
+    </div>
+</aside>

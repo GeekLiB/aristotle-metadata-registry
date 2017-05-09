@@ -1,0 +1,6 @@
+{% extends "search/indexes/aristotle_mdr_help/helpbase_text.txt" %}
+
+{{ object.brief | striptags }}
+{{ object.offical_reference | striptags }}
+{{ object.offical_link }}
+{{ object.creation_tip  | striptags }}

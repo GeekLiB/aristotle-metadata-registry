@@ -1,0 +1,47 @@
+{% load humanize %}
+{% load aristotle_tags %}
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Title <small class="visible-xs-inline">(and workgroup)</small></th>
+            {% if showWorkgroups %}
+                <th class="hidden-xs">Workgroup</th>
+            {% endif %}
+            <th>Latest comment</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for post in discussions %}
+        <tr>
+            <td>{{ post.author }}<br>
+                <small>{{ post.created|naturaltime }}</small>
+            </td>
+            <td>
+                <a href="{% url 'aristotle:discussionsPost' post.id %}">{{ post.title }}</a>
+                {% if showWorkgroups %}
+                <span class="visible-xs-block">
+                    In <a href="{% url 'aristotle:discussionsWorkgroup' post.workgroup.id %}" title="View discussions for this workgroup only">{{ post.workgroup }}</a>
+                </span>
+                {% endif %}
+            </td>
+            {% if showWorkgroups %}
+            <td class="hidden-xs">
+                <a href="{% url 'aristotle:discussionsWorkgroup' post.workgroup.id %}" title="View discussions for this workgroup only">{{ post.workgroup }}</a>
+            </td>
+            {% endif %}
+            <td>
+                {% if post.comments.last %}
+                    <a href="{% url 'aristotle:discussionsPost' post.id %}#comment_{{post.comments.last.id}}"
+                        title="Jump to last comment">
+                        {{ post.comments.last.author }}, {{ post.comments.last.created|naturaltime }}</a>
+                    ({{ post.comments.count }} total)
+                {% else %}
+                    -
+                {% endif %}
+                {% ternary post.closed '(Closed)' '' %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

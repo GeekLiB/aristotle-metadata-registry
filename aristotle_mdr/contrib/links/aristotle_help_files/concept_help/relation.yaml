@@ -1,0 +1,19 @@
+- model: aristotle_mdr_help.concepthelp
+  fields:
+    app_label: aristotle_mdr_links
+    concept_type: relation
+    language: en
+    brief: A definition for classifying a set of real objects, ideas or events
+        that all share common measurable attributes
+    offical_definition: >
+        Relation is a class each instance of which models a relation (3.2.119),
+        a sense in which concepts (3.2.18) may be connected via constituent
+        relation roles (3.2.120).
+    official_reference: ISO/IEC 11179 - Clause 9.1.2.4.2
+    official_link:
+    body: >
+      <p>A relation is a way of formally describing a way of linking two or more
+      concepts beyond those specified in ISO 11179.
+      </p>
+    creation_tip: >
+        Relations

@@ -1,0 +1,18 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: Downloading content
+    app_label: aristotle_mdr
+    language: en
+    body: >
+      <p>Each instance of an Aristotle Metadata Registry will have different
+      provisions and formats available for downloading content from the
+      registry.</p>
+      <p>In general, downloads of individual items are made available through
+      the download menu to the right of items name. This menu will list every different
+      type of download format made available in this registry.</p>
+      
+      <p>Additionally, you can download multiple items at a time when reviewing lists of metadata
+      items, such as browse screens, favourite lists or lists of workgroup items.
+      This is done by highlighting items and selecting "bulk download" from the bulk action dropdown box
+      and then selecting the appropriate download format.
+      </p>

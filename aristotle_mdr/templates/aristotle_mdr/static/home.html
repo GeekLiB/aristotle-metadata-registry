@@ -1,0 +1,106 @@
+{% extends "aristotle_mdr/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Home'%}{% endblock %}
+{% block header %}
+   {% include 'aristotle_mdr/header.html' with hide_search=True %}
+{% endblock %}
+
+{% block extra_head_scripts %}
+{% include 'meta/schemaorg/home.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="jumbotron">
+<h1>{{ config.SITE_INTRO }}</h1>
+<form id="homeSearch" action="{% url 'aristotle:search' %}" method="get" >
+        <input type="text" class="form-control" id="searchText" name="q" accesskey="q"></input>
+        <div class="text-center" style="margin-top:5px;">
+            <a href="{% url 'aristotle:search' %}" class="btn btn-default">{% trans 'More options' context "Front page search options" %}...</a>
+            <button class="btn btn-primary" type="submit">
+                {% trans 'Search' %} <i class="fa fa-search"></i>
+            </button>
+
+        </div>
+</form>
+</div>
+
+<div id="homeFaq" class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="{% url 'aristotle_help:help_page' 'what-is-metadata' %}">What is metadata?</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'aristotle_help:help_page' 'about-isoiec-11179' %}">What is ISO/IEC 11179?</a>
+                <a href="{% url 'aristotle_help:help_page' 'what-is-a-metadata-registry' %}">What is a metadata registry?</a>
+                <a href="{% url 'aristotle:about' 'aristotle_mdr' %}">What is <em>Aristotle-MDR</em>?</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">About <em>{{ config.SITE_NAME }}</em></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'aristotle:all_registration_authorities' %}">Current registration authorities</a>
+                <a href="{% url 'browse_apps' %}">Browse the registry</a>
+                <a href="{% url 'aristotle:compare_concepts' %}">Compare metadata</a>
+                {% if config.CONTENT_EXTENSIONS %}
+                <a href="{% url 'aristotle:extensions' %}">View current extensions</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="{% url 'aristotle:about' 'getting_data' %}">How can I get data?</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="#">What is a data dictionary?</a>
+                <a href="#">Why are data standards important?</a>
+                <a href="#"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="">How can I add content?</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'aristotle_help:help_page' 'what-are-workgroups' %}">What is a workgroup?</a>
+                <a href="{% url 'aristotle_help:help_page' 'how-does-content-become-visible' %}">How does content become visible?</a>
+                <a href="{% url 'aristotle_help:help_page' 'registry-roles' %}">What roles exist within a registry?</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="{% url 'aristotle:about' 'metadata_standards' %}">About metadata standards</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'aristotle_help:help_page' 'what-makes-a-standard' %}">What makes metadata "standard"?</a>
+                <a href="{% url 'aristotle_help:help_page' 'versioning-content' %}">Versioning content</a>
+                <a href="{% url 'aristotle_help:help_page' 'registration-authorities' %}">What is a registration authority?</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 ">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title"><a href="{% url 'aristotle_help:help_base' %}">Need more help?</a></h2>
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'aristotle_help:help_concepts' %}">Help on all registry items</a>
+                <a href="http://aristotle-metadata-registry.rtfd.org/en/latest/">Documentation for programmers</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

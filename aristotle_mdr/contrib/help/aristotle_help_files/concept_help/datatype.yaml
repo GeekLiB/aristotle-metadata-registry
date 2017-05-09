@@ -1,0 +1,37 @@
+- model: aristotle_mdr_help.concepthelp
+  fields:
+    app_label: aristotle_mdr
+    concept_type: datatype
+    language: en
+    brief: set of distinct values, characterized by properties of those values and by operations on those values
+    offical_definition: >
+        set of distinct values, characterized by properties of those values and by operations on those values
+    official_reference: ISO/IEC 11179 - Clause 3.1.8
+    official_link:
+    body: >
+        <P> A datatype is a set of distinct values, characterized by properties of those values and by operations on those values (ISO/IEC 11404).</P>
+        <p><em>Primative datatypes</em> are those "that cannot be decomposed into other datatypes without loss of associated semantics "</p>
+        
+        <blockquote>
+        <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+        ISO/IEC 11179-3 Section 11.3.2.9</a></cite>
+
+        <p>Datatype is a class, each instance of which models a datatype (3.1.9), a set of distinct values,
+        characterized by properties of those values and by operations on those values.
+        For example, the category used for the collection of letters, digits, and/or symbols
+        to depict values of a Data_Element (11.5.2.1) determined by the operations that may be performed on the Data_Element.
+        </p>
+        <p>
+        This part of ISO/IEC 11179 is intended to accommodate datatypes from datatype schemes specified in external standards.
+        It is also intended to accommodate other non-standard datatype schemes.
+        Possible standardized datatype schemes include:
+          <ul>
+            <li>ISO/IEC 9075 (SQL dataype);</li>
+            <li>ISO/IEC 11404 (General Purpose Datatypes);</li>
+            <li>ISO 21090 Health Informatics datatypes;</li>
+            <li>C programming language datatypes;</li>
+            <li>XML Schema datatypes;</li>
+          </ul>
+        </p>
+        </blockquote>
+    

@@ -1,0 +1,188 @@
+{% load i18n aristotle_help aristotle_tags %}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>{% block title %}{{ title }}{% endblock %} - {{ config.SITE_NAME }}</title>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <style type="text/css">
+            * {
+                font-size:11pt;
+            }
+
+            h1 {
+                border-top:1px solid black;
+                border-bottom:1px solid black;
+                padding:5px;
+            }
+
+            h2 {
+                border-top:1px solid darkgray;
+                border-left:1px solid darkgray;
+                padding:5px;
+            }
+
+            #footerContent, #footerContent * {
+                font-size:10pt;
+            }
+
+            #supersedes {
+                list-style-type:none;
+                margin-left:0px;
+                float:right;
+            }
+
+            #supersedes > span {
+                display:table-cell;
+            }
+            #supersedes ul, #supersedes ol {
+                display:inline-block;
+                list-style-type:none;
+                padding:0px;
+                margin:0px;
+            }
+
+            #content .objectSpecific dl {
+                padding-top:0.25cm;
+                padding-left:0.5cm;
+            }
+
+            #content .objectSpecific dt {
+                font-weight:bold;
+            }
+
+            #content .objectSpecific dd {
+                padding-left:1cm;
+            }
+
+            a {
+                text-decoration: none;
+                color:black;
+                padding-left:1px;
+            }
+
+            pdftoc {
+                color: #444;
+            }
+            pdftoc.pdftoclevel0 {
+                font-weight: bold;
+                margin-top: 0.5em;
+                border-bottom:1px solid black;
+                text-decoration:underline;
+            }
+            pdftoc.pdftoclevel1 {
+                margin-left: 1em;
+                border-bottom:1px solid black;
+                text-decoration:underline;
+            }
+            pdftoc.pdftoclevel2 {
+                margin-left: 2em;
+                border-bottom:1px solid black;
+            }
+            td, td * , th, th *{
+                vertical-align:top;
+            }
+            cite {
+                font-style:italic;
+            }
+
+            @page {
+                size: {{ pagesize }};
+                margin: 1cm;
+                margin-bottom: 2cm;
+                padding: 0.5cm;
+                border: 0px solid white;
+                @frame footer {
+                    -pdf-frame-content: footerContent;
+                    bottom: 0cm;
+                    margin-left: 2cm;
+                    margin-right: 2cm;
+                    padding:0.2cm;
+                    height: 2cm;
+                }
+            }
+       </style>
+   </head>
+   <body>
+   <div id="main">
+           <div style="page-break-after:always;">
+                <strong>{{ title }}
+                </strong>
+                {% if subtitle %}
+                <p>
+                    {{subtitle}}
+                </p>
+                {% endif %}
+           </div>
+           <div style="page-break-after:always;">
+               <h1>Table of contents</h1>
+               <pdf:toc />
+           </div>
+
+       <div id='content'>
+            {% for t,dict in included_items %}
+            <h1>{{t.get_verbose_name_plural}}</h1>
+                {% with object=dict.help %}
+                    {% if object %}
+                    <p>
+                        <strong>Definition:</strong>
+                        {% relink object 'brief' %}
+                    </p>
+                    <p>
+                        For more information see the <em>Glossary of included metadata types</em>.
+                    </p>
+                    {% endif %}
+                {% endwith %}
+                {% for item in dict.qs.all %}
+                    <div style="page-break-after:always;">
+                        {% include item|template_path:'pdf,inline' with item=item.item %}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            <div>
+                <h1>Glossary of included metadata types</h1>
+                {% for t,dict in included_items %}
+                {% with object=dict.help %}
+                    {% if object %}
+                    <h2>{{t.get_verbose_name}}</h2>
+    
+                    <p>{% relink object 'brief' %}</p>
+                    {% if object.offical_definition %}
+                    <blockquote>{% relink object 'offical_definition' %}
+                        {% if object.official_reference %}
+                            {% if object.official_link %}
+                            <small>
+                                <a href="{{object.official_link}}" title="{% trans 'Click to view the official source'%}">
+                                {{ object.official_reference }}
+                                <i class="fa fa-external-link-square" ></i>
+                                </a>
+                            </small>
+                            {% else %}
+                            <small>{{ object.official_reference }}</small>
+                            {% endif %}
+                        {% endif %}
+                    </blockquote>
+                    {% endif %}
+                    <p>
+                        {% relink object 'body' %}
+                    </p>
+                    {% endif %}
+                {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div id="footerContent">
+        {%block page_foot%}
+            Page <pdf:pagenumber> -
+            {{title}} -
+            Produced on {% now "DATETIME_FORMAT" %}
+        {%endblock%}
+        <br/>
+        <footer>
+        {{ config.SITE_NAME }}
+        Powered by the Aristotle Metadata Registry
+        </footer>
+    </div>
+   </body>
+</html>

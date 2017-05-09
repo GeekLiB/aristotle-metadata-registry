@@ -1,0 +1,117 @@
+{% comment %}
+This is reused when displaying Data Elements, but we want to minimise the
+amount of information around the Value Domain
+So we've split this out into its own template.
+{% endcomment %}
+
+{% load aristotle_tags %}
+
+
+<div>
+<table class="table table-striped valueDomainRepresentation">
+{% if item.description %}
+<tr>
+  <th>Description</th>
+  <td>{{ item.description }}</a></td>
+</tr>
+{% endif %}
+{% if item.data_type %}
+<tr>
+  <th>Data Type</th>
+  <td><a href="{% url 'aristotle:item' item.data_type.id %}">{{ item.data_type }}</a></td>
+</tr>
+{% endif %}
+{% if item.unit_of_measure %}
+<tr>
+  <th>Unit Of Measure</th>
+  <td><a href="{% url 'aristotle:item' item.unit_of_measure.id %}">
+    {{ item.unit_of_measure }}
+    {% if item.unit_of_measure.symbol %}<tt>({{ item.unit_of_measure.symbol }})</tt>{% endif %}
+  </td>
+</tr>
+{% endif %}
+{% if item.format %}
+<tr>
+  <th>Format</th>
+  <td>{{ item.format }}</td>
+</tr>
+{% endif %}
+{% if item.maximum_length %}
+<tr>
+  <th>Maximum character length</th>
+  <td>{{ item.maximum_length }}</td>
+</tr>
+{% endif %}
+</table>
+{% if item.permissiblevalue_set.count > 0 or item.supplementaryvalue_set.count > 0 or item|can_edit:request.user %}
+  <strong>Permissible Values</strong>
+    <table class="codeList table table-striped">
+        <thead>
+            <tr>
+                <td></td>
+                <th>Value</th><th>Meaning</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for perm in item.permissiblevalue_set.all %}
+                <tr>
+                    {% if forloop.first %}
+                    <th rowspan="{{ item.permissiblevalue_set.count }}">Permissible Values
+                        {% if item|can_edit:request.user %}
+                            <a class="inline_action" data-toggle="modal" data-target="#value_domain_modal"
+                            href="{% url 'aristotle:permsissible_values_edit' item.id %}">edit</a>
+                        {% endif %}
+                    </th>
+                    {% endif %}
+                    <td>{{ perm.value }}</td>
+                    <td>{{ perm.meaning }}</td>
+                </tr>
+            {% empty %}
+                {% if item|can_edit:request.user %}
+                <tr>
+                    <th>
+                        {% if item|can_edit:request.user %}
+                            <a class="inline_action" data-toggle="modal" data-target="#value_domain_modal"
+                            href="{% url 'aristotle:permsissible_values_edit' item.id %}">Add Permissible Values</a>
+                        {% endif %}
+                    </th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+        <tbody>
+            {% for perm in item.supplementaryvalue_set.all %}
+                <tr>
+                    {% if forloop.first %}
+                    <th rowspan="{{ item.supplementaryvalue_set.count }}">Supplementary Values
+                        {% if item|can_edit:request.user %}
+                            <a class="inline_action" data-toggle="modal" data-target="#value_domain_modal"
+                            href="{% url 'aristotle:supplementary_values_edit' item.id %}">edit</a>
+                        {% endif %}
+                    </th>
+                    {% endif %}
+                    <td>{{ perm.value }}</td>
+                    <td>{{ perm.meaning }}</td>
+                </tr>
+            {% empty %}
+                {% if item|can_edit:request.user %}
+                <tr>
+                    <th>
+                        {% if item|can_edit:request.user %}
+                            <a class="inline_action" data-toggle="modal" data-target="#value_domain_modal"
+                            href="{% url 'aristotle:supplementary_values_edit' item.id %}">Add Supplementary Values</a>
+                        {% endif %}
+                    </th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+
+    </table>
+    {% bootstrap_modal "value_domain_modal" size='lg' %}
+{% endif %}
+</div>

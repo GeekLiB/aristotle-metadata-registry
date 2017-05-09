@@ -1,0 +1,149 @@
+{% load i18n %}
+
+<ul class="nav nav-pills nav-stacked nav-collapse dashMenu">
+    <li class="dashboard_link {% ifequal activeTab "home" %}active{% endifequal %}">
+        <div>
+        <a class="main" href="{% url 'aristotle:userHome' %}">
+        <i class="fa fa-home fa-fw"></i> My Dashboard</a>
+        <a href="{% url 'aristotle:userEdit' %}">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-cog fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+        </div>
+    </li>
+        {% ifequal activeTab "edit" %}
+    <li class="">
+        <ul class="nav nav-pills nav-stacked nav-collapse dashSubMenu">
+            <li><a href="{% url 'password_change' %}">
+                <i class="fa fa-cog fa-fw"></i> {% trans 'Change password' %}
+            </a></li>
+        </ul>
+    </li>
+        {% endifequal %}
+    <li {% ifequal activeTab "create_list" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:create_list' %}">
+        <i class="fa fa-plus fa-fw"></i> Create Metadata
+        </a>
+    </li>
+    <li {% ifequal activeTab "favourites" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:userFavourites' %}">
+        <i class="fa fa-bookmark fa-fw"></i> Favourites
+        <span class="badge pull-right">{{ user.profile.favourites.count }}</span></a>
+    </li>
+    <li {% ifequal inboxFolder "unread" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:userInbox' %}">
+        <i class="fa fa-envelope fa-fw"></i> Notifications
+        {% with notecount=user.notifications.unread.count %}
+            <span class="badge pull-right" title="{{ notecount }} unread notifications">{{ notecount }}</span>
+        {% endwith %}
+        </a>
+        {% if inboxFolder %}
+        <ul class="nav nav-pills nav-stacked nav-collapse dashSubMenu">
+            <li {% if inboxFolder == "all" %}class="active"{% endif %}>
+                <a href="{% url 'aristotle:userInbox' 'all' %}">
+                    <i class="fa fa-envelope-o fa-fw"></i> {% trans 'All messages' %}
+                </a>
+            </li>
+        </ul>
+        {% endif %}
+    </li>
+    <li {% ifequal activeTab "workgroups" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:userWorkgroups' %}">
+        <i class="fa fa-users fa-fw"></i> {% trans "Workgroups" %}
+        <span class="badge pull-right">{{ user.profile.myWorkgroups.count }}</span></a>
+        {% if subWorkgroups %}
+        <ul class="nav nav-pills nav-stacked nav-collapse dashSubMenu">
+            <li><a href="{% url 'aristotle:user_workgroups_archives' %}">
+                <i class="fa fa-archive"></i>
+                {% trans "Archived Workgroups" %}</a></li>
+            {% for item in subWorkgroups %}
+            <li>
+                <a href="{% url 'aristotle:workgroup' item.id %}">{{ item }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% elif subWorkgroup %}
+        <ul class="nav nav-pills nav-stacked nav-collapse dashSubMenu">
+            <li class="active">
+                <a href="{% url 'aristotle:workgroup' item.id %}">{{ item }}</a>
+            </li>
+        </ul>
+        {% endif %}
+        {% ifequal activeTab "workgroupArchives" %}
+        <ul class="nav nav-pills nav-stacked nav-collapse dashSubMenu">
+            <li class="active">
+                <i class="fa fa-archive"></i>
+                <a href="{% url 'aristotle:user_workgroups_archives' %}">{% trans "Archived Workgroups" %}</a>
+            </li>
+        </ul>
+        {% endifequal %}
+    </li>
+    <li {% ifequal activeTab "discussions" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:discussions' %}">
+        <i class="fa fa-comments fa-fw"></i> {% trans 'Discussions'%}
+    </a></li>
+    <li {% ifequal activeTab "recent" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:userRecentItems' %}">
+        <i class="fa fa-history fa-fw"></i> {% trans "Recent Actions" %}</a>
+    </li>
+    <li {% ifequal activeTab "sandbox" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:userSandbox' %}">
+        <i class="fa fa-pencil-square-o fa-fw"></i> {% trans "My Sandbox" %}</a>
+    </li>
+    <li {% ifequal activeTab "myreviewrequests" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:userMyReviewRequests' %}">
+        <i class="fa fa-flag-o fa-fw"></i> {% trans "My Review Requests" %}</a>
+    </li>
+    <li role="presentation" class="nav-divider"></li>
+    <li {% ifequal activeTab "role" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:userRoles' %}">
+        <i class="fa fa-industry fa-fw"></i> My roles</a>
+    </li>
+    {% if request.user.profile.is_registrar %}
+    <li {% ifequal activeTab "registrarTools" %}class="active"{% endifequal %}>
+        <a href="{% url 'aristotle:userRegistrarTools' %}">
+        <i class="fa fa-institution fa-fw"></i> {% trans "Registrar tools" %}
+        </a>
+        {% ifequal activeTab "registrarTools" %}
+        <ul class="nav nav-pills nav-stacked nav-collapse dashSubMenu">
+            <li><a href="{% url 'aristotle:userReadyForReview' %}">
+                {% comment %}Translators: A link to the list of things to be reviewed.{% endcomment %}
+                <i class="fa fa-flag fa-fw"></i> {% trans 'Review list' %}
+            </a></li>
+        </ul>
+        {% endifequal %}
+    </li>
+    {% endif %}
+    {% if request.user.is_superuser %}
+    <li class="su_action {% ifequal activeTab "adminTools" %}active{% endifequal %}">
+        <a href="{% url 'aristotle:userAdminTools' %}">
+        <i class="fa fa-user-md fa-fw"></i> {% trans "Administrator tools" %}
+        </a>
+        {% if activeTab == 'adminTools' %}
+        <ul class="nav nav-pills nav-stacked nav-collapse dashSubMenu">
+            <li {% if adminSub == "stats" %}class="active"{% endif %}>
+                <a href="{% url 'aristotle:userAdminStats' %}">
+                    <i class="fa fa-bar-chart fa-fw"></i> {% trans 'Registry Statistics' %}
+                </a>
+            </li>
+        </ul>
+        {% endif %}
+    </li>
+    {% endif %}
+    {% if request.user.is_staff %}
+    <li class="staff_action {% ifequal activeTab "djangoAdminTools" %}active{% endifequal %}">
+        <a href="{% url 'aristotle:django_admin' %}">
+        <i class="fa fa-user-md fa-fw"></i> {% trans "Django administration" %}
+        </a>
+    </li>
+    {% endif %}
+    <li role="presentation" class="nav-divider"></li>
+    {% for addon in config.DASHBOARD_ADDONS %}
+        {% with addon|add:'/dashboard/sidebar.html' as template %}
+            {% include template %}
+        {% endwith %}
+    {% endfor %}
+</ul>
+

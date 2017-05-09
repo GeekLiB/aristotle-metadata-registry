@@ -1,0 +1,8 @@
+{% extends "aristotle_mdr/workgroup.html" %}
+
+{% block page %}
+<h1>{% block title %}{{ workgroup.name }} - Items{% endblock %}</h1>
+
+{% include "aristotle_mdr/helpers/bulk_action_paginated_list.html" with allow_select_all=True %}
+
+{% endblock %}

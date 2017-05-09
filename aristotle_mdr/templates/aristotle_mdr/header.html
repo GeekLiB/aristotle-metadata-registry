@@ -1,0 +1,172 @@
+{% load i18n %}
+{% load bootstrap3 %}
+{% load static from staticfiles %}
+{% load notifications_tags %}
+<a class="sr-only" accesskey="j" href="#content">Skip to content</a>
+<a class="sr-only" accesskey="l" href="{% url 'aristotle:accessibility' %}#accesskeys">Learn about the access keys available for {{ config.SITE_NAME }}</a>
+<nav class="main navbar navbar-inverse">
+<div class="container-fluid" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="{% url 'aristotle:home' %}" id="logo">
+        <img height="50px" src="{% static config.SITE_BRAND %}" alt="{{ config.SITE_NAME }}" title="{{ config.SITE_NAME }}">
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        {% if not hide_search %}
+            {% comment %}
+            The search block is defined to allow some pages
+            (SPECIFICALLY the home page) to override or hide the search bar
+            DO NOT OVERRIDE THIS UNLESS YOU ARE CERTAIN OF WHAT YOU ARE DOING!
+            {% endcomment %}
+            <form id="quickSearch" action="{% url 'aristotle:search' %}" method="get"
+            class="navbar-form navbar-left" role="search">
+                <label class="sr-only" for="searchText">Search:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchText" name="q" accesskey="q">
+                    <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit" title="{% trans 'Search' %}">
+                        {% bootstrap_icon "search" %}&nbsp;
+                    </button>
+                    </span>
+                </div>
+            </form>
+        {% endif %}
+
+        <ul class="nav navbar-nav navbar-right">
+            <li >
+                <a href="{% url 'browse_apps' %}">{% trans 'Browse'%}</a>
+            </li>
+            <li >
+                <a accesskey="h" href="{% url 'aristotle_help:help_base' %}">{% trans 'Help'%}</a>
+            </li>
+        {% if user.is_active %}
+            <li class="dropdown">
+                <a id="header_menu_button_user" href="{% url 'aristotle:userHome' %}" accesskey="u" class="dropdown-toggle" role="menu" data-toggle="dropdown" title="{% trans 'Open user menu' %}">
+                    {% if user.is_superuser %}
+                        <i class="fa fa-user-md fa-lg"></i>
+                    {% else %}
+                        <i class="fa fa-user fa-lg"></i>
+                    {% endif %}
+                    {% firstof user.get_short_name user.get_username %}
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{% url 'aristotle:userHome' %}">
+                        <i class="fa fa-home fa-fw"></i> {% trans 'My Dashboard'%}
+                    </a></li>
+                    <li><a href="{% url 'aristotle:userFavourites' %}">
+                        <i class="fa fa-bookmark fa-fw"></i> {% trans 'My Favourites'%}
+                        <span class="badge pull-right">{{ user.profile.favourites.count }}</span>
+                    </a></li>
+                    <li><a href="{% url 'aristotle:userInbox' %}">
+                        <i class="fa fa-envelope fa-fw"></i> {% trans 'Notifications'%}
+                        {% with notecount=user.notifications.unread.count %}
+                        <span class="badge pull-right" title="{{ notecount }} unread notifications">{{ notecount }}</span>
+                        {% endwith %}
+                    </a></li>
+                    <li><a href="{% url 'aristotle:discussions' %}">
+                        <i class="fa fa-comments fa-fw"></i> {% trans 'Discussions'%}
+                    </a></li>
+                    <li><a href="{% url 'aristotle:userWorkgroups' %}">
+                        <i class="fa fa-users fa-fw"></i> {% trans 'Workgroups'%}
+                    </a></li>
+                    <li><a href="{% url 'aristotle:userRecentItems' %}">
+                        <i class="fa fa-history fa-fw"></i> {% trans 'Recent actions'%}
+                    </a></li>
+                    {% if user.has_usable_password %}
+                        <li><a href="{% url 'password_change' %}">
+                        <i class="fa fa-cog fa-fw"></i> {% trans 'Change password' %}
+                        </a></li>
+                    {% endif %}
+                    {% if user.profile.is_registrar %}
+                        <li role="presentation" class="divider"></li>
+                        <li><a href="{% url 'aristotle:userRegistrarTools' %}">
+                        <i class="fa fa-university fa-fw"></i> {% trans 'Registrar tools' %}
+                        </a></li>
+                    {% endif %}
+                    {% if user.is_staff %}
+                        <li role="presentation" class="divider"></li>
+                        <li><a class="staff_action" href="{% url 'admin:index' %}">
+                        <i class="fa fa-sliders fa-fw"></i> {% trans 'Management interface' %}
+                        </a></li>
+                    {% endif %}
+                    {% if request.user.is_superuser %}
+                        <li><a class="su_action" href="{% url 'aristotle:userAdminTools' %}">
+                        <i class="fa fa-user-md fa-fw"></i> {% trans 'Admin tools' %}
+                        </a></li>
+                    {% endif %}
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a id="header_menu_button_create" href="{% url 'aristotle:create_list' %}"
+                    accesskey="o" class="dropdown-toggle" data-toggle="dropdown" title="{% trans 'Create new' %}...">
+                    <i class="fa fa-plus"></i>
+                    <span class="visible-xs-inline">{% trans 'Create new' %} ... </span>
+                    <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu" >
+                    <li><a href="{% url 'aristotle:createItem' 'aristotle_mdr' 'objectclass'%}">Object Class</a></li>
+                    <li><a href="{% url 'aristotle:createItem' 'aristotle_mdr' 'property'%}">Property</a></li>
+                    <li><a href="{% url 'aristotle:createItem' 'aristotle_mdr' 'valuedomain'%}">Value Domain</a></li>
+                    <li><a href="{% url 'aristotle:createItem' 'aristotle_mdr' 'dataelementconcept'%}">Data Element Concept</a></li>
+                    <li><a href="{% url 'aristotle:createItem' 'aristotle_mdr' 'dataelement'%}">Data Element</a></li>
+                    {# <li><a href="{% url 'aristotle:createDataElement'%}"></a></li> #}
+
+                    {% if request.user.is_superuser %}
+                        <li role="presentation" class="divider"></li>
+                        <li role="presentation" class="dropdown-header">
+                            <i class="fa fa-user-md fa-2x"></i> {% trans 'Admin only' %}
+                        </li>
+                        <li>
+                            <a class="su_action" href="{% url 'admin:aristotle_mdr_workgroup_add'%}">
+                                <i class="fa fa-users fa-fw"></i> {% trans 'Workgroup' %}</a>
+                        </li>
+                        <li>
+                            <a class="su_action" href="{% url 'admin:auth_user_add'%}">
+                                <i class="fa fa-user-plus fa-fw"></i> {% trans 'User' %}
+                            </a>
+                        </li>
+                    {% endif %}
+                    <li role="presentation" class="divider"></li>
+                    <li>
+                        <a href="{% url 'aristotle:create_list' %}">{% trans 'See all'%}...</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a id="header_menu_button_notifications" href="{% url 'notifications:all' %}"
+                    class="dropdown-toggle" data-toggle="dropdown" title="{% trans 'Show recent notifications' %}">
+                    {% if user.notifications.unread %}
+                    <span class="notify" title="{% trans 'New notifications' %}"></span>
+                    <span class="visible-xs-inline">{% trans 'New notifications' %}</span>
+                    {% else %}
+                    <span class="no-notify" title="{% trans 'No unread notifications' %}"></span>
+                    <span class="visible-xs-inline">{% trans 'No unread notifications' %}</span>
+                    {% endif %}
+                    {% live_notify_badge classes="badge" %}
+                </a>
+                {% live_notify_list classes="dropdown-menu" %}
+            </li>
+            <li>
+                <a id="header_menu_button_logout" href="{% url 'logout' %}?next={{request.path}}" title="{% trans 'Log out'%}">
+                    <i class="fa fa-sign-out fa-fw"></i>
+                    <span class="visible-xs-inline">{% trans 'Log out' %}</span>
+                </a>
+            </li>
+        {% else %}
+            <li>
+            <a id="header_menu_button_login" href="{% url 'friendly_login' %}?next={{request.path}}">
+                <i class="fa fa-sign-in fa-lg"></i>  {% trans 'Log in'%}
+            </a>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
+</div>
+</nav>

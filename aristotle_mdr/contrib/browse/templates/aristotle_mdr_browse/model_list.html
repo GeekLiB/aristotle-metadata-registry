@@ -1,0 +1,38 @@
+{% extends "aristotle_mdr_browse/base.html" %}
+{% load aristotle_tags aristotle_help util_tags %}
+
+{% block title %}Browsing models for {{app.verbose_name}}{% endblock %}
+
+{% block breadcumbs %}
+    <li><a href="{% url 'browse_apps'  %}">Metadata browser</a></li>
+    <li class="active">{{app.verbose_name}}</li>
+{% endblock %}
+
+{% block object_list %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th title="Number of visibile items of this metadata type">#</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+      {% for obj in object_list %}
+        {% if obj.model_class|visible_count:request.user %}
+          <tr>
+              <td>
+                  <a href="{% url 'browse_concepts' app.label obj.model %}">{{ obj.model_class.get_verbose_name_plural }}</a>
+              </td>
+              <td>
+                  {{ obj.model_class|visible_count:request.user }}
+              </td>
+              <td>
+                  {% help_doc obj.model_class %}
+              </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

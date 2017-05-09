@@ -1,0 +1,106 @@
+{% extends "aristotle_mdr/user/base.html" %}
+{% load aristotle_tags compile_static %}
+{% load static from staticfiles %}
+
+
+{% block title %}My Dashboard{% endblock %}
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.dashboard.less'|compile %}" />
+{% endblock %}
+
+{% block page %}
+<h1><a href="#">My Dashboard</a> <small>- {{ user.first_name }} {{ user.last_name }} ({{ user.username }})</small></h1>
+    <div class='row'>
+        <section class="col-md-8">
+            <div class='panel-body'>
+                <a class="col-md-4 btn btn-default" href="{% url 'aristotle:create_list' %}">
+                    <i class="fa fa-2x fa-plus"></i><br>
+                    Create new metadata
+                </a>
+                <a class="col-md-4 btn btn-default" href="{% url 'aristotle:userWorkgroups' %}">
+                    <i class="fa fa-2x fa-users"></i><br>
+                    View my teams
+                </a>
+                <a class="col-md-4 btn btn-default" href="{% url 'aristotle:userEdit' %}">
+                    <i class="fa fa-2x fa-user"></i><br>
+                    View my account
+                </a>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-envelope fa-fw"></i> <a class="panel-title" href="{% url 'aristotle:userInbox' %}">Recent Notifications</a>
+                </div>
+                    <ul class="list-group">
+                    {% for item in user.notifications.unread|slice:':5' %}
+                      <li class="list-group-item">
+                        {{ item }}
+                      </a>
+                      </li>
+                    {% empty %}
+                        <li class="list-group-item"> No unread notifications </li>
+                    {% endfor %}
+                    </ul>
+                    <div class="panel-footer"><a href="{% url 'aristotle:userInbox' %}">See all notifications...</a></div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bookmark fa-fw"></i> <a class="panel-title" href="{% url 'aristotle:userFavourites' %}">Recently Favourited Items</a>
+                </div>
+
+                <div class="list-group">
+                    {% for item in user.profile.favourites.all|slice:':5' %}
+                      <a class="list-group-item" href="{{ item.get_absolute_url }}">
+                        {{ item }}
+                        <small>({{ item.item.get_verbose_name }})</small>
+                      </a>
+
+                    {% empty %}
+                        <a class="list-group-item"> No favourites </a>
+                    {% endfor %}
+                </div>
+                <div class="panel-footer"><a href="{% url 'aristotle:userFavourites' %}">See all my favourites...</a></div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-users fa-fw"></i> Recent Workgroups
+                </div>
+                <ul class="list-group">
+                {% for item in user.profile.myWorkgroups.all %}
+                  <li class="list-group-item" ><a href="{% url 'aristotle:workgroup' item.id %}/">{{ item }}</a>
+                    </li>
+                {% empty %}
+                    <li class="list-group-item"> No workgroups </li>
+                {% endfor %}
+                </ul>
+                <div class="panel-footer"><a href="{% url 'aristotle:userWorkgroups' %}">See all my workgroups...</a></div>
+            </div>
+        </section>
+
+        <section class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-history fa-fw"></i> My Recent Actions
+                </div>
+                <ul class="list-group">
+                {% for revision in recent %}
+                    <li class="list-group-item">
+                        <span>{{ revision.comment }} <small>({{revision.date_created}})</small></span>
+                        <ul>
+                            {% for item in revision.version_set.all|unique_recent %}
+                                {% if item.object.get_absolute_url %}
+                                    {# things with a 'parentitem' are components and probably shouldn't be shown. #}
+                                    <li><a href="{{ item.object.get_absolute_url }}">{{ item }} ({{ item.object.id }})</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% empty %}
+                    <li class="list-group-item"> No recent items </li>
+                {% endfor %}
+                </ul>
+                <div class="panel-footer"><a href="{% url 'aristotle:userRecentItems' %}">See all recent items...</a></div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

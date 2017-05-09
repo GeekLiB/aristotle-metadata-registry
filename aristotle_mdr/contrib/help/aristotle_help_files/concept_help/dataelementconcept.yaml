@@ -1,0 +1,51 @@
+- model: aristotle_mdr_help.concepthelp
+  fields:
+    app_label: aristotle_mdr
+    concept_type: dataelementconcept
+    language: en
+    brief: A valid pairing of an [[object class]] and a [[property]] to define a measurable
+        attribute of the object, idea or event being observed.
+    offical_definition: >
+        Concept that is an association of a [[Property]] with an [[Object Class]]
+    official_reference: ISO/IEC 11179 - Clause 3.2.29
+    official_link:
+    body: >
+        <p>A data element concept represents the union of an [[objectclass]] and a
+        [[property]]. Examples of data element concepts include concepts such as,
+        <em>Person</em> &mdash; <em>date of birth</em>, <em>Person</em> &mdash;
+        <em>country of birth</em>, and <em>Person</em> &mdash; <em>religious
+        affiliation</em>.</p>
+        
+        <p>A data element concept is solely a conceptual description
+        and does not include values for measurement or collection.
+        Values are described by a [[valuedomain]], which in combination with
+        the data element concept forms a [[dataelement]].</p>
+        
+        <p>A [[conceptualdomain]] may also be associated with a data element concept,
+        thereby providing meaning to the values associated with the concept.
+        A one-to-many relationship may be formed between a data element concept
+        and suitable conceptual domains.</p>
+        <blockquote>
+        <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+        ISO/IEC 11179-3 Section 11.2.2.3.</a></cite>
+        
+        <p>Data_Element_Concept is a class each instance of which models a data element concept (3.2.29).
+        A data element concept is a specification of a concept (3.2.18) independent of any particular
+        representation. A data element concept can be represented in the form of a [[data element]] (3.2.28).
+        </p>
+        <p>A Data_Element_Concept may have a data_element_concept_object_class association (11.2.3.3)
+        with zero or one Object_Class (11.2.2.1) and a data_element_concept_property association (11.2.3.1)
+        with zero or one Property (11.2.2.2).
+        </p>
+        <p>The combination of a [[property]] (3.2.100) and an [[object class]] (3.2.88) provides significance 
+        beyond either that of the property or the object class. A Data_Element_Concept thus has a 
+        Definition (7.3.2.4) independent of the Definition of the Object_Class or the Property.
+        </p>
+        <p>Every Data_Element_Concept must have exactly one data_element_concept_domain 
+        association (11.2.3.2) with a Conceptual_Domain (11.3.2.1), where the Data_Element_Concept 
+        supplies a usage for the associated Conceptual_Domain.
+        </p>
+        <p><strong>Example:</strong> An association between the Data_Element_Concept "Person Country of Residence"
+        and the Conceptual_Domain "Country".
+        </p>
+        </blockquote>

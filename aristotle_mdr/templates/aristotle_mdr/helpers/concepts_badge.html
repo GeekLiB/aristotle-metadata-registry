@@ -1,0 +1,13 @@
+{% load aristotle_search_tags i18n %}
+{% with class=class %}
+    <div class="badge" title="{{result.object.concept.item.get_verbose_name}}">
+    {{model.get_verbose_name|first_letters}}
+    </div>
+<a href="{% url 'aristotle_help:concept_help' model.meta.app_label model.meta.model_name %}"
+    title="{% trans 'Learn about this metadata type' %}"
+    {# data-toggle="modal" data-target="#search_concept_help" #}
+    class="text-center"
+>
+    <div><i class="fa fa-question-circle"></i></div>
+</a>
+{% endwith %}

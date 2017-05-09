@@ -1,0 +1,43 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+{% load compile_static i18n %}
+{% load static from staticfiles %}
+
+{% block title %}Adding relationship for {{ item.name }}{% endblock %}
+{% block content %}
+
+<form method="post" action="{{ submit_url }}" >
+    <div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:item' item.id %}">{{ item.name }}</a></li>
+          <li class="active">{{ form_title }}</li>
+        </ol>
+
+        {% if formset.errors %}
+        <div class="alert alert-danger">
+            {{formset.errors}}
+        </div>
+        {% endif %}
+
+    {% csrf_token %}
+        {% include "aristotle_mdr/helpers/fancy_form.html" with form=form %}
+    </div>
+
+    <div class="modal-footer">
+        {% if request.is_ajax %}
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+                <i class="fa fa-times"></i>Cancel</button>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'aristotle:item' item.id %}">
+                <i class="fa fa-times"></i>
+                Cancel</a>
+        {% endif %}
+        <button type="submit" class="btn btn-primary" value="Save" accesskey='s'>
+            <i class="fa fa-save"></i> Save
+        </button>
+    </div>
+</form>
+    {% block extra_head_scripts %}
+        <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.moveable.less'|compile %}" />
+        {{ form.media }}
+    {% endblock %}
+{% endblock %}

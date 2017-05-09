@@ -1,0 +1,10 @@
+how what when where why
+how to
+how can i
+what is
+when is
+where do i
+where is
+why did
+
+{% include "search/indexes/aristotle_mdr_help/helpbase_text.txt" %}

@@ -1,0 +1,78 @@
+{% comment %}
+This is reused when displaying Data Elements, but we want to minimise the
+amount of information around the Value Domain
+So we've split this out into its own template.
+{% endcomment %}
+
+{% load aristotle_tags %}
+
+
+<div>
+<table class="table table-striped valueDomainRepresentation">
+{% if item.dataType %}
+<tr>
+  <th>Data Type</th>
+  <td><a href="{% url 'aristotle:dataType' item.dataType.id %}">{{ item.dataType }}</a></dd>
+</tr>
+{% endif %}
+{% if item.unitOfMeasure %}
+<tr>
+  <th>Unit Of Measure</th>
+  <td><a href="{% url 'aristotle:unitOfMeasure' item.unitOfMeasure.id %}">
+    {{ item.unitOfMeasure }}
+    {% if item.unitOfMeasure.symbol %}<tt>({{ item.unitOfMeasure.symbol }})</tt>{% endif %}
+  </td>
+</tr>
+{% endif %}
+{% if item.format %}
+<tr>
+  <th>Format</th>
+  <td>{{ item.format }}</td>
+</tr>
+{% endif %}
+{% if item.maximumLength %}
+<tr>
+  <th>Maximum character length</th>
+  <td>{{ item.maximumLength }}</td>
+</tr>
+{% endif %}
+</table>
+
+{% if item.permissibleValues.count > 0 %}
+    <table class="codeList table table-striped">
+        <thead>
+            <tr>
+                <td ></td>
+                <th >Value</th>
+                <th>Meaning</th>
+            </tr>
+        </thead>
+        {% if item.permissibleValues.count > 0 %}
+            <tr>
+            <th colspan="2">Permissible Values
+            </th></tr>
+            {% for perm in item.permissibleValues.all %}
+                <tr>
+                    <td>{{ perm.value }}</td>
+                    <td>{{ perm.meaning }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+        {% if item.supplementaryValues.count > 0 %}
+        <tbody>
+            <tr>
+            <th colspan="2">Supplementary Values
+            </th></tr>
+            {% for perm in item.supplementaryValues.all %}
+                <tr>
+                    <td>{{ perm.value }}</td>
+                    <td>{{ perm.meaning }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+    </table>
+{% endif %}
+
+</div>

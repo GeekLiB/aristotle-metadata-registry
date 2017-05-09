@@ -1,0 +1,42 @@
+{% extends "aristotle_mdr/actions/bulk_actions/base.html" %}
+
+{% block title %}Download multiple items{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'aristotle:bulk_action' %}?next={{next}}">{% csrf_token %}
+    <input type="hidden" name="bulkaction" value="bulk_download"/>
+    <div class="modal-body">
+        <header>This form allows you to download multiple items into a single package.<br>
+        Only items that you have permission to view, and items which can be downloaded in the requested format
+        will be included.
+        </header>
+        <div>
+            {{ form.items.label }}
+            {{ form.items }}
+        </div>
+        <section>
+        <div id="workgroup">
+            <span>
+                {{ form.title.label }}:
+                {{ form.title.errors }}
+            </span>
+            <span>
+                {{ form.title }}
+            </span>
+        </div>
+        <div id="comments">
+            <span>
+                {{ form.download_type.label }}:
+                {{ form.download_type.errors }}
+            </span>
+            <span>
+                {{ form.download_type }}
+            </span>
+        </div>
+    </div>
+    <div>
+        <a class="btn btn-default" href="{{ next }}">Cancel</a>
+        <button type="submit" name="confirmed" class="btn btn-primary" value="Change">Download</button>
+    </div>
+</form>
+{% endblock %}

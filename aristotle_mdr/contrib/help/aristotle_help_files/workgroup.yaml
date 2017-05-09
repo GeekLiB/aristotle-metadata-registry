@@ -1,0 +1,22 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: What are workgroups?
+    language: en
+    body: >
+        <p>
+        <strong>A workgroup is an administrative collection of people working together
+        to create a set of metadata for a specific purpose.</strong>
+        </p>
+        
+        <p>Every item belongs to a workgroup, and this workgroup is used to determine the
+        <a href="/help/how-does-content-become-visible">permissions
+        around when and to whom an item is visible.</a>
+        However, once an item is registered it become the property of the registry,
+        rather than just the workgroup.
+        </p>
+        
+        <p>Workgroups usually have one or more <a href="/help/registration-authorities">registration authorities</a>
+        associated with them, and the workgroup is presumed to be creating content on behalf of these registraion authorities.
+        If a workgroup has no registration authority associated with it registration of items is not possible and items
+        will be visible only to members of the workgroup and cannot be <a href="/help/what-makes-a-standard">standardised</a>.
+        </p>

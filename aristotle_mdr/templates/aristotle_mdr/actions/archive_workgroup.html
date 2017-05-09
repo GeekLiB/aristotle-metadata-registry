@@ -1,0 +1,56 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+{% load compile_static i18n %}
+{% load static from staticfiles %}
+
+{% block title %}Editing {{ item.name }}{% endblock %}
+{% block content %}
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.wizard.less'|compile %}" />
+    {{ form.media }}
+{% endblock %}
+
+<form method="post" action="{% url 'aristotle:archive_workgroup' item.id %}">{% csrf_token %}
+    <div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:workgroup' item.id %}">{{ item.name }}</a></li>
+          <li class="active">Archive or activate a workgroup</li>
+        </ol>
+
+        {% if item.archived %}
+        <p>
+            Workgroup exists to perform small discrete functions to create a well defined set of items.
+            By reactivating a workgroup, you are stating that it the work for this group is no longer completed.
+            Archiving workgroups also makes it easier for users to navigate their options when creating or searching
+            for items.
+        </p><p>
+            It also possible to create a new workgroup, or if you are certain you
+            can reactive this workgroup by using the buttons below.
+        </p>
+        {% else %}
+        <p>
+            Archiving a workgroup signifies that the work this group was set up for has been
+            completed, and is a positive step to completing the standardisation process.
+        </p><p>
+            By archiving this workgroup, this workgroup will longer show up in lists for users when
+            creating items (such as Object Classes or Data Elements),
+            and new posts or comments can be created within the discussion area for workgroup.
+        </p>
+        {% endif %}
+
+    </div>
+    <div class="modal-footer">
+        {% if request.is_ajax %}
+            <button type="button" class="btn btn-default" data-dismiss="modal">{% trans 'Cancel' %}</button>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'aristotle:workgroup' item.id %}">{% trans 'Cancel' %}</a>
+        {% endif %}
+        <button type="submit" class="btn btn-primary" value="submit">
+        {% if item.archived %}
+            <i class="fa fa-folder-open"></i> {% trans 'Reactivate' %}
+        {% else %}
+            <i class="fa fa-archive"></i> {% trans 'Archive' %}
+        {% endif %}
+        </button>
+    </div>
+</form>
+{% endblock %}

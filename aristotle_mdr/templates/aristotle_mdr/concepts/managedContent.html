@@ -1,0 +1,84 @@
+{% extends 'aristotle_mdr/base.html' %}
+{% load humanize i18n %}
+{% load compile_static %}
+{% load static from staticfiles %}
+{% load aristotle_tags %}
+
+{% block extra_head_scripts %}
+    {% if item|can_edit:request.user %}
+        <link rel="stylesheet" type="text/css" href="{% static 'aristotle_mdr/aristotle.autocomplete.css' %}" />
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{% static 'aristotle_mdr/aristotle.visuals.less'|compile %}" />
+{% endblock %}
+
+{% block title %}
+    {{ item.name }}
+    {% if item.version %}
+        - v{{ item.version }}
+    {% endif %}
+    ({{ item.get_verbose_name }})
+{% endblock %}
+{% block content %}
+<header class="row">
+    {% block concept_title %}
+    {% include "aristotle_mdr/concepts/titles/display_title.html" %}
+    {% endblock %}
+    {% include "aristotle_mdr/concepts/actionbar.html" %}
+</header>
+<section class="managed row">
+    {% include "aristotle_mdr/concepts/infobox.html" %}
+    {% include "aristotle_mdr/concepts/visibilityInfoBar.html" %}
+
+    <h2 title="{% doc item 'definition' %}">{% trans 'Definition'%}</h2>
+    <div id="definition" class="definition">
+        {{ item.definition | safe}}
+    </div>
+    {% if item.short_name or item.synonyms %}
+    <h3>Alternate names:</h3>
+    <dl id="alternate_names">
+        {% if item.short_name %}
+        <dt>{% trans 'Short name'%}</dt><dd>{{ item.short_name }}</dd>
+        {% endif %}
+        {% if item.synonyms %}
+        <dt>{% trans 'Synonyms'%}</dt><dd>{{ item.synonyms }}</dd>
+        {% endif %}
+    </dl>
+    {% endif %}
+
+    {% block objSpecific %}{% endblock %}
+
+    {% if item.comments %}
+        <h2>Comments</h2>
+        {{ item.comments | safe }}
+    {% endif %}
+
+    {% if item.references %}
+    <div>
+    <h2>References</h2>
+        <p>{{ item.references | safe }}</p>
+        {% if item.submitting_organisation %}
+        <h3>Submitting Organisation</h3>
+            <p>{{ item.submitting_organisation }}</p>
+        {% endif %}
+        {% if item.responsible_organisation %}
+        <h3>Responsible Organisation</h3>
+            <p>{{ item.responsible_organisation }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% if 'aristotle_mdr.contrib.slots'|is_installed_app %}
+        {% include "aristotle_mdr/slots/slots_display.html" %}
+    {% endif %}
+    {% if 'aristotle_mdr.contrib.links'|is_installed_app %}
+        {% include "aristotle_mdr/links/links_display.html" %}
+    {% endif %}
+    <h2>Related content</h2>
+        {% block relationships %}{% endblock %}
+        {% for extension in config.CONTENT_EXTENSIONS %}
+            {% extra_content extension item request.user %}
+        {% endfor %}
+    </div>
+</div>
+
+</section>
+{% endblock %}

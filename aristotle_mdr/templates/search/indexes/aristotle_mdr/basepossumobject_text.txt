@@ -1,0 +1,8 @@
+{{ object.name }}
+{{ object.description }}
+{{ object.comments }}
+{{ object.submitting_organisation }}
+{{ object.responsible_organisation }}
+{% for state in object.statuses.all %}{{ state.state_name }} {% endfor %}
+{% comment %} May include this above if needed {{ state.registrationAuthority }} {% endcomment %}
+

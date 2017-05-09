@@ -1,0 +1,439 @@
+{% extends 'aristotle_mdr/base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% load bootstrap3 %}
+{% load static from staticfiles %}
+{% load aristotle_tags aristotle_search_tags %}
+{% load compile_static %}
+
+{% block extra_head_scripts %}
+    <script src="{% static 'aristotle_mdr/aristotle.search.js' %}" type="text/javascript"></script>
+    <!--[if !IE]> -->
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle_search.less'|compile %}" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <![endif]-->
+{% endblock %}
+
+{% block header %}
+   {% include 'aristotle_mdr/header.html' with hide_search=True %}
+{% endblock %}
+{% block title %}{% trans "Search" %}{% if query %} {% trans "results" context 'Search results' %} - {{ query }}{% endif %}{% endblock %}
+{% block content %}
+    <form method="get" class="row"> {# open main_search_form #}
+        <div id="searchbar" class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" value="{% ternary form.q.value form.q.value "" %}" name="q" accesskey="q">
+                    <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">
+                        {% trans "Search" %} {% bootstrap_icon "search" %}
+                    </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="userSearchTools" class="row text-center">
+            {% if user.is_active %}
+                {% comment %}
+                    Only logged in users have workgroups.
+                    If you aren't logged in you can *only* see public items.
+                {% endcomment %}
+                <label>
+                    <i class="fa fa-eye fa-fw"></i>
+                    {{ form.public_only }}
+                    {{ form.public_only.label }}
+                </label>
+                <label>
+                    <i class="fa fa-users fa-fw"></i>
+                    {{ form.myWorkgroups_only }}
+                    {{ form.myWorkgroups_only.label }}
+                </label>
+            {% endif %}
+            <span style="display:inline-block"><i class="fa fa-life-ring fa-fw"></i> <a href="{% url 'aristotle_help:help_page' 'advanced-search' %}">Advanced help</a></span>
+        </div>
+        <nav class="navbar navbar-default searchAdvanced" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#advSearch">
+                <span class="sr-only">{% trans 'Toggle navigation' %}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" accesskey="a" id="advanced_nav_link" href="#"><small id="advanced_label">{% trans 'Advanced' context "Advanced search"%}:</small><small id="clear_filters">{% trans 'Clear filters' context "Clear search filters" %}</small></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="advSearch">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown dropdown-menu-form">
+                        <a href="#" class="dropdown-toggle"
+                        data-toggle="dropdown">
+                            <i class="fa fa-puzzle-piece fa-fw"></i>
+                            {% trans 'Item type' context 'Metadata item type' %}  <span class="badge"></span><span class="caret"></span>
+                        </a>
+                        {{ form.models }}
+                    </li>
+                    <li class="dropdown dropdown-menu-form">
+                        <a href="#" class="dropdown-toggle"
+                        data-toggle="dropdown">
+                            <i class="fa fa-unlock-alt fa-fw"></i>
+                            {% trans 'Status' context 'Registration Status' %} <span class="badge"></span><span class="caret"></span>
+                        </a>
+                        {{ form.state }}
+                    </li>
+                    <li class="dropdown dropdown-menu-form">
+                        <a href="#" class="dropdown-toggle"
+                        data-toggle="dropdown">
+                            <i class="fa fa-university fa-fw"></i>
+                            {% trans 'Authority' context 'Registration Authority' %} <span class="badge"></span><span class="caret"></span>
+                        </a>
+                        {{ form.ra }}
+                    </li>
+                    <li class="dropdown dropdown-menu-date">
+                        <a href="#" class="dropdown-toggle"
+                        data-toggle="dropdown">
+                            <i class="fa fa-calendar fa-fw"></i>
+                            {% trans 'Modified' context 'Modified date' %} <span class="caret"></span>
+                            <small class="details"></small>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            {{ form.mq }}
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <label role="menuitem" for='id_{{form.mds.name}}'>Modified after...</label>
+                                {{ form.mds|safe }}
+                            </li>
+                            <li role="presentation">
+                                <label role="menuitem" for='id_{{form.mde.name}}'>Modified before...</label>
+                                {{ form.mde }}
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-menu-date">
+                        <a href="#" class="dropdown-toggle"
+                        data-toggle="dropdown">
+                            <i class="fa fa-calendar fa-fw"></i>
+                            {% trans 'Created' context 'Created date' %} <span class="caret"></span>
+                            <small class="details"></small>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            {{ form.cq }}
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <label role="menuitem" for='id_{{form.cds.name}}'>Created after...</label>
+                                {{ form.cds }}
+                            </li>
+                            <li role="presentation">
+                                <label role="menuitem" for='id_{{form.cde.name}}'>Created before...</label>
+                                {{ form.cde }}
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='pull-right'>
+                        <div class="btn-group pull-right">
+                            <div class="btn-group sort-order-box">
+                                <button type="button" class="btn btn-default dropdown-toggle "
+                                data-toggle="dropdown">
+                                    <i class="fa fa-sort"></i>
+                                    Sort by... <span class="caret"></span>
+                                    <small class="details"></small>
+                                </button>
+                                {{ form.sort }}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+              </div>
+          </div>
+        </nav>
+    </form> {# close main_search_form for when results #}
+<div class="row">
+    {% if form.errors %}
+    <div class="col-md-10 col-md-offset-1">
+        <p>
+            <strong>There were one or more error with your search selections, please correct them and try again.</strong>
+            <ul>
+            {% for field in form %}
+                {% if field.errors %}
+                    <li>{{ field.label_tag }} {{ field }} {{ field.errors }}</li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </p>
+    </div>
+    {% endif %}
+    
+    <div class="col-xs-12 results_header">
+    {% if query or form.filter_search %}
+        <div class="row">
+            <h3 class="col-sm-3">Results</h3>
+            {% if form.auto_broaden_search %}
+                <div class="alert alert-warning" role="alert">
+                    <p>There were no results for "{{ form.q.value }}" with your requested filters.
+                    </p>
+                    <p>
+                        We've automatically removed the filters and re-run your search.
+                    </p>
+                </div>
+            {% endif %}
+            <div class="col-sm-9">
+                {% if form.applied_filters %}
+                <div>
+                    Showing only items where
+                    {% search_describe_filters form %}
+                </div>
+                {% endif %}
+    
+                <p class="results_count">
+                    {% if page.has_other_pages %}
+                    Showing {{ page.start_index }} - {{ page.end_index }} of <span class="count">{{ page.paginator.count }}</span> results.
+                    {% else %}
+                    Showing <span class="count">{{ page.paginator.count }}</span> results.
+                    {% endif %}
+                </p>
+            
+            {#  ----- If there are spelling suggestions, show them. ----- #}
+            {% if form.auto_correct_spell_search or form.has_spelling_suggestions %}
+                {% if form.auto_correct_spell_search %}
+                <div id="spelling" class="col-md-10 col-md-offset-1">
+                    {% if page.object_list %}
+                        <p><strong>No results for:</strong> {{ form.original_query }}
+                        </p>
+                        <strong>Searching instead for:</strong>
+                        <span>
+                            <a href="?q={{form.suggested_query}}">
+                            {% for word,suggestion in form.spelling_suggestions %}
+                                {% if suggestion %}
+                                    <em>{{ suggestion }}</em>
+                                {% else %}
+                                    {{ word }}
+                                {% endif %}
+                            {% endfor %}
+                            </a>
+                        </span>
+                    {% else %}
+                        <p><strong>No results for:</strong> {{ form.original_query }}
+                        </p>
+                        <strong>Tried searching instead for:</strong>
+                        <span>
+                        {% for word,suggestion in form.spelling_suggestions %}
+                            {% if suggestion %}
+                                <em>{{ suggestion }}</em>
+                            {% else %}
+                                {{ word }}
+                            {% endif %}
+                        {% endfor %}, but no results were found.
+                        </span>
+                    {% endif %}
+                </div>{# closes div#spelling #}
+                {% elif form.has_spelling_suggestions  %}
+                    Did you mean:
+                    <a href="?q={{ form.suggested_query }}">
+                    {% for word,suggestion in form.spelling_suggestions %}
+                        {% if suggestion %}
+                            <em>{{ suggestion }}</em>
+                        {% else %}
+                            {{ word }}
+                        {% endif %}
+                    {% endfor %}
+                    </a>
+                {% endif %}
+            {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+            
+    </div>
+
+    {#  ----- MAIN RESULTS PAGE STARTS HERE ----- #}
+    {% if query or form.filter_search %}
+        {% if page.object_list %}
+        <div class="col-md-3 facets">
+                <form method="get" class="row"> {# open main_search_form #}
+                <input type="hidden" name="q" value="{{form.q.value}}">
+            <header>Refine your results</header>
+            <dl class="panel-body">
+                {% if form.facets.fields.facet_model_ct %}
+                <dt>Item types</dt>
+                {% for f in form.facets.fields.facet_model_ct %}
+                    <dd>
+                        {% with ct='ct'|get_item_from_facet:f.0 %}
+                        <a href="{{ request.get_full_path }}&amp;models={{ ct.app_label|urlencode }}.{{ ct.model|urlencode }}">
+                            {{ ct.name|title }}</a>
+                        ({{ f.1 }})
+                        {% endwith %}
+                    </dd>
+                {% endfor %}
+                {% endif %}
+                {% if form.facets.fields.registrationAuthorities %}
+                <dt>Registration Authorities</dt>
+                {% for f in form.facets.fields.registrationAuthorities %}
+                    <dd>
+                        {% with ra='ra'|get_item_from_facet:f.0 %}
+                        {% if ra %}
+                            <a href="{{ request.get_full_path }}&amp;ra={{ f.0|urlencode }}">
+                                {{ ra.name }}</a>
+                            ({{ f.1 }})
+                        {% else %}
+                        {% endif %}
+                        {% endwith %}
+                    </dd>
+                {% endfor %}
+                {% endif %}
+                {% if request.user.is_active and form.facets.fields.restriction %}
+                <dt>Restriction</dt>
+                {% for f in form.facets.fields.restriction %}
+                    <dd>
+                        <a href="{{ request.get_full_path }}&amp;res={{ f.0|urlencode }}">
+                            {{ f.0|restriction_to_text }}</a>{{f.o}}
+                        ({{ f.1 }})
+                    </dd>
+                {% endfor %}
+                {% endif %}
+                {% if form.facets.fields.statuses %}
+                <dt>Status</dt>
+                {% for f in form.facets.fields.statuses %}
+                    <dd>
+                        <a href="{{ request.get_full_path }}&amp;state={{ f.0|urlencode }}">
+                            {{ f.0|search_state_to_text }}</a>
+                        ({{ f.1 }})
+                    </dd>
+                {% endfor %}
+                {% endif %}
+                {% if request.user.is_active and form.facets.fields.workgroup %}
+                <dt>Workgroup</dt>
+                {% for f in form.facets.fields.workgroup %}
+                    <dd>
+                        {% with wg='wg'|get_item_from_facet:f.0 %}
+                        <a href="{{ request.get_full_path }}&amp;wg{{ f.0|urlencode }}">{{ wg.name }}</a>
+                        ({{ f.1 }})
+                        {% endwith %}
+                    </dd>
+                {% endfor %}
+                {% endif %}
+
+                {% for field,details in form.extra_facet_fields %}
+                    {% if details.values|length > 1 %}
+                        <dt>{{details.details.title}}</dt>
+                        <dd>
+                            {% if details.details.allow_search %}
+                            <label>
+                            <input name="f___{{field}}">
+                            </label>
+                            {% endif %}
+    
+                        </dd>
+                        {% if details.details.applied %}
+                        <dd>
+                        Active facets
+                        <ul class='active-facets'>
+                            {% for af in details.details.applied %}
+                            <li>
+                                <a href='?{% unfacet request field af|urlencode %}'>
+                                    {% facet_display details.details af %}
+                                    <span class='badge pull-right'><i class="fa fa-times"></i></span>
+                                    
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        </dd>
+                        {% endif %}
+                        {% for f,count in details.values %}
+                        {% if f %}
+                        <dd>
+                            <a href="{{ request.get_full_path }}&amp;f={{field}}::{{ f|urlencode }}">
+                                {% facet_display details.details f %}</a>
+                            <span>({{ count }})</span>
+                        </dd>
+                        {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </dl>
+            </form>
+        </div>
+        <div class="col-md-9">
+
+            <form action="{% url 'aristotle:bulk_action' %}?next={{ request.get_full_path }}" method="POST">
+            {% csrf_token %}
+
+            <ol start="{{ page.start_index }}"
+                class="searchResults {% ternary user.is_active 'active' '' %}">
+            {% for result in page.object_list %}
+                {% if result %}
+                <li>
+                    <div class="action">
+                    {% if result.object.concept %}
+                        <span>
+                        <input type='checkbox' id="id_items_{{result.object.id}}" name="items" value='{{ result.object.id }}' title='{% trans "select to perform a bulk action" %}'>
+                            {% include "search/badge.html" with result=result %}
+                        </span>
+                        {% if result.object.concept in request.user.profile.favourites.all %}
+                            <i class="fa fa-bookmark" title="{% trans 'This item is in your favourites list' %}"></i>
+                        {% endif %}
+                    {% else %}
+                        <div></div>
+                    {% endif %}
+                    </div>
+                    {% include result.searchindex.template_name with item=result.object %}
+                </li>
+                {% endif %}
+            {% empty %}
+                <li>No results found.</li>
+            {% endfor %}
+            </ol>
+
+            {% include "aristotle_mdr/helpers/list_action_bar.html" with wrap=True %}
+            </form>
+
+            {% include "aristotle_mdr/helpers/paginator.html" with page=page %}
+        </div>
+        {% else %}
+            <h3>No results found.</h3>
+            <p>
+            {% if form.auto_broaden_search %}
+                <div class="alert alert-warning" role="alert">
+                    <p>There were no results for "{{ form.q.value }}" with your requested filters.
+                    </p>
+                    <p>
+                        We removed the filters and re-ran your search, but there were still zero results.
+                    </p>
+                </div>
+            {% endif %}
+            {% if form.attempted_filter_search %}
+                <div class="alert alert-warning" role="alert">
+                    <p>There were no results for your requested filters.
+                    </p>
+                    <p>
+                        Please change your search parameters and try again.
+                    </p>
+                </div>
+            {% endif %}
+            </p>
+        {% endif %}
+    {% elif form.errors %}
+    {% else %}
+        {# Show some example queries to run, maybe query syntax, something else? #}
+        <div class="col-md-10 col-md-offset-1">
+        <p>
+            Enter a query above to search the registry.
+        </p>
+        <ul>
+        <li> Selecting a registration authority will limit search results to items registered by that authority.
+        </li>
+        <li> Selecting a registation state will limit search results to items that are in that state.
+        </li>
+        <li> Selecting both will limit search results to items that are at that state in a particular authority.
+        </li>
+        </ul>
+        <p>
+        </p>
+        </div>
+    {% endif %}
+
+{% bootstrap_modal 'search_concept_help' %}
+{% endblock %}

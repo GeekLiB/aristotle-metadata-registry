@@ -1,0 +1,26 @@
+{% extends "aristotle_mdr/base.html" %}
+
+{% block title %}Confirm changes{% endblock %}
+{% block content %}
+{{ form.media }}
+
+<form method="post" action="{% url 'aristotle:bulk_action' %}?next={{next}}">{% csrf_token %}
+    <input type="hidden" name="bulkaction" value="{{ action }}"/>
+    <div class="modal-body">
+        <div class="alert alert-danger">
+            Woah! It looks like you are about to change a lot of things.
+            Double check whats about to happen and click 'go' when you are sure.
+        </div>
+        <div>
+            {{ form.items.label }}
+            {{ form.items }}
+        </div>
+        </section>
+    </div>
+    <div>
+        <a class="btn btn-default" href="{{ next }}">Cancel</a>
+        <button type="submit" name="confirmed" class="btn btn-primary" value="Go">Go</button>
+    </div>
+</form>
+{% include 'autocomplete_light/static.html' %}
+{% endblock %}

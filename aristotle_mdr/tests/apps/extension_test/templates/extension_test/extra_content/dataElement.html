@@ -1,0 +1,13 @@
+{% load aristotle_tags %}
+
+<h3>Related questions</h3>
+{% if item.questions > 0 %}
+This data element is collected by the following questions, some question objects may be hidden based on your current permissions.
+<ul>
+    {% for q in item.questions|can_view_iter:user %}
+            <li>{% include "aristotle_mdr/helpers/itemLink.html" with item=q %}</li>
+    {% endfor %}
+</ul>
+{% else %}
+    <em>This data element is not related to any questions.</em>
+{% endif %}

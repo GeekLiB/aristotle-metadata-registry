@@ -1,0 +1,47 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+
+{% block title %}Add {{model_to_add.get_verbose_name_plural}} to {{ model_base.get_verbose_name }}{% endblock %}
+
+{% block content %}
+
+<form method="post" action="{{ submit_url }}">{% csrf_token %}
+<div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:item' item.id %}">{{ item.name }}</a></li>
+          <li class="active">{{ form_title }}</li>
+        </ol>
+<header>
+    Use this form to attach {{model_to_add.get_verbose_name_plural}} to
+    {{ model_base.get_verbose_name }}.
+    If you cannot find the {{model_to_add.get_verbose_name}} you many not have permission, or
+    it may not exist yet. You can
+    <a href="{% url 'aristotle:createItem' model_to_add.meta.app_label model_to_add.meta.model_name %}">
+        create a new {{model_to_add.get_verbose_name_plural}} using the
+        creation wizard
+    </a>.
+</header>
+<section style="height:50%;" >
+        {% include "aristotle_mdr/helpers/fancy_form.html" with form=form %}
+
+
+{% block save %}
+{% endblock %}
+
+</section>
+    <div class="modal-footer">
+    {% if request.is_ajax %}
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    {% else %}
+        <a class="btn btn-default" href="{% url 'aristotle:item' iid=item.id%}">Cancel</a>
+    {% endif %}
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-plus"></i> Add to {{model_from}}
+        </button>
+    </div>
+</form>
+    {% block extra_head_scripts %}
+        {{ form.media }}
+        {% include 'autocomplete_light/static.html' %}
+    {% endblock %}
+</div>
+{% endblock %}

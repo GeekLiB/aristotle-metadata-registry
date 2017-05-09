@@ -1,0 +1,1689 @@
+# Aristotle-MDR translation file.
+# Copyright (C) 2015
+# This file is distributed under the same license as the Aristotle-MDR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.0.1a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-19 22:55-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: aristotle_mdr/contrib/browse/views.py:27
+#, fuzzy
+msgid "No name"
+msgstr "Tanpa nama"
+
+#: aristotle_mdr/contrib/help/forms.py:20 aristotle_mdr/forms/search.py:20
+#, fuzzy
+msgid "Any time"
+msgstr "setiap saat"
+
+#: aristotle_mdr/contrib/help/forms.py:21 aristotle_mdr/forms/search.py:21
+#, fuzzy
+msgid "Last hour"
+msgstr "Jam terakhir"
+
+#: aristotle_mdr/contrib/help/forms.py:22 aristotle_mdr/forms/search.py:22
+#, fuzzy
+msgid "Today"
+msgstr "Hari ini"
+
+#: aristotle_mdr/contrib/help/forms.py:23 aristotle_mdr/forms/search.py:23
+#, fuzzy
+msgid "This week"
+msgstr "Minggu ini"
+
+#: aristotle_mdr/contrib/help/forms.py:24 aristotle_mdr/forms/search.py:24
+#, fuzzy
+msgid "This month"
+msgstr "Bulan ini"
+
+#: aristotle_mdr/contrib/help/forms.py:25 aristotle_mdr/forms/search.py:25
+#, fuzzy
+msgid "This year"
+msgstr "Tahun ini"
+
+#: aristotle_mdr/contrib/help/forms.py:26 aristotle_mdr/forms/search.py:26
+#, fuzzy
+msgid "Custom period"
+msgstr "periode kustom"
+
+#: aristotle_mdr/contrib/help/forms.py:31 aristotle_mdr/forms/search.py:31
+#, fuzzy
+msgid "Ranking"
+msgstr "Peringkat"
+
+#: aristotle_mdr/contrib/help/forms.py:32 aristotle_mdr/forms/search.py:32
+#, fuzzy
+msgid "Modified ascending"
+msgstr "dimodifikasi menaik"
+
+#: aristotle_mdr/contrib/help/forms.py:33 aristotle_mdr/forms/search.py:33
+#, fuzzy
+msgid "Modified descending"
+msgstr "dimodifikasi menurun"
+
+#: aristotle_mdr/contrib/help/forms.py:34 aristotle_mdr/forms/search.py:34
+#, fuzzy
+msgid "Created ascending"
+msgstr "dibuat menaik"
+
+#: aristotle_mdr/contrib/help/forms.py:35 aristotle_mdr/forms/search.py:35
+#, fuzzy
+msgid "Created descending"
+msgstr "dibuat menurun"
+
+#: aristotle_mdr/contrib/help/forms.py:36 aristotle_mdr/forms/search.py:36
+#, fuzzy
+msgid "Alphabetical"
+msgstr "Alfabetis"
+
+#: aristotle_mdr/contrib/help/forms.py:37 aristotle_mdr/forms/search.py:37
+#, fuzzy
+msgid "Registration state"
+msgstr "negara Pendaftaran"
+
+#: aristotle_mdr/contrib/help/forms.py:285 aristotle_mdr/forms/search.py:285
+#, fuzzy
+msgid "Registration authority"
+msgstr "Otoritas Registrasi"
+
+#: aristotle_mdr/contrib/help/forms.py:302 aristotle_mdr/forms/search.py:302
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:3
+#, fuzzy
+msgid "Registration status"
+msgstr "Status Pendaftaran"
+
+#: aristotle_mdr/contrib/help/forms.py:316 aristotle_mdr/forms/search.py:316
+#, fuzzy
+msgid "Item type"
+msgstr "Tipe barang"
+
+#: aristotle_mdr/contrib/help/models.py:24
+#, fuzzy
+msgid "Add an app for app specific help, required for concept help"
+msgstr ""
+"Menambahkan aplikasi untuk aplikasi bantuan tertentu, diperlukan untuk "
+"konsep bantuan"
+
+#: aristotle_mdr/contrib/help/models.py:27
+#, fuzzy
+msgid "A short title for the help page"
+msgstr "Sebuah judul singkat untuk halaman bantuan"
+
+#: aristotle_mdr/contrib/help/models.py:31
+#, fuzzy
+msgid "A long help definition for an object or topic"
+msgstr "Sebuah bantuan definisi lama untuk sebuah objek atau topik"
+
+#: aristotle_mdr/contrib/help/models.py:57
+#, fuzzy
+msgid "A short description of the concept"
+msgstr "Sebuah deskripsi singkat dari konsep"
+
+#: aristotle_mdr/contrib/help/models.py:61
+#, fuzzy
+msgid ""
+"An official description of the concept, e.g. the ISO/IEC definition for an "
+"Object Class"
+msgstr ""
+"Deskripsi resmi konsep, misalnya definisi ISO / IEC untuk Kelas Object"
+
+#: aristotle_mdr/contrib/help/models.py:65
+#, fuzzy
+msgid "The reference document that describes this concept type"
+msgstr "Dokumen referensi yang menggambarkan jenis konsep ini"
+
+#: aristotle_mdr/contrib/help/models.py:69
+#, fuzzy
+msgid "An link to an official source for a description of the concept"
+msgstr "Link ke sumber resmi untuk deskripsi konsep"
+
+#: aristotle_mdr/contrib/help/models.py:73
+#, fuzzy
+msgid "Instructions for creating good content of this type"
+msgstr "Petunjuk untuk membuat konten yang baik dari jenis ini"
+
+#: aristotle_mdr/contrib/help/models.py:102
+#, python-format, fuzzy
+msgid "Help for concept type %s"
+msgstr "Bantuan untuk konsep jenis %s"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/all_help.html:28
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/base.html:25
+#: aristotle_mdr/templates/aristotle_mdr/header.html:35
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:17
+#: aristotle_mdr/templates/search/search.html:21
+#: aristotle_mdr/templates/search/search.html:30
+#: aristotle_mdr/views/wizards.py:644
+#, fuzzy
+msgid "Search"
+msgstr "Pencarian"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/base.html:21
+#, fuzzy
+msgid "Search help"
+msgstr "Mencari bantuan"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/concept_help.html:20
+#, fuzzy
+msgid "Click to view the official source"
+msgstr "Klik untuk melihat sumber resmi"
+
+#: aristotle_mdr/forms/admin.py:23 aristotle_mdr/forms/admin.py:24
+#: aristotle_mdr/forms/admin.py:25 aristotle_mdr/forms/admin.py:26
+#, fuzzy
+msgid "workgroups"
+msgstr "kelompok kerja"
+
+#: aristotle_mdr/forms/admin.py:29
+#, fuzzy
+msgid "registration authorities"
+msgstr "otoritas pendaftaran"
+
+#: aristotle_mdr/forms/bulk_actions.py:115
+#, fuzzy
+msgid "Add bookmark"
+msgstr "Tambah bookmark"
+
+#: aristotle_mdr/forms/bulk_actions.py:123
+#, python-format, fuzzy
+msgid ""
+"%(num_items)s items favourited. \n"
+"Some items failed, they had the id's: %(bad_ids)s"
+msgstr ""
+"%(num_items)s item favourited. Beberapa item gagal, mereka memiliki id: "
+"%(bad_ids)s"
+
+#: aristotle_mdr/forms/bulk_actions.py:133
+#, fuzzy
+msgid "Remove bookmark"
+msgstr "Hapus bookmark"
+
+#: aristotle_mdr/forms/bulk_actions.py:138
+#, python-format, fuzzy
+msgid "%(num_items)s items removed from favourites"
+msgstr "%(num_items)s item dihapus dari favorit"
+
+#: aristotle_mdr/forms/bulk_actions.py:144
+#, fuzzy
+msgid "Change state"
+msgstr "perubahan state"
+
+#: aristotle_mdr/forms/bulk_actions.py:179
+#, python-format, fuzzy
+msgid ""
+"%(num_items)s items registered in %(num_ra)s registration authorities. \n"
+"Some items failed, they had the id's: %(bad_ids)s"
+msgstr ""
+"%(num_items)s item yang terdaftar di otoritas pendaftaran %(num_ra)s . "
+"Beberapa item gagal, mereka memiliki id: %(bad_ids)s"
+
+#: aristotle_mdr/forms/creation_wizards.py:42
+#, fuzzy
+msgid "You do not have permission to move an item between workgroups."
+msgstr ""
+"Anda tidak memiliki izin untuk memindahkan item antara kelompok kerja."
+
+#: aristotle_mdr/forms/creation_wizards.py:43
+#, fuzzy
+msgid "You do not have permission to remove an item from this workgroup."
+msgstr "Anda tidak memiliki izin untuk menghapus item dari workgroup ini."
+
+#: aristotle_mdr/forms/creation_wizards.py:44
+#, fuzzy
+msgid "You do not have permission to move an item to that workgroup."
+msgstr "Anda tidak memiliki izin untuk memindahkan item ke workgroup yang."
+
+#: aristotle_mdr/forms/creation_wizards.py:69
+#, fuzzy
+msgid ""
+"The object you are editing has been changed, review the changes before "
+"continuing then if you wish to save your changes click the Save button "
+"below."
+msgstr ""
+"Objek yang sedang Anda edit telah berubah, meninjau perubahan sebelum "
+"melanjutkan kemudian jika Anda ingin menyimpan perubahan klik tombol Simpan "
+"di bawah ini."
+
+#: aristotle_mdr/forms/creation_wizards.py:72
+#, fuzzy
+msgid ""
+"Unable to determine if this save will overwrite an existing save. Please try"
+" again. "
+msgstr ""
+"Tidak dapat menentukan apakah ini menyimpan akan menimpa yang ada save. "
+"Silakan coba lagi."
+
+#: aristotle_mdr/forms/creation_wizards.py:179
+#: aristotle_mdr/forms/creation_wizards.py:340
+#, fuzzy
+msgid ""
+"I've reviewed these items, and none of them meet my needs. Make me a new "
+"one."
+msgstr ""
+"Saya telah item ini, dan tidak satupun dari mereka memenuhi kebutuhan saya. "
+"Membuat saya yang baru."
+
+#: aristotle_mdr/forms/creation_wizards.py:259
+#: aristotle_mdr/forms/creation_wizards.py:356
+#, fuzzy
+msgid "I've reviewed these items, and wish to create them."
+msgstr "Saya telah item ini, dan ingin membuat mereka."
+
+#: aristotle_mdr/forms/forms.py:18
+#, fuzzy
+msgid "First Name"
+msgstr "Nama depan"
+
+#: aristotle_mdr/forms/forms.py:19
+#, fuzzy
+msgid "Last Name"
+msgstr "Nama keluarga"
+
+#: aristotle_mdr/forms/forms.py:20
+#, fuzzy
+msgid "Email Address"
+msgstr "Alamat email"
+
+#: aristotle_mdr/forms/forms.py:45
+#, fuzzy
+msgid "Supersede older items"
+msgstr "Menggantikan item yang lebih tua"
+
+#: aristotle_mdr/forms/forms.py:66 aristotle_mdr/forms/forms.py:85
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:102
+#, fuzzy
+msgid "Superseded by"
+msgstr "digantikan oleh"
+
+#: aristotle_mdr/forms/forms.py:104
+#, fuzzy
+msgid "Registration date"
+msgstr "Tanggal registrasi"
+
+#: aristotle_mdr/forms/forms.py:111
+#, fuzzy
+msgid "Do you want to update the registration of associated items?"
+msgstr "Apakah Anda ingin memperbarui pendaftaran item terkait?"
+
+#: aristotle_mdr/forms/forms.py:116
+#, fuzzy
+msgid "Why is the status being changed for these items?"
+msgstr "Mengapa status sedang berubah untuk item ini?"
+
+#: aristotle_mdr/forms/forms.py:164 aristotle_mdr/forms/forms.py:184
+#, fuzzy
+msgid "First item"
+msgstr "item pertama"
+
+#: aristotle_mdr/forms/forms.py:171 aristotle_mdr/forms/forms.py:191
+#, fuzzy
+msgid "Second item"
+msgstr "kedua barang"
+
+#: aristotle_mdr/forms/workgroups.py:12
+#, fuzzy
+msgid "Workgroup roles"
+msgstr "peran workgroup"
+
+#: aristotle_mdr/forms/workgroups.py:17
+#, fuzzy
+msgid "Select users"
+msgstr "Pilih pengguna"
+
+#: aristotle_mdr/models.py:37
+#, fuzzy
+msgid "Not Progressed"
+msgstr "tidak berkembang"
+
+#: aristotle_mdr/models.py:38
+#, fuzzy
+msgid "Incomplete"
+msgstr "Tidak lengkap"
+
+#: aristotle_mdr/models.py:39
+#: aristotle_mdr/tests/querysets/test_querysets.py:68
+#, fuzzy
+msgid "Candidate"
+msgstr "Calon"
+
+#: aristotle_mdr/models.py:40
+#: aristotle_mdr/tests/querysets/test_querysets.py:69
+#, fuzzy
+msgid "Recorded"
+msgstr "Tercatat"
+
+#: aristotle_mdr/models.py:41
+#, fuzzy
+msgid "Qualified"
+msgstr "berkualitas"
+
+#: aristotle_mdr/models.py:42
+#: aristotle_mdr/tests/querysets/test_querysets.py:71
+#, fuzzy
+msgid "Standard"
+msgstr "Standar"
+
+#: aristotle_mdr/models.py:43
+#, fuzzy
+msgid "Preferred Standard"
+msgstr "Standard Preferred"
+
+#: aristotle_mdr/models.py:44
+#, fuzzy
+msgid "Superseded"
+msgstr "Digantikan"
+
+#: aristotle_mdr/models.py:45
+#: aristotle_mdr/tests/querysets/test_querysets.py:74
+#, fuzzy
+msgid "Retired"
+msgstr "Pensiunan"
+
+#: aristotle_mdr/models.py:54
+#, fuzzy
+msgid "The primary name used for human identification purposes."
+msgstr "Nama utama yang digunakan untuk tujuan identifikasi manusia."
+
+#: aristotle_mdr/models.py:57
+#, fuzzy
+msgid "definition"
+msgstr "definisi"
+
+#: aristotle_mdr/models.py:58
+#, fuzzy
+msgid ""
+"Representation of a concept by a descriptive statement which serves to "
+"differentiate it from related concepts"
+msgstr ""
+"Representasi dari konsep dengan pernyataan deskriptif yang berfungsi untuk "
+"membedakannya dari konsep-konsep yang terkait"
+
+#: aristotle_mdr/models.py:159
+#, fuzzy
+msgid "Managers"
+msgstr "manajer"
+
+#: aristotle_mdr/models.py:192
+#, fuzzy
+msgid "Registrars"
+msgstr "pendaftar"
+
+#: aristotle_mdr/models.py:218 aristotle_mdr/models.py:354
+#: aristotle_mdr/models.py:390
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:27
+#, fuzzy
+msgid "Registration Authorities"
+msgstr "Pihak berwenang Pendaftaran"
+
+#: aristotle_mdr/models.py:269
+#, python-format, fuzzy
+msgid "Cascade registration of item '%(name)s' (id:%(iid)s)\n"
+msgstr "Cascade pendaftaran barang &#39;%(name)s&#39; (id: __ iid__)\n"
+
+#: aristotle_mdr/models.py:353
+#, fuzzy
+msgid "Registry"
+msgstr "pendaftaran"
+
+#: aristotle_mdr/models.py:373
+#, fuzzy
+msgid ""
+"Specifies the 'owner' of the content of the workgroup. Selecting 'registry' "
+"allows any registration authority to progress and make items public, "
+"'Registration authorities' specifies that only registration authorities "
+"associated with this workgroup may control their visibility."
+msgstr ""
+"Menentukan &#39;pemilik&#39; dari isi workgroup. Memilih &#39;registry&#39; "
+"memungkinkan otoritas pendaftaran untuk kemajuan dan membuat barang-barang "
+"publik, menspesifikasikan &#39;Pendaftaran berwenang bahwa hanya otoritas "
+"pendaftaran terkait dengan workgroup ini dapat mengontrol visibilitas "
+"mereka."
+
+#: aristotle_mdr/models.py:382
+#, fuzzy
+msgid ""
+"Archived workgroups can no longer have new items or discussions created "
+"within them."
+msgstr ""
+"kelompok kerja diarsipkan tidak bisa lagi memiliki barang-barang baru atau "
+"diskusi dibuat dalam diri mereka."
+
+#: aristotle_mdr/models.py:384
+#, fuzzy
+msgid "Archived"
+msgstr "diarsipkan"
+
+#: aristotle_mdr/models.py:397
+#, fuzzy
+msgid "Viewers"
+msgstr "pemirsa"
+
+#: aristotle_mdr/models.py:403
+#, fuzzy
+msgid "Submitters"
+msgstr "menyerahkan"
+
+#: aristotle_mdr/models.py:409
+#, fuzzy
+msgid "Stewards"
+msgstr "stewards"
+
+#: aristotle_mdr/models.py:413
+#, fuzzy
+msgid "Submitter"
+msgstr "Pengirim"
+
+#: aristotle_mdr/models.py:414
+#, fuzzy
+msgid "Viewer"
+msgstr "Penonton"
+
+#: aristotle_mdr/models.py:415
+#, fuzzy
+msgid "Steward"
+msgstr "Pelayan"
+
+#: aristotle_mdr/models.py:416
+#, fuzzy
+msgid "Manager"
+msgstr "Manajer"
+
+#: aristotle_mdr/models.py:929
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:20
+#, fuzzy
+msgid "Date registration effective"
+msgstr "pendaftaran tanggal efektif"
+
+#: aristotle_mdr/models.py:931
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:21
+#, fuzzy
+msgid "Date registration expires"
+msgstr "pendaftaran tanggal kedaluwarsa"
+
+#: aristotle_mdr/models.py:1019 aristotle_mdr/models.py:1077
+#, fuzzy
+msgid "description"
+msgstr "deskripsi"
+
+#: aristotle_mdr/register.py:135
+#, python-format, fuzzy
+msgid "Extra fields for %(class_name)s"
+msgstr "bidang tambahan untuk %(class_name)s"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:88
+#, fuzzy
+msgid "Return to the main site"
+msgstr "Kembali ke situs utama"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:105
+#, fuzzy
+msgid "Browse live documentation"
+msgstr "Isi dokumentasi hidup"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:105
+#, fuzzy
+msgid "Documentation"
+msgstr "Dokumentasi"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:110
+#: aristotle_mdr/templates/aristotle_mdr/header.html:46
+#, fuzzy
+msgid "Open user menu"
+msgstr "menu pengguna terbuka"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:120
+#: aristotle_mdr/templates/aristotle_mdr/header.html:56
+#, fuzzy
+msgid "My Dashboard"
+msgstr "Dashboard saya"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:122
+#: aristotle_mdr/templates/aristotle_mdr/header.html:79
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:75
+#, fuzzy
+msgid "Change password"
+msgstr "Ganti kata sandi"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:125
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:140
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:142
+#: aristotle_mdr/templates/aristotle_mdr/header.html:152
+#: aristotle_mdr/templates/aristotle_mdr/header.html:154
+#, fuzzy
+msgid "Log out"
+msgstr "Keluar"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:133
+#: aristotle_mdr/templates/aristotle_mdr/header.html:141
+#: aristotle_mdr/templates/aristotle_mdr/header.html:142
+#, fuzzy
+msgid "New notifications"
+msgstr "pemberitahuan baru"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:135
+#: aristotle_mdr/templates/aristotle_mdr/header.html:144
+#: aristotle_mdr/templates/aristotle_mdr/header.html:145
+#, fuzzy
+msgid "No unread notifications"
+msgstr "Tidak ada pemberitahuan belum dibaca"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:161
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:4
+#, fuzzy
+msgid "Home"
+msgstr "Rumah"
+
+#: aristotle_mdr/templates/admin/submit_line.html:7
+#: aristotle_mdr/tests/apps/bulk_actions_test/actions.py:7
+#, fuzzy
+msgid "Delete"
+msgstr "Menghapus"
+
+#: aristotle_mdr/templates/admin/submit_line.html:11
+#, fuzzy
+msgid "Cancel editing and return to main site"
+msgstr "Batal editing dan kembali ke situs utama"
+
+#: aristotle_mdr/templates/admin/submit_line.html:13
+#, fuzzy
+msgid "Exit without saving"
+msgstr "Keluar tanpa menyimpan"
+
+#: aristotle_mdr/templates/admin/submit_line.html:16
+#, fuzzy
+msgid "Save and return to item"
+msgstr "Simpan dan kembali ke item"
+
+#: aristotle_mdr/templates/admin/submit_line.html:19
+#, fuzzy
+msgid "Save as new"
+msgstr "Simpan sebagai baru"
+
+#: aristotle_mdr/templates/admin/submit_line.html:22
+#, fuzzy
+msgid "Save and add another"
+msgstr "Simpan dan tambahkan lagi"
+
+#: aristotle_mdr/templates/admin/submit_line.html:25
+#, fuzzy
+msgid "Save and continue editing"
+msgstr "Simpan dan lanjutkan editing"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:24
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:6
+#, fuzzy
+msgid "This item has been superseded by the newer version,"
+msgstr "Item ini telah digantikan oleh versi yang lebih baru,"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:30
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:11
+#, fuzzy
+msgid ""
+"This item has been retired and is not recommended for use by any "
+"registration authority."
+msgstr ""
+"Item ini telah pensiun dan tidak direkomendasikan untuk digunakan oleh "
+"otoritas pendaftaran."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:37
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:16
+#, fuzzy
+msgid "This item is currently public."
+msgstr "Item ini adalah saat publik."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:41
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:20
+#, fuzzy
+msgid "This item is currently under development."
+msgstr "Item ini sedang dalam pengembangan."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:42
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:44
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:35
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:37
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:49
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:37
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:17
+#: aristotle_mdr/templates/registration/password_change_form.html:46
+#, fuzzy
+msgid "Cancel"
+msgstr "Membatalkan"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:48
+#, fuzzy
+msgid "Reactivate"
+msgstr "Mengaktifkan kembali"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:50
+#, fuzzy
+msgid "Archive"
+msgstr "arsip"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/autocompleteItem.html:10
+#, fuzzy
+msgid "Open in a new window"
+msgstr "Buka di jendela baru"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:25
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:118
+#, fuzzy
+msgid "Select a new state to see how the visibility of this item will change."
+msgstr ""
+"Pilih negara baru untuk melihat bagaimana visibilitas item ini akan berubah."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:115
+#, fuzzy
+msgid "After saving, this item will stay VISIBILITY_STATUS"
+msgstr "Setelah menyimpan, item ini akan tetap VISIBILITY_STATUS"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:117
+#, fuzzy
+msgid "After saving, this item will become VISIBILITY_STATUS"
+msgstr "Setelah menyimpan, item ini akan menjadi VISIBILITY_STATUS"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:120
+#, fuzzy
+msgid "hidden"
+msgstr "tersembunyi"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:121
+#, fuzzy
+msgid "locked"
+msgstr "terkunci"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:122
+#, fuzzy
+msgid "public"
+msgstr "publik"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:61
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:34
+#, fuzzy
+msgid "There are no differences."
+msgstr "Tidak ada perbedaan."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:69
+#, fuzzy
+msgid "Fields below are identical for both items."
+msgstr "Kolom di bawah ini adalah identik untuk kedua item."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:80
+#, fuzzy
+msgid "Blank for both items"
+msgstr "Kosong untuk kedua item"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:87
+#, fuzzy
+msgid "There are no similarities."
+msgstr "Tidak ada kesamaan."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:98
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:123
+#, fuzzy
+msgid "Fields below are only on "
+msgstr "Bidang di bawah ini adalah hanya pada"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:109
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:135
+#, fuzzy
+msgid "Blank"
+msgstr "Kosong"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:14
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history_compare.html:18
+#, fuzzy
+msgid "Version history"
+msgstr "versi sejarah"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:20
+#, fuzzy
+msgid "Date"
+msgstr "Tanggal"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:21
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:14
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:22
+#, fuzzy
+msgid "Comment"
+msgstr "Komentar"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:22
+#: aristotle_mdr/templates/aristotle_mdr/header.html:127
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:21
+#, fuzzy
+msgid "User"
+msgstr "pemakai"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:41
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:36
+#, fuzzy
+msgid "No version comment made"
+msgstr "Tidak ada versi komentar yang dibuat"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history_compare.html:20
+#, fuzzy
+msgid "Compare"
+msgstr "Membandingkan"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:41
+#, fuzzy
+msgid "Remove ready to review flag"
+msgstr "Hapus siap untuk meninjau bendera"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:43
+#, fuzzy
+msgid "Ready to review"
+msgstr "Siap untuk meninjau"
+
+#: aristotle_mdr/templates/aristotle_mdr/base.html:40
+#, fuzzy
+msgid "Loading"
+msgstr "Pemuatan"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:21
+#, fuzzy
+msgctxt "Object Type"
+msgid "Type"
+msgstr "Mengetik"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:29
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:97
+#, fuzzy
+msgid "Short name"
+msgstr "Nama pendek"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:32
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:25
+#, fuzzy
+msgid "Version"
+msgstr "Versi"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:35
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:100
+#, fuzzy
+msgid "Synonyms"
+msgstr "sinonim"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:38
+#, fuzzy
+msgid "Origin URI"
+msgstr "asal URI"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:55
+#, fuzzy
+msgid "Last updated"
+msgstr "terakhir diperbarui"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:72
+#, fuzzy
+msgid "This may have been added during an import."
+msgstr "Ini mungkin telah ditambahkan selama impor."
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:72
+#, fuzzy
+msgctxt "Unknown import user"
+msgid "Unknown"
+msgstr "tidak diketahui"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:77
+#, fuzzy
+msgid "Created"
+msgstr "dibuat"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:83
+#, fuzzy
+msgid "Supersedes"
+msgstr "menggantikan"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:97
+#, fuzzy
+msgctxt "No older objects"
+msgid "None"
+msgstr "tak satupun"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:112
+#, fuzzy
+msgctxt "No newer objects"
+msgid "None"
+msgstr "tak satupun"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:118
+#: aristotle_mdr/templates/aristotle_mdr/header.html:123
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:24
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:16
+#, fuzzy
+msgid "Workgroup"
+msgstr "workgroup"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:120
+#, fuzzy
+msgid "History"
+msgstr "Sejarah"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:121
+#, fuzzy
+msgid "View history"
+msgstr "Lihat riwayat"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:122
+#: aristotle_mdr/templates/aristotle_mdr/header.html:69
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:63
+#, fuzzy
+msgid "Discussions"
+msgstr "diskusi"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:132
+#, fuzzy
+msgid "Start a new discussion about this item"
+msgstr "Mulai diskusi baru tentang item ini"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:33
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:54
+#, fuzzy
+msgid "Edit in admin"
+msgstr "Edit di admin"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:35
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:51
+#, fuzzy
+msgid "Open item editor"
+msgstr "Terbuka editor item"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:46
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:72
+#, fuzzy
+msgid "Edit"
+msgstr "mengedit"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:59
+#, fuzzy
+msgid "Clone this item"
+msgstr "Mengkloning item ini"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:63
+#, fuzzy
+msgid "Clone this item via admin"
+msgstr "Mengkloning item ini melalui admin"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:79
+#, fuzzy
+msgid "Download"
+msgstr "Download"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:89
+#, fuzzy
+msgid "Definition"
+msgstr "Definisi"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:24
+#, fuzzy
+msgid "This item is under active development. Content may change frequently."
+msgstr ""
+"Item ini berada di bawah pengembangan aktif. Konten dapat sering berubah."
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:34
+#, fuzzy
+msgid ""
+"This item has been marked as ready to review, but has not yet been "
+"registered in an authority."
+msgstr ""
+"Item ini telah ditandai sebagai siap untuk meninjau, tapi belum terdaftar di"
+" otoritas."
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:36
+#, fuzzy
+msgid ""
+"The visibility of this item is still restricted to your current workgroup."
+msgstr "Visibilitas item ini masih terbatas pada workgroup Anda saat ini."
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:42
+#, fuzzy
+msgid ""
+"\n"
+"                <p>You can control the visibility of this item by indicating its review status.\n"
+"                If an item is marked \"ready for review\", registrars will be able to see this item and\n"
+"                begin the standardisation process according to their registration authority.\n"
+"                </p>\n"
+"                "
+msgstr ""
+"\n"
+"<p> Anda dapat mengontrol visibilitas item ini dengan menunjukkan statusnya peninjauannya. Jika item ditandai &quot;siap untuk diperiksa&quot;, pendaftar akan dapat melihat item ini dan memulai proses standarisasi sesuai dengan otoritas pendaftaran mereka. </p>"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:51
+#, fuzzy
+msgid "Remove ready for review flag"
+msgstr "Hapus siap ulasan bendera"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:53
+#, fuzzy
+msgid "Flag as ready for review"
+msgstr "Tandai sebagai siap ulasan"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/clone_item.html:16
+#, fuzzy
+msgid "Cloning"
+msgstr "kloning"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/clone_item.html:19
+#, fuzzy
+msgid ""
+"\n"
+"            Reusing existing metadata helps users find and compare similar items. Cloning and item should only be done where a similar but clearly different item exists and can be used as a template for quickly creating a new item in the registry.\n"
+"            "
+msgstr ""
+"\n"
+"Menggunakan kembali metadata yang ada membantu pengguna menemukan dan membandingkan barang serupa. Kloning dan barang hanya boleh dilakukan di mana barang serupa tetapi jelas berbeda ada dan dapat digunakan sebagai template untuk cepat membuat item baru dalam registri."
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:8
+#, fuzzy
+msgctxt "creating items"
+msgid "Definition"
+msgstr "Definisi"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:15
+#, fuzzy
+msgctxt "For making an item"
+msgid "Components"
+msgstr "komponen"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:19
+#, fuzzy
+msgctxt "When saving changes to an item"
+msgid "Change message"
+msgstr "perubahan pesan"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:23
+#, fuzzy
+msgctxt "creating items"
+msgid "Tips and help"
+msgstr "Tips dan bantuan"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:144
+#, fuzzy
+msgid ""
+"\n"
+"                If it is left blank an automatic messages stating which fields\n"
+"                have been changed will be generated on your behalf.\n"
+"                </p>\n"
+"                <p>However, stating <em>why</em> values in fields have changed\n"
+"                can be much more useful than knowing that a field has changed.\n"
+"                "
+msgstr ""
+"\n"
+"Jika dibiarkan kosong sebuah pesan otomatis yang menyatakan yang bidang telah berubah akan dihasilkan atas nama Anda. </p><p> Namun, <em>yang</em> menyatakan <em>mengapa</em> nilai-nilai di bidang telah berubah bisa jauh lebih berguna daripada mengetahui bahwa lapangan telah berubah."
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:25
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:46
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:39
+#, fuzzy
+msgid "First step"
+msgstr "Langkah pertama"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:28
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:47
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:40
+#, fuzzy
+msgid "Back"
+msgstr "Kembali"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:31
+#, fuzzy
+msgid "submit"
+msgstr "menyerahkan"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:32
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:36
+#: aristotle_mdr/views/wizards.py:637
+#, fuzzy
+msgid "Next"
+msgstr "Berikutnya"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:5
+#, fuzzy
+msgid "Create New Items"
+msgstr "Buat Produk Baru"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:16
+#: aristotle_mdr/templates/aristotle_mdr/header.html:91
+#, fuzzy
+msgid "Management interface"
+msgstr "antarmuka manajemen"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:24
+#: aristotle_mdr/templates/aristotle_mdr/header.html:103
+#: aristotle_mdr/templates/aristotle_mdr/header.html:105
+#, fuzzy
+msgid "Create new"
+msgstr "Membuat baru"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:25
+#, fuzzy
+msgid "Help"
+msgstr "Membantu"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:26
+#, fuzzy
+msgid "Basic description"
+msgstr "deskripsi dasar"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:39
+#, fuzzy
+msgid "Get more help on this item"
+msgstr "Dapatkan bantuan lebih lanjut tentang item ini"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:59
+#, fuzzy
+msgid "My Favourites"
+msgstr "Favorit saya"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:63
+#, fuzzy
+msgid "Notifications"
+msgstr "pemberitahuan"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:72
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:32
+#, fuzzy
+msgid "Workgroups"
+msgstr "kelompok kerja"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:75
+#, fuzzy
+msgid "Recent actions"
+msgstr "tindakan baru-baru ini"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:85
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:88
+#, fuzzy
+msgid "Registrar tools"
+msgstr "alat pencatat"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:96
+#, fuzzy
+msgid "Admin tools"
+msgstr "alat admin"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:119
+#, fuzzy
+msgid "Admin only"
+msgstr "Admin hanya"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:133
+#, fuzzy
+msgid "See all"
+msgstr "Lihat semua"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:139
+#, fuzzy
+msgid "Show recent notifications"
+msgstr "Tampilkan pemberitahuan terbaru"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:160
+#: aristotle_mdr/templates/registration/password_reset_complete.html:10
+#, fuzzy
+msgid "Log in"
+msgstr "Masuk"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/favourite_concept.html:11
+#, python-format, fuzzy
+msgid "Favourited by %(count)s users "
+msgstr "Favourited oleh pengguna %(count)s "
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_list.html:14
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:14
+#, fuzzy
+msgid "Concept"
+msgstr "Konsep"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_list.html:32
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:33
+#, fuzzy
+msgid "Last modified"
+msgstr "Terakhir diubah"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:15
+#, fuzzy
+msgid "Updated"
+msgstr "Updated"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:16
+#, fuzzy
+msgid "Items"
+msgstr "item"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:3
+#, fuzzy
+msgid "Filter workgroups by name and description"
+msgstr "Filter kelompok kerja dengan nama dan deskripsi"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:25
+#, fuzzy
+msgid "Ownership"
+msgstr "Kepemilikan"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:37
+#, fuzzy
+msgid "Number of members"
+msgstr "Jumlah anggota"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:47
+#, fuzzy
+msgid "Number of items"
+msgstr "Jumlah item"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:65
+#, fuzzy
+msgid "None"
+msgstr "tak satupun"
+
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:22
+#, fuzzy
+msgid "State"
+msgstr "Negara"
+
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:44
+#, fuzzy
+msgid "This item has not yet been registered by any authority"
+msgstr "Item ini belum didaftarkan oleh otoritas"
+
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:15
+#, fuzzy
+msgctxt "Front page search options"
+msgid "More options"
+msgstr "Lebih banyak pilihan"
+
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:13
+#, fuzzy
+msgid "View registration history"
+msgstr "Lihat sejarah pendaftaran"
+
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:29
+#: aristotle_mdr/templates/search/search.html:245
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:104
+#, fuzzy
+msgid "Not registered"
+msgstr "Tidak terdaftar"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:4
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:5
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:11
+#, fuzzy
+msgid "My Recent Actions"
+msgstr "Tindakan Terbaru saya"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userInbox.html:59
+#, fuzzy
+msgid "in"
+msgstr "di"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:24
+#, fuzzy
+msgid "All messages"
+msgstr "semua pesan"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:38
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:56
+#, fuzzy
+msgid "Archived Workgroups"
+msgstr "diarsipkan Workgroups"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:67
+#, fuzzy
+msgid "Recent Actions"
+msgstr "Tindakan baru-baru ini"
+
+#. Translators: A link to the list of things to be reviewed.
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:94
+#, fuzzy
+msgid "Review list"
+msgstr "daftar ulasan"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:103
+#, fuzzy
+msgid "Administrator tools"
+msgstr "alat administrator"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:109
+#, fuzzy
+msgid "Registry Statistics"
+msgstr "Statistik Registry"
+
+#: aristotle_mdr/templates/aristotle_mdr/workgroupMembers.html:4
+#, fuzzy
+msgid "members"
+msgstr "anggota"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:9
+#, fuzzy
+msgid "Apply change"
+msgstr "menerapkan perubahan"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:11
+#, fuzzy
+msgid "Save"
+msgstr "Menyimpan"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:15
+#, fuzzy
+msgid "Cancel change"
+msgstr "Batal perubahan"
+
+#: aristotle_mdr/templates/registration/password_change_done.html:7
+#, fuzzy
+msgid "Your password was changed."
+msgstr "Sandi diubah."
+
+#: aristotle_mdr/templates/registration/password_change_form.html:3
+#: aristotle_mdr/templates/registration/password_change_form.html:6
+#, fuzzy
+msgid "Password change"
+msgstr "perubahan sandi"
+
+#: aristotle_mdr/templates/registration/password_change_form.html:13
+#, fuzzy
+msgid "Please correct the error below."
+msgstr "Harap perbaiki kesalahan di bawah."
+
+#: aristotle_mdr/templates/registration/password_change_form.html:13
+#, fuzzy
+msgid "Please correct the errors below."
+msgstr "Mohon perbaiki kesalahan di bawah."
+
+#: aristotle_mdr/templates/registration/password_change_form.html:18
+#, fuzzy
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new"
+" password twice so we can verify you typed it in correctly."
+msgstr ""
+"Masukkan password lama Anda, demi keamanan, dan kemudian masukkan password "
+"baru dua kali sehingga kami dapat memverifikasi Anda mengetik dengan benar."
+
+#: aristotle_mdr/templates/registration/password_change_form.html:47
+#, fuzzy
+msgid "Change my password"
+msgstr "Mengubah password saya"
+
+#: aristotle_mdr/templates/registration/password_reset_complete.html:9
+#, fuzzy
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "sandi telah ditetapkan. Anda dapat pergi ke depan dan login sekarang."
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:6
+#, fuzzy
+msgid "Select two items and click compare to see the differences between them"
+msgstr ""
+"Pilih dua item dan klik bandingkan untuk melihat perbedaan antara mereka"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:14
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:16
+#, fuzzy
+msgid "compare"
+msgstr "membandingkan"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:20
+#, fuzzy
+msgid "Date/time"
+msgstr "Tanggal Waktu"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:40
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:42
+#, fuzzy
+msgid "DATETIME_FORMAT"
+msgstr "DATETIME_FORMAT"
+
+#: aristotle_mdr/templates/reversion-compare/compare_links_partial.html:2
+#, fuzzy
+msgid "previous"
+msgstr "sebelumnya"
+
+#: aristotle_mdr/templates/reversion-compare/compare_links_partial.html:3
+#, fuzzy
+msgid "next"
+msgstr "berikutnya"
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:5
+#, fuzzy
+msgid "Edit comment:"
+msgstr "Mengedit komentar:"
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:17
+#, fuzzy
+msgid "Note:"
+msgstr "catatan:"
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:19
+#, fuzzy
+msgid ""
+"\n"
+"        Fields/entries marked with <sup class=\"follow\">*</sup> are not under reversion control.\n"
+"        It may be that not all marked information are correct.\n"
+"    "
+msgstr ""
+"\n"
+"Bidang / entri yang ditandai dengan <sup class=\"follow\">*</sup> tidak berada di bawah kendali pengembalian. Mungkin tidak semua informasi yang ditandai benar."
+
+#: aristotle_mdr/templates/search/search.html:21
+#, fuzzy
+msgctxt "Search results"
+msgid "results"
+msgstr "hasil"
+
+#: aristotle_mdr/templates/search/search.html:61
+#, fuzzy
+msgid "Toggle navigation"
+msgstr "navigasi beralih"
+
+#: aristotle_mdr/templates/search/search.html:66
+#, fuzzy
+msgctxt "Advanced search"
+msgid "Advanced"
+msgstr "Maju"
+
+#: aristotle_mdr/templates/search/search.html:66
+#, fuzzy
+msgctxt "Clear search filters"
+msgid "Clear filters"
+msgstr "jelas filter"
+
+#: aristotle_mdr/templates/search/search.html:75
+#, fuzzy
+msgctxt "Metadata item type"
+msgid "Item type"
+msgstr "Tipe barang"
+
+#: aristotle_mdr/templates/search/search.html:83
+#, fuzzy
+msgctxt "Registration Status"
+msgid "Status"
+msgstr "Status"
+
+#: aristotle_mdr/templates/search/search.html:91
+#, fuzzy
+msgctxt "Registration Authority"
+msgid "Authority"
+msgstr "Wewenang"
+
+#: aristotle_mdr/templates/search/search.html:99
+#, fuzzy
+msgctxt "Modified date"
+msgid "Modified"
+msgstr "Diubah"
+
+#: aristotle_mdr/templates/search/search.html:119
+#, fuzzy
+msgctxt "Created date"
+msgid "Created"
+msgstr "dibuat"
+
+#: aristotle_mdr/templates/search/search.html:324
+#, fuzzy
+msgid "This item is in your favourites list"
+msgstr "Item ini dalam daftar favorit Anda"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:48
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:63
+#, python-format, fuzzy
+msgid "%s is"
+msgstr "%s adalah"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:58
+#, python-format, fuzzy
+msgid " or %s"
+msgstr "atau %s"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:68
+#, python-format, fuzzy
+msgid " and %s"
+msgstr "dan %s"
+
+#: aristotle_mdr/templatetags/aristotle_tags.py:358
+#: aristotle_mdr/templatetags/aristotle_tags.py:360
+#, fuzzy
+msgid "model:"
+msgstr "model:"
+
+#: aristotle_mdr/templatetags/aristotle_tags.py:367
+#, python-format, fuzzy
+msgid "No help text for the field '%(field)s' found for the model '%(model)s'"
+msgstr ""
+"Tidak ada bantuan teks untuk bidang &#39;%(field)s&#39; ditemukan untuk "
+"model &#39;%(model)s&#39;"
+
+#. Translators: The '(clone)' prefix is a noun, indicating an object is a
+#. clone of another - for example "Person-Sex" compared to "Person-Sex
+#. (clone)"
+#: aristotle_mdr/utils/utils.py:34
+#, fuzzy
+msgid " (clone)"
+msgstr "(klon)"
+
+#: aristotle_mdr/utils/utils.py:76
+#, python-format, fuzzy
+msgid "Changed %s."
+msgstr " %sberubah."
+
+#: aristotle_mdr/utils/utils.py:76 aristotle_mdr/utils/utils.py:88
+#, fuzzy
+msgid "and"
+msgstr "dan"
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been created in the
+#. registry.
+#: aristotle_mdr/utils/utils.py:82
+#, python-format, fuzzy
+msgid "Added %(name)s \"%(object)s\"."
+msgstr "Ditambahkan %(name)s &quot;%(object)s&quot;."
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been changed in the
+#. registry.
+#: aristotle_mdr/utils/utils.py:87
+#, python-format, fuzzy
+msgid "Changed %(list)s for %(name)s \"%(object)s\"."
+msgstr " %(list)s berubah untuk %(name)s &quot;%(object)s&quot;."
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been deleted from the
+#. registry.
+#: aristotle_mdr/utils/utils.py:93
+#, python-format, fuzzy
+msgid "Deleted %(name)s \"%(object)s\"."
+msgstr "Dihapus %(name)s &quot;%(object)s&quot;."
+
+#: aristotle_mdr/utils/utils.py:97
+#, fuzzy
+msgid "No fields changed."
+msgstr "Tidak ada bidang berubah."
+
+#: aristotle_mdr/views/comparator.py:55 aristotle_mdr/views/comparator.py:57
+#, fuzzy
+msgid "This item has no revisions. A comparison cannot be made"
+msgstr "Item ini tidak memiliki revisi. Perbandingan tidak bisa dibuat"
+
+#: aristotle_mdr/views/discussions.py:99
+#, fuzzy
+msgid "This post is closed. Your comment was not added."
+msgstr "Posting ini ditutup. Komentar anda tidak ditambahkan."
+
+#: aristotle_mdr/views/views.py:317
+#, python-format, fuzzy
+msgid "%s added to favourites."
+msgstr "%s menambahkan ke favorit."
+
+#: aristotle_mdr/views/views.py:319
+#, python-format, fuzzy
+msgid "%s removed from favourites."
+msgstr "%s dihapus dari favorit."
+
+#: aristotle_mdr/views/views.py:320
+#, fuzzy
+msgid " Review your favourites from the user menu."
+msgstr "Tinjau favorit Anda dari menu pengguna."
+
+#: aristotle_mdr/views/wizards.py:124
+#, fuzzy
+msgid "Search for existing content"
+msgstr "Cari konten yang ada"
+
+#: aristotle_mdr/views/wizards.py:134
+#, fuzzy
+msgid "Select or create"
+msgstr "Pilih atau buat"
+
+#: aristotle_mdr/views/wizards.py:287 aristotle_mdr/views/wizards.py:290
+#, fuzzy
+msgid "No object class name found"
+msgstr "Tidak ada nama kelas objek yang ditemukan"
+
+#: aristotle_mdr/views/wizards.py:288 aristotle_mdr/views/wizards.py:291
+#, fuzzy
+msgid "No object class definition found"
+msgstr "Tidak ada definisi kelas objek yang ditemukan"
+
+#: aristotle_mdr/views/wizards.py:302 aristotle_mdr/views/wizards.py:305
+#: aristotle_mdr/views/wizards.py:742 aristotle_mdr/views/wizards.py:745
+#, fuzzy
+msgid "No property name found"
+msgstr "Tidak ada nama properti ditemukan"
+
+#: aristotle_mdr/views/wizards.py:303 aristotle_mdr/views/wizards.py:306
+#: aristotle_mdr/views/wizards.py:743 aristotle_mdr/views/wizards.py:746
+#, fuzzy
+msgid "No property definition found"
+msgstr "Tidak ada definisi properti ditemukan"
+
+#: aristotle_mdr/views/wizards.py:319
+#, python-brace-format, fuzzy
+msgid "<p>{pr} of {oc}</p> - This was an autogenerated definition."
+msgstr "<p> {Pr} dari {oc} </p> - Ini adalah definisi software otomatis."
+
+#: aristotle_mdr/views/wizards.py:396 aristotle_mdr/views/wizards.py:643
+#, fuzzy
+msgid "Search for components"
+msgstr "Cari untuk komponen"
+
+#: aristotle_mdr/views/wizards.py:397 aristotle_mdr/views/wizards.py:646
+#, fuzzy
+msgid "Refine components"
+msgstr "memperbaiki komponen"
+
+#: aristotle_mdr/views/wizards.py:398 aristotle_mdr/views/wizards.py:650
+#, fuzzy
+msgid "Create Object Class"
+msgstr "Buat Obyek Kelas"
+
+#: aristotle_mdr/views/wizards.py:399 aristotle_mdr/views/wizards.py:655
+#, fuzzy
+msgid "Create Property"
+msgstr "Buat Properti"
+
+#: aristotle_mdr/views/wizards.py:400
+#, fuzzy
+msgid "Review Data Element Concept"
+msgstr "Tinjau Elemen Data Konsep"
+
+#: aristotle_mdr/views/wizards.py:401 aristotle_mdr/views/wizards.py:671
+#, fuzzy
+msgid "Complete and Save"
+msgstr "Lengkap dan Simpan"
+
+#: aristotle_mdr/views/wizards.py:448 aristotle_mdr/views/wizards.py:779
+#, python-brace-format, fuzzy
+msgid "New Property '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"Baru Properti &#39;{nama}&#39; Disimpan - <a href='{url}'>id: {id}</a>"
+
+#: aristotle_mdr/views/wizards.py:457 aristotle_mdr/views/wizards.py:788
+#, python-brace-format, fuzzy
+msgid "New Object Class '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"New Object Class &#39;{nama}&#39; Disimpan - <a href='{url}'>id: {id}</a>"
+
+#: aristotle_mdr/views/wizards.py:466 aristotle_mdr/views/wizards.py:797
+#, python-brace-format, fuzzy
+msgid "New Data Element Concept '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"Data Baru Element Konsep &#39;{nama}&#39; Disimpan - <a href='{url}'>id: "
+"{id}</a>"
+
+#: aristotle_mdr/views/wizards.py:647 aristotle_mdr/views/wizards.py:668
+#, fuzzy
+msgid "Review Data Element"
+msgstr "Ulasan data Element"
+
+#: aristotle_mdr/views/wizards.py:651
+#, fuzzy
+msgid "Save Object Class"
+msgstr "Simpan Obyek Kelas"
+
+#: aristotle_mdr/views/wizards.py:656
+#, fuzzy
+msgid "Save Property"
+msgstr "Simpan Properti"
+
+#: aristotle_mdr/views/wizards.py:658
+#, fuzzy
+msgid "Select Data Element Concept"
+msgstr "Pilih Data Element Concept"
+
+#: aristotle_mdr/views/wizards.py:661
+#, fuzzy
+msgid "Create Data Element Concept"
+msgstr "Buat Data Element Concept"
+
+#: aristotle_mdr/views/wizards.py:662
+#, fuzzy
+msgid "Save Data Element Concept"
+msgstr "Simpan Data Element Concept"
+
+#: aristotle_mdr/views/wizards.py:666
+#, fuzzy
+msgid "Create Value Domain"
+msgstr "Buat Nilai Domain"
+
+#: aristotle_mdr/views/wizards.py:672
+#, fuzzy
+msgid "Save and Finish"
+msgstr "Simpan dan Finish"
+
+#: aristotle_mdr/views/wizards.py:727 aristotle_mdr/views/wizards.py:730
+#, fuzzy
+msgid "No value domain name found"
+msgstr "Tidak ada nama nilai domain yang ditemukan"
+
+#: aristotle_mdr/views/wizards.py:728 aristotle_mdr/views/wizards.py:731
+#, fuzzy
+msgid "No value domain definition found"
+msgstr "Tidak ada definisi nilai domain yang ditemukan"
+
+#: aristotle_mdr/views/wizards.py:757
+#, python-brace-format, fuzzy
+msgid "<p>{dec}, recorded as {vd}</p> - This was an autogenerated definition."
+msgstr ""
+"<p> {Desember}, dicatat sebagai {} vd </p> - Ini adalah definisi software "
+"otomatis."
+
+#: aristotle_mdr/views/wizards.py:806
+#, python-brace-format, fuzzy
+msgid "New ValueDomain '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"New ValueDomain &#39;{nama}&#39; Disimpan - <a href='{url}'>id: {id}</a>"
+
+#: aristotle_mdr/views/wizards.py:815
+#, python-brace-format, fuzzy
+msgid "New Data Element '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"Data Baru Element &#39;{nama}&#39; Disimpan - <a href='{url}'>id: {id}</a>"

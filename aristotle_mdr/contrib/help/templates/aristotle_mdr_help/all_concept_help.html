@@ -1,0 +1,50 @@
+{% extends "aristotle_mdr_help/base.html" %}
+{% load aristotle_tags aristotle_help %}
+
+{% block title %}Help{% endblock %}
+
+{% block breadcumbs %}
+    <li><a href="{% url 'aristotle_help:help_base' %}">Help</a></li>
+    <li class="active">Concepts</li>
+{% endblock %}
+
+{% block help_content %}
+<p>
+    Below is a list of all help pages about the different concept types
+    available in this registry, click the name for more information.
+    To see a list of help pages for concept types provided by an extension
+    click the extension name.
+</p>
+<p>
+    Generic help pages can be
+    found in the <a href="{% url 'aristotle_help:help_base' %}">Help index page</a>.
+</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Provided by</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+      {% for obj in object_list %}
+        {% if obj.get_model %}
+        <tr>
+            <th>
+                <a href="{% url 'aristotle_help:concept_help' obj.app_label obj.concept_type %}">
+                    {{ obj.get_model.get_verbose_name }}</a>
+            </th>
+            <td>
+                <a href="{% url 'aristotle_help:concept_app_help' obj.app_label %}">
+                    {{ obj.get_app.verbose_name }}</a>
+            </td>
+            <td>
+                {% help_doc obj.get_model %}
+            </td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

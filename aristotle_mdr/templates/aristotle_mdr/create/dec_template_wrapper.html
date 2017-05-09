@@ -1,0 +1,46 @@
+{% extends "aristotle_mdr/base.html" %}
+{% load compile_static i18n %}
+{% load static from staticfiles %}
+
+{% block title %}
+Create Data Element Concept - Step {{ wizard.steps.step1 }}: {{step_title}}
+{% endblock %}
+
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.wizard.less'|compile %}" />
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle_search.less'|compile %}" />
+{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<h1>Create Data Element Concept - <span><em>Step {{ wizard.steps.step1 }}</em>: {{step_title}}</span></h1>
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width:{{ percent_complete }}%;">
+  </div>
+</div>
+
+
+<aside class="creationTips">
+    {% block creationTips %}{% endblock %}
+</aside>
+
+<form action="" method="post">{% csrf_token %}
+   {{ wizard.management_form }}
+    {% block formarea %}
+       {{ wizard.management_form }}
+    {% endblock %}
+
+    <div class="modal-footer">
+        <button class="btn btn-primary pull-right" type="submit" value="submit">{% trans "Next" %}</button>
+        <a href="{% url 'aristotle:create_list' %}" class="btn btn-danger">{% trans "Cancel" %}</a>
+        {% if wizard.steps.prev %}
+            <!-- button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "First step" %}</button -->
+            <button class="btn btn-default" name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "Back" %}</button>
+        {% endif %}
+    </div>
+</form>
+{% endblock %}
+

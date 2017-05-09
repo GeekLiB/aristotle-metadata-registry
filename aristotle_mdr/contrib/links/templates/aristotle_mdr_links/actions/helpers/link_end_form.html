@@ -1,0 +1,23 @@
+{% load i18n util_tags %}
+
+<div style="display:table">
+{% for f, role in form|izip:roles %}
+    <div style="display:table-row">
+        <label style="display:table-cell"for='{{f.id_for_label}}'>{{f.label}}</label>
+        <div style="display:table-cell">
+            <p>Definition: {{role.definition}}
+            </p>
+            {% if role.multiplicity %}
+                You can select up to {{ role.multiplicity }} 
+                concept{{ multiplicity|pluralize}} for this role for this relationship.
+            {% else %}
+                There is no limit on the number of concepts that fill this
+                role for this relationship.
+            {% endif %}
+        </div>
+        <div style="display:table-cell">
+        {{f}}
+        </div>
+    </div>
+{% endfor %}
+</div>

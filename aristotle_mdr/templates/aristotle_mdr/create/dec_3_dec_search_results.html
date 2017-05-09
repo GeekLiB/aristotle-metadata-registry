@@ -1,0 +1,68 @@
+{% extends "aristotle_mdr/create/dec_template_wrapper.html" %}
+{% load aristotle_tags i18n %}
+
+{% block formarea %}
+    {% if wizard.form.errors %}
+        <div class="alert alert-danger">
+        There were errors saving your {{ model_name }}, please review the errors shown below.
+        {{ wizard.form.errors }}
+            {% if duplicate_items or similar_items %}
+                {% if wizard.form.fields.make_new_item.errors %}
+                    <strong>There were similar items shown on the previous page.
+                    To save this item acknowledge that none of these are suitable or press back to review them again.</strong>
+                    <div class="panel-footer">
+                        {{ wizard.form.make_new_item }}
+                        {{ wizard.form.make_new_item.label }}
+                        {{ wizard.form.make_new_item.errors }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if dec_matches %}
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                There are already Data Element Concepts based on a
+                "<em>{{ oc_match.name }}</em>" and "<em>{{ pr_match.name }}</em>".
+            </div>
+            <div class="panel-body">
+                Reusing existing content makes comparing items in the future easier.
+                <br>Consider reviewing these items to see if an existing piece of content meets your needs.
+                <ol class="searchResults">
+                    {% for obj in dec_matches %}
+                    <li>
+                        {% include "search/searchItem.html" with item=obj %}
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="panel-footer">
+                {{ wizard.form.make_new_item }}
+                {{ wizard.form.make_new_item.label }}
+                {{ wizard.form.make_new_item.errors }}
+            </div>
+        </div>
+    {% elif oc_match and pr_match %}
+        <p>
+            No Data Element Concepts based on "<em>{{ oc_match.name }}</em>" and "<em>{{ pr_match.name }}</em>" were found,
+            so a new one will be created.
+        </p>
+    {% elif oc_match %}
+        <p>
+            You've elected to create a new Property, so you will need to create a new Data Element Concept as well.
+        </p>
+    {% elif pr_match %}
+        <p>
+            You've elected to create a new Object Class, so you will need to create a new Data Element Concept as well.
+        </p>
+    {% else %}
+        <p>
+            You've elected to create a new Object Class and Property, so you will need to create a new Data Element Concept as well.
+        </p>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-10">
+            {% include "aristotle_mdr/create/concept_editor.html" with form=wizard.form %}
+        </div>
+    </div>
+{% endblock %}

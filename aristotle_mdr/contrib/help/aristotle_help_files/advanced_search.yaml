@@ -1,0 +1,138 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: Advanced Search
+    language: en
+    body: >
+      <h2>Restricting search with the advanced search options</h2>
+      <p>
+          The <a href="/search/">search page</a> provides a form that gives users control to filter and sort search results.</p>
+      <p>
+      <img src="{static}/aristotle_mdr/search_filters.png">
+          When searching, the "indexed text" refers to everything crawled by the search engine.
+          This always includes names, definitions, version and comments.
+          Some items will also include additional text from associated items.
+          For example, Data Elements include the text from its related Data Element Concept and Value Domain.</p>
+      
+      <h3><i class="fa fa-eye fa-fw"></i> Only show public items</h3>
+      <p>
+          When logged in, selecting this option limits search results 
+          to only those items that are publically visible to all users,
+          including those without an account.
+          This option is only shown to logged-in users as non-logged in
+          users only have right to view to public content.
+      </p>
+      
+      <h3><i class="fa fa-users fa-fw"></i> Only show items in my workgroups</h3>
+      <p>
+          When searching select this box to limit results to only those items that are within a workgroup a user belongs.
+          This option is only shown to logged-in users.
+      </p>
+      
+      <h3><i class="fa fa-magic fa-fw"></i> Smart spellcheck and filter removal</h3>
+      <p>
+          When searching Aristotle-MDR performs spellchecks against search terms, and if there is
+          a low number of resutls will recommend an alternate search term.
+          <br>
+          Along with this, if a search returns zero results, Aristotle-MDR will remove any filters such as
+          item type or date restrictions to automatically broaden the search corpus.
+          <br>
+          Any time the search is changed, such as spelling correction or filter removal, a notification
+          will appear under the search bar to let users know.
+      </p>
+      
+      
+      <h2>Keyword search shortcuts</h2>
+      <p>
+          When searching there are a few advanced options available to make searching easier.
+          Much like other large scale search engines, these can be entered into any search
+          box using the <tt>keyword:search_term</tt> format.
+      
+      </p>
+      
+      <h3><i class="fa fa-keyboard-o fa-fw"></i> Narrow search results using field name</h3>
+      <p>
+          Field names, such as name, or version, can be used to limit results when searching.
+          These will force the search engine to only return results where terms appear in those fields.
+      </p>
+      <table class="table">
+          <caption>Sample queries are shown below:</caption>
+          <thead>
+              <tr>
+                  <th>Query</th>
+                  <th>Result</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td><code>name:Person</code></td>
+                  <td>Returns items with "Person" in the name</td>
+              </tr>
+              <tr>
+                  <td><code>Person version:1.0.0</code></td>
+                  <td>
+                      Returns items where Person appears anywhere in the indexed text, and also has a version of "1.0.0"
+                      <div class="alert alert-warning" role="alert">Because of the nature of the search engine, search queries
+                      need to be at least 3 characters long.</div>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      
+      
+      <h3><i class="fa fa-puzzle-piece fa-fw"></i> Restrict item types using the <tt>type</tt> keyword</h3>
+      <p>
+          When searching, you can enter a type along with the name of the object type to further restrict your
+          search. The type must not include spaces, which should be removed, or replaced with underscores or hyphens.
+          For an even shorter query, type names can be abbreviated to the first letter of each word in the type name.
+      </p>
+      <p>
+          This is the same as selecting options in the <span class="well well-sm"><i class="fa fa-puzzle-piece fa-fw"></i> Item Type</span> dropdown on the search page.
+      </p>
+      <table class="table">
+          <caption>Sample queries are shown below:</caption>
+          <thead>
+              <tr>
+                  <th>Query</th>
+                  <th>Result</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td><code>Age type:property</code></td>
+                  <td>Returns <em>only properties</em> with "Age" in the text</td>
+              </tr>
+              <tr>
+                  <td><code>Person type:objectclass</code></td>
+                  <td>Returns <em>only Object Classes</em> with "Person" in the text</td>
+              </tr>
+              <tr>
+                  <td><code>Person type:object_class</code></td>
+                  <td>Returns <em>only Object Classes</em> with "Person" in the text</td>
+              </tr>
+              <tr>
+                  <td><code>Person type:oc</code></td>
+                  <td>Abbreviated way to return <em>only Object Classes</em> with "Person" in the text</td>
+              </tr>
+              <tr>
+                  <td><code>Person Age type:dec</code></td>
+                  <td>Abbreviated way to return <em>only Data Element Concepts</em> with "Person" and "Age" in the text</td>
+              </tr>
+              <tr>
+                  <td><code>Person Age type:dec type:de</code></td>
+                  <td>Abbreviated way to return <em>Data Element Concepts <strong>or</strong> Data Elements</em> with "Person" and "Age" in the text</td>
+              </tr>
+          </tbody>
+      </table>
+      <div class="alert alert-info" role="alert">
+          <i class="fa fa-exclamation-circle fa-fw fa-2x pull-left"></i> <header><strong>Keyword queries can be used
+          together to create complex queries.</strong></header>
+          For example, this query - <code>Person Age name:Person type:dec version:1.2.3</code> -
+          searches for items that meet the following criteria:
+          <ul>
+              <li><code>Person Age</code> - "Person" or "Age" in the indexed text</li>
+              <li><code>name:Person</code> - "Person" appearing in the name</li>
+              <li><code>type:dec</code> - Are of the type Data Element Concept</li>
+              <li><code>version:1.2.3</code> - Have a version of "1.2.3"</li>
+          </ul>
+      
+      </div>

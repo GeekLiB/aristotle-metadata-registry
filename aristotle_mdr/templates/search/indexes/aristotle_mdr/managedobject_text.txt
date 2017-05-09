@@ -1,0 +1,11 @@
+{{ object.name }} {{ object.version }}
+{{ object.shortName }}
+{{ object.definition }}
+{{ object.synonyms }}
+{{ object.submitting_organisation }}
+{{ object.responsible_organisation }}
+{% for state in object.statuses.all %}{{ state.state_name }} {% endfor %}
+
+{% for slot in object.slots.all %}
+{{slot.name}} {{slot.value}}
+{% endfor %}

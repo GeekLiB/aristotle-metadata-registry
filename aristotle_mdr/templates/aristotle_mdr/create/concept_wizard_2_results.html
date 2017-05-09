@@ -1,0 +1,85 @@
+{% extends template_name %}
+{% load aristotle_tags i18n %}
+{% block formarea %}
+    {% if wizard.form.errors %}
+        <div class="alert alert-danger">
+
+        There were errors saving your {{ model_name }}, please review the errors shown below.
+        {{ wizard.form.errors }}
+            {% if duplicate_items or similar_items %}
+                {% if wizard.form.fields.make_new_item.errors %}
+                    <strong>There were similar items shown on the previous page.
+                    To save this item acknowledge that none of these are suitable or press back to review them again.</strong>
+                    <div class="panel-footer">
+                        {{ wizard.form.make_new_item }}
+                        {{ wizard.form.make_new_item.label }}
+                        {{ wizard.form.make_new_item.errors }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if duplicate_items %}
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                {{ duplicate_items.count }} items were found with a the name "<em>{{ search_name }}</em>".
+            </div>
+            <div class="panel-body">
+                Reusing existing content makes comparing items in the future easier.
+                <br>Consider reviewing these items to see if an existing piece of content meets your needs.
+                <ol class="searchResults">
+                    {% for obj in duplicate_items %}
+                    <li>
+                        {# <input type='checkbox'> #}
+                        {% include "search/searchItem.html" with item=obj %}
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="panel-footer">
+                {{ wizard.form.make_new_item }}
+                {{ wizard.form.make_new_item.label }}
+                {{ wizard.form.make_new_item.errors }}
+            </div>
+        </div>
+    {% elif similar_items %}
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                {{ similar_items.count }} items were found with a content similar to "<em>{{ search_name }}</em>".
+            </div>
+            <div class="panel-body">
+                Reusing existing content makes comparing items in the future easier.
+                <br>Consider reviewing these similar items to see if an existing piece of content meets your needs.
+                <ol class="searchResults">
+                    {% for obj in similar_items %}
+                    <li>
+                        {# <input type='checkbox'> #}
+                        {% include "search/searchItem.html" with item=obj.object %}
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="panel-footer">
+                {{ wizard.form.make_new_item }}
+                {{ wizard.form.make_new_item.label }}
+                {{ wizard.form.make_new_item.errors }}
+            </div>
+        </div>
+    {% else %}
+        <p class='well'>
+            No matching items were found for reuse, so this wizard will help you create a new one.
+        </p>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-12">
+            {% include "aristotle_mdr/create/concept_editor.html" with form=wizard.form %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block next_button %}
+    <button type="submit" class="btn btn-primary" value="{% trans "submit" %}">
+        {% trans "Save" %}
+        <i class="fa fa-save"></i>
+    </button>
+{% endblock %}

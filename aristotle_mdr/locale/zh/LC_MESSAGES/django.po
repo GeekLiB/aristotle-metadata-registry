@@ -1,0 +1,1650 @@
+# Aristotle-MDR translation file.
+# Copyright (C) 2015
+# This file is distributed under the same license as the Aristotle-MDR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.0.1a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-19 22:55-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+
+#: aristotle_mdr/contrib/browse/views.py:27
+#, fuzzy
+msgid "No name"
+msgstr "无名"
+
+#: aristotle_mdr/contrib/help/forms.py:20 aristotle_mdr/forms/search.py:20
+#, fuzzy
+msgid "Any time"
+msgstr "任何时候"
+
+#: aristotle_mdr/contrib/help/forms.py:21 aristotle_mdr/forms/search.py:21
+#, fuzzy
+msgid "Last hour"
+msgstr "上一个小时"
+
+#: aristotle_mdr/contrib/help/forms.py:22 aristotle_mdr/forms/search.py:22
+#, fuzzy
+msgid "Today"
+msgstr "今天"
+
+#: aristotle_mdr/contrib/help/forms.py:23 aristotle_mdr/forms/search.py:23
+#, fuzzy
+msgid "This week"
+msgstr "本星期"
+
+#: aristotle_mdr/contrib/help/forms.py:24 aristotle_mdr/forms/search.py:24
+#, fuzzy
+msgid "This month"
+msgstr "这个月"
+
+#: aristotle_mdr/contrib/help/forms.py:25 aristotle_mdr/forms/search.py:25
+#, fuzzy
+msgid "This year"
+msgstr "今年"
+
+#: aristotle_mdr/contrib/help/forms.py:26 aristotle_mdr/forms/search.py:26
+#, fuzzy
+msgid "Custom period"
+msgstr "自定义周期"
+
+#: aristotle_mdr/contrib/help/forms.py:31 aristotle_mdr/forms/search.py:31
+#, fuzzy
+msgid "Ranking"
+msgstr "排行"
+
+#: aristotle_mdr/contrib/help/forms.py:32 aristotle_mdr/forms/search.py:32
+#, fuzzy
+msgid "Modified ascending"
+msgstr "修改升"
+
+#: aristotle_mdr/contrib/help/forms.py:33 aristotle_mdr/forms/search.py:33
+#, fuzzy
+msgid "Modified descending"
+msgstr "修改降"
+
+#: aristotle_mdr/contrib/help/forms.py:34 aristotle_mdr/forms/search.py:34
+#, fuzzy
+msgid "Created ascending"
+msgstr "创建升序"
+
+#: aristotle_mdr/contrib/help/forms.py:35 aristotle_mdr/forms/search.py:35
+#, fuzzy
+msgid "Created descending"
+msgstr "创建下降"
+
+#: aristotle_mdr/contrib/help/forms.py:36 aristotle_mdr/forms/search.py:36
+#, fuzzy
+msgid "Alphabetical"
+msgstr "按字母顺序"
+
+#: aristotle_mdr/contrib/help/forms.py:37 aristotle_mdr/forms/search.py:37
+#, fuzzy
+msgid "Registration state"
+msgstr "注册状态"
+
+#: aristotle_mdr/contrib/help/forms.py:285 aristotle_mdr/forms/search.py:285
+#, fuzzy
+msgid "Registration authority"
+msgstr "登记机关"
+
+#: aristotle_mdr/contrib/help/forms.py:302 aristotle_mdr/forms/search.py:302
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:3
+#, fuzzy
+msgid "Registration status"
+msgstr "注册状态"
+
+#: aristotle_mdr/contrib/help/forms.py:316 aristotle_mdr/forms/search.py:316
+#, fuzzy
+msgid "Item type"
+msgstr "物品种类"
+
+#: aristotle_mdr/contrib/help/models.py:24
+#, fuzzy
+msgid "Add an app for app specific help, required for concept help"
+msgstr "添加应用程序特定的帮助应用程序，用于帮助观念需要"
+
+#: aristotle_mdr/contrib/help/models.py:27
+#, fuzzy
+msgid "A short title for the help page"
+msgstr "短标题帮助页面"
+
+#: aristotle_mdr/contrib/help/models.py:31
+#, fuzzy
+msgid "A long help definition for an object or topic"
+msgstr "对象或主题的长期帮助下定义"
+
+#: aristotle_mdr/contrib/help/models.py:57
+#, fuzzy
+msgid "A short description of the concept"
+msgstr "这个概念的简短描述"
+
+#: aristotle_mdr/contrib/help/models.py:61
+#, fuzzy
+msgid ""
+"An official description of the concept, e.g. the ISO/IEC definition for an "
+"Object Class"
+msgstr "概念的官方说明，如ISO / IEC定义对象类"
+
+#: aristotle_mdr/contrib/help/models.py:65
+#, fuzzy
+msgid "The reference document that describes this concept type"
+msgstr "描述这个概念类型参考文件"
+
+#: aristotle_mdr/contrib/help/models.py:69
+#, fuzzy
+msgid "An link to an official source for a description of the concept"
+msgstr "一份官方来源的链接，这个概念的描述"
+
+#: aristotle_mdr/contrib/help/models.py:73
+#, fuzzy
+msgid "Instructions for creating good content of this type"
+msgstr "有关创建这种类型的好内容"
+
+#: aristotle_mdr/contrib/help/models.py:102
+#, python-format, fuzzy
+msgid "Help for concept type %s"
+msgstr "帮助概念型 %s"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/all_help.html:28
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/base.html:25
+#: aristotle_mdr/templates/aristotle_mdr/header.html:35
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:17
+#: aristotle_mdr/templates/search/search.html:21
+#: aristotle_mdr/templates/search/search.html:30
+#: aristotle_mdr/views/wizards.py:644
+#, fuzzy
+msgid "Search"
+msgstr "搜索"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/base.html:21
+#, fuzzy
+msgid "Search help"
+msgstr "搜索帮助"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/concept_help.html:20
+#, fuzzy
+msgid "Click to view the official source"
+msgstr "点击查看官方消息"
+
+#: aristotle_mdr/forms/admin.py:23 aristotle_mdr/forms/admin.py:24
+#: aristotle_mdr/forms/admin.py:25 aristotle_mdr/forms/admin.py:26
+#, fuzzy
+msgid "workgroups"
+msgstr "工作组"
+
+#: aristotle_mdr/forms/admin.py:29
+#, fuzzy
+msgid "registration authorities"
+msgstr "登记机构"
+
+#: aristotle_mdr/forms/bulk_actions.py:115
+#, fuzzy
+msgid "Add bookmark"
+msgstr "添加书签"
+
+#: aristotle_mdr/forms/bulk_actions.py:123
+#, fuzzy, python-format
+msgid ""
+"%(num_items)s items favourited. \n"
+"Some items failed, they had the id's: %(bad_ids)s"
+msgstr "%(num_items)s 物品收藏最多。有些项目失败了，他们有ID的： %(bad_ids)s"
+
+#: aristotle_mdr/forms/bulk_actions.py:133
+#, fuzzy
+msgid "Remove bookmark"
+msgstr "删除书签"
+
+#: aristotle_mdr/forms/bulk_actions.py:138
+#, fuzzy, python-format
+msgid "%(num_items)s items removed from favourites"
+msgstr "从收藏夹中删除%(num_items)s 项目"
+
+#: aristotle_mdr/forms/bulk_actions.py:144
+#, fuzzy
+msgid "Change state"
+msgstr "更改状态"
+
+#: aristotle_mdr/forms/bulk_actions.py:179
+#, fuzzy, python-format
+msgid ""
+"%(num_items)s items registered in %(num_ra)s registration authorities. \n"
+"Some items failed, they had the id's: %(bad_ids)s"
+msgstr "%(num_items)s 在 %(num_ra)s 登记机关登记的项目。有些项目失败了，他们有ID的： %(bad_ids)s"
+
+#: aristotle_mdr/forms/creation_wizards.py:42
+#, fuzzy
+msgid "You do not have permission to move an item between workgroups."
+msgstr "您没有权限工作组之间移动项目。"
+
+#: aristotle_mdr/forms/creation_wizards.py:43
+#, fuzzy
+msgid "You do not have permission to remove an item from this workgroup."
+msgstr "您没有权限在此工作组中删除项目。"
+
+#: aristotle_mdr/forms/creation_wizards.py:44
+#, fuzzy
+msgid "You do not have permission to move an item to that workgroup."
+msgstr "您没有权限的项目移动到该工作组。"
+
+#: aristotle_mdr/forms/creation_wizards.py:69
+#, fuzzy
+msgid ""
+"The object you are editing has been changed, review the changes before "
+"continuing then if you wish to save your changes click the Save button "
+"below."
+msgstr "您正在编辑的对象已经改变，继续审查前再更改，如果你想保存更改，请单击下面的保存按钮。"
+
+#: aristotle_mdr/forms/creation_wizards.py:72
+#, fuzzy
+msgid ""
+"Unable to determine if this save will overwrite an existing save. Please try"
+" again. "
+msgstr "无法确定是否该救将覆盖现有的保存。请再试一次。"
+
+#: aristotle_mdr/forms/creation_wizards.py:179
+#: aristotle_mdr/forms/creation_wizards.py:340
+#, fuzzy
+msgid ""
+"I've reviewed these items, and none of them meet my needs. Make me a new "
+"one."
+msgstr "我查看了这些项目，其中没有满足我的需求。让我一个新的。"
+
+#: aristotle_mdr/forms/creation_wizards.py:259
+#: aristotle_mdr/forms/creation_wizards.py:356
+#, fuzzy
+msgid "I've reviewed these items, and wish to create them."
+msgstr "我查看了这些项目，并希望创建它们。"
+
+#: aristotle_mdr/forms/forms.py:18
+#, fuzzy
+msgid "First Name"
+msgstr "名字"
+
+#: aristotle_mdr/forms/forms.py:19
+#, fuzzy
+msgid "Last Name"
+msgstr "姓"
+
+#: aristotle_mdr/forms/forms.py:20
+#, fuzzy
+msgid "Email Address"
+msgstr "电子邮件地址"
+
+#: aristotle_mdr/forms/forms.py:45
+#, fuzzy
+msgid "Supersede older items"
+msgstr "取代旧项目"
+
+#: aristotle_mdr/forms/forms.py:66 aristotle_mdr/forms/forms.py:85
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:102
+#, fuzzy
+msgid "Superseded by"
+msgstr "所取代"
+
+#: aristotle_mdr/forms/forms.py:104
+#, fuzzy
+msgid "Registration date"
+msgstr "注册日期"
+
+#: aristotle_mdr/forms/forms.py:111
+#, fuzzy
+msgid "Do you want to update the registration of associated items?"
+msgstr "你想更新相关项目的注册？"
+
+#: aristotle_mdr/forms/forms.py:116
+#, fuzzy
+msgid "Why is the status being changed for these items?"
+msgstr "为什么状态正在改变这些项目吗？"
+
+#: aristotle_mdr/forms/forms.py:164 aristotle_mdr/forms/forms.py:184
+#, fuzzy
+msgid "First item"
+msgstr "第一项"
+
+#: aristotle_mdr/forms/forms.py:171 aristotle_mdr/forms/forms.py:191
+#, fuzzy
+msgid "Second item"
+msgstr "第二项"
+
+#: aristotle_mdr/forms/workgroups.py:12
+#, fuzzy
+msgid "Workgroup roles"
+msgstr "工作组的角色"
+
+#: aristotle_mdr/forms/workgroups.py:17
+#, fuzzy
+msgid "Select users"
+msgstr "选择用户"
+
+#: aristotle_mdr/models.py:37
+#, fuzzy
+msgid "Not Progressed"
+msgstr "没有取得进展"
+
+#: aristotle_mdr/models.py:38
+#, fuzzy
+msgid "Incomplete"
+msgstr "残缺"
+
+#: aristotle_mdr/models.py:39
+#: aristotle_mdr/tests/querysets/test_querysets.py:68
+#, fuzzy
+msgid "Candidate"
+msgstr "候选人"
+
+#: aristotle_mdr/models.py:40
+#: aristotle_mdr/tests/querysets/test_querysets.py:69
+#, fuzzy
+msgid "Recorded"
+msgstr "记录"
+
+#: aristotle_mdr/models.py:41
+#, fuzzy
+msgid "Qualified"
+msgstr "合格"
+
+#: aristotle_mdr/models.py:42
+#: aristotle_mdr/tests/querysets/test_querysets.py:71
+#, fuzzy
+msgid "Standard"
+msgstr "标准"
+
+#: aristotle_mdr/models.py:43
+#, fuzzy
+msgid "Preferred Standard"
+msgstr "首选标准"
+
+#: aristotle_mdr/models.py:44
+#, fuzzy
+msgid "Superseded"
+msgstr "取代"
+
+#: aristotle_mdr/models.py:45
+#: aristotle_mdr/tests/querysets/test_querysets.py:74
+#, fuzzy
+msgid "Retired"
+msgstr "退休"
+
+#: aristotle_mdr/models.py:54
+#, fuzzy
+msgid "The primary name used for human identification purposes."
+msgstr "用于人类识别目的的主名称。"
+
+#: aristotle_mdr/models.py:57
+#, fuzzy
+msgid "definition"
+msgstr "定义"
+
+#: aristotle_mdr/models.py:58
+#, fuzzy
+msgid ""
+"Representation of a concept by a descriptive statement which serves to "
+"differentiate it from related concepts"
+msgstr "通过供应一个描述性语句的概念表示，从相关概念区分开来"
+
+#: aristotle_mdr/models.py:159
+#, fuzzy
+msgid "Managers"
+msgstr "经理"
+
+#: aristotle_mdr/models.py:192
+#, fuzzy
+msgid "Registrars"
+msgstr "登记"
+
+#: aristotle_mdr/models.py:218 aristotle_mdr/models.py:354
+#: aristotle_mdr/models.py:390
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:27
+#, fuzzy
+msgid "Registration Authorities"
+msgstr "登记机构"
+
+#: aristotle_mdr/models.py:269
+#, fuzzy, python-format
+msgid "Cascade registration of item '%(name)s' (id:%(iid)s)\n"
+msgstr "项目&#39;%(name)s&#39;注册级联（ID：__ iid__）\n"
+
+#: aristotle_mdr/models.py:353
+#, fuzzy
+msgid "Registry"
+msgstr "注册"
+
+#: aristotle_mdr/models.py:373
+#, fuzzy
+msgid ""
+"Specifies the 'owner' of the content of the workgroup. Selecting 'registry' "
+"allows any registration authority to progress and make items public, "
+"'Registration authorities' specifies that only registration authorities "
+"associated with this workgroup may control their visibility."
+msgstr ""
+"指定的工作组的内容的“所有者”。选择“注册表”允许任何登记机关进步做出公开的项目，“登记管理机关”指定只与此相关的工作组登记机构可以控制自己的知名度。"
+
+#: aristotle_mdr/models.py:382
+#, fuzzy
+msgid ""
+"Archived workgroups can no longer have new items or discussions created "
+"within them."
+msgstr "存档的工作组不能再有新的项目或在其中创建的讨论。"
+
+#: aristotle_mdr/models.py:384
+#, fuzzy
+msgid "Archived"
+msgstr "存档"
+
+#: aristotle_mdr/models.py:397
+#, fuzzy
+msgid "Viewers"
+msgstr "观众"
+
+#: aristotle_mdr/models.py:403
+#, fuzzy
+msgid "Submitters"
+msgstr "提交者"
+
+#: aristotle_mdr/models.py:409
+#, fuzzy
+msgid "Stewards"
+msgstr "管家"
+
+#: aristotle_mdr/models.py:413
+#, fuzzy
+msgid "Submitter"
+msgstr "提交"
+
+#: aristotle_mdr/models.py:414
+#, fuzzy
+msgid "Viewer"
+msgstr "查看器"
+
+#: aristotle_mdr/models.py:415
+#, fuzzy
+msgid "Steward"
+msgstr "管家"
+
+#: aristotle_mdr/models.py:416
+#, fuzzy
+msgid "Manager"
+msgstr "经理"
+
+#: aristotle_mdr/models.py:929
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:20
+#, fuzzy
+msgid "Date registration effective"
+msgstr "注册日期有效"
+
+#: aristotle_mdr/models.py:931
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:21
+#, fuzzy
+msgid "Date registration expires"
+msgstr "注册日期过期"
+
+#: aristotle_mdr/models.py:1019 aristotle_mdr/models.py:1077
+#, fuzzy
+msgid "description"
+msgstr "描述"
+
+#: aristotle_mdr/register.py:135
+#, fuzzy, python-format
+msgid "Extra fields for %(class_name)s"
+msgstr "对于 %(class_name)s额外的字段"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:88
+#, fuzzy
+msgid "Return to the main site"
+msgstr "返回到主网站"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:105
+#, fuzzy
+msgid "Browse live documentation"
+msgstr "浏览文档直播"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:105
+#, fuzzy
+msgid "Documentation"
+msgstr "文档"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:110
+#: aristotle_mdr/templates/aristotle_mdr/header.html:46
+#, fuzzy
+msgid "Open user menu"
+msgstr "打开用户菜单"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:120
+#: aristotle_mdr/templates/aristotle_mdr/header.html:56
+#, fuzzy
+msgid "My Dashboard"
+msgstr "我的仪表盘"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:122
+#: aristotle_mdr/templates/aristotle_mdr/header.html:79
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:75
+#, fuzzy
+msgid "Change password"
+msgstr "更改密码"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:125
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:140
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:142
+#: aristotle_mdr/templates/aristotle_mdr/header.html:152
+#: aristotle_mdr/templates/aristotle_mdr/header.html:154
+#, fuzzy
+msgid "Log out"
+msgstr "登出"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:133
+#: aristotle_mdr/templates/aristotle_mdr/header.html:141
+#: aristotle_mdr/templates/aristotle_mdr/header.html:142
+#, fuzzy
+msgid "New notifications"
+msgstr "新通知"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:135
+#: aristotle_mdr/templates/aristotle_mdr/header.html:144
+#: aristotle_mdr/templates/aristotle_mdr/header.html:145
+#, fuzzy
+msgid "No unread notifications"
+msgstr "没有未读通知"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:161
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:4
+#, fuzzy
+msgid "Home"
+msgstr "家"
+
+#: aristotle_mdr/templates/admin/submit_line.html:7
+#: aristotle_mdr/tests/apps/bulk_actions_test/actions.py:7
+#, fuzzy
+msgid "Delete"
+msgstr "删除"
+
+#: aristotle_mdr/templates/admin/submit_line.html:11
+#, fuzzy
+msgid "Cancel editing and return to main site"
+msgstr "取消编辑并返回到主站点"
+
+#: aristotle_mdr/templates/admin/submit_line.html:13
+#, fuzzy
+msgid "Exit without saving"
+msgstr "不保存退出"
+
+#: aristotle_mdr/templates/admin/submit_line.html:16
+#, fuzzy
+msgid "Save and return to item"
+msgstr "保存并返回到项目"
+
+#: aristotle_mdr/templates/admin/submit_line.html:19
+#, fuzzy
+msgid "Save as new"
+msgstr "另存为新"
+
+#: aristotle_mdr/templates/admin/submit_line.html:22
+#, fuzzy
+msgid "Save and add another"
+msgstr "保存并添加另一个"
+
+#: aristotle_mdr/templates/admin/submit_line.html:25
+#, fuzzy
+msgid "Save and continue editing"
+msgstr "保存并继续编辑"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:24
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:6
+#, fuzzy
+msgid "This item has been superseded by the newer version,"
+msgstr "此项目已被新版本取代，"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:30
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:11
+#, fuzzy
+msgid ""
+"This item has been retired and is not recommended for use by any "
+"registration authority."
+msgstr "此产品已退休，不推荐任何登记机关使用。"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:37
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:16
+#, fuzzy
+msgid "This item is currently public."
+msgstr "此产品目前处于公开状态。"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:41
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:20
+#, fuzzy
+msgid "This item is currently under development."
+msgstr "目前这款产品正在开发中。"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:42
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:44
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:35
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:37
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:49
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:37
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:17
+#: aristotle_mdr/templates/registration/password_change_form.html:46
+#, fuzzy
+msgid "Cancel"
+msgstr "取消"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:48
+#, fuzzy
+msgid "Reactivate"
+msgstr "重新激活"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:50
+#, fuzzy
+msgid "Archive"
+msgstr "档案"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/autocompleteItem.html:10
+#, fuzzy
+msgid "Open in a new window"
+msgstr "打开新窗口"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:25
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:118
+#, fuzzy
+msgid "Select a new state to see how the visibility of this item will change."
+msgstr "选择一个新的状态，怎么看这个项目的可见性会发生变化。"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:115
+#, fuzzy
+msgid "After saving, this item will stay VISIBILITY_STATUS"
+msgstr "保存后，此项目将留VISIBILITY_STATUS"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:117
+#, fuzzy
+msgid "After saving, this item will become VISIBILITY_STATUS"
+msgstr "保存后，该项目将成为VISIBILITY_STATUS"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:120
+#, fuzzy
+msgid "hidden"
+msgstr "隐"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:121
+#, fuzzy
+msgid "locked"
+msgstr "锁定"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:122
+#, fuzzy
+msgid "public"
+msgstr "上市"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:61
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:34
+#, fuzzy
+msgid "There are no differences."
+msgstr "有没有差异。"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:69
+#, fuzzy
+msgid "Fields below are identical for both items."
+msgstr "下面的字段是两个项目是相同的。"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:80
+#, fuzzy
+msgid "Blank for both items"
+msgstr "空白两个项目"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:87
+#, fuzzy
+msgid "There are no similarities."
+msgstr "有没有相似之处。"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:98
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:123
+#, fuzzy
+msgid "Fields below are only on "
+msgstr "下面的字段只在"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:109
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:135
+#, fuzzy
+msgid "Blank"
+msgstr "空白"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:14
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history_compare.html:18
+#, fuzzy
+msgid "Version history"
+msgstr "版本历史记录"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:20
+#, fuzzy
+msgid "Date"
+msgstr "日期"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:21
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:14
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:22
+#, fuzzy
+msgid "Comment"
+msgstr "评论"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:22
+#: aristotle_mdr/templates/aristotle_mdr/header.html:127
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:21
+#, fuzzy
+msgid "User"
+msgstr "用户"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:41
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:36
+#, fuzzy
+msgid "No version comment made"
+msgstr "再没版本注释"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history_compare.html:20
+#, fuzzy
+msgid "Compare"
+msgstr "比较"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:41
+#, fuzzy
+msgid "Remove ready to review flag"
+msgstr "取出准备审查标志"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:43
+#, fuzzy
+msgid "Ready to review"
+msgstr "准备复习"
+
+#: aristotle_mdr/templates/aristotle_mdr/base.html:40
+#, fuzzy
+msgid "Loading"
+msgstr "加载"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:21
+#, fuzzy
+msgctxt "Object Type"
+msgid "Type"
+msgstr "类型"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:29
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:97
+#, fuzzy
+msgid "Short name"
+msgstr "简称"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:32
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:25
+#, fuzzy
+msgid "Version"
+msgstr "版"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:35
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:100
+#, fuzzy
+msgid "Synonyms"
+msgstr "同义词"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:38
+#, fuzzy
+msgid "Origin URI"
+msgstr "产地URI"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:55
+#, fuzzy
+msgid "Last updated"
+msgstr "最近更新时间"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:72
+#, fuzzy
+msgid "This may have been added during an import."
+msgstr "这可能会在导入过程中已被添加。"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:72
+#, fuzzy
+msgctxt "Unknown import user"
+msgid "Unknown"
+msgstr "未知"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:77
+#, fuzzy
+msgid "Created"
+msgstr "创建"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:83
+#, fuzzy
+msgid "Supersedes"
+msgstr "取代"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:97
+#, fuzzy
+msgctxt "No older objects"
+msgid "None"
+msgstr "没有"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:112
+#, fuzzy
+msgctxt "No newer objects"
+msgid "None"
+msgstr "没有"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:118
+#: aristotle_mdr/templates/aristotle_mdr/header.html:123
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:24
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:16
+#, fuzzy
+msgid "Workgroup"
+msgstr "工作组"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:120
+#, fuzzy
+msgid "History"
+msgstr "历史"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:121
+#, fuzzy
+msgid "View history"
+msgstr "查看历史记录"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:122
+#: aristotle_mdr/templates/aristotle_mdr/header.html:69
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:63
+#, fuzzy
+msgid "Discussions"
+msgstr "讨论"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:132
+#, fuzzy
+msgid "Start a new discussion about this item"
+msgstr "启动这个项目的新讨论"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:33
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:54
+#, fuzzy
+msgid "Edit in admin"
+msgstr "编辑在管理"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:35
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:51
+#, fuzzy
+msgid "Open item editor"
+msgstr "打开项目编辑器"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:46
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:72
+#, fuzzy
+msgid "Edit"
+msgstr "编辑"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:59
+#, fuzzy
+msgid "Clone this item"
+msgstr "克隆此项目"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:63
+#, fuzzy
+msgid "Clone this item via admin"
+msgstr "通过克隆管理员此项目"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:79
+#, fuzzy
+msgid "Download"
+msgstr "下载"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:89
+#, fuzzy
+msgid "Definition"
+msgstr "定义"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:24
+#, fuzzy
+msgid "This item is under active development. Content may change frequently."
+msgstr "此项目正在积极发展。内容可能会经常发生变化。"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:34
+#, fuzzy
+msgid ""
+"This item has been marked as ready to review, but has not yet been "
+"registered in an authority."
+msgstr "此项目已被标记为准备审查，但尚未在规范注册。"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:36
+#, fuzzy
+msgid ""
+"The visibility of this item is still restricted to your current workgroup."
+msgstr "此项目的可见性仍然受限于当前的工作组。"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:42
+#, fuzzy
+msgid ""
+"\n"
+"                <p>You can control the visibility of this item by indicating its review status.\n"
+"                If an item is marked \"ready for review\", registrars will be able to see this item and\n"
+"                begin the standardisation process according to their registration authority.\n"
+"                </p>\n"
+"                "
+msgstr ""
+"\n"
+"<p>您可以通过指示其审核状态控制该项目的知名度。如果一个项目被标记为“准备复审”，注册商将可以看到这个项目，并根据其登记机关开始标准化进程。 </p>"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:51
+#, fuzzy
+msgid "Remove ready for review flag"
+msgstr "取出准备审核标志"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:53
+#, fuzzy
+msgid "Flag as ready for review"
+msgstr "标志为准备复习"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/clone_item.html:16
+#, fuzzy
+msgid "Cloning"
+msgstr "克隆"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/clone_item.html:19
+#, fuzzy
+msgid ""
+"\n"
+"            Reusing existing metadata helps users find and compare similar items. Cloning and item should only be done where a similar but clearly different item exists and can be used as a template for quickly creating a new item in the registry.\n"
+"            "
+msgstr ""
+"\n"
+"重用现有的元数据可以帮助用户查找和比较类似物品。其中，一个类似的但明显不同的产品存在，并且可以被用作用于在注册表中快速建立一个新的项的模板克隆和项目只应完成。"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:8
+#, fuzzy
+msgctxt "creating items"
+msgid "Definition"
+msgstr "定义"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:15
+#, fuzzy
+msgctxt "For making an item"
+msgid "Components"
+msgstr "组件"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:19
+#, fuzzy
+msgctxt "When saving changes to an item"
+msgid "Change message"
+msgstr "变更信息"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:23
+#, fuzzy
+msgctxt "creating items"
+msgid "Tips and help"
+msgstr "提示和帮助"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:144
+#, fuzzy
+msgid ""
+"\n"
+"                If it is left blank an automatic messages stating which fields\n"
+"                have been changed will be generated on your behalf.\n"
+"                </p>\n"
+"                <p>However, stating <em>why</em> values in fields have changed\n"
+"                can be much more useful than knowing that a field has changed.\n"
+"                "
+msgstr ""
+"\n"
+"如果是空白的自动消息，指出哪些字段已被更改将代表您生成。 </p><p>然而，说明<em>为什么</em>在字段中的值已经改变可以比知道一个字段已经改变更为有用。"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:25
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:46
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:39
+#, fuzzy
+msgid "First step"
+msgstr "第一步"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:28
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:47
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:40
+#, fuzzy
+msgid "Back"
+msgstr "背部"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:31
+#, fuzzy
+msgid "submit"
+msgstr "提交"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:32
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:36
+#: aristotle_mdr/views/wizards.py:637
+#, fuzzy
+msgid "Next"
+msgstr "下一个"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:5
+#, fuzzy
+msgid "Create New Items"
+msgstr "创建新项目"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:16
+#: aristotle_mdr/templates/aristotle_mdr/header.html:91
+#, fuzzy
+msgid "Management interface"
+msgstr "管理接口"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:24
+#: aristotle_mdr/templates/aristotle_mdr/header.html:103
+#: aristotle_mdr/templates/aristotle_mdr/header.html:105
+#, fuzzy
+msgid "Create new"
+msgstr "创建新的"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:25
+#, fuzzy
+msgid "Help"
+msgstr "帮帮我"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:26
+#, fuzzy
+msgid "Basic description"
+msgstr "基本描述"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:39
+#, fuzzy
+msgid "Get more help on this item"
+msgstr "得到更多的帮助就这一项目"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:59
+#, fuzzy
+msgid "My Favourites"
+msgstr "我的最爱"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:63
+#, fuzzy
+msgid "Notifications"
+msgstr "通知"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:72
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:32
+#, fuzzy
+msgid "Workgroups"
+msgstr "工作组"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:75
+#, fuzzy
+msgid "Recent actions"
+msgstr "最近的行动"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:85
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:88
+#, fuzzy
+msgid "Registrar tools"
+msgstr "注册商工具"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:96
+#, fuzzy
+msgid "Admin tools"
+msgstr "管理工具"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:119
+#, fuzzy
+msgid "Admin only"
+msgstr "只有管​​理员"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:133
+#, fuzzy
+msgid "See all"
+msgstr "查看全部"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:139
+#, fuzzy
+msgid "Show recent notifications"
+msgstr "显示最近的通知"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:160
+#: aristotle_mdr/templates/registration/password_reset_complete.html:10
+#, fuzzy
+msgid "Log in"
+msgstr "登录"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/favourite_concept.html:11
+#, fuzzy, python-format
+msgid "Favourited by %(count)s users "
+msgstr "通过 %(count)s 用户收藏最多"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_list.html:14
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:14
+#, fuzzy
+msgid "Concept"
+msgstr "概念"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_list.html:32
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:33
+#, fuzzy
+msgid "Last modified"
+msgstr "上一次更改"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:15
+#, fuzzy
+msgid "Updated"
+msgstr "更新"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:16
+#, fuzzy
+msgid "Items"
+msgstr "项目"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:3
+#, fuzzy
+msgid "Filter workgroups by name and description"
+msgstr "过滤器的工作组名称和描述"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:25
+#, fuzzy
+msgid "Ownership"
+msgstr "所有权"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:37
+#, fuzzy
+msgid "Number of members"
+msgstr "成员数"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:47
+#, fuzzy
+msgid "Number of items"
+msgstr "项目数"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:65
+#, fuzzy
+msgid "None"
+msgstr "没有"
+
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:22
+#, fuzzy
+msgid "State"
+msgstr "州"
+
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:44
+#, fuzzy
+msgid "This item has not yet been registered by any authority"
+msgstr "此产品尚未注册的任何权力"
+
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:15
+#, fuzzy
+msgctxt "Front page search options"
+msgid "More options"
+msgstr "更多的选择"
+
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:13
+#, fuzzy
+msgid "View registration history"
+msgstr "查看注册历史记录"
+
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:29
+#: aristotle_mdr/templates/search/search.html:245
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:104
+#, fuzzy
+msgid "Not registered"
+msgstr "未注册"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:4
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:5
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:11
+#, fuzzy
+msgid "My Recent Actions"
+msgstr "我最近的操作"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userInbox.html:59
+#, fuzzy
+msgid "in"
+msgstr "在"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:24
+#, fuzzy
+msgid "All messages"
+msgstr "所有消息"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:38
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:56
+#, fuzzy
+msgid "Archived Workgroups"
+msgstr "工作组存档"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:67
+#, fuzzy
+msgid "Recent Actions"
+msgstr "最近的行动"
+
+#. Translators: A link to the list of things to be reviewed.
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:94
+#, fuzzy
+msgid "Review list"
+msgstr "审查清单"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:103
+#, fuzzy
+msgid "Administrator tools"
+msgstr "管理员工具"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:109
+#, fuzzy
+msgid "Registry Statistics"
+msgstr "注册统计"
+
+#: aristotle_mdr/templates/aristotle_mdr/workgroupMembers.html:4
+#, fuzzy
+msgid "members"
+msgstr "会员"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:9
+#, fuzzy
+msgid "Apply change"
+msgstr "应用变革"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:11
+#, fuzzy
+msgid "Save"
+msgstr "保存"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:15
+#, fuzzy
+msgid "Cancel change"
+msgstr "取消变化"
+
+#: aristotle_mdr/templates/registration/password_change_done.html:7
+#, fuzzy
+msgid "Your password was changed."
+msgstr "您的密码已更改。"
+
+#: aristotle_mdr/templates/registration/password_change_form.html:3
+#: aristotle_mdr/templates/registration/password_change_form.html:6
+#, fuzzy
+msgid "Password change"
+msgstr "密码更改"
+
+#: aristotle_mdr/templates/registration/password_change_form.html:13
+#, fuzzy
+msgid "Please correct the error below."
+msgstr "请更正下面的错误。"
+
+#: aristotle_mdr/templates/registration/password_change_form.html:13
+#, fuzzy
+msgid "Please correct the errors below."
+msgstr "请更正以下错误。"
+
+#: aristotle_mdr/templates/registration/password_change_form.html:18
+#, fuzzy
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new"
+" password twice so we can verify you typed it in correctly."
+msgstr "请输入您的旧密码，为了安全起见，然后输入两次新密码，以便我们确认您的输入正确无误。"
+
+#: aristotle_mdr/templates/registration/password_change_form.html:47
+#, fuzzy
+msgid "Change my password"
+msgstr "更改我的密码"
+
+#: aristotle_mdr/templates/registration/password_reset_complete.html:9
+#, fuzzy
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr "您的密码已设置。你可以继续前进，现在登录。"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:6
+#, fuzzy
+msgid "Select two items and click compare to see the differences between them"
+msgstr "选择两项产品进行比较，看它们之间的差异"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:14
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:16
+#, fuzzy
+msgid "compare"
+msgstr "比较"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:20
+#, fuzzy
+msgid "Date/time"
+msgstr "约会时间"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:40
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:42
+#, fuzzy
+msgid "DATETIME_FORMAT"
+msgstr "DATETIME_FORMAT"
+
+#: aristotle_mdr/templates/reversion-compare/compare_links_partial.html:2
+#, fuzzy
+msgid "previous"
+msgstr "以前"
+
+#: aristotle_mdr/templates/reversion-compare/compare_links_partial.html:3
+#, fuzzy
+msgid "next"
+msgstr "下一个"
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:5
+#, fuzzy
+msgid "Edit comment:"
+msgstr "编辑点评："
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:17
+#, fuzzy
+msgid "Note:"
+msgstr "注意："
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:19
+#, fuzzy
+msgid ""
+"\n"
+"        Fields/entries marked with <sup class=\"follow\">*</sup> are not under reversion control.\n"
+"        It may be that not all marked information are correct.\n"
+"    "
+msgstr ""
+"\n"
+"标有<sup class=\"follow\">*的</sup>字段/条目不复归控制之下。这可能是因为并不是所有的标志信息是正确的。"
+
+#: aristotle_mdr/templates/search/search.html:21
+#, fuzzy
+msgctxt "Search results"
+msgid "results"
+msgstr "结果"
+
+#: aristotle_mdr/templates/search/search.html:61
+#, fuzzy
+msgid "Toggle navigation"
+msgstr "切换导航"
+
+#: aristotle_mdr/templates/search/search.html:66
+#, fuzzy
+msgctxt "Advanced search"
+msgid "Advanced"
+msgstr "高级"
+
+#: aristotle_mdr/templates/search/search.html:66
+#, fuzzy
+msgctxt "Clear search filters"
+msgid "Clear filters"
+msgstr "清除过滤器"
+
+#: aristotle_mdr/templates/search/search.html:75
+#, fuzzy
+msgctxt "Metadata item type"
+msgid "Item type"
+msgstr "物品种类"
+
+#: aristotle_mdr/templates/search/search.html:83
+#, fuzzy
+msgctxt "Registration Status"
+msgid "Status"
+msgstr "状态"
+
+#: aristotle_mdr/templates/search/search.html:91
+#, fuzzy
+msgctxt "Registration Authority"
+msgid "Authority"
+msgstr "权威"
+
+#: aristotle_mdr/templates/search/search.html:99
+#, fuzzy
+msgctxt "Modified date"
+msgid "Modified"
+msgstr "改性"
+
+#: aristotle_mdr/templates/search/search.html:119
+#, fuzzy
+msgctxt "Created date"
+msgid "Created"
+msgstr "创建"
+
+#: aristotle_mdr/templates/search/search.html:324
+#, fuzzy
+msgid "This item is in your favourites list"
+msgstr "这个项目在您的收藏夹列表"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:48
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:63
+#, fuzzy, python-format
+msgid "%s is"
+msgstr "%s 是"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:58
+#, fuzzy, python-format
+msgid " or %s"
+msgstr "或 %s"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:68
+#, fuzzy, python-format
+msgid " and %s"
+msgstr "和 %s"
+
+#: aristotle_mdr/templatetags/aristotle_tags.py:358
+#: aristotle_mdr/templatetags/aristotle_tags.py:360
+#, fuzzy
+msgid "model:"
+msgstr "模型："
+
+#: aristotle_mdr/templatetags/aristotle_tags.py:367
+#, fuzzy, python-format
+msgid "No help text for the field '%(field)s' found for the model '%(model)s'"
+msgstr "没有为外地&#39;%(field)s“发现模型帮助文本”%(model)s“"
+
+#. Translators: The '(clone)' prefix is a noun, indicating an object is a
+#. clone of another - for example "Person-Sex" compared to "Person-Sex
+#. (clone)"
+#: aristotle_mdr/utils/utils.py:34
+#, fuzzy
+msgid " (clone)"
+msgstr "（克隆）"
+
+#: aristotle_mdr/utils/utils.py:76
+#, fuzzy, python-format
+msgid "Changed %s."
+msgstr "更改 %s。"
+
+#: aristotle_mdr/utils/utils.py:76 aristotle_mdr/utils/utils.py:88
+#, fuzzy
+msgid "and"
+msgstr "和"
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been created in the
+#. registry.
+#: aristotle_mdr/utils/utils.py:82
+#, fuzzy, python-format
+msgid "Added %(name)s \"%(object)s\"."
+msgstr "新增 %(name)s “%(object)s”。"
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been changed in the
+#. registry.
+#: aristotle_mdr/utils/utils.py:87
+#, fuzzy, python-format
+msgid "Changed %(list)s for %(name)s \"%(object)s\"."
+msgstr "更改为 %(list)s  %(name)s “%(object)s”。"
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been deleted from the
+#. registry.
+#: aristotle_mdr/utils/utils.py:93
+#, fuzzy, python-format
+msgid "Deleted %(name)s \"%(object)s\"."
+msgstr "删除 %(name)s “%(object)s”。"
+
+#: aristotle_mdr/utils/utils.py:97
+#, fuzzy
+msgid "No fields changed."
+msgstr "无域改变。"
+
+#: aristotle_mdr/views/comparator.py:55 aristotle_mdr/views/comparator.py:57
+#, fuzzy
+msgid "This item has no revisions. A comparison cannot be made"
+msgstr "此产品没有修订。比较无法进行"
+
+#: aristotle_mdr/views/discussions.py:99
+#, fuzzy
+msgid "This post is closed. Your comment was not added."
+msgstr "这个帖子被关闭。未添加您的评论。"
+
+#: aristotle_mdr/views/views.py:317
+#, python-format, fuzzy
+msgid "%s added to favourites."
+msgstr "%s 添加到您的收藏夹。"
+
+#: aristotle_mdr/views/views.py:319
+#, fuzzy, python-format
+msgid "%s removed from favourites."
+msgstr "%s 从收藏夹中删除。"
+
+#: aristotle_mdr/views/views.py:320
+#, fuzzy
+msgid " Review your favourites from the user menu."
+msgstr "回顾从用户菜单中选择您的最爱。"
+
+#: aristotle_mdr/views/wizards.py:124
+#, fuzzy
+msgid "Search for existing content"
+msgstr "搜索现有的内容"
+
+#: aristotle_mdr/views/wizards.py:134
+#, fuzzy
+msgid "Select or create"
+msgstr "选择或创建"
+
+#: aristotle_mdr/views/wizards.py:287 aristotle_mdr/views/wizards.py:290
+#, fuzzy
+msgid "No object class name found"
+msgstr "未找到对象类名称"
+
+#: aristotle_mdr/views/wizards.py:288 aristotle_mdr/views/wizards.py:291
+#, fuzzy
+msgid "No object class definition found"
+msgstr "没有对象类定义中"
+
+#: aristotle_mdr/views/wizards.py:302 aristotle_mdr/views/wizards.py:305
+#: aristotle_mdr/views/wizards.py:742 aristotle_mdr/views/wizards.py:745
+#, fuzzy
+msgid "No property name found"
+msgstr "未找到属性名称"
+
+#: aristotle_mdr/views/wizards.py:303 aristotle_mdr/views/wizards.py:306
+#: aristotle_mdr/views/wizards.py:743 aristotle_mdr/views/wizards.py:746
+#, fuzzy
+msgid "No property definition found"
+msgstr "无属性定义找到"
+
+#: aristotle_mdr/views/wizards.py:319
+#, fuzzy, python-brace-format
+msgid "<p>{pr} of {oc}</p> - This was an autogenerated definition."
+msgstr "<p> {} OC的{}公关</p> - 这是一个自动生成的定义。"
+
+#: aristotle_mdr/views/wizards.py:396 aristotle_mdr/views/wizards.py:643
+#, fuzzy
+msgid "Search for components"
+msgstr "搜索组件"
+
+#: aristotle_mdr/views/wizards.py:397 aristotle_mdr/views/wizards.py:646
+#, fuzzy
+msgid "Refine components"
+msgstr "优化组件"
+
+#: aristotle_mdr/views/wizards.py:398 aristotle_mdr/views/wizards.py:650
+#, fuzzy
+msgid "Create Object Class"
+msgstr "创建对象类"
+
+#: aristotle_mdr/views/wizards.py:399 aristotle_mdr/views/wizards.py:655
+#, fuzzy
+msgid "Create Property"
+msgstr "创建属性"
+
+#: aristotle_mdr/views/wizards.py:400
+#, fuzzy
+msgid "Review Data Element Concept"
+msgstr "查看数据元素概念"
+
+#: aristotle_mdr/views/wizards.py:401 aristotle_mdr/views/wizards.py:671
+#, fuzzy
+msgid "Complete and Save"
+msgstr "完成并保存"
+
+#: aristotle_mdr/views/wizards.py:448 aristotle_mdr/views/wizards.py:779
+#, fuzzy, python-brace-format
+msgid "New Property '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr "新属性“（名称）&#39;保存- <a href='{url}'>ID：{ID}</a>"
+
+#: aristotle_mdr/views/wizards.py:457 aristotle_mdr/views/wizards.py:788
+#, fuzzy, python-brace-format
+msgid "New Object Class '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr "新的对象类&#39;（名称）&#39;保存- <a href='{url}'>ID：{ID}</a>"
+
+#: aristotle_mdr/views/wizards.py:466 aristotle_mdr/views/wizards.py:797
+#, fuzzy, python-brace-format
+msgid "New Data Element Concept '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr "新的数据元素概念&#39;（名称）&#39;保存- <a href='{url}'>ID：{ID}</a>"
+
+#: aristotle_mdr/views/wizards.py:647 aristotle_mdr/views/wizards.py:668
+#, fuzzy
+msgid "Review Data Element"
+msgstr "回顾数据元素"
+
+#: aristotle_mdr/views/wizards.py:651
+#, fuzzy
+msgid "Save Object Class"
+msgstr "保存对象类"
+
+#: aristotle_mdr/views/wizards.py:656
+#, fuzzy
+msgid "Save Property"
+msgstr "保存属性"
+
+#: aristotle_mdr/views/wizards.py:658
+#, fuzzy
+msgid "Select Data Element Concept"
+msgstr "选择数据元素概念"
+
+#: aristotle_mdr/views/wizards.py:661
+#, fuzzy
+msgid "Create Data Element Concept"
+msgstr "创建数据元素概念"
+
+#: aristotle_mdr/views/wizards.py:662
+#, fuzzy
+msgid "Save Data Element Concept"
+msgstr "保存数据元素概念"
+
+#: aristotle_mdr/views/wizards.py:666
+#, fuzzy
+msgid "Create Value Domain"
+msgstr "创建值域"
+
+#: aristotle_mdr/views/wizards.py:672
+#, fuzzy
+msgid "Save and Finish"
+msgstr "保存并完成"
+
+#: aristotle_mdr/views/wizards.py:727 aristotle_mdr/views/wizards.py:730
+#, fuzzy
+msgid "No value domain name found"
+msgstr "未发现价值的域名"
+
+#: aristotle_mdr/views/wizards.py:728 aristotle_mdr/views/wizards.py:731
+#, fuzzy
+msgid "No value domain definition found"
+msgstr "没有价值域定义发现"
+
+#: aristotle_mdr/views/wizards.py:757
+#, fuzzy, python-brace-format
+msgid "<p>{dec}, recorded as {vd}</p> - This was an autogenerated definition."
+msgstr "<p> {}月，记为{} VD </p> - 这是一个自动生成的定义。"
+
+#: aristotle_mdr/views/wizards.py:806
+#, fuzzy, python-brace-format
+msgid "New ValueDomain '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr "新ValueDomain&#39;（名称）&#39;保存- <a href='{url}'>ID：{ID}</a>"
+
+#: aristotle_mdr/views/wizards.py:815
+#, fuzzy, python-brace-format
+msgid "New Data Element '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr "新的数据元素“（名称）&#39;保存- <a href='{url}'>ID：{ID}</a>"
+
+#~ msgctxt "creating items"
+#~ msgid "Tips"
+#~ msgstr "提示"

@@ -1,0 +1,131 @@
+{% extends "aristotle_mdr/user/userHome.html" %}
+
+{% load aristotle_tags %}
+
+{% block collapse-link %}
+    <i class="fa fa-institution fa-fw"></i> My Roles </a>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "aristotle_mdr/user/userSideBar.html" with activeTab='roles' %}
+{% endblock %}
+
+{% block page %}
+<h1>{% block title %}My Roles{% endblock %}</h1>
+
+    <div>
+        <p>Below is a list of every Registration Authority you are a registrar in.
+        Clicking on the name of a Registration Authority to go to its
+        home page.
+        </p>
+    </div>
+
+    <table class='table'>
+        <thead>
+            <th>Group</th>
+            <th>Type</th>
+            <th>Role</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+        {% if request.user.is_superuser %}
+        <tr>
+            <td>
+            </td>
+            <td>Registry
+            </td>
+            <td>Super user
+            </td>
+            <td>You have complete access to all registration authorities,
+            workgroups and items. You can add new user accounts.
+            </td>
+        </tr>
+        {% endif %}
+        {% for ra in request.user.registrar_in.all %}
+        <tr>
+            <td>{{ ra.name }}
+            </td>
+            <td>Registration Authority
+            </td>
+            <td>Registrar
+            </td>
+            <td>
+                You can alter the registration status of items that are marked
+                <em>Ready to Review.</em>
+            </td>
+        </tr>
+        {% endfor %}
+        {% for ra in request.user.registrationauthority_manager_in.all %}
+        <tr>
+            <td>{{ ra.name }}
+            </td>
+            <td>Registration Authority
+            </td>
+            <td>Manager
+            </td>
+            <td>
+                You can edit this registration authority, and can assign existing
+                users as registrars or managers to this registration authority.
+            </td>
+        </tr>
+        {% endfor %}
+        {% for wg in request.user.workgroup_manager_in.all %}
+        <tr>
+            <td>{{ wg.name }}
+            </td>
+            <td>Workgroup
+            </td>
+            <td>Manager
+            </td>
+            <td>
+                You can edit this workgroup, and can assign existing users as
+                viewers. submitters, stewards or managers to this workgroup.
+            </td>
+        </tr>
+        {% endfor %}
+        {% for wg in request.user.steward_in.all %}
+        <tr>
+            <td>{{ wg.name }}
+            </td>
+            <td>Workgroup
+            </td>
+            <td>Steward
+            </td>
+            <td>
+                You can create and edit content in this workgroup and can edit 
+                content that has been progressed to a 'locked' state by a registrar.
+            </td>
+        </tr>
+        {% endfor %}
+        {% for wg in request.user.submitter_in.all %}
+        <tr>
+            <td>{{ wg.name }}
+            </td>
+            <td>Workgroup
+            </td>
+            <td>Submitter
+            </td>
+            <td>
+                You can create and edit content in this workgroup, but cannot edit 
+                content that has been progressed to a 'locked' state by a registrar.
+            </td>
+        </tr>
+        {% endfor %}
+        {% for wg in request.user.viewer_in.all %}
+        <tr>
+            <td>{{ wg.name }}
+            </td>
+            <td>Workgroup
+            </td>
+            <td>Viewer
+            </td>
+            <td>
+                You can view content in this workgroup and participate in discussions
+                in this workgroup.
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

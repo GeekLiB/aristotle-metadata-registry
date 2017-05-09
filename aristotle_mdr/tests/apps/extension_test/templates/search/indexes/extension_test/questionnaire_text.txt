@@ -1,0 +1,6 @@
+{% include "search/indexes/aristotle_mdr/managedobject_text.txt" %}
+
+{% for question in questions %}
+    {{ question.questionText }}
+
+{% endfor %}

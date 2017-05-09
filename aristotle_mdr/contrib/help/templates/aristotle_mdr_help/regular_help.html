@@ -1,0 +1,24 @@
+{% extends "aristotle_mdr_help/base.html" %}
+{% load aristotle_help %}
+
+{% block title %}Help - {{ object.title }}{% endblock %}
+
+{% block breadcumbs %}
+    <li><a href="{% url 'aristotle_help:help_base' %}">Help</a></li>
+    {% comment %}
+    {% if app %}
+    <li><a href="">{{ app.verbose_name }}</a></li>
+    {% endif %}
+    {% endcomment %}
+    <li class="active">{{ object.title }}</li>
+{% endblock %}
+
+{% block help_content %}
+<div class="help_page_wrapper">
+    {% relink object 'body' %}
+</div>
+
+<p>
+    Last modified: {{ object.modified }}
+</p>
+{% endblock %}

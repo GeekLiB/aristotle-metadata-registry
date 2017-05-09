@@ -1,0 +1,53 @@
+{% load aristotle_tags i18n %}
+
+<div class="btn-group pull-right">
+    {% if user.is_active %}
+        {% include "aristotle_mdr/helpers/favourite_concept.html" %}
+    {% endif %}
+    {% include "aristotle_mdr/helpers/extra_actions.html" %}
+    {% if user.is_active or item|can_edit:request.user %}
+    <div class="btn-group">
+      <button id="metadata_action_menu_action" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-fw fa-pencil-square-o"></i> {% trans 'Actions'%} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        {% if item|can_edit:request.user %}
+        <li><a class="" href="{% url 'aristotle:edit_item' item.id %}"
+                        data-toggle="modal" data-target="#infobox_adv_edit">
+            <i class="fa fa-fw fa-pencil-square-o"></i> {% trans 'Open item editor'%}
+        </a></li>
+        {% endif %}
+        {% if user.is_active %}
+        <li><a class="" href="{% url 'aristotle:clone_item' item.id %}">
+            <i class="fa fa-fw fa-code-fork"></i> {% trans 'Clone this item'%}
+        </a></li>
+        <li class="divider"></li>
+        <li><a class="" href="{% url 'aristotle:request_review' item.id %}" data-toggle="modal" data-target="#infobox_adv_edit">
+            <i class="fa fa-fw fa-flag"></i> {% trans 'Submit for review'%}
+        </a></li>
+        {% comment %}
+        <li><a class="" href="{% url 'aristotle:clone_item' item.id %}">
+            <i class="fa fa-fw fa-flag-checkered"></i> {% trans 'View review history'%}
+        </a></li>
+        {% endcomment %}
+        {% endif %}
+        {% if item.registry_cascade_items %}
+        <li><a class="" href="{% url 'aristotle:check_cascaded_states' item.id %}" data-toggle="modal" data-target="#infobox_adv_edit">
+            <i class="fa fa-fw fa-sitemap"></i> {% trans 'Check component states'%}
+        </a></li>
+        {% endif %}
+        {% if 'aristotle_mdr.contrib.links'|is_installed_app %}
+            {% include "aristotle_mdr_links/actions/add_link_action.html" %}
+        {% endif %}
+      </ul>
+    </div>
+    {% endif %}
+    <div class="btn-group">
+        <button id="metadata_action_menu_download" accesskey="d" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-download"></i> {% trans 'Download'%} <span class="caret"></span>
+        </button>
+        {% downloadMenu item %}
+    </div>
+</div>
+
+{% bootstrap_modal "infobox_adv_edit" size='lg' %}

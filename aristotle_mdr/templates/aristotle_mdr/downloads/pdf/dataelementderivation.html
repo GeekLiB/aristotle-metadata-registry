@@ -1,0 +1,24 @@
+{% extends "aristotle_mdr/downloads/pdf/managedContent.html" %}
+
+{% block title %}{{ item.name }} ({{item.status}}){% endblock %}
+{% block objSpecific %}
+
+<h2>Derivation</h2>
+<tt>
+    {{ item.derivation_rule }}
+</tt>
+<dl>
+    <dt>Derived Data Element</dt>
+    <dd>
+        {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item.derives %}
+    </dd>
+    <dt>Input Data Elements</dt>
+    {% for de in item.inputs.all %}
+        <dd>
+            {% include "aristotle_mdr/helpers/inlineDetails.html" with item=de %}
+        </dd>
+    {% empty %}
+        <dd><em>None</em></dd>
+    {% endfor %}
+</dl>
+{% endblock %}

@@ -1,0 +1,9 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: How do I browse items?
+    language: en
+    body: >
+      <p>
+        This registry provides a browsable list of every item type that can
+        be accessed through the <a href="/browse/">Browse Registry Page</a>.
+      </p>

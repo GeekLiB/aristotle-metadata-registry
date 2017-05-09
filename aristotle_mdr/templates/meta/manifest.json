@@ -1,0 +1,23 @@
+{% load staticfiles %}
+{
+  "name": "{{ config.SITE_NAME }}",
+  "icons": [
+    {
+      "src": "{% static 'aristotle_mdr/images/aristotle_square_small.png' %}",
+      "sizes": "128x128",
+      "type": "image/png",
+      "density": 1.0
+    },
+    {
+      "src": "{% static 'aristotle_mdr/images/favicon.png' %}",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": 1.0
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#4e8382",
+  "background_color": "#4e8382"
+}

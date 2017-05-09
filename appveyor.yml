@@ -1,0 +1,36 @@
+build: false
+
+services:
+  - mssql2016
+
+environment:
+  global:
+    APPVEYOR: 1
+  matrix:
+      - DJANGO_VERSION: '1.8'
+        DB: mssql
+        SEARCH: whoosh
+        PYTHON_HOME: "C:/Python35"
+      - DJANGO_VERSION: '1.8'
+        DB: mssql
+        SEARCH: whoosh
+        PYTHON_HOME: "C:/Python35-x64"
+      - DJANGO_VERSION: '1.10'
+        DB: mssql
+        SEARCH: whoosh
+        PYTHON_HOME: "C:/Python35"
+      - DJANGO_VERSION: '1.10'
+        DB: mssql
+        SEARCH: whoosh
+        PYTHON_HOME: "C:/Python35-x64"
+
+install:
+  - cmd: |
+        set PATH=%PYTHON_HOME%;%PYTHON_HOME%\Scripts;%PATH%
+        pip install tox
+
+# command to run tests
+test_script:
+  - cmd: |
+        tox -e dj%DJANGO_VERSION%-test-azure-db-%DB%-search-%SEARCH% --skip-missing-interpreters
+

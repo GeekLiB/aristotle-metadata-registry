@@ -1,0 +1,71 @@
+{% load compile_static i18n %}
+{% load static from staticfiles %}
+
+{% block content %}
+    {% block extra_head_scripts %}
+        <script src="{% static 'aristotle_mdr/jqueryui/jquery-ui.min.js' %}"></script>
+    {% endblock %}
+
+
+
+<a class="sr-only" onclick="addSlot()" href="?extra=1" accesskey='r'>Add a slot (adding a slot does not save changes)</a>
+    {% with formset=slots_FormSet %}
+
+    {{ formset.management_form }}
+    <table id="" class="form table  table-hover">
+    {% with formset.forms.0 as slot_form %}
+      <thead><tr>
+            <th>{% trans 'Link name' %}</th>
+            <th>{% trans 'Value' %}</th>
+            <th>{% trans 'Delete' %}</th>
+      </tr></thead>
+    {% endwith %}
+    <tbody id="slotsTable">
+    {% for slot_form in formset.forms %}
+      <tr class="moveablerow">
+
+          {# <td title="Drag to reorder"><i class="fa fa-bars grabber"></i></td> #}
+          {% for field in slot_form.visible_fields %}
+            <td>
+            {# Include the hidden fields in the form #}
+            {% if forloop.first %}
+              {% for hidden in slot_form.hidden_fields %}
+              {{ hidden }}
+              {% endfor %}
+            {% endif %}
+              {{ field.errors.as_ul }}
+              {{ field }}
+            </td>
+          {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <a class="btn btn-primary" onclick="addSlot()">
+        <i class="fa fa-plus-circle"></i> Add a slot</a>
+
+{% endwith %}
+    <h3>Slots available for this metadata item</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{% trans 'Slot name' %}</th>
+                <th>{% trans 'Details' %}</th>
+                <th>{% trans 'Cardinality' %}</th>
+                <th>{% trans 'Data type' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for slot in concept_slots %}
+            <tr>
+                <td>{{slot.slot_name}}</td>
+                <td>{{slot.help_text}}</td>
+                <td>{{slot.get_cardinality_display}}</td>
+                <td><a href="{{ slot.datatype.get_absolute_url }}">{{slot.datatype}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+        <script src="{% static 'aristotle_mdr/aristotle.moveable.js' %}"></script>
+{% endblock %}

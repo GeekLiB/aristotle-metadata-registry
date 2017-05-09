@@ -1,0 +1,69 @@
+.navbar-inverse {
+    background-color: #4e8382;
+    border-color: #4e8382;
+}
+
+.home.row a {
+    color: #356A69; /* Arisistotle Green darkened 10% */
+    /* border-bottom: 1px dotted #4e8382; */
+}
+
+.home.row a:hover {
+    border: none;
+}
+
+nav.main.navbar .login.btn {
+    margin:3px;
+}
+
+nav.main.navbar a.btn {
+    padding: 10px 10px;
+    color:black;
+}
+
+nav.main.navbar a.btn:hover {
+    color:white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:white;
+}
+
+body footer.footer {
+    background-color: rgb(51,51,51);
+}
+
+.extra.footer {
+    margin-top:0px;
+}
+
+body .navbar-form {
+    margin-bottom:0px;
+}
+
+body>.navbar {
+    margin-bottom:0px;
+}
+
+body>#content {
+    padding-top:20px;
+}
+
+body>footer.footer {
+    margin-top:0px;
+}
+
+@media (max-width:600px)  {
+    #content {padding:0 25px;}
+    body .navbar-inverse .navbar-nav .open .dropdown-menu>li,
+    body .navbar-inverse .navbar-nav .open .dropdown-menu>li>* {
+        color: white;
+    }
+    body .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+        background-color: #5f8f8e;
+    }
+}
+
+body .navbar-inverse .navbar-nav a:hover {
+    background-color: #5f8f8e;
+}

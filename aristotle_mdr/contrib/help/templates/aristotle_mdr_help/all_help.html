@@ -1,0 +1,40 @@
+{% extends "aristotle_mdr_help/base.html" %}
+{% load aristotle_tags i18n %}
+
+{% block title %}Help{% endblock %}
+
+{% block breadcumbs %}
+    <li class="active">Help</li>
+{% endblock %}
+
+{% block help_content %}
+<p>
+    Below is a list of all help pages available in this registry,
+    click the name for more information.
+</p>
+<p>
+    Help on different item types available in this registry can be
+    found in the <a href="{% url 'aristotle_help:help_concepts' %}">Concept help pages</a>.
+</p>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+      {% for obj in object_list %}
+        <tr>
+            <td>
+                <a href="{% url 'aristotle_help:help_page' obj.slug %}">
+                    {{ obj.title }}</a>
+            </td>
+            <td>{{ obj.body|striptags|truncatewords:20 }}
+            </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}

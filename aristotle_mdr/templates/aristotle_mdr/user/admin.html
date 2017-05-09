@@ -1,0 +1,36 @@
+{% extends "aristotle_mdr/user/userHome.html" %}
+
+{% load aristotle_tags %}
+
+{% block extra_head_scripts %}
+{{ block.super }}
+    <style>
+        .admin-wrap {
+            width:100%;
+        }
+        .admin-wrap .col-sm-12 {
+            padding-left:0px;
+            padding-right:0px;
+        }
+        iframe#django_admin {
+            width:100%;
+            min-height:600px;
+        }
+    </style>
+    <script>
+      function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        document.title = obj.contentWindow.document.title
+      }
+    </script>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "aristotle_mdr/user/userSideBar.html" with activeTab='djangoAdminTools' %}
+{% endblock %}
+
+{% block page %}
+<iframe id='django_admin' frameborder="0"    marginheight="0"
+   marginwidth="0"
+    src="/django/admin/{{page_url}}" onload="resizeIframe(this)" ></iframe>
+{% endblock %}

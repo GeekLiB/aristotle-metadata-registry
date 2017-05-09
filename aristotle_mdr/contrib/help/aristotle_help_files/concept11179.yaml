@@ -1,0 +1,16 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: Concept
+    app_label: aristotle_mdr
+    language: en
+    body: >
+        <blockquote>
+        unit of knowledge created by a unique combination of characteristics
+        </blockquote>
+        
+        <p>
+            The <em>concept</em> is the core object in the ISO/IEC 11179 standard, 
+            from which all other item types are based on.
+            By adding additional relations and attributes to the concept object, 
+            new items can be created.
+        </p>

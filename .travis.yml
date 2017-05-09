@@ -1,0 +1,101 @@
+# Lets run on the new infrastructure
+sudo: false
+
+language: python
+python:
+  - "3.5"
+  - "2.7"
+
+services:
+  - postgresql
+  - redis-server
+  - elasticsearch
+  - mariadb
+
+env:
+  - DOCS=1
+  - A11Y='metadata_item'
+  - A11Y='metadata_action'
+  - A11Y='static'
+  - DJANGO_VERSION='1.8'  DB=postgres  SEARCH=elastic
+  - DJANGO_VERSION='1.8'  DB=postgres  SEARCH=elastic
+  - DJANGO_VERSION='1.8'  DB=sqlite    SEARCH=whoosh
+  - DJANGO_VERSION='1.8'  DB=postgres  SEARCH=whoosh
+  - DJANGO_VERSION='1.8'  DB=mariadb   SEARCH=whoosh
+  - DJANGO_VERSION='1.8'  DB=mariadb   SEARCH=elastic
+
+  - DJANGO_VERSION='1.10' DB=sqlite    SEARCH=elastic
+  - DJANGO_VERSION='1.10' DB=sqlite    SEARCH=whoosh
+
+  # Possible failures:
+  - DJANGO_VERSION='1.8'  DB=sqlite    SEARCH=whoosh   VARIANT=haystack
+  - DJANGO_VERSION='1.8'  DB=sqlite    SEARCH=elastic  VARIANT=haystack
+
+  - DJANGO_VERSION='1.11' DB=sqlite    SEARCH=whoosh
+
+before_install:
+  - pip install codecov
+  - pip install coveralls
+
+install:
+  - pip install tox
+
+before_script:
+# Make a MariaDB database
+# Fix wierdness with MariaDB on Travis - https://github.com/mozilla/kitsune/pull/2453/commits/229db28973f00dfc4fa7b386f266caf3417966a0  
+  - if [[ $DB == mariadb ]]; then mysql -e 'create database aristotle_test_db;' -u root ; fi
+  - if [[ $DB == mariadb ]]; then mysql -e 'SET GLOBAL wait_timeout = 36000;' ; fi
+  - if [[ $DB == mariadb ]]; then mysql -e 'SET GLOBAL max_allowed_packet = 134209536;' ; fi
+  - if [[ $SEARCH == elasticsearch ]]; then sleep 10; fi
+# Make a posgres database
+  - if [[ $DB == postgres ]]; then psql -c 'create database aristotle_test_db;' -U postgres; fi
+
+# command to run tests
+script:
+# Start a few workers
+#  - ./manage.py runworker --settings=aristotle_mdr.tests.settings.settings > worker1.log 2>&1 &
+  - if [[ "$DB" != "" ]]; then tox -e dj$DJANGO_VERSION-test-linux-db-$DB-search-$SEARCH --skip-missing-interpreters; fi
+# check documentation builds cleanly
+  - if [[ $DOCS == 1 ]]; then tox -e pep8 -e docs --skip-missing-interpreters; fi
+  - if [[ $A11Y != "" ]]; then tox -e ally-$A11Y --skip-missing-interpreters; fi
+#  - cat worker1.log
+after_success:
+  - coveralls
+  - codecov
+
+addons:
+  apt:
+    sources:
+      - elasticsearch-2.x
+    packages:
+      - elasticsearch
+  code_climate:
+    repo_token: ac63d774ebdd641ef502acf1588b36248726a28a50e4e1f4ba4295a157477f54
+  mariadb: '10.1'
+
+matrix:
+  exclude:
+    - python: "2.7"
+      env: A11Y='metadata_item'
+    - python: "2.7"
+      env: A11Y='metadata_action'
+    - python: "2.7"
+      env: A11Y='static'
+    - python: "2.7"
+      env: DOCS=1
+    - python: "2.7"
+      env: DJANGO_VERSION='1.10' DB=sqlite    SEARCH=elastic
+    - python: "2.7"
+      env: DJANGO_VERSION='1.10' DB=sqlite    SEARCH=whoosh
+  # Possible failures:
+    - python: "2.7"
+      env: DJANGO_VERSION='1.8'  DB=sqlite    SEARCH=whoosh   VARIANT=haystack
+    - python: "2.7"
+      env: DJANGO_VERSION='1.8'  DB=sqlite    SEARCH=elastic  VARIANT=haystack
+    - python: "2.7"
+      env: DJANGO_VERSION='1.11' DB=sqlite    SEARCH=whoosh
+
+  allow_failures:
+    - env: DJANGO_VERSION='1.8'  DB=sqlite    SEARCH=whoosh   VARIANT=haystack
+    - env: DJANGO_VERSION='1.8'  DB=sqlite    SEARCH=elastic  VARIANT=haystack
+    - env: DJANGO_VERSION='1.11' DB=sqlite    SEARCH=whoosh

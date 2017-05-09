@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load aristotle_tags %}
+
+
+<div class="btn-group dropup">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Bulk Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+
+    {% for name,action in bulk_actions.items %}
+        {% if name in hidden_actions %}
+        {% elif request.user|can_use_action:name %}
+            <li><button class="btn btn-default btn-block" type="submit" name="bulkaction" value="{{name}}" style="text-align:left;">
+                <i class="fa fa-fw {{ action.classes }}"></i>
+                {{ action.text }}
+            </button></li>
+        {% endif %}
+    {% endfor %}
+
+</ul>
+</div>

@@ -1,0 +1,82 @@
+{% load i18n aristotle_tags %}
+
+{% if page.has_other_pages %}
+Showing {{ page.start_index }} - {{ page.end_index }} of {{ page.paginator.count }} results.
+{% else %}
+Showing {{ page.paginator.count }} results.
+{% endif %}
+
+<table class="table">
+<thead>
+    <tr>
+        <th>
+            {% if allow_select_all %}
+            <input title='{% trans "Select all" %}' type="checkbox" id="all_in_queryset" name="all_in_queryset">
+            <input type="hidden" name="qs" value="{{ select_all_list_queryset_filter }}">
+
+            {% endif %}
+        </th>
+        <th></th>
+        <th>
+            {% if sort == "name_asc" %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_desc"><i class="fa fa-sort-asc"></i></a>
+            {% elif sort == "name_desc" %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_asc"><i class="fa fa-sort-desc"></i></a>
+            {% else %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_desc"><i class="fa fa-sort"></i></a>
+            {% endif %}
+            {% trans 'Name' %}
+        </th>
+        <th>{% trans 'Details' %}</th>
+        <th>
+        {% if sort == "mod_asc" %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=mod_desc"><i class="fa fa-sort-asc"></i></a>
+        {% elif sort == "mod_desc" %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=mod_asc"><i class="fa fa-sort-desc"></i></a>
+        {% else %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=mod_desc"><i class="fa fa-sort"></i></a>
+        {% endif %}
+        {% trans 'Last modified' %}</th>
+
+    </tr>
+</thead>
+<tbody>
+{% with favourites=request.user.profile.favourites.select_subclasses %}
+    {% for item in page %}
+    <tr>
+        <td><input type="checkbox" id="id_items_{{item.id}}" name="items" value="{{item.id}}"></td>
+        <td>
+            {% if item.is_registered %}
+                <i class="fa fa-university fa-fw" title="Registered"></i>
+            {% else %}
+                <i class="fa fa-flag-o fa-fw" title="In progress"></i>
+            {% endif %}
+
+            {% if request.user.is_active %}
+            {% with is_favourite=item|is_in:favourites %}
+                <a href="{% url 'aristotle:toggleFavourite' item.id %}?next={{ request.path }}"
+                    title="{% ternary is_favourite 'Remove from my favourite items' 'Add to my favourite items' %}"
+                    >
+                    {% if item in favourites %}
+                        <i class="fa fa-bookmark fa-fw"></i>
+                    {% else %}
+                        <i class="fa fa-bookmark-o fa-fw"></i>
+                    {% endif %}
+                </a>
+            {% endwith %}
+            {% endif %}
+        </td>
+        <td>
+        {% include "aristotle_mdr/helpers/itemLink.html" with item=item %}</td>
+        <td>
+        {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item %}
+</td>
+        <td>{{ item.modified }}</td>
+    </tr>
+    {% endfor %}
+{% endwith %}
+</tbody>
+</table>
+
+{% include "aristotle_mdr/helpers/paginator.html" with page=page %}
+

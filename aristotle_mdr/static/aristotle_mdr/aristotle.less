@@ -1,0 +1,524 @@
+@colors_border:#C6D3E3;
+@colors_footer:#2E2526;
+@colors_footer_text:#D0D1D5;
+@colors_favourite:goldenrod;
+
+/*
+  Aristotle-MDR assume the breakpoints for bootstrap have been modified to those below.
+  600px for small is the bootstrap standard values.
+  However, 760px as the lower point for a "medium" screen ensures the the site retains functionality
+  on smaller desktop widths. It seemed pointless to drop functionality.
+  992px is the standard "medium" minimum, and between 760px and 992px this value
+
+  an override for the main
+*/
+@screen-sm-min:599px;
+@screen-sm-max:760px;
+@screen-md-regular:992px;
+
+@media (max-width:@screen-md-regular)  {
+    .container {
+        width:100%;
+    }
+}
+@media (min-width:@screen-sm-min)  {
+    #infobox-wrap {padding:0;border:none;background-color:white;}
+    #infobox {margin:0;}
+}
+@media (max-width:@screen-sm-min)  {
+    #content {padding:0 25px;}
+}
+@media (max-width:@screen-sm-max)  {
+    #infobox {
+        border:none;
+        div.status ul {padding-left:20px;}
+    }
+}
+
+@media (max-width:@screen-sm-min)  {
+    span.visible-xs {
+        display: inline-block !important;
+    }
+}
+
+body .navbar {
+    border-radius:0px
+}
+
+#homeFaq {
+    margin-top:50px;
+    margin-bottom:20px;
+
+    div.panel-body {
+        height:100px;
+    }
+    .panel-heading h2 {
+        height:30px;
+        margin:0;
+        font-size:13pt;
+        text-align:center;
+    }
+    a {
+        display:block;
+
+
+    }
+}
+
+.inline_action {
+    &:before {content: "["}
+    &:after  {content: "]"}
+    margin-left:2px;
+    font-size:80%;
+    font-weight:normal;
+    color:darkblue;
+    text-decoration:none;
+    &:hover {
+        text-decoration:underline;
+    }
+    &.enable {
+        font-weight:bold;
+    }
+    display:inline-block !important;
+}
+
+dl.quickkeys {
+    dt {
+        float:left;
+        padding-right:3px;
+    }
+    dd {
+        padding-left:25px;
+        display:block;
+    }
+}
+dl {
+    margin-top: 0px;
+    dt:after {
+        content: ":";
+    }
+}
+#definition {
+    margin-bottom:1em;
+    font-size:120%;
+    h2 {
+        font-size:1.2em;
+    }
+}
+dl .definition {
+    padding-bottom:5px;
+}
+.definition {
+    overflow-wrap: break-word;
+    p {
+        overflow-wrap: break-word;
+    }
+}
+#alternate_names {
+    dt {
+        min-width:200px;
+        padding-right:5px;
+    }
+    dt, dd {
+        display: inline;
+    }
+    dd:after {
+        content:"\a";
+        white-space: pre;
+    }
+}
+.no-notify, .notify {
+    &:before {
+        font-family: FontAwesome;
+        text-align:center;
+        width:1em;
+        padding-left:3px;
+    }
+}
+.no-notify {
+    &:before {
+        content: '\f003';
+    }
+}
+.notify {
+    &:before {
+        color:white;
+        content: '\f0e0';
+    }
+}
+
+
+#supersedes {
+    border-top:1px solid @colors_border;
+    border-bottom:1px solid @colors_border;
+    > li {
+        display:inline-block;
+        vertical-align:text-top;
+        text-align:center;
+        margin:0px 10px;
+    }
+}
+
+a.expand {
+    font-size:80%;
+    color:gray !important;
+    padding-left:5px;
+}
+
+#content {
+    padding:15px 30px;
+    background-color:white;
+    h1 {
+        font-size:1.6em;
+        margin-top:10px;
+        margin-bottom:10px;
+        > span {
+            font-size:80%;
+        }
+        small, .version {
+            display:inline-block;
+        }
+        a, a:visited {
+            color:inherit;
+        }
+        input {
+            font-size:1em;
+        }
+        .version {
+            color:black;
+            font-size:70%;
+            margin-left:0px;
+            padding-left:0px;
+            padding-right:3px;
+            &:before {
+                display:inline;
+                color:gray;
+                content:'v';
+                padding-right:0px;
+            }
+        }
+    }
+    h2 {
+        font-size:1.5em;
+        margin-top: 10px;
+        border-bottom:1px solid lightgray;
+    }
+    h3 {
+        font-size:1.3em;
+    }
+}
+
+body footer.footer {
+    clear:both;
+    text-align:center;
+    background-color:@colors_footer;
+    padding:5px;
+    margin-top:15px;
+    color:@colors_footer_text;
+    * {
+        color:@colors_footer_text;
+    }
+    a {
+        padding:0 2px;
+        text-decoration:underline;
+    }
+}
+
+#changeStatusDate {
+    margin-top:10px;
+    display:table;
+    &>span {
+        display:table-cell;
+        vertical-align:middle;
+        width:50%;
+    }
+    label {
+        font-weight:bold;
+    }
+}
+
+#deprecate {
+    label {
+        vertical-align:top;
+    }
+    .autocomplete-light-widget {
+        display:block;
+        /* span.deck {
+            &>span {display:block ;}
+            display:block;
+        } */
+    }
+    .helptext {
+        /* hides "ctrl+click" to select multiple */
+        display:none !important;
+    }
+}
+
+#changeStatus {
+    margin-top:10px;
+    display:table;
+    &>div {
+        display:table-row;
+        &>*:first-child{
+            border-right:1px solid @colors_border;
+        }
+        &>* {
+            display:table-cell;
+            padding:5px;
+            width:50%;
+            li {
+                list-style:none;
+            }
+        }
+        &>span {
+            font-weight:bold;
+            text-align:center;
+            border-bottom:1px solid @colors_border;
+        }
+    }
+}
+
+li.viewHistory {
+    list-style-type:none;
+    margin-left:-15px;
+}
+#infobox {
+    > header {
+        font-size:110%;
+        font-weight:bold;
+        border-bottom:1px solid gray;
+        text-align:center;
+    }
+    font-size:90%;
+    border:1px solid black;
+    padding:5px;
+    margin-left:15px;
+    background-color:white;
+    dl {
+        margin-bottom:0px;
+        dt {clear:both;
+            float:left;
+            &.large {float:none;}
+        }
+        dd {
+            margin-left:100px;
+            &.large {
+                margin-left:0px;
+                ul {
+                    padding-left:30px;
+                }
+            }
+        }
+    }
+}
+
+*:target {
+    background-color:#ffffca;
+}
+
+*:hover > a.pilcrow {
+    color:red;
+}
+
+a.pilcrow {
+    color:transparent;
+    text-decoration:none;
+    margin-left:2px;
+    padding: 2px 0;
+
+    &:hover {
+        color:white;
+        background-color:red;
+    }
+}
+label strong {
+    font-weight:bold;
+    color:red;
+}
+
+/* the alert heading just after the item title for concepts/administeredItems */
+#progress.alert {
+    text-indent:15px hanging;
+    &:before {
+            font-family: FontAwesome;
+            content: '\f071 ';
+            padding-right:3px;
+    }
+}
+
+table.valueDomainRepresentation {
+    @media only screen and (max-width: @screen-sm-min) {
+        width:100%;
+    }
+    @media only screen and (min-width: @screen-sm-min) {
+        width:65%;
+    }
+    td {
+        padding:5px;
+    }
+}
+/*
+aside.creationTips {
+    border:1px solid @colors_border;
+    border-radius: 5px;
+    padding:5px;
+
+    header {
+        text-align: center;
+        border-bottom: 1px solid @colors_border;
+        padding-bottom: 2px;
+        font-size: 110%;
+        font-weight: bold;
+    }
+}
+
+#content form {
+    padding-top:5px;
+    margin-top:5px;
+
+    fieldset {
+        margin-right:15px;
+        &.wizard {
+            textarea {
+                height:4em;
+                width:100%;
+            }
+        }
+        legend{
+            font-size:105%;
+        }
+    }
+    p {
+        padding-top:0px;
+        margin-top:0px;
+        vertical-align:top;
+        display:table;
+
+        label {
+            width:120px;
+            display:table-cell;
+            vertical-align:top;
+        }
+    }
+    .errorlist {
+        .error();
+
+        list-style-type:none;
+        margin-bottom:0px;
+        vertical-align:middle;
+    }
+}
+*/
+
+.objectTitle {
+    padding-left:15px;
+    display:inline-block;
+}
+a.favourite {
+    .fa{
+        color:@colors_favourite;
+    }
+}
+
+table.codeList {
+    border-collapse:collapse;
+    min-width:66%;
+    width:auto;
+    thead, tbody {
+        border-bottom:1px solid @colors_border;
+    }
+    thead th, tbody td {
+        border-left:1px solid @colors_border;
+    }
+
+    tr {
+        margin: 0;
+        td, th {
+            padding: 2px;
+        }
+    }
+    tbody tr {
+        th, td {
+            padding-right: 5px;
+            vertical-align:top;
+        }
+    }
+}
+
+
+.status_definitions {
+    clear:both;
+    &>dt {
+        clear:both;
+        border-top:1px solid @colors_border;
+        width:120px;
+        float:left;
+        text-align:center;
+        padding-top:7px;
+        &:after {
+            content:"";
+        }
+    }
+    &>dd {
+        border-top:1px solid @colors_border;
+        margin-left:120px;
+        dl {
+            margin-top:7px;
+            margin-bottom:11px;
+        }
+    }
+}
+
+dl.browse, dl.treble_defintions {
+    dd {
+        padding-left:25px;
+    }
+}
+dl.treble_defintions {
+    a {display:block;}
+}
+
+.status_change_description textarea {
+    min-width:100%;
+    max-width:100%;
+    resize:none;
+    overflow:auto;
+}
+
+#loading_indicator.loading {
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  z-index:2000; /* Needs to be greater than 1040 to go over the bootstrap modal-backdrop */
+}
+
+.su_action {
+background: repeating-linear-gradient(
+      45deg,
+    transparent,
+    transparent 10px,
+    rgba(250, 54, 54, 0.2) 10px,
+    rgba(250, 54, 54, 0.2) 20px
+    )
+}
+
+.staff_action {
+background: repeating-linear-gradient(
+      -45deg,
+    transparent,
+    transparent 10px,
+    rgba(250, 150, 54, 0.2) 10px,
+    rgba(250, 150, 54, 0.2) 20px
+    )
+}
+
+#collapseMoreVisibilityInfo {
+    width:100%;
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid lightgray;
+}
+
+.facets{
+    padding: 0px;
+}

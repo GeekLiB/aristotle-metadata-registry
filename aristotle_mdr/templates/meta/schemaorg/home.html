@@ -1,0 +1,12 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "{{ request.scheme }}://{{ request.META.HTTP_HOST }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ request.scheme }}://{{ request.META.HTTP_HOST }}{% url 'aristotle:search' %}?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>

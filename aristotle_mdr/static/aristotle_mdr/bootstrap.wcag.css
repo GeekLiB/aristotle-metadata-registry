@@ -1,0 +1,25 @@
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
+    color: rgb(112, 112, 112);
+}
+
+.badge {
+    background-color: #555;
+}
+
+caption,
+.breadcrumb>.active,
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: rgb(112, 112, 112);
+}
+
+a {
+    /* Bootsrap default link color (darkened 16%) */
+    color: #0A518E;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    padding-top: 10px;
+    transform: scale(1.25);
+}

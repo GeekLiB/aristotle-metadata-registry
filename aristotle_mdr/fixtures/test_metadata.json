@@ -1,0 +1,769 @@
+[
+  {
+    "fields": {
+      "username": "possum",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": null,
+      "groups": [
+        
+      ],
+      "user_permissions": [
+        
+      ],
+      "password": "pbkdf2_sha256$20000$CJ6ocrxVoXPG$9uoqnqJwKEyV0ZL1rldu6MhIdsANRmJEiCXZ9Alo8FM=",
+      "email": "",
+      "date_joined": "2016-05-02T22:23:10.627Z"
+    },
+    "model": "auth.user",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "username": "vicky",
+      "first_name": "Vicky",
+      "last_name": "Viewer",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": null,
+      "groups": [
+        
+      ],
+      "user_permissions": [
+        
+      ],
+      "password": "pbkdf2_sha256$20000$0nDJOwioyjht$XH+ixugS7lJOAjogazVN2KBBwxWwCfECErYtC0xUhTM=",
+      "email": "",
+      "date_joined": "2016-05-02T22:23:10.734Z"
+    },
+    "model": "auth.user",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "username": "stewie",
+      "first_name": "Stewie",
+      "last_name": "Steward",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": null,
+      "groups": [
+        
+      ],
+      "user_permissions": [
+        
+      ],
+      "password": "pbkdf2_sha256$20000$F36PABkRVv5h$LuM7HYM07CZpd1Gl4SbFVuz8zH5muC+l\/IrXHBwrz7I=",
+      "email": "",
+      "date_joined": "2016-05-02T22:23:10.862Z"
+    },
+    "model": "auth.user",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "username": "mandy",
+      "first_name": "Mandy",
+      "last_name": "Manager",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": null,
+      "groups": [
+        
+      ],
+      "user_permissions": [
+        
+      ],
+      "password": "pbkdf2_sha256$20000$39CwEUm8jmck$WXyqDA0xa8wBn1c4H366XVEb9yWCruU8WVupwcg7ILE=",
+      "email": "",
+      "date_joined": "2016-05-02T22:23:10.989Z"
+    },
+    "model": "auth.user",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "username": "suzie",
+      "first_name": "Suzie",
+      "last_name": "Submitter",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": null,
+      "groups": [
+        
+      ],
+      "user_permissions": [
+        
+      ],
+      "password": "pbkdf2_sha256$20000$jv9IDRHZr973$kl+bOg0zYUOUych+KwuQVmjsjoPaQMUYN2PKnqFAV4s=",
+      "email": "",
+      "date_joined": "2016-05-02T22:23:11.113Z"
+    },
+    "model": "auth.user",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "username": "reggie",
+      "first_name": "Reggie",
+      "last_name": "Registrar",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": false,
+      "last_login": null,
+      "groups": [
+        
+      ],
+      "user_permissions": [
+        
+      ],
+      "password": "pbkdf2_sha256$20000$5ogyHvSU2Lkj$GIzVYGH2l0KBdSN+7017YKd7H6SENEH3JzXt1+xesxo=",
+      "email": "",
+      "date_joined": "2016-05-02T22:23:11.603Z"
+    },
+    "model": "auth.user",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "definition": "Welfare Authority",
+      "name": "Welfare",
+      "created": "2016-05-02T22:23:11.550Z",
+      "modified": "2016-05-02T22:23:11.550Z",
+      "managers": [
+      ]
+    },
+    "model": "aristotle_mdr.organization",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "definition": "Health Authority",
+      "name": "Health",
+      "created": "2016-05-02T22:23:11.562Z",
+      "modified": "2016-05-02T22:23:11.562Z",
+      "managers": [
+      ]
+    },
+    "model": "aristotle_mdr.organization",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "organization_ptr": 2,
+      "notprogressed": "",
+      "candidate": "",
+      "locked_state": 2,
+      "public_state": 3,
+      "superseded": "",
+      "recorded": "",
+      "preferred": "",
+      "standard": "",
+      "qualified": "",
+      "registrars": [
+        
+      ],
+      "retired": "",
+      "incomplete": ""
+    },
+    "model": "aristotle_mdr.registrationauthority",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "organization_ptr": 3,
+      "notprogressed": "",
+      "candidate": "",
+      "locked_state": 2,
+      "public_state": 3,
+      "superseded": "",
+      "recorded": "",
+      "preferred": "",
+      "standard": "",
+      "qualified": "",
+      "registrars": [
+        
+      ],
+      "retired": "",
+      "incomplete": ""
+    },
+    "model": "aristotle_mdr.registrationauthority",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "definition": "",
+      "archived": false,
+      "stewards": [
+        4
+      ],
+      "managers": [
+        5
+      ],
+      "name": "Possum Workgroup",
+      "created": "2016-05-02T22:23:10.720Z",
+      "submitters": [
+        6
+      ],
+      "modified": "2016-05-02T22:23:12.039Z",
+      "viewers": [
+        3
+      ]
+    },
+    "model": "aristotle_mdr.workgroup",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "definition": "",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:10.597Z",
+      "modified": "2016-05-02T22:23:10.597Z",
+      "_is_public": false,
+      "name": "Hour and minute"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "definition": "",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:10.612Z",
+      "modified": "2016-05-02T22:23:10.612Z",
+      "_is_public": false,
+      "name": "Week"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "definition": "A human being, whether man or woman.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.253Z",
+      "modified": "2016-05-02T22:23:11.947Z",
+      "_is_public": false,
+      "name": "Person"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "definition": "A human being, whether man, woman or child.",
+      "_is_locked": true,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.269Z",
+      "modified": "2016-05-02T22:23:11.934Z",
+      "_is_public": true,
+      "name": "Person"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "definition": "The length of life or existence.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.315Z",
+      "modified": "2016-05-02T22:23:11.315Z",
+      "_is_public": false,
+      "name": "Age"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "definition": "The age of the person.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.331Z",
+      "modified": "2016-05-02T22:23:11.333Z",
+      "_is_public": false,
+      "name": "Person-Age"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "definition": "The weight of an object.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.352Z",
+      "modified": "2016-05-02T22:23:11.353Z",
+      "_is_public": false,
+      "name": "Weight"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "definition": "The height of an object, usually measured from the ground to its highest point.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.368Z",
+      "modified": "2016-05-02T22:23:11.368Z",
+      "_is_public": false,
+      "name": "Height"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "definition": "The weight of the person.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.384Z",
+      "modified": "2016-05-02T22:23:11.384Z",
+      "_is_public": false,
+      "name": "Person-Weight"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "definition": "The height of the person.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.400Z",
+      "modified": "2016-05-02T22:23:11.400Z",
+      "_is_public": false,
+      "name": "Person-Height"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "definition": "Total number of completed years.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.420Z",
+      "modified": "2016-05-02T22:23:11.421Z",
+      "_is_public": false,
+      "name": "Total years N[NN]"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "definition": "The age of the person in (completed) years at a specific point in time.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.436Z",
+      "modified": "2016-05-02T22:23:11.436Z",
+      "_is_public": false,
+      "name": "Person-age, total years N[NN]"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "definition": "A gender.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.450Z",
+      "modified": "2016-05-02T22:23:11.450Z",
+      "_is_public": false,
+      "name": "Sex"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "definition": "The sex of the person.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.466Z",
+      "modified": "2016-05-02T22:23:11.466Z",
+      "_is_public": false,
+      "name": "Person-Sex"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "definition": "A code for sex.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.487Z",
+      "modified": "2016-05-02T22:23:11.487Z",
+      "_is_public": false,
+      "name": "Sex Code"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "definition": "The sex of the person with a code.",
+      "_is_locked": false,
+      "workgroup": 3,
+      "created": "2016-05-02T22:23:11.524Z",
+      "modified": "2016-05-02T22:23:12.021Z",
+      "_is_public": false,
+      "name": "Person-sex, Code N"
+    },
+    "model": "aristotle_mdr._concept",
+    "pk": 31
+  },
+  {
+    "fields": {
+      "concept": 19,
+      "created": "2016-05-02T22:23:11.708Z",
+      "registrationAuthority": 3,
+      "modified": "2016-05-02T22:23:11.708Z",
+      "state": 5,
+      "changeDetails": null,
+      "until_date": null,
+      "registrationDate": "2009-04-28"
+    },
+    "model": "aristotle_mdr.status",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": 19,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.objectclass",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "People",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.objectclass",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.property",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.property",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.property",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": ""
+    },
+    "model": "aristotle_mdr.property",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 3
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "symbol": "",
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "measure": 3
+    },
+    "model": "aristotle_mdr.unitofmeasure",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "unit_of_measure": 17,
+      "submitting_organisation": "",
+      "short_name": "",
+      "format": "X[XX]",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "data_type": 4,
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "maximum_length": 3,
+      "conceptual_domain": null,
+      "description": ""
+    },
+    "model": "aristotle_mdr.valuedomain",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "unit_of_measure": 17,
+      "submitting_organisation": "",
+      "short_name": "",
+      "format": "X",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "data_type": 4,
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "maximum_length": 3,
+      "conceptual_domain": null,
+      "description": ""
+    },
+    "model": "aristotle_mdr.valuedomain",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "end_date": null,
+      "value_meaning": null,
+      "value": "1",
+      "order": 1,
+      "meaning": "Male",
+      "valueDomain": 30,
+      "start_date": null
+    },
+    "model": "aristotle_mdr.permissiblevalue",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "end_date": null,
+      "value_meaning": null,
+      "value": "2",
+      "order": 1,
+      "meaning": "Female",
+      "valueDomain": 30,
+      "start_date": null
+    },
+    "model": "aristotle_mdr.permissiblevalue",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "end_date": null,
+      "value_meaning": null,
+      "value": "1",
+      "order": 1,
+      "meaning": "Male",
+      "valueDomain": 30,
+      "start_date": null
+    },
+    "model": "aristotle_mdr.permissiblevalue",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "end_date": null,
+      "value_meaning": null,
+      "value": "2",
+      "order": 1,
+      "meaning": "Female",
+      "valueDomain": 30,
+      "start_date": null
+    },
+    "model": "aristotle_mdr.permissiblevalue",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "objectClass": 19,
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "conceptualDomain": null,
+      "property": 20
+    },
+    "model": "aristotle_mdr.dataelementconcept",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "objectClass": 19,
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "conceptualDomain": null,
+      "property": 22
+    },
+    "model": "aristotle_mdr.dataelementconcept",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "objectClass": 19,
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "conceptualDomain": null,
+      "property": 23
+    },
+    "model": "aristotle_mdr.dataelementconcept",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "objectClass": 19,
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "conceptualDomain": null,
+      "property": 28
+    },
+    "model": "aristotle_mdr.dataelementconcept",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "dataElementConcept": 21,
+      "valueDomain": 26
+    },
+    "model": "aristotle_mdr.dataelement",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "submitting_organisation": "",
+      "short_name": "",
+      "superseded_by": null,
+      "responsible_organisation": "",
+      "comments": "",
+      "origin_URI": "",
+      "synonyms": "",
+      "version": "",
+      "references": "",
+      "dataElementConcept": 29,
+      "valueDomain": 30
+    },
+    "model": "aristotle_mdr.dataelement",
+    "pk": 31
+  }
+]

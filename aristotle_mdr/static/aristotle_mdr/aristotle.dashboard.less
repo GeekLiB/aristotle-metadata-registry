@@ -1,0 +1,145 @@
+@screen-sm-min:600px;
+@screen-sm-max:760px;
+@screen-md-regular:992px;
+
+#dashboard-nav {
+    padding-left:0px;
+    padding-right:0px;
+
+    .dashMenu {
+        &>li>a {
+            padding-left:30px;
+            &>i {
+                margin-left:-25px;
+            }
+        }
+
+        .dashSubMenu {
+            margin-left:7px;
+            margin-right:3px;
+            border-left:1px solid #2e2e2e;
+            border-bottom:1px solid #2e2e2e;
+            border-right:1px solid #2e2e2e;
+            & > li > a {
+                font-size:90%;
+            }
+        }
+    }
+}
+
+
+@screen-sm-min:600px;
+#user_sidebar {
+    @media only screen and (min-width: @screen-sm-min) {
+        padding:25px 0;
+        width:250px;
+    }
+    background-color:#2E2E3E;
+    li a {
+        color:#e2e2e2;
+    }
+    li a:hover {
+        color:#2e2e2e;
+    }
+    li.active, li.active a {
+        background-color:#3E3E4E;
+    }
+    li.active a:hover {
+        background-color:#6E6E8E;
+        color:#0e0e2e;
+    }
+}
+
+#registrarcontrols {
+    >dt {
+        font-size:110%;
+    }
+    >dt, >dd {
+        border-top:1px solid lightgray;
+    }
+    dt:after {
+        content:'';
+    }
+    > dd > dl {
+        margin-bottom:0px;
+    }
+}
+
+@media (max-width:@screen-sm-min)  {
+    #registrarcontrols {
+        >dt {
+            border-top:1px solid lightgray;
+            border-bottom:1px solid lightblue;
+            font-size:110%;
+        }
+        >dd {
+            padding-left:30px;
+            > dl > dt {
+                clear:both;
+            }
+        }
+    }
+}
+
+#content {
+    width:100%;
+    padding:0;
+}
+
+@media only screen and (min-width: @screen-sm-min) {
+    #content {
+        display:table-row;
+    }
+    #content > * {
+        display:table-cell;
+    }
+}
+@media (max-width:@screen-sm-min)  {
+    #django_admin_container #content-related {
+        float:none;
+        position:static;
+        width:100%;
+    }
+    #django_admin_content.colMS {
+        float:none;
+        margin-right:0px;
+    }
+}
+
+body > .main.navbar {
+    margin-bottom:0;
+}
+
+.admin-wrap {
+    h1 {
+        margin-bottom:10px;
+        padding-bottom:10px;
+        border-bottom:1px solid #2e2e2e
+    }
+}
+
+
+.dashboard_link {
+    font-size:125%;
+}
+
+.nav > li.dashboard_link > div {
+    display:table;
+    width:100%;
+}
+
+li.dashboard_link div a.main:hover {
+    background-color: #eee;
+}
+
+.nav > li.dashboard_link > div > a {
+    display:table-cell;
+}
+
+
+.nav > li.dashboard_link  a .fa-inverse {
+    color:#2E2E3E;
+}
+.nav > li.dashboard_link:hover  a .fa-inverse {
+    color:#999;
+}

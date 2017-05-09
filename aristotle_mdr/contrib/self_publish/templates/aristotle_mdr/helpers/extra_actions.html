@@ -1,0 +1,7 @@
+{% load i18n %}
+{% if request.user == item.submitter or request.user.is_superuser %}
+<a class="btn btn-default " href="{% url 'aristotle_self_publish:publish_metadata' item.id %}"
+    data-toggle="modal" data-target="#infobox_adv_edit">
+    <i class="fa fa-fw fa-globe"></i> {% trans 'Publish'%}
+</a>
+{% endif %}

@@ -1,0 +1,18 @@
+{% extends "aristotle_mdr/user/userHome.html" %}
+{% load aristotle_tags i18n %}
+
+{% block title %}{% trans "My Recent Actions" %}{% endblock %}
+{% block collapse-link%}<i class="fa fa-history fa-fw"></i> {% trans "My Recent Actions" %}</a>{% endblock %}
+{% block sidebar %}
+    {% include "aristotle_mdr/user/userSideBar.html" with activeTab='recent' %}
+{% endblock %}
+
+{% block page %}
+    <h1>{% trans "My Recent Actions" %}</h1>
+    {% if page %}
+        {% include "aristotle_mdr/helpers/paginated_reversion_list.html" with page=page %}
+    {% else %}
+        <p>You have no recent actions.</p>
+    {% endif %}
+
+{% endblock %}

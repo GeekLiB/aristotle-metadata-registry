@@ -1,0 +1,50 @@
+{% extends "aristotle_mdr/concepts/managedContent.html" %}
+
+{% load aristotle_tags util_tags %}
+
+{% block type %}conceptualdomain{% endblock %}
+{% block includes %}
+    <dd>
+        {% with total=item.dataelementconcept_set.count %}
+        {{ total }} Data Element Concept{{ total|pluralize }}
+        {% endwith %}
+        <br/>
+        {% with total=item.valuedomain_set.count %}
+        {{ total }} Value Domain{{ total|pluralize }}
+        {% endwith %}
+    </dd>
+{% endblock %}
+
+{% block objSpecific %}
+<table class='table'>
+    <caption>Roles in this conceptual relationship
+    {% if item|can_edit:request.user %}
+    <a href="{% url 'aristotle_mdr_links:relation_roles_edit' item.pk %}" class='btn btn-default pull-right'
+    >
+        <i class='fa fa-pencil'></i> Edit roles
+    </a>
+    {% endif %}
+    </caption>
+    <thead>
+        <tr>
+            <th>Order</th>
+            <th>Role name</th>
+            <th>definition</th>
+            <th>multiplicity</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for role in item.relationrole_set.all|order_by:'ordinal' %}
+    <tr id="role_{{role.pk}}">
+        <td>{{ role.ordinal }}</td>
+        <td>{{ role.name }}</td>
+        <td>{{ role.definition }}</td>
+        <td>{{ role.multiplicity }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block relationships %}
+{% endblock %}

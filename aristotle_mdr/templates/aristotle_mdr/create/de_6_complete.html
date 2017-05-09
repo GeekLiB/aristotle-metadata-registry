@@ -1,0 +1,42 @@
+{% extends "aristotle_mdr/create/dec_template_wrapper.html" %}
+{% load aristotle_tags i18n %}
+
+{% block formarea %}
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        You are about to create a new <strong>Data Element</strong>
+        that describes the storage of the "<em>{{ pr.name }}</em>" of a "<em>{{ oc.name }}</em>" using a "<em>{{ vd.name }}</em>"
+    </div>
+    <div class="panel-body">
+        {% if de_matches %}
+        Reusing existing content makes comparing items in the future easier.
+        <br>Consider reviewing these items to see if an existing piece of content meets your needs.
+        <ol class="searchResults">
+            {% for obj in de_matches %}
+            <li>
+                {% include "search/searchItem.html" with item=obj %}
+            </li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+        <p>You are about going to create the following items:
+            <ul>
+                {% if made_de  %}<li><strong>Data Element - {{made_de.name}}</strong><p>{{made_de.definition|safe}}</p></li>{% endif %}
+                {% if made_oc  %}<li><strong>Object Class - {{made_oc.name}}</strong><p>{{made_oc.definition|safe}}</p></li>{% endif %}
+                {% if made_pr  %}<li><strong>Property - {{made_pr.name}}</strong><p>{{made_pr.definition|safe}}</p></li>{% endif %}
+                {% if made_dec %}<li><strong>Data Element Concept - {{made_dec.name}}</strong><p>{{made_dec.definition|safe}}</p></li>{% endif %}
+                {% if made_vd  %}<li><strong>Value Domain - {{made_vd.name}}</strong><p>{{made_vd.definition|safe}}</p></li>{% endif %}
+            </ul>
+        </p>
+    </div>
+    <div class="panel-footer">
+        <label>
+        {{ wizard.form.make_items }}
+        {{ wizard.form.make_items.label }}
+        </label>
+        {{ wizard.form.make_items.errors }}
+    </div>
+</div>
+
+{% endblock %}

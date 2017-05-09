@@ -1,0 +1,70 @@
+{% extends "aristotle_mdr/base.html" %}
+
+{% block title %}Change states for multiple items{% endblock %}
+{% block content %}
+{{ form.media }}
+<form method="post" action="{% url 'aristotle:bulk_action' %}?next={{next}}">{% csrf_token %}
+    <input type="hidden" name="bulkaction" value="change_state"/>
+    <div class="modal-body">
+        {% if item and not request.is_ajax %}
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:item' item.id %}">{{ item.name }}</a></li>
+          <li class="active">Change registation status</li>
+        </ol>
+        {% endif %}
+        <header>This form allows you to change the status of items in your registration authorities.
+        </header>
+        <div>
+            {{ form.items.label }}
+            {{ form.items }}
+        </div>
+        <section>
+        <div id="changeStatusDate">
+            <span>
+                {{ form.registrationDate.label }}:
+                {{ form.registrationDate.errors }}
+            </span>
+            <span>
+                {{ form.registrationDate }}
+            </span>
+        </div>
+        <div id="cascadeRegistration">
+            <span>
+                {{ form.cascadeRegistration.label }}:
+                {{ form.cascadeRegistration.errors }}
+            </span>
+            <span>
+                {{ form.cascadeRegistration }}
+            </span>
+        </div>
+        <div id="changeStatus">
+            <div>
+                <span>
+                    {{ form.state.label }}
+                    {{ form.state.errors }}
+                </span>
+                <span>
+                    {{ form.registrationAuthorities.label }}
+                    {{ form.registrationAuthorities.errors }}
+                </span>
+            </div>
+            <div>
+                {{ form.state }}
+                {{ form.registrationAuthorities }}
+            </div>
+        </div>
+        <div class="status_change_description">
+            {{ form.changeDetails.label }} (optional):
+            {{ form.changeDetails }}
+        </div>
+        {% block save %}
+        {% endblock %}
+        </section>
+    </div>
+    <div>
+        <a class="btn btn-default" href="{{ next }}">Cancel</a>
+        <button type="submit" name="confirmed" class="btn btn-primary" value="Update Status">Update Status</button>
+    </div>
+</form>
+{% include 'autocomplete_light/static.html' %}
+{% endblock %}

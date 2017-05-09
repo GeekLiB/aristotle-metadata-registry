@@ -1,0 +1,83 @@
+{% extends "aristotle_mdr/create/dec_template_wrapper.html" %}
+
+{% block creationTips %}
+<div class="panel panel-info">
+    <header class="panel-heading">
+        The key to good metadata is reuse.
+    </header>
+    <div class="panel-body">
+        <p>
+            Enter a name and short description for the what you would like to create, and
+            Aristotle will do a quick search to see if similar objects exist to reuse.
+        </p>
+        <p>
+            If no items with similar terms exist, your search terms will be used to
+            pre-populate any new items you create.
+        </p>
+        <p>
+            <a href="{% url 'aristotle_help:concept_help'  'aristotle_mdr' 'dataelementconcept' %}"><em>Data Element concepts</em></a>
+            are description of a type of data that might be collected for a particular
+            attribute of an entity, described by the combination of a
+            <a href="{% url 'aristotle_help:concept_help'  'aristotle_mdr' 'objectclass' %}"><em>Object Class</em></a> and a
+            <a href="{% url 'aristotle_help:concept_help'  'aristotle_mdr' 'property' %}"><em>Property</em></a>.
+
+            <small class="example">For example: <em>Age of a Person</em> or <em>Number of employees of a Business</em>.</small>
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block formarea %}
+<fieldset class="wizard row">
+    <legend class="col-sm-4">What type of thing are you collecting infomation about?
+        <small class="example">For example: Person, Business, Event...</small>
+    </legend>
+    <div class="col-sm-8">
+        <label>
+            What would be the <em>name</em> of this type of object?
+            {% if form.oc_name.errors %}
+                <div class="alert alert-danger">
+                {{ form.oc_name.errors }}
+            {% endif %}
+            {{ form.oc_name }}
+            <div>
+             {{ form.oc_name.help_text }}
+            </div>
+            {% if form.oc_name.errors %}
+                </div>
+            {% endif %}
+        </label>
+        <label>
+            Add some <em>keywords</em> to help narrow your search (optional):
+            {{ form.oc_desc }}
+        </label>
+    </div>
+</fieldset>
+
+<fieldset class="wizard row">
+    <legend class="col-sm-4">
+        What information to you want to find out?
+        <small class="example">For example: Age, height, colour...</small>
+    </legend>
+    <div class="col-sm-8">
+        <label>
+            What would be the <em>name</em> of the property you are measuring?
+            {% if form.pr_name.errors %}
+                <div class="alert alert-danger">
+                {{ form.pr_name.errors }}
+            {% endif %}
+            {{ form.pr_name }}
+            <div>
+             {{ form.pr_name.help_text }}
+            </div>
+            {% if form.pr_name.errors %}
+                </div>
+            {% endif %}
+        </label>
+        <label>
+            Add some <em>keywords</em> to help narrow your search (optional):
+            {{ form.pr_desc }}
+        </label>
+    </div>
+</fieldset>
+{% endblock %}

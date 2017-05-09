@@ -1,0 +1,97 @@
+- model: aristotle_mdr_help.concepthelp
+  fields:
+    app_label: aristotle_mdr
+    concept_type: valuedomain
+    language: en
+    brief: A definition of how to record the measurement a particular attribute, either
+        using a coded list of values or a description of the possible values.
+    offical_definition: a set of Permissible Values
+    official_reference: ISO/IEC 11179 - Clause 3.2.140
+    official_link: 
+    body: >
+        <p>A value domain provides a set of permissible values by which a [[data element]]
+        can be implemented. Value domains can be enumerated (e.g. Total centimetres NNN)
+        or non-enumerated (e.g. Sex code N).</p>
+        
+            <p>The union of a specific value domain with a specific [[data element concept]]
+            creates a [[data element]]. For example the data element concept
+            <em>Person&mdash;body height</em> can be implemented through union
+            with the <em>Total centimetres NNN</em> value domain. </p>
+        
+        <header><strong>Permissible values</strong></header>
+        <blockquote>
+        An expression of a Value Meaning allowed in a specific Value Domain
+        </blockquote>
+        
+        <header><strong>Permissible values</strong></header>
+        
+        <p>ISO/IEC 11179 allows for 2 different types of Value Domains - enumerated vs non-enumerated.
+        The distinction between these is that an enumerated value domain is <q>specified by a list of all its Value Meanings</q>,
+        while a non-enumerated value domain is <q>specified by a description rather than a list of all Permissible Values</q>.
+        </p>
+        <ul>
+            <li>
+                <em>An example of a enumerated value domain</em> would be a list of 10-year cohorts for recording a persons age:
+                <ul>
+                    <li> A code of A coresponsing to 0-15 years
+                    <li> A code of B coresponsing to 15-30 years
+                    <li> A code of C coresponsing to 30-45 years
+                    <li> A code of D coresponsing to 45+ years
+                </ul>
+                Here, every possible value within the set has been explicitly enumerated.
+            </li>
+            <li>
+                <em>An example of a non-enumerated value domain</em> would be an numeric range for recording a persons age,
+                where the number could be any two digit number greater than zero. While there is an implied set of values, these have not been expressly enumerated.
+            </li>
+        </ul>
+        
+        <blockquote>
+        <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+        ISO/IEC 11179-3 Section 11.3.2.5</a></cite>
+
+        <p>Value_Domain is a class each instance of which models a value domain (3.2.140), a set
+        of permissible values (3.2.96). A value domain provides representation, but has no implication
+        as to the [[data element concept]] (3.2.29) with which the values are associated, nor what the values mean.</p>
+        <p>
+        A Value_Domain is an abstract class which is used to denote a collection of Permissible_Values associated with
+        a Conceptual_Domain (11.3.2.1). A Value_Domain has two possible subclasses: an Enumerated_Value_Domain (11.3.2.6)
+        and a Described_Value_Domain (11.3.2.8). A Value_Domain must be either one or both an Enumerated Valued or a Described_Value_Domain.
+        </p>
+
+        <p><strong>Example:</strong> 'ISO 3166 Codes for the representation of names of countries' 
+        describes seven distinct Value_Domains for the single Conceptual_Domain 'names of countries'.
+        The seven Value_Domains are:
+            'short name in English',
+            'official name in English', 
+            'short name in French', 
+            'official name in French',
+            'alpha-2 code', 
+            'alpha-3 code' 
+            and 'numeric code'.
+        </p>
+        </blockquote>
+
+        <blockquote>
+        <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+        ISO/IEC 11179-3 Section 11.3.2.6</a></cite>
+
+        <p>Enumerated_Value_Domain is a class each instance of which models an enumerated value domain (3.2.61),
+        a value domain (3.2.140) that is specified by a list of all its permissible values (3.2.96).
+        The Enumerated_Value_Domain class is a concrete subclass of the abstract class Value_Domain.</p>
+        </blockquote>
+
+        <blockquote>
+        <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+        ISO/IEC 11179-3 Section 11.3.2.8</a></cite>
+
+        <p>
+        Described_Value_Domain is a class each instance of which models a described value domain (3.2.49),
+        a value domain (3.2.140) that is specified by a description or specification, such as a rule,
+        a procedure, or a range (i.e. interval) , rather than as an explicit set of permissible values (3.2.96).
+        It is a concrete subclass of the abstract class Value_Domain. As a subclass of Value_Domain, a 
+        Described_Value_Domain inherits the attributes and relationships of the former.
+        </p>
+        </blockquote>
+
+

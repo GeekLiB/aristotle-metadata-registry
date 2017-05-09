@@ -1,0 +1,68 @@
+{% extends 'aristotle_mdr/downloads/pdf/pdf.html' %}
+{% load aristotle_tags aristotle_help %}
+
+{% block title %}{{ item.name }}{% endblock %}
+{% block content %}
+<section>
+    <header>
+    <h1 id="objectTitle">
+        {{ item.name }}
+        <span>({{ item.get_verbose_name }})
+        </span>
+    </h1>
+</header>
+<div class="definition">
+    {{ item.definition | safe }}
+</div>
+<div class="status">
+    {% include "aristotle_mdr/statuses.html" with statuses=item.current_statuses only %}
+</div>
+<table id="supersedes">
+    <tr>
+    <td>Supersedes:
+          <ul>
+          {% for sup in item.supersedes.all %}
+            <li>
+            <a href="/item/{{ sup.id }}/">{{ sup }}</a>
+            <span>(id {{ sup.id }})</span>
+            </li>
+          {% empty %}
+            <li>-</li>
+          {% endfor %}
+          </ul>
+    </td>
+    <td>Superseded by:
+        <ul><li>
+        {% if item.superseded_by %}
+            <a href="/item/{{ item.superseded_by.id }}/">{{ item.superseded_by }}</a>
+        {% else %}
+            -
+        {% endif %}
+        </li></ul>
+    </td>
+    </tr>
+</table>
+<div class="objectSpecific">
+    {% block objSpecific %}
+    {% endblock %}
+</div>
+{% if subitems %}
+<h1>Additional Components</h1>
+    {% for type,subitemset in subitems %}
+    <div style="page-break-after:always;">
+        <h2>{{type.get_verbose_name}}</h2>
+        <p>{% help_doc type 'brief' %}</p>
+        {% for i in subitemset %} 
+            <div id='{{i.id}}'>
+                {% include i|template_path:'pdf,inline' with item=i only %}
+            </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+{% endif %}
+{% if item.slots.count > 0 %}
+    {% include "aristotle_mdr/slots/pdf/slots_display.html" %}
+{% endif %}
+</section>
+
+{% endblock %}

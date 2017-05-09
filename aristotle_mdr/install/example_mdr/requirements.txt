@@ -1,0 +1,8 @@
+#Uncomment lines as required
+
+aristotle-metadata-registry>=1.2
+
+#!aristotle_dse! -e git+git://github.com/aristotle-mdr/aristotle-dataset-extensions#egg=aristotle-dse
+#!aristotle_glossary! -e git+git://github.com/aristotle-mdr/aristotle-glossary#egg=aristotle_glossary
+#!aristotle_ddi_utils! -e git+git://github.com/aristotle-mdr/aristotle-ddi-utils#egg=aristotle_ddi_utils
+#!aristotle_mdr_api! -e git+git://github.com/aristotle-mdr/aristotle-mdr-api#egg=aristotle_mdr_api

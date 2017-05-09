@@ -1,0 +1,15 @@
+{% load humanize %}
+<div class="result">
+<a href="{% url 'aristotle_help:help_page' item.slug %}">{{ item.title }}</a>
+<span class="item_type">(Help page)</span>
+<p>
+    {{ item.body|truncatewords:20|striptags }}
+</p>
+<div class="attrs">
+    <span class="attr">
+        {# <span class="time">Created: {{ item.created }}</span> #}
+        <header class="time">Last modified:</header>
+        {{ item.modified }}
+    </span>
+</div>
+</div>

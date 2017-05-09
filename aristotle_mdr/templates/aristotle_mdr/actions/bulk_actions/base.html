@@ -1,0 +1,8 @@
+{% extends "aristotle_mdr/base.html" %}
+{% load compile_static %}
+{% load static from staticfiles %}
+
+{% block extra_head_scripts %}
+{{ form.media }}
+<link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.bulk_action.less'|compile %}" />
+{% endblock %}

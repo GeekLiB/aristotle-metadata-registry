@@ -1,0 +1,39 @@
+{% extends 'aristotle_mdr/base.html' %}
+{% load compile_static i18n util_tags %}
+{% load static from staticfiles %}
+
+{% block title %}Edit link - {% endblock %}
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.wizard.less'|compile %}" />
+{% endblock %}
+
+{% block content %}
+    <form method="post" action="">{% csrf_token %}
+    <div class="modal-body">
+        <h1></h1>
+            {% if form.errors %}
+                {{form.errors}}
+            {% endif %}
+    <ol class="breadcrumb">
+      <li class="active">Edit link</a></li>
+    </ol>
+    <div>
+        You are about to add concepts to the roles for the relation
+            <a href='{{link.relation.get_absolute_url}}'>{{ link.relation }}</a> for this link.
+        <div class='well'>
+        {{ link.relation.definition|safe }}
+        </div>
+    </div>
+    <div>
+        <div>
+            {% include 'aristotle_mdr_links/actions/helpers/link_end_form.html' %}
+        </div>
+    </div>
+
+        <div class="modal-footer">
+            <a class="btn btn-default" href="">Cancel</a>
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </div>
+    </div>
+    </form>
+{% endblock %}

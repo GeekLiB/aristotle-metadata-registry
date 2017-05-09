@@ -1,0 +1,1704 @@
+# Aristotle-MDR translation file.
+# Copyright (C) 2015
+# This file is distributed under the same license as the Aristotle-MDR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.0.1a\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-19 22:55-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: aristotle_mdr/contrib/browse/views.py:27
+#, fuzzy
+msgid "No name"
+msgstr "Sin nombre"
+
+#: aristotle_mdr/contrib/help/forms.py:20 aristotle_mdr/forms/search.py:20
+#, fuzzy
+msgid "Any time"
+msgstr "En cualquier momento"
+
+#: aristotle_mdr/contrib/help/forms.py:21 aristotle_mdr/forms/search.py:21
+#, fuzzy
+msgid "Last hour"
+msgstr "Ultima hora"
+
+#: aristotle_mdr/contrib/help/forms.py:22 aristotle_mdr/forms/search.py:22
+#, fuzzy
+msgid "Today"
+msgstr "Hoy"
+
+#: aristotle_mdr/contrib/help/forms.py:23 aristotle_mdr/forms/search.py:23
+#, fuzzy
+msgid "This week"
+msgstr "Esta semana"
+
+#: aristotle_mdr/contrib/help/forms.py:24 aristotle_mdr/forms/search.py:24
+#, fuzzy
+msgid "This month"
+msgstr "Este mes"
+
+#: aristotle_mdr/contrib/help/forms.py:25 aristotle_mdr/forms/search.py:25
+#, fuzzy
+msgid "This year"
+msgstr "Este año"
+
+#: aristotle_mdr/contrib/help/forms.py:26 aristotle_mdr/forms/search.py:26
+#, fuzzy
+msgid "Custom period"
+msgstr "periodo de encargo"
+
+#: aristotle_mdr/contrib/help/forms.py:31 aristotle_mdr/forms/search.py:31
+#, fuzzy
+msgid "Ranking"
+msgstr "Clasificación"
+
+#: aristotle_mdr/contrib/help/forms.py:32 aristotle_mdr/forms/search.py:32
+#, fuzzy
+msgid "Modified ascending"
+msgstr "ascendente modificado"
+
+#: aristotle_mdr/contrib/help/forms.py:33 aristotle_mdr/forms/search.py:33
+#, fuzzy
+msgid "Modified descending"
+msgstr "descendente modificado"
+
+#: aristotle_mdr/contrib/help/forms.py:34 aristotle_mdr/forms/search.py:34
+#, fuzzy
+msgid "Created ascending"
+msgstr "Creado ascendente"
+
+#: aristotle_mdr/contrib/help/forms.py:35 aristotle_mdr/forms/search.py:35
+#, fuzzy
+msgid "Created descending"
+msgstr "Creado descendente"
+
+#: aristotle_mdr/contrib/help/forms.py:36 aristotle_mdr/forms/search.py:36
+#, fuzzy
+msgid "Alphabetical"
+msgstr "Alfabético"
+
+#: aristotle_mdr/contrib/help/forms.py:37 aristotle_mdr/forms/search.py:37
+#, fuzzy
+msgid "Registration state"
+msgstr "estado de registro"
+
+#: aristotle_mdr/contrib/help/forms.py:285 aristotle_mdr/forms/search.py:285
+#, fuzzy
+msgid "Registration authority"
+msgstr "Autoridad de Registro"
+
+#: aristotle_mdr/contrib/help/forms.py:302 aristotle_mdr/forms/search.py:302
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:3
+#, fuzzy
+msgid "Registration status"
+msgstr "Estado de registro"
+
+#: aristotle_mdr/contrib/help/forms.py:316 aristotle_mdr/forms/search.py:316
+#, fuzzy
+msgid "Item type"
+msgstr "Tipo de artículo"
+
+#: aristotle_mdr/contrib/help/models.py:24
+#, fuzzy
+msgid "Add an app for app specific help, required for concept help"
+msgstr ""
+"Agregar una aplicación para obtener ayuda específica aplicación, es "
+"necesario para el concepto de ayuda"
+
+#: aristotle_mdr/contrib/help/models.py:27
+#, fuzzy
+msgid "A short title for the help page"
+msgstr "Un título corto para la página de ayuda"
+
+#: aristotle_mdr/contrib/help/models.py:31
+#, fuzzy
+msgid "A long help definition for an object or topic"
+msgstr "Una definición ayuda mucho para un objeto o tema"
+
+#: aristotle_mdr/contrib/help/models.py:57
+#, fuzzy
+msgid "A short description of the concept"
+msgstr "Una breve descripción del concepto"
+
+#: aristotle_mdr/contrib/help/models.py:61
+#, fuzzy
+msgid ""
+"An official description of the concept, e.g. the ISO/IEC definition for an "
+"Object Class"
+msgstr ""
+"Una descripción oficial del concepto, por ejemplo, la definición de la ISO /"
+" IEC para una clase de objeto"
+
+#: aristotle_mdr/contrib/help/models.py:65
+#, fuzzy
+msgid "The reference document that describes this concept type"
+msgstr "El documento de referencia que describe este tipo de concepto"
+
+#: aristotle_mdr/contrib/help/models.py:69
+#, fuzzy
+msgid "An link to an official source for a description of the concept"
+msgstr ""
+"Un enlace a una fuente oficial para obtener una descripción del concepto"
+
+#: aristotle_mdr/contrib/help/models.py:73
+#, fuzzy
+msgid "Instructions for creating good content of this type"
+msgstr "Las instrucciones para crear un buen contenido de este tipo"
+
+#: aristotle_mdr/contrib/help/models.py:102
+#, python-format, fuzzy
+msgid "Help for concept type %s"
+msgstr "Ayuda para el concepto de tipo %s"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/all_help.html:28
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/base.html:25
+#: aristotle_mdr/templates/aristotle_mdr/header.html:35
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:17
+#: aristotle_mdr/templates/search/search.html:21
+#: aristotle_mdr/templates/search/search.html:30
+#: aristotle_mdr/views/wizards.py:644
+#, fuzzy
+msgid "Search"
+msgstr "Buscar"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/base.html:21
+#, fuzzy
+msgid "Search help"
+msgstr "Buscar Ayuda"
+
+#: aristotle_mdr/contrib/help/templates/aristotle_mdr_help/concept_help.html:20
+#, fuzzy
+msgid "Click to view the official source"
+msgstr "Haga clic para ver la fuente oficial"
+
+#: aristotle_mdr/forms/admin.py:23 aristotle_mdr/forms/admin.py:24
+#: aristotle_mdr/forms/admin.py:25 aristotle_mdr/forms/admin.py:26
+#, fuzzy
+msgid "workgroups"
+msgstr "grupos de trabajo"
+
+#: aristotle_mdr/forms/admin.py:29
+#, fuzzy
+msgid "registration authorities"
+msgstr "las autoridades de registro"
+
+#: aristotle_mdr/forms/bulk_actions.py:115
+#, fuzzy
+msgid "Add bookmark"
+msgstr "Añadir marcador"
+
+#: aristotle_mdr/forms/bulk_actions.py:123
+#, python-format, fuzzy
+msgid ""
+"%(num_items)s items favourited. \n"
+"Some items failed, they had the id's: %(bad_ids)s"
+msgstr ""
+"%(num_items)s artículos Favorecido. Algunos artículos no, tenían los "
+"identificadores: %(bad_ids)s"
+
+#: aristotle_mdr/forms/bulk_actions.py:133
+#, fuzzy
+msgid "Remove bookmark"
+msgstr "Eliminar marca"
+
+#: aristotle_mdr/forms/bulk_actions.py:138
+#, python-format, fuzzy
+msgid "%(num_items)s items removed from favourites"
+msgstr "%(num_items)s elementos retirados de favoritos"
+
+#: aristotle_mdr/forms/bulk_actions.py:144
+#, fuzzy
+msgid "Change state"
+msgstr "cambio de estado"
+
+#: aristotle_mdr/forms/bulk_actions.py:179
+#, python-format, fuzzy
+msgid ""
+"%(num_items)s items registered in %(num_ra)s registration authorities. \n"
+"Some items failed, they had the id's: %(bad_ids)s"
+msgstr ""
+"%(num_items)s elementos registrados en los órganos de registro %(num_ra)s . "
+"Algunos artículos no, tenían los identificadores: %(bad_ids)s"
+
+#: aristotle_mdr/forms/creation_wizards.py:42
+#, fuzzy
+msgid "You do not have permission to move an item between workgroups."
+msgstr ""
+"Usted no tiene permiso para mover un elemento entre grupos de trabajo."
+
+#: aristotle_mdr/forms/creation_wizards.py:43
+#, fuzzy
+msgid "You do not have permission to remove an item from this workgroup."
+msgstr ""
+"Usted no tiene permiso para eliminar un elemento de este grupo de trabajo."
+
+#: aristotle_mdr/forms/creation_wizards.py:44
+#, fuzzy
+msgid "You do not have permission to move an item to that workgroup."
+msgstr "Usted no tiene permiso para mover un elemento a ese grupo de trabajo."
+
+#: aristotle_mdr/forms/creation_wizards.py:69
+#, fuzzy
+msgid ""
+"The object you are editing has been changed, review the changes before "
+"continuing then if you wish to save your changes click the Save button "
+"below."
+msgstr ""
+"El objeto que se está editando se ha cambiado, compruebe los cambios antes "
+"de continuar continuación, si desea guardar los cambios, haga clic en el "
+"botón Guardar a continuación."
+
+#: aristotle_mdr/forms/creation_wizards.py:72
+#, fuzzy
+msgid ""
+"Unable to determine if this save will overwrite an existing save. Please try"
+" again. "
+msgstr ""
+"No se puede determinar si esto reserva se sobreponen a una ya existente en "
+"Guardar. Por favor, inténtelo de nuevo."
+
+#: aristotle_mdr/forms/creation_wizards.py:179
+#: aristotle_mdr/forms/creation_wizards.py:340
+#, fuzzy
+msgid ""
+"I've reviewed these items, and none of them meet my needs. Make me a new "
+"one."
+msgstr ""
+"He revisado estos artículos, y ninguno de ellos cumplió con mis necesidades."
+" Hazme una nueva."
+
+#: aristotle_mdr/forms/creation_wizards.py:259
+#: aristotle_mdr/forms/creation_wizards.py:356
+#, fuzzy
+msgid "I've reviewed these items, and wish to create them."
+msgstr "He revisado estos artículos, y deseo para crearlos."
+
+#: aristotle_mdr/forms/forms.py:18
+#, fuzzy
+msgid "First Name"
+msgstr "Nombre de pila"
+
+#: aristotle_mdr/forms/forms.py:19
+#, fuzzy
+msgid "Last Name"
+msgstr "Apellido"
+
+#: aristotle_mdr/forms/forms.py:20
+#, fuzzy
+msgid "Email Address"
+msgstr "Dirección de correo electrónico"
+
+#: aristotle_mdr/forms/forms.py:45
+#, fuzzy
+msgid "Supersede older items"
+msgstr "Sustituyen artículos anteriores"
+
+#: aristotle_mdr/forms/forms.py:66 aristotle_mdr/forms/forms.py:85
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:102
+#, fuzzy
+msgid "Superseded by"
+msgstr "Sustituida por"
+
+#: aristotle_mdr/forms/forms.py:104
+#, fuzzy
+msgid "Registration date"
+msgstr "Fecha de Registro"
+
+#: aristotle_mdr/forms/forms.py:111
+#, fuzzy
+msgid "Do you want to update the registration of associated items?"
+msgstr "¿Quieres actualizar el registro de elementos asociados?"
+
+#: aristotle_mdr/forms/forms.py:116
+#, fuzzy
+msgid "Why is the status being changed for these items?"
+msgstr "¿Por qué es la situación está cambiando para estos equipos?"
+
+#: aristotle_mdr/forms/forms.py:164 aristotle_mdr/forms/forms.py:184
+#, fuzzy
+msgid "First item"
+msgstr "En primer elemento"
+
+#: aristotle_mdr/forms/forms.py:171 aristotle_mdr/forms/forms.py:191
+#, fuzzy
+msgid "Second item"
+msgstr "segundo punto"
+
+#: aristotle_mdr/forms/workgroups.py:12
+#, fuzzy
+msgid "Workgroup roles"
+msgstr "funciones de grupo de trabajo"
+
+#: aristotle_mdr/forms/workgroups.py:17
+#, fuzzy
+msgid "Select users"
+msgstr "Seleccione los usuarios"
+
+#: aristotle_mdr/models.py:37
+#, fuzzy
+msgid "Not Progressed"
+msgstr "no progresada"
+
+#: aristotle_mdr/models.py:38
+#, fuzzy
+msgid "Incomplete"
+msgstr "Incompleto"
+
+#: aristotle_mdr/models.py:39
+#: aristotle_mdr/tests/querysets/test_querysets.py:68
+#, fuzzy
+msgid "Candidate"
+msgstr "Candidato"
+
+#: aristotle_mdr/models.py:40
+#: aristotle_mdr/tests/querysets/test_querysets.py:69
+#, fuzzy
+msgid "Recorded"
+msgstr "Grabado"
+
+#: aristotle_mdr/models.py:41
+#, fuzzy
+msgid "Qualified"
+msgstr "Calificado"
+
+#: aristotle_mdr/models.py:42
+#: aristotle_mdr/tests/querysets/test_querysets.py:71
+#, fuzzy
+msgid "Standard"
+msgstr "Estándar"
+
+#: aristotle_mdr/models.py:43
+#, fuzzy
+msgid "Preferred Standard"
+msgstr "Preferred Standard"
+
+#: aristotle_mdr/models.py:44
+#, fuzzy
+msgid "Superseded"
+msgstr "sustituida"
+
+#: aristotle_mdr/models.py:45
+#: aristotle_mdr/tests/querysets/test_querysets.py:74
+#, fuzzy
+msgid "Retired"
+msgstr "Retirado"
+
+#: aristotle_mdr/models.py:54
+#, fuzzy
+msgid "The primary name used for human identification purposes."
+msgstr ""
+"El nombre principal que se utiliza para los propósitos de identificación "
+"humana."
+
+#: aristotle_mdr/models.py:57
+#, fuzzy
+msgid "definition"
+msgstr "definición"
+
+#: aristotle_mdr/models.py:58
+#, fuzzy
+msgid ""
+"Representation of a concept by a descriptive statement which serves to "
+"differentiate it from related concepts"
+msgstr ""
+"Representación de un concepto de un texto descriptivo que sirve para "
+"diferenciarlo de conceptos relacionados"
+
+#: aristotle_mdr/models.py:159
+#, fuzzy
+msgid "Managers"
+msgstr "Los gestores"
+
+#: aristotle_mdr/models.py:192
+#, fuzzy
+msgid "Registrars"
+msgstr "registradores"
+
+#: aristotle_mdr/models.py:218 aristotle_mdr/models.py:354
+#: aristotle_mdr/models.py:390
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:27
+#, fuzzy
+msgid "Registration Authorities"
+msgstr "Autoridades de registro"
+
+#: aristotle_mdr/models.py:269
+#, python-format, fuzzy
+msgid "Cascade registration of item '%(name)s' (id:%(iid)s)\n"
+msgstr "de registro en cascada del tema &#39;%(name)s&#39; (id: __ iid__)\n"
+
+#: aristotle_mdr/models.py:353
+#, fuzzy
+msgid "Registry"
+msgstr "Registro"
+
+#: aristotle_mdr/models.py:373
+#, fuzzy
+msgid ""
+"Specifies the 'owner' of the content of the workgroup. Selecting 'registry' "
+"allows any registration authority to progress and make items public, "
+"'Registration authorities' specifies that only registration authorities "
+"associated with this workgroup may control their visibility."
+msgstr ""
+"Especifica el &quot;dueño&quot; del contenido del grupo de trabajo. Al "
+"seleccionar &quot;A&quot; del Registro permite a cualquier autoridad de "
+"registro para el progreso y hacer que los elementos pública, &#39;organismo "
+"de registro especifica que sólo las autoridades de registro asociados a este"
+" grupo de trabajo pueden controlar su visibilidad."
+
+#: aristotle_mdr/models.py:382
+#, fuzzy
+msgid ""
+"Archived workgroups can no longer have new items or discussions created "
+"within them."
+msgstr ""
+"grupos de trabajo archivados ya no pueden tener nuevos artículos o "
+"discusiones creadas dentro de ellos."
+
+#: aristotle_mdr/models.py:384
+#, fuzzy
+msgid "Archived"
+msgstr "archivado"
+
+#: aristotle_mdr/models.py:397
+#, fuzzy
+msgid "Viewers"
+msgstr "Los espectadores"
+
+#: aristotle_mdr/models.py:403
+#, fuzzy
+msgid "Submitters"
+msgstr "Peticionarios"
+
+#: aristotle_mdr/models.py:409
+#, fuzzy
+msgid "Stewards"
+msgstr "administradores"
+
+#: aristotle_mdr/models.py:413
+#, fuzzy
+msgid "Submitter"
+msgstr "Remitente"
+
+#: aristotle_mdr/models.py:414
+#, fuzzy
+msgid "Viewer"
+msgstr "Espectador"
+
+#: aristotle_mdr/models.py:415
+#, fuzzy
+msgid "Steward"
+msgstr "Mayordomo"
+
+#: aristotle_mdr/models.py:416
+#, fuzzy
+msgid "Manager"
+msgstr "Gerente"
+
+#: aristotle_mdr/models.py:929
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:20
+#, fuzzy
+msgid "Date registration effective"
+msgstr "Fecha de notificación efectiva"
+
+#: aristotle_mdr/models.py:931
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:21
+#, fuzzy
+msgid "Date registration expires"
+msgstr "Fecha de inscripción expira"
+
+#: aristotle_mdr/models.py:1019 aristotle_mdr/models.py:1077
+#, fuzzy
+msgid "description"
+msgstr "descripción"
+
+#: aristotle_mdr/register.py:135
+#, python-format, fuzzy
+msgid "Extra fields for %(class_name)s"
+msgstr "Los campos adicionales para %(class_name)s"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:88
+#, fuzzy
+msgid "Return to the main site"
+msgstr "Volver a la página principal"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:105
+#, fuzzy
+msgid "Browse live documentation"
+msgstr "Examine la documentación en directo"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:105
+#, fuzzy
+msgid "Documentation"
+msgstr "Documentación"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:110
+#: aristotle_mdr/templates/aristotle_mdr/header.html:46
+#, fuzzy
+msgid "Open user menu"
+msgstr "Abrir menú de usuario"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:120
+#: aristotle_mdr/templates/aristotle_mdr/header.html:56
+#, fuzzy
+msgid "My Dashboard"
+msgstr "Mi tablero"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:122
+#: aristotle_mdr/templates/aristotle_mdr/header.html:79
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:75
+#, fuzzy
+msgid "Change password"
+msgstr "Cambia la contraseña"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:125
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:140
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:142
+#: aristotle_mdr/templates/aristotle_mdr/header.html:152
+#: aristotle_mdr/templates/aristotle_mdr/header.html:154
+#, fuzzy
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:133
+#: aristotle_mdr/templates/aristotle_mdr/header.html:141
+#: aristotle_mdr/templates/aristotle_mdr/header.html:142
+#, fuzzy
+msgid "New notifications"
+msgstr "nuevas notificaciones"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:135
+#: aristotle_mdr/templates/aristotle_mdr/header.html:144
+#: aristotle_mdr/templates/aristotle_mdr/header.html:145
+#, fuzzy
+msgid "No unread notifications"
+msgstr "No hay notificaciones no leídas"
+
+#: aristotle_mdr/templates/admin/aristotle_admin_base.html:161
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:4
+#, fuzzy
+msgid "Home"
+msgstr "Casa"
+
+#: aristotle_mdr/templates/admin/submit_line.html:7
+#: aristotle_mdr/tests/apps/bulk_actions_test/actions.py:7
+#, fuzzy
+msgid "Delete"
+msgstr "Borrar"
+
+#: aristotle_mdr/templates/admin/submit_line.html:11
+#, fuzzy
+msgid "Cancel editing and return to main site"
+msgstr "Cancelar la edición y volver al sitio principal"
+
+#: aristotle_mdr/templates/admin/submit_line.html:13
+#, fuzzy
+msgid "Exit without saving"
+msgstr "Salir sin guardar"
+
+#: aristotle_mdr/templates/admin/submit_line.html:16
+#, fuzzy
+msgid "Save and return to item"
+msgstr "Guardar y volver al punto"
+
+#: aristotle_mdr/templates/admin/submit_line.html:19
+#, fuzzy
+msgid "Save as new"
+msgstr "Guardar como nueva"
+
+#: aristotle_mdr/templates/admin/submit_line.html:22
+#, fuzzy
+msgid "Save and add another"
+msgstr "Guardar y añadir otro"
+
+#: aristotle_mdr/templates/admin/submit_line.html:25
+#, fuzzy
+msgid "Save and continue editing"
+msgstr "Guardar y continuar con la edición"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:24
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:6
+#, fuzzy
+msgid "This item has been superseded by the newer version,"
+msgstr "Este artículo ha sido reemplazado por la versión más reciente,"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:30
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:11
+#, fuzzy
+msgid ""
+"This item has been retired and is not recommended for use by any "
+"registration authority."
+msgstr ""
+"Este artículo ha sido retirado y no se recomienda para su uso por cualquier "
+"autoridad de registro."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:37
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:16
+#, fuzzy
+msgid "This item is currently public."
+msgstr "Este articulo está disponible público."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/advanced_editor.html:41
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:20
+#, fuzzy
+msgid "This item is currently under development."
+msgstr "Este artículo está actualmente en fase de desarrollo."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:42
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:44
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:35
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:37
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:49
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:37
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:17
+#: aristotle_mdr/templates/registration/password_change_form.html:46
+#, fuzzy
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:48
+#, fuzzy
+msgid "Reactivate"
+msgstr "Reactivar"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/archive_workgroup.html:50
+#, fuzzy
+msgid "Archive"
+msgstr "Archivo"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/autocompleteItem.html:10
+#, fuzzy
+msgid "Open in a new window"
+msgstr "Abrir en una nueva ventana"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:25
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:118
+#, fuzzy
+msgid "Select a new state to see how the visibility of this item will change."
+msgstr ""
+"Seleccionar un nuevo estado para ver cómo la visibilidad de este artículo va"
+" a cambiar."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:115
+#, fuzzy
+msgid "After saving, this item will stay VISIBILITY_STATUS"
+msgstr "Después de guardar, este artículo permanecerá VISIBILITY_STATUS"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:117
+#, fuzzy
+msgid "After saving, this item will become VISIBILITY_STATUS"
+msgstr "Después de guardar, este material se convierta en VISIBILITY_STATUS"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:120
+#, fuzzy
+msgid "hidden"
+msgstr "oculto"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:121
+#, fuzzy
+msgid "locked"
+msgstr "bloqueada"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/changeStatus.html:122
+#, fuzzy
+msgid "public"
+msgstr "público"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:61
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:34
+#, fuzzy
+msgid "There are no differences."
+msgstr "No hay diferencias."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:69
+#, fuzzy
+msgid "Fields below are identical for both items."
+msgstr "Los campos a continuación son idénticos para ambos elementos."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:80
+#, fuzzy
+msgid "Blank for both items"
+msgstr "En blanco para ambos artículos"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:87
+#, fuzzy
+msgid "There are no similarities."
+msgstr "No hay similitudes."
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:98
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:123
+#, fuzzy
+msgid "Fields below are only on "
+msgstr "Los campos a continuación son sólo de"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:109
+#: aristotle_mdr/templates/aristotle_mdr/actions/compare/compare_items.html:135
+#, fuzzy
+msgid "Blank"
+msgstr "Blanco"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:14
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history_compare.html:18
+#, fuzzy
+msgid "Version history"
+msgstr "Historial de versiones"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:20
+#, fuzzy
+msgid "Date"
+msgstr "Fecha"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:21
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:14
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:22
+#, fuzzy
+msgid "Comment"
+msgstr "Comentario"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:22
+#: aristotle_mdr/templates/aristotle_mdr/header.html:127
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:21
+#, fuzzy
+msgid "User"
+msgstr "Usuario"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history.html:41
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:36
+#, fuzzy
+msgid "No version comment made"
+msgstr "No hay versión comentario hecho"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/concept_history_compare.html:20
+#, fuzzy
+msgid "Compare"
+msgstr "Comparar"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:41
+#, fuzzy
+msgid "Remove ready to review flag"
+msgstr "Retire dispuesta a revisar la bandera"
+
+#: aristotle_mdr/templates/aristotle_mdr/actions/mark_ready_to_review.html:43
+#, fuzzy
+msgid "Ready to review"
+msgstr "Dispuesta a revisar"
+
+#: aristotle_mdr/templates/aristotle_mdr/base.html:40
+#, fuzzy
+msgid "Loading"
+msgstr "Cargando"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:21
+#, fuzzy
+msgctxt "Object Type"
+msgid "Type"
+msgstr "Tipo"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:29
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:97
+#, fuzzy
+msgid "Short name"
+msgstr "Nombre corto"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:32
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:25
+#, fuzzy
+msgid "Version"
+msgstr "Versión"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:35
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:100
+#, fuzzy
+msgid "Synonyms"
+msgstr "sinónimos"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:38
+#, fuzzy
+msgid "Origin URI"
+msgstr "origen URI"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:55
+#, fuzzy
+msgid "Last updated"
+msgstr "Última actualización"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:72
+#, fuzzy
+msgid "This may have been added during an import."
+msgstr "Esto puede haber sido añadido durante una importación."
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:72
+#, fuzzy
+msgctxt "Unknown import user"
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:77
+#, fuzzy
+msgid "Created"
+msgstr "Creado"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:83
+#, fuzzy
+msgid "Supersedes"
+msgstr "Reemplaza"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:97
+#, fuzzy
+msgctxt "No older objects"
+msgid "None"
+msgstr "Ninguna"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:112
+#, fuzzy
+msgctxt "No newer objects"
+msgid "None"
+msgstr "Ninguna"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:118
+#: aristotle_mdr/templates/aristotle_mdr/header.html:123
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:24
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:16
+#, fuzzy
+msgid "Workgroup"
+msgstr "grupo de trabajo"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:120
+#, fuzzy
+msgid "History"
+msgstr "Historia"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:121
+#, fuzzy
+msgid "View history"
+msgstr "Ver historial"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:122
+#: aristotle_mdr/templates/aristotle_mdr/header.html:69
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:63
+#, fuzzy
+msgid "Discussions"
+msgstr "discusiones"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/infobox.html:132
+#, fuzzy
+msgid "Start a new discussion about this item"
+msgstr "Iniciar una nueva discusión sobre este tema"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:33
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:54
+#, fuzzy
+msgid "Edit in admin"
+msgstr "Editar admin"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:35
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:51
+#, fuzzy
+msgid "Open item editor"
+msgstr "editor de elementos abierto"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:46
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:72
+#, fuzzy
+msgid "Edit"
+msgstr "Editar"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:59
+#, fuzzy
+msgid "Clone this item"
+msgstr "Clonar este artículo"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:63
+#, fuzzy
+msgid "Clone this item via admin"
+msgstr "Clonar este artículo vía de administración"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:79
+#, fuzzy
+msgid "Download"
+msgstr "Descargar"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/managedContent.html:89
+#, fuzzy
+msgid "Definition"
+msgstr "Definición"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:24
+#, fuzzy
+msgid "This item is under active development. Content may change frequently."
+msgstr ""
+"Este artículo está bajo desarrollo activo. El contenido puede cambiar con "
+"frecuencia."
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:34
+#, fuzzy
+msgid ""
+"This item has been marked as ready to review, but has not yet been "
+"registered in an authority."
+msgstr ""
+"Este artículo ha sido marcado como dispuesto a revisar, pero aún no ha sido "
+"registrada en una autoridad."
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:36
+#, fuzzy
+msgid ""
+"The visibility of this item is still restricted to your current workgroup."
+msgstr ""
+"La visibilidad de este artículo todavía está restringido a su grupo de "
+"trabajo actual."
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:42
+#, fuzzy
+msgid ""
+"\n"
+"                <p>You can control the visibility of this item by indicating its review status.\n"
+"                If an item is marked \"ready for review\", registrars will be able to see this item and\n"
+"                begin the standardisation process according to their registration authority.\n"
+"                </p>\n"
+"                "
+msgstr ""
+"\n"
+"<p> Puede controlar la visibilidad de este tema, lo que indica su estado de revisión. Si un artículo está marcado como &quot;listos para su revisión&quot;, registradores podrán ver este tema y comenzar el proceso de normalización de acuerdo con su autoridad de registro. </p>"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:51
+#, fuzzy
+msgid "Remove ready for review flag"
+msgstr "Retire listo para la bandera opinión"
+
+#: aristotle_mdr/templates/aristotle_mdr/concepts/visibilityInfoBar.html:53
+#, fuzzy
+msgid "Flag as ready for review"
+msgstr "Así, lista para su revisión"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/clone_item.html:16
+#, fuzzy
+msgid "Cloning"
+msgstr "clonación"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/clone_item.html:19
+#, fuzzy
+msgid ""
+"\n"
+"            Reusing existing metadata helps users find and compare similar items. Cloning and item should only be done where a similar but clearly different item exists and can be used as a template for quickly creating a new item in the registry.\n"
+"            "
+msgstr ""
+"\n"
+"La reutilización de los metadatos existentes ayuda a los usuarios encontrar y comparar elementos similares. La clonación y el tema se debe hacer solamente cuando existe un artículo similar pero claramente diferente y se puede utilizar como una plantilla para crear rápidamente un nuevo elemento en el registro."
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:8
+#, fuzzy
+msgctxt "creating items"
+msgid "Definition"
+msgstr "Definición"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:15
+#, fuzzy
+msgctxt "For making an item"
+msgid "Components"
+msgstr "componentes"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:19
+#, fuzzy
+msgctxt "When saving changes to an item"
+msgid "Change message"
+msgstr "mensaje de cambio"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:23
+#, fuzzy
+msgctxt "creating items"
+msgid "Tips and help"
+msgstr "Consejos y ayuda"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_editor.html:144
+#, fuzzy
+msgid ""
+"\n"
+"                If it is left blank an automatic messages stating which fields\n"
+"                have been changed will be generated on your behalf.\n"
+"                </p>\n"
+"                <p>However, stating <em>why</em> values in fields have changed\n"
+"                can be much more useful than knowing that a field has changed.\n"
+"                "
+msgstr ""
+"\n"
+"Si se deja en blanco un mensajes automáticos que indican qué campos han sido modificados serán generados en su nombre. </p><p> Sin embargo, indicando <em>por qué</em> valores de los campos han cambiado puede ser mucho más útil que saber que un campo ha cambiado."
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:25
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:46
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:39
+#, fuzzy
+msgid "First step"
+msgstr "Primer paso"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:28
+#: aristotle_mdr/templates/aristotle_mdr/create/de_template_wrapper.html:47
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:40
+#, fuzzy
+msgid "Back"
+msgstr "Espalda"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:31
+#, fuzzy
+msgid "submit"
+msgstr "enviar"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/concept_wizard_wrapper.html:32
+#: aristotle_mdr/templates/aristotle_mdr/create/dec_template_wrapper.html:36
+#: aristotle_mdr/views/wizards.py:637
+#, fuzzy
+msgid "Next"
+msgstr "Siguiente"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:5
+#, fuzzy
+msgid "Create New Items"
+msgstr "Crear nuevos elementos"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:16
+#: aristotle_mdr/templates/aristotle_mdr/header.html:91
+#, fuzzy
+msgid "Management interface"
+msgstr "interfaz de gestión"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:24
+#: aristotle_mdr/templates/aristotle_mdr/header.html:103
+#: aristotle_mdr/templates/aristotle_mdr/header.html:105
+#, fuzzy
+msgid "Create new"
+msgstr "Crear nuevo"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:25
+#, fuzzy
+msgid "Help"
+msgstr "Ayuda"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:26
+#, fuzzy
+msgid "Basic description"
+msgstr "Descripción básica"
+
+#: aristotle_mdr/templates/aristotle_mdr/create/create_list.html:39
+#, fuzzy
+msgid "Get more help on this item"
+msgstr "Obtener más ayuda sobre este tema"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:59
+#, fuzzy
+msgid "My Favourites"
+msgstr "Mis favoritos"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:63
+#, fuzzy
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:72
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:32
+#, fuzzy
+msgid "Workgroups"
+msgstr "grupos de trabajo"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:75
+#, fuzzy
+msgid "Recent actions"
+msgstr "Las acciones recientes"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:85
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:88
+#, fuzzy
+msgid "Registrar tools"
+msgstr "herramientas de registrador"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:96
+#, fuzzy
+msgid "Admin tools"
+msgstr "herramientas de administración"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:119
+#, fuzzy
+msgid "Admin only"
+msgstr "único administrador"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:133
+#, fuzzy
+msgid "See all"
+msgstr "Ver todo"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:139
+#, fuzzy
+msgid "Show recent notifications"
+msgstr "Mostrar notificaciones recientes"
+
+#: aristotle_mdr/templates/aristotle_mdr/header.html:160
+#: aristotle_mdr/templates/registration/password_reset_complete.html:10
+#, fuzzy
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/favourite_concept.html:11
+#, python-format, fuzzy
+msgid "Favourited by %(count)s users "
+msgstr "Favorecido por los usuarios %(count)s "
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_list.html:14
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:14
+#, fuzzy
+msgid "Concept"
+msgstr "Concepto"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_list.html:32
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_review_list.html:33
+#, fuzzy
+msgid "Last modified"
+msgstr "Última modificación"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:15
+#, fuzzy
+msgid "Updated"
+msgstr "Actualizado"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_reversion_list.html:16
+#, fuzzy
+msgid "Items"
+msgstr "Artículos"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:3
+#, fuzzy
+msgid "Filter workgroups by name and description"
+msgstr "grupos de trabajo Nombre de filtro y la descripción"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:25
+#, fuzzy
+msgid "Ownership"
+msgstr "Propiedad"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:37
+#, fuzzy
+msgid "Number of members"
+msgstr "Número de miembros"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:47
+#, fuzzy
+msgid "Number of items"
+msgstr "Número de items"
+
+#: aristotle_mdr/templates/aristotle_mdr/helpers/paginated_workgroup_list.html:65
+#, fuzzy
+msgid "None"
+msgstr "Ninguna"
+
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:22
+#, fuzzy
+msgid "State"
+msgstr "Estado"
+
+#: aristotle_mdr/templates/aristotle_mdr/registrationHistory.html:44
+#, fuzzy
+msgid "This item has not yet been registered by any authority"
+msgstr "Este artículo aún no ha sido registrada por cualquier autoridad"
+
+#: aristotle_mdr/templates/aristotle_mdr/static/home.html:15
+#, fuzzy
+msgctxt "Front page search options"
+msgid "More options"
+msgstr "Mas opciones"
+
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:13
+#, fuzzy
+msgid "View registration history"
+msgstr "Ver el historial de registro"
+
+#: aristotle_mdr/templates/aristotle_mdr/statuses.html:29
+#: aristotle_mdr/templates/search/search.html:245
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:104
+#, fuzzy
+msgid "Not registered"
+msgstr "No registrado"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:4
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:5
+#: aristotle_mdr/templates/aristotle_mdr/user/recent.html:11
+#, fuzzy
+msgid "My Recent Actions"
+msgstr "Mis acciones recientes"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userInbox.html:59
+#, fuzzy
+msgid "in"
+msgstr "en"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:24
+#, fuzzy
+msgid "All messages"
+msgstr "Todos los mensajes"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:38
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:56
+#, fuzzy
+msgid "Archived Workgroups"
+msgstr "archivados trabajo en grupo"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:67
+#, fuzzy
+msgid "Recent Actions"
+msgstr "acciones recientes"
+
+#. Translators: A link to the list of things to be reviewed.
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:94
+#, fuzzy
+msgid "Review list"
+msgstr "Revisar la lista"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:103
+#, fuzzy
+msgid "Administrator tools"
+msgstr "herramientas del administrador"
+
+#: aristotle_mdr/templates/aristotle_mdr/user/userSideBar.html:109
+#, fuzzy
+msgid "Registry Statistics"
+msgstr "Estadísticas del registro"
+
+#: aristotle_mdr/templates/aristotle_mdr/workgroupMembers.html:4
+#, fuzzy
+msgid "members"
+msgstr "los miembros"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:9
+#, fuzzy
+msgid "Apply change"
+msgstr "aplicar el cambio"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:11
+#, fuzzy
+msgid "Save"
+msgstr "Salvar"
+
+#: aristotle_mdr/templates/inplaceeditform/render_field.html:15
+#, fuzzy
+msgid "Cancel change"
+msgstr "cancelar el cambio"
+
+#: aristotle_mdr/templates/registration/password_change_done.html:7
+#, fuzzy
+msgid "Your password was changed."
+msgstr "Su contraseña se ha cambiado."
+
+#: aristotle_mdr/templates/registration/password_change_form.html:3
+#: aristotle_mdr/templates/registration/password_change_form.html:6
+#, fuzzy
+msgid "Password change"
+msgstr "Cambio de contraseña"
+
+#: aristotle_mdr/templates/registration/password_change_form.html:13
+#, fuzzy
+msgid "Please correct the error below."
+msgstr "Por favor, corrija el error abajo."
+
+#: aristotle_mdr/templates/registration/password_change_form.html:13
+#, fuzzy
+msgid "Please correct the errors below."
+msgstr "Por favor, corrija los errores a continuación."
+
+#: aristotle_mdr/templates/registration/password_change_form.html:18
+#, fuzzy
+msgid ""
+"Please enter your old password, for security's sake, and then enter your new"
+" password twice so we can verify you typed it in correctly."
+msgstr ""
+"Por favor, introduzca su contraseña anterior, por el bien de la seguridad, y"
+" luego introduzca la nueva contraseña dos veces para que podamos verificar "
+"la ha escrito correctamente."
+
+#: aristotle_mdr/templates/registration/password_change_form.html:47
+#, fuzzy
+msgid "Change my password"
+msgstr "Cambiar contraseña"
+
+#: aristotle_mdr/templates/registration/password_reset_complete.html:9
+#, fuzzy
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+"La contraseña se ha establecido. Usted puede seguir adelante y acceder "
+"ahora."
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:6
+#, fuzzy
+msgid "Select two items and click compare to see the differences between them"
+msgstr ""
+"Seleccionar dos productos y haga clic para comparar para ver las diferencias"
+" entre ellos"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:14
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:16
+#, fuzzy
+msgid "compare"
+msgstr "comparar"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:20
+#, fuzzy
+msgid "Date/time"
+msgstr "Fecha y hora"
+
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:40
+#: aristotle_mdr/templates/reversion-compare/action_list_partial.html:42
+#, fuzzy
+msgid "DATETIME_FORMAT"
+msgstr "DATETIME_FORMAT"
+
+#: aristotle_mdr/templates/reversion-compare/compare_links_partial.html:2
+#, fuzzy
+msgid "previous"
+msgstr "anterior"
+
+#: aristotle_mdr/templates/reversion-compare/compare_links_partial.html:3
+#, fuzzy
+msgid "next"
+msgstr "siguiente"
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:5
+#, fuzzy
+msgid "Edit comment:"
+msgstr "Editar comentario:"
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:17
+#, fuzzy
+msgid "Note:"
+msgstr "Nota:"
+
+#: aristotle_mdr/templates/reversion-compare/compare_partial.html:19
+#, fuzzy
+msgid ""
+"\n"
+"        Fields/entries marked with <sup class=\"follow\">*</sup> are not under reversion control.\n"
+"        It may be that not all marked information are correct.\n"
+"    "
+msgstr ""
+"\n"
+"Campos / entradas marcadas con <sup class=\"follow\">*</sup> no están bajo el control de la reversión. Puede ser que no toda la información es correcta marcada."
+
+#: aristotle_mdr/templates/search/search.html:21
+#, fuzzy
+msgctxt "Search results"
+msgid "results"
+msgstr "resultados"
+
+#: aristotle_mdr/templates/search/search.html:61
+#, fuzzy
+msgid "Toggle navigation"
+msgstr "Navegación de palanca"
+
+#: aristotle_mdr/templates/search/search.html:66
+#, fuzzy
+msgctxt "Advanced search"
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: aristotle_mdr/templates/search/search.html:66
+#, fuzzy
+msgctxt "Clear search filters"
+msgid "Clear filters"
+msgstr "Eliminar filtros"
+
+#: aristotle_mdr/templates/search/search.html:75
+#, fuzzy
+msgctxt "Metadata item type"
+msgid "Item type"
+msgstr "Tipo de artículo"
+
+#: aristotle_mdr/templates/search/search.html:83
+#, fuzzy
+msgctxt "Registration Status"
+msgid "Status"
+msgstr "Estado"
+
+#: aristotle_mdr/templates/search/search.html:91
+#, fuzzy
+msgctxt "Registration Authority"
+msgid "Authority"
+msgstr "Autoridad"
+
+#: aristotle_mdr/templates/search/search.html:99
+#, fuzzy
+msgctxt "Modified date"
+msgid "Modified"
+msgstr "Modificado"
+
+#: aristotle_mdr/templates/search/search.html:119
+#, fuzzy
+msgctxt "Created date"
+msgid "Created"
+msgstr "Creado"
+
+#: aristotle_mdr/templates/search/search.html:324
+#, fuzzy
+msgid "This item is in your favourites list"
+msgstr "Este artículo está en tu lista de favoritos"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:48
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:63
+#, python-format, fuzzy
+msgid "%s is"
+msgstr "%s es"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:58
+#, python-format, fuzzy
+msgid " or %s"
+msgstr "o %s"
+
+#: aristotle_mdr/templatetags/aristotle_search_tags.py:68
+#, python-format, fuzzy
+msgid " and %s"
+msgstr "y %s"
+
+#: aristotle_mdr/templatetags/aristotle_tags.py:358
+#: aristotle_mdr/templatetags/aristotle_tags.py:360
+#, fuzzy
+msgid "model:"
+msgstr "modelo:"
+
+#: aristotle_mdr/templatetags/aristotle_tags.py:367
+#, python-format, fuzzy
+msgid "No help text for the field '%(field)s' found for the model '%(model)s'"
+msgstr ""
+"Sin texto de ayuda para el campo &#39;%(field)sencontrado para el "
+"modelo&#39;%(model)s&#39;"
+
+#. Translators: The '(clone)' prefix is a noun, indicating an object is a
+#. clone of another - for example "Person-Sex" compared to "Person-Sex
+#. (clone)"
+#: aristotle_mdr/utils/utils.py:34
+#, fuzzy
+msgid " (clone)"
+msgstr "(clon)"
+
+#: aristotle_mdr/utils/utils.py:76
+#, python-format, fuzzy
+msgid "Changed %s."
+msgstr " %scambiada."
+
+#: aristotle_mdr/utils/utils.py:76 aristotle_mdr/utils/utils.py:88
+#, fuzzy
+msgid "and"
+msgstr "y"
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been created in the
+#. registry.
+#: aristotle_mdr/utils/utils.py:82
+#, python-format, fuzzy
+msgid "Added %(name)s \"%(object)s\"."
+msgstr "Añadido %(name)s &quot;%(object)s&quot;."
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been changed in the
+#. registry.
+#: aristotle_mdr/utils/utils.py:87
+#, python-format, fuzzy
+msgid "Changed %(list)s for %(name)s \"%(object)s\"."
+msgstr " %(list)s cambiado para %(name)s &quot;%(object)s&quot;."
+
+#. Translators: A message in the version history of an item saying that an
+#. object with the name (name) of the type (object) has been deleted from the
+#. registry.
+#: aristotle_mdr/utils/utils.py:93
+#, python-format, fuzzy
+msgid "Deleted %(name)s \"%(object)s\"."
+msgstr "Suprimido %(name)s &quot;%(object)s&quot;."
+
+#: aristotle_mdr/utils/utils.py:97
+#, fuzzy
+msgid "No fields changed."
+msgstr "No hay campos cambiados."
+
+#: aristotle_mdr/views/comparator.py:55 aristotle_mdr/views/comparator.py:57
+#, fuzzy
+msgid "This item has no revisions. A comparison cannot be made"
+msgstr "Este artículo no tiene revisiones. Una comparación no puede hacerse"
+
+#: aristotle_mdr/views/discussions.py:99
+#, fuzzy
+msgid "This post is closed. Your comment was not added."
+msgstr "Este puesto está cerrado. No se agregó su comentario."
+
+#: aristotle_mdr/views/views.py:317
+#, python-format, fuzzy
+msgid "%s added to favourites."
+msgstr "%s añadido a favoritos."
+
+#: aristotle_mdr/views/views.py:319
+#, python-format, fuzzy
+msgid "%s removed from favourites."
+msgstr "%s eliminado de favoritos."
+
+#: aristotle_mdr/views/views.py:320
+#, fuzzy
+msgid " Review your favourites from the user menu."
+msgstr "Revise sus favoritos desde el menú de usuario."
+
+#: aristotle_mdr/views/wizards.py:124
+#, fuzzy
+msgid "Search for existing content"
+msgstr "Búsqueda de contenido existente"
+
+#: aristotle_mdr/views/wizards.py:134
+#, fuzzy
+msgid "Select or create"
+msgstr "Seleccionar o crear"
+
+#: aristotle_mdr/views/wizards.py:287 aristotle_mdr/views/wizards.py:290
+#, fuzzy
+msgid "No object class name found"
+msgstr "Sin nombre de la clase objeto encontrado"
+
+#: aristotle_mdr/views/wizards.py:288 aristotle_mdr/views/wizards.py:291
+#, fuzzy
+msgid "No object class definition found"
+msgstr "No existe una definición de clase de objeto encontrado"
+
+#: aristotle_mdr/views/wizards.py:302 aristotle_mdr/views/wizards.py:305
+#: aristotle_mdr/views/wizards.py:742 aristotle_mdr/views/wizards.py:745
+#, fuzzy
+msgid "No property name found"
+msgstr "No se encontró el nombre de propiedad"
+
+#: aristotle_mdr/views/wizards.py:303 aristotle_mdr/views/wizards.py:306
+#: aristotle_mdr/views/wizards.py:743 aristotle_mdr/views/wizards.py:746
+#, fuzzy
+msgid "No property definition found"
+msgstr "No se encontró definición de la propiedad"
+
+#: aristotle_mdr/views/wizards.py:319
+#, python-brace-format, fuzzy
+msgid "<p>{pr} of {oc}</p> - This was an autogenerated definition."
+msgstr "<p> {Pr} de {oc} </p> - Esta es una definición autogenerado."
+
+#: aristotle_mdr/views/wizards.py:396 aristotle_mdr/views/wizards.py:643
+#, fuzzy
+msgid "Search for components"
+msgstr "Búsqueda de componentes"
+
+#: aristotle_mdr/views/wizards.py:397 aristotle_mdr/views/wizards.py:646
+#, fuzzy
+msgid "Refine components"
+msgstr "refinar componentes"
+
+#: aristotle_mdr/views/wizards.py:398 aristotle_mdr/views/wizards.py:650
+#, fuzzy
+msgid "Create Object Class"
+msgstr "Crear clase de objetos"
+
+#: aristotle_mdr/views/wizards.py:399 aristotle_mdr/views/wizards.py:655
+#, fuzzy
+msgid "Create Property"
+msgstr "crear propiedad"
+
+#: aristotle_mdr/views/wizards.py:400
+#, fuzzy
+msgid "Review Data Element Concept"
+msgstr "Examen de la idea de elementos de datos"
+
+#: aristotle_mdr/views/wizards.py:401 aristotle_mdr/views/wizards.py:671
+#, fuzzy
+msgid "Complete and Save"
+msgstr "Completa y Guardar"
+
+#: aristotle_mdr/views/wizards.py:448 aristotle_mdr/views/wizards.py:779
+#, python-brace-format, fuzzy
+msgid "New Property '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"Nueva propiedad &#39;{nombre}&#39; Guardado - <a href='{url}'>id: {id}</a>"
+
+#: aristotle_mdr/views/wizards.py:457 aristotle_mdr/views/wizards.py:788
+#, python-brace-format, fuzzy
+msgid "New Object Class '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"Nueva clase de objeto &#39;{nombre}&#39; Guardado - <a href='{url}'>id: "
+"{id}</a>"
+
+#: aristotle_mdr/views/wizards.py:466 aristotle_mdr/views/wizards.py:797
+#, python-brace-format, fuzzy
+msgid "New Data Element Concept '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"Nuevo concepto de elemento de datos &#39;{nombre}&#39; Guardado - <a "
+"href='{url}'>id: {id}</a>"
+
+#: aristotle_mdr/views/wizards.py:647 aristotle_mdr/views/wizards.py:668
+#, fuzzy
+msgid "Review Data Element"
+msgstr "Revisión de elementos de datos"
+
+#: aristotle_mdr/views/wizards.py:651
+#, fuzzy
+msgid "Save Object Class"
+msgstr "Clase Guardar objeto"
+
+#: aristotle_mdr/views/wizards.py:656
+#, fuzzy
+msgid "Save Property"
+msgstr "Guardar la propiedad"
+
+#: aristotle_mdr/views/wizards.py:658
+#, fuzzy
+msgid "Select Data Element Concept"
+msgstr "Seleccione Concepto Elementos de Datos"
+
+#: aristotle_mdr/views/wizards.py:661
+#, fuzzy
+msgid "Create Data Element Concept"
+msgstr "Crear Concepto Elementos de Datos"
+
+#: aristotle_mdr/views/wizards.py:662
+#, fuzzy
+msgid "Save Data Element Concept"
+msgstr "Excepto concepto de elementos de datos"
+
+#: aristotle_mdr/views/wizards.py:666
+#, fuzzy
+msgid "Create Value Domain"
+msgstr "Crear Valor de dominio"
+
+#: aristotle_mdr/views/wizards.py:672
+#, fuzzy
+msgid "Save and Finish"
+msgstr "Guardar y Finalizar"
+
+#: aristotle_mdr/views/wizards.py:727 aristotle_mdr/views/wizards.py:730
+#, fuzzy
+msgid "No value domain name found"
+msgstr "Sin nombre de dominio valor encontrado"
+
+#: aristotle_mdr/views/wizards.py:728 aristotle_mdr/views/wizards.py:731
+#, fuzzy
+msgid "No value domain definition found"
+msgstr "No existe una definición de dominio valor encontrado"
+
+#: aristotle_mdr/views/wizards.py:757
+#, python-brace-format, fuzzy
+msgid "<p>{dec}, recorded as {vd}</p> - This was an autogenerated definition."
+msgstr ""
+"<p> {} Diciembre, registra como vd {} </p> - Esta es una definición "
+"autogenerado."
+
+#: aristotle_mdr/views/wizards.py:806
+#, python-brace-format, fuzzy
+msgid "New ValueDomain '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"Nueva ValueDomain &#39;{nombre}&#39; Guardado - <a href='{url}'>id: {id}</a>"
+
+#: aristotle_mdr/views/wizards.py:815
+#, python-brace-format, fuzzy
+msgid "New Data Element '{name}' Saved - <a href='{url}'>id:{id}</a>"
+msgstr ""
+"Nuevo elemento de datos &#39;{nombre}&#39; Guardado - <a href='{url}'>id: "
+"{id}</a>"

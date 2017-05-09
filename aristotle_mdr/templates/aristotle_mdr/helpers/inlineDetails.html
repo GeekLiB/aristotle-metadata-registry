@@ -1,0 +1,15 @@
+{% if item %}
+    {% if name != False %}
+    {% include "aristotle_mdr/helpers/itemLink.html" %}
+    {% endif %}
+<div class="attr"><small>Statuses:
+    {% for s in item.current_statuses %}
+        [{{ s.registrationAuthority }}: {{ s.state_name }}]
+    {% empty %}
+    <em>Unregistered</em>
+    {% endfor %}</small></div>
+
+    <div class="definition">
+        {{ item.definition|striptags|safe|truncatewords:20 }}
+    </div>
+{% endif %}

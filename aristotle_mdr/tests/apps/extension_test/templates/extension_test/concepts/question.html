@@ -1,0 +1,20 @@
+{% extends "aristotle_mdr/concepts/managedContent.html" %}
+
+{% load aristotle_tags %}
+
+{% block objSpecific %}
+<h2>Question Information</h2>
+
+    <h3>Question Text</h3>
+    {{ item.questionText | safe }}
+
+    <h3>Response Length: {{ item.responseLength }}</h3>
+
+    <h3>Collected Data Element</h3>
+    {% if item.collectedDataElement %}
+        {% include "aristotle_mdr/helpers/itemLink.html" with item=item.collectedDataElement %}
+    {% else %}
+        <em>No data element has been assigned to this question.</em>
+    {% endif %}
+
+{% endblock %}

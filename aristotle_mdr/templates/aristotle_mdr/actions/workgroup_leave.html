@@ -1,0 +1,33 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+{% load compile_static i18n humanize %}
+{% load aristotle_tags %}
+
+{% block title %}Leave workgroup: {{ item.name }}{% endblock %}
+{% block content %}
+<form method="post" action="{% url 'aristotle:workgroup_leave' item.id %}">{% csrf_token %}
+    <div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:item' item.id %}">{{ item.name }}</a></li>
+          <li class="active">Leave workgroup</li>
+        </ol>
+    <p class="alert alert-danger">
+        You about to leave the workgroup '{{item.name}}'.<br>
+        If you leave, you will need to be invited back in and may no longer
+        be able to see private content in this workgroup.
+    </p>
+    <p>
+        <strong>If you are sure you wish to leave, click the leave button below.</strong>
+    </p>
+    </div>
+    <div class="modal-footer">
+        {% if request.is_ajax %}
+            <button type="button" class="btn btn-default" data-dismiss="modal">No, take me back</button>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'aristotle:item' item.id %}">No, take me back</a>
+        {% endif %}
+        <button type="submit" class="btn btn-danger">
+             <i class="fa fa-user-times"></i> Yes, I want to leave {{item.name}}
+        </button>
+    </div>
+</form>
+{% endblock %}

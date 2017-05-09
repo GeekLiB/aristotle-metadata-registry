@@ -1,0 +1,53 @@
+{% extends "aristotle_mdr_browse/base.html" %}
+{% load aristotle_tags aristotle_help util_tags %}
+
+{% block title %}Concept browser{% endblock %}
+
+{% block breadcumbs %}
+    <li class="active">Metadata browser</li>
+{% endblock %}
+
+{% block object_list %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th title="Number of visible items of this metadata type">#</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+
+{% for app,app_models in apps.items %}
+    <tbody>
+        <tr>
+            <th colspan="2">
+            </th>
+            <th>
+            <strong>
+                <a href="{% url 'browse_models' app %}">{{ app_models.app }}</a>
+            </strong>
+            </th>
+        </tr>
+        <tbody>
+    {% for model in app_models.models %}
+      {% if model.model_class|visible_count:request.user %}
+          <tr>
+          <td>
+              <a href="{% url 'browse_concepts' model.app_label model.model %}">
+                  {{ model.model_class.get_verbose_name }}
+              </a>
+          </td>
+          <td>
+              {{ model.model_class|visible_count:request.user }}
+          </td>
+          <td>{% help_doc model.model_class 'brief' %}</td>
+          </tr>
+      {% endif %}
+    {% endfor %}
+    </tbody>
+
+{% endfor %}
+    </table>
+
+{% endblock %}

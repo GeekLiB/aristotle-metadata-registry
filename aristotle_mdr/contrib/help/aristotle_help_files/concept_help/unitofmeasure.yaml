@@ -1,0 +1,15 @@
+- model: aristotle_mdr_help.concepthelp
+  fields:
+    app_label: aristotle_mdr
+    concept_type: unitofmeasure
+    language: en
+    brief: The actual units in which the associated values are measured
+    offical_definition: >
+        Actual units in which the associated values are measured
+    official_reference: ISO/IEC 11179 - Clause 3.2.138
+    official_link:
+    body: >
+        <P>The units in which the values in a value domain are measured. Adding unit of measure information makes the value more 
+        meaningful, especially in instances where a concept can be measured using various units of measure. For example, length or distance may be measured in millimetres, centimetres, inches, metres, feet, kilometres or miles etc.</P>
+        <P>While units of measure are specifically related to value domains, they are impertive to the formation of well described 
+        data elements.</P>  

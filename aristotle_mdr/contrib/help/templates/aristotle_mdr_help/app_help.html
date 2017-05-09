@@ -1,0 +1,23 @@
+{% extends "aristotle_mdr_help/base.html" %}
+{% load aristotle_help %}
+
+{% block breadcumbs %}
+    <li><a href="">Help</a></li>
+    <li><a href="">Concepts</a></li>
+    <li><a href="{% url 'browse_models' app.label %}">{{app.verbose_name}}</a></li>
+    <li class="active">{{ model.get_verbose_name_plural }}</li>
+{% endblock %}
+
+{% block help_content %}
+<h3><em>{{ model.get_verbose_name }}</em> - {% relink object 'brief' %}</h3>
+{% if object.offical_definition %}
+<blockquote>{% relink object 'official_definition' %}
+    {% if object.official_reference %}
+        <small>{{ object.official_reference }}</small>
+    {% endif %}
+</blockquote>
+{% endif %}
+<p>
+    {% relink object 'body' %}
+</p>
+{% endblock %}

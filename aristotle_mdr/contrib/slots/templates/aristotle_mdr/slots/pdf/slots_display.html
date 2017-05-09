@@ -1,0 +1,42 @@
+{% load i18n slot_tags util_tags %}
+{% if item.slots.exists %}
+<div>
+<h1>Additional Attributes</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                {% trans 'Slot name' %}
+            </th>
+            <th>
+                {% trans 'Type' %}
+            </th>
+            <th>
+                {% trans 'Value' %}
+            </th>
+            <th title="Number of items with slots with similar values">Similar
+            <i class='fa fa-help'></i>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for slot in item.slots.all|order_by:'name' %}
+        <tr>
+            <td>
+                {{ slot.name }}
+            </td>
+            <td>{{slot.type}}</td>
+            <td>
+                {{ slot.value|linebreaks }}
+            </td>
+            <td>
+                <a href="{% url 'aristotle_slots:similar_slots' slot.name %}?value={{slot.value}}">
+                {% count_similar request.user slot %}
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endif %}

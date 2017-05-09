@@ -1,0 +1,143 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: What are 'registration statuses'?
+    slug: whats_are_statuses
+    language: en
+    body: >
+        <p>
+        The ISO 11179 standards defines a range of registration status levels 
+        that help users of a registry understand the endorsement of metadata for
+        its use in certain domains. Within the 11179 standard, these levels are given 
+        using broad criteria that allow registration authorities to specify the exact
+        meaning of each status level.
+        
+        </p>
+        <p>
+        The Aristotle Metadata Registry allows registration authorities to  record
+        the meaning of status levels so that users looking for metadata can quickly determine
+        the who has endorsed metadata and for what purpose. By clicking the name of a registration
+        authority a user can quickly jump to the registration authority home page to
+        see their definitions for each status level.
+        </p>
+        <p>
+        For example:
+        <div class="help_example">
+        A <i>Federal Department of Education</i> has defined the status level of "standard"
+        to be applicable for any metadata that has been endorsed by a majority of a council
+        of education superintendents.
+        </div>
+        Then, if a user sees metadata item (such as a question or [[data element]])
+        with the status of 'standard', they can be certain that it is endorsed for use
+        when dealing with education data at a federal level.
+        </p>
+        <p>
+        Below is an extract from ISO/IEC 11179-6 that explains status levels in more depth.
+        </p>
+
+        <blockquote>
+        <cite><a href="[[h|about-isoiec-11179|u]]">ISO/IEC 11179-6 : Section 4.4.2 </a></cite>
+        <header>4.4.2 Summary of registration status categories</header>
+        <p>
+        Registration status specifies the state of an Administered Item that is in the metadata register, in the
+        view of the Registration Authority. Registration status categories shall apply to individual Administered
+        Items that have been registered in the metadata register by the Registration Authority. Registration
+        status categories are of two sub-types: lifecycle and documentation. The lifecycle registration status
+        categories address improvement and progression towards levels of perfection of the quality of the
+        metadata of the item and of the preferences of usage of the Administered Item. The documentation
+        registration status categories are used to denote positions at which there will be no more progression
+        in quality of metadata or use of the Administered Item. The relationships among these status categories,
+        along with the requirements for an Administered Item to achieve a particular registration status level,
+        are presented in Table 1.
+        </p>
+        <table class="table">
+        <thead>
+        <tr>
+            <td>Administered Item registration status category</td>
+            <td>Status criteria</td>
+        </tr>
+        </thead>
+        <tbody>
+        <th>
+        <td colspan=2>Lifecycle statuses</td>
+        </th>
+        <tr>
+            <td>Preferred Standard</td>
+            <td>The Registration Authority confirms that the Administered Item is
+                <ul><li>preferred for use within the community that uses this metadata register.
+            </td>
+        </tr>
+        <tr>
+            <td>Standard</td>
+            <td>The Registration Authority confirms that the Administered Item is
+                <ul><li>of sufficient quality and
+                    <li>of broad interest for use
+                </ul>in the community that uses this metadata register.
+            </td>
+        </tr>
+        <tr>
+            <td>Qualified</td>
+            <td>The Registration Authority has confirmed that
+                <ul><li>the mandatory metadata attributes are complete and
+                    <li>the mandatory metadata attributes conform to applicable quality
+                requirements.
+        </td>
+        </tr>
+        <tr>
+            <td>Recorded</td>
+            <td>The Registration Authority has confirmed that
+            <ul><li>all mandatory metadata attributes have been completed</td>
+        </tr>
+        <tr>
+            <td>Candidate</td>
+            <td>The Administered Item has been proposed for progression through the registration levels.</td>
+        </tr>
+        <tr>
+            <td>Incomplete</td>
+            <td>Submitter wishes to make the community that uses this metadata
+                register aware of the existence of an Administered Item in their local
+                domain.</td>
+        </tr>
+        <tr>
+            <td>Retired</td>
+            <td>The Registration Authority has approved the Administered Item as
+                <ul><li>no longer recommended for use in the community that uses this
+                metadata register and
+                    <li>should no longer be used.</td>
+        </tr>
+        <tr>
+            <td>Superseded</td>
+            <td>The Registration Authority determined that the Administered Item is
+                <ul><li>no longer recommended for use by the community that uses this
+                metadata register, and
+                    <li>a successor Administered Item is now preferred for use.</td>
+        </tr>
+        </tbody>
+
+        <tbody>
+        <th>
+        <td colspan=2>Documentation statuses</td>
+        </th>
+        <tr>
+            <td>Historical</td>
+            <td>The Submitter wishes to make the community that uses this metadata
+                register aware of the existence of an Administered Item that was used
+                in the past.</td>
+        </tr>
+        <tr>
+            <td>Application</td>
+            <td>The Registration Authority wishes to make the community that uses
+                this metadata register aware of the existence of an Administered Item
+                in their local domain that is in an application system and is not specified
+                at the logical level. This item may be very well described.</td>
+        </tr>
+        </tbody>
+        </table>
+        </p>
+        
+        While the general intent is to progress as many Administered Items as possible from “Incomplete” 
+        to the “Preferred Standard” registration status, progression to a status higher than “Recorded”
+        or “Qualified” may not be appropriate. That is, necessary metadata attribute documentation for 
+        an Administered Item may not be available to establish required documentation for the “Recorded”
+        status, may not be of the quality necessary for the “Qualified” status, or identification as
+        “Preferred Standard” Administered Item may not be appropriate.
+        </blockquote>

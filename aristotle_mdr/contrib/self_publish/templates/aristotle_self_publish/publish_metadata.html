@@ -1,0 +1,37 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+
+{% block title %}Publish {{item.name}}{% endblock %}
+
+{% block extra_head_scripts %}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+<form method="post" action="{{ submit_url }}">{% csrf_token %}
+<div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:item' item.id %}">{{ item.name }}</a></li>
+          <li class="active">Publish</li>
+        </ol>
+<ul>
+    <li>Use this page to publish metadata to make it visible <em>without registering it</em>.</li>
+    <li>Metadata that is published is visible, but not necessarily endorsed.</li>
+</ul>
+<section style="height:50%;" >
+    {% include "aristotle_mdr/helpers/fancy_form.html" with form=form %}
+
+</section>
+    <div class="modal-footer">
+    {% if request.is_ajax %}
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    {% else %}
+        <a class="btn btn-default" href="{% url 'aristotle:item' iid=item.id%}">Cancel</a>
+    {% endif %}
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-globe"></i> Publish
+        </button>
+    </div>
+</form>
+</div>
+{% endblock %}

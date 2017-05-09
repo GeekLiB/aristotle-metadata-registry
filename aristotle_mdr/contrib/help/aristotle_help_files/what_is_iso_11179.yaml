@@ -1,0 +1,32 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: About ISO/IEC 11179
+    app_label: aristotle_mdr
+    language: en
+    slug: about-isoiec-11179
+    body: >
+      <p>
+      ISO/IEC 11179 is an international standard for describing metadata registries that
+      defines the technical, structural and governance requirements for describing the
+      structure of data in a reusable way.
+
+      <a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+      Electronic copies of the ISO/IEC 11179 specification are made freely
+      accessible on the ISO website.
+      </a>
+      
+      </p>
+      <p>
+      The Aristotle Metadata Registry is a software implementation of the ISO/IEC 11179 standard
+      that allows agencies to run their own standard conformat registries.
+      </p>
+      <blockquote>
+      <cite><a href="http://standards.iso.org/ittf/PubliclyAvailableStandards/index.html">
+      ISO/IEC 11179 specification on the ISO website.</a></cite>
+      
+      The primary purpose of ISO/IEC 11179-3 is to specify the structure of a Metadata Registry.
+      ISO/IEC 11179-3 also specifies basic attributes which are required to describe metadata items, and which
+      may be used in situations where a complete metadata registry is not appropriate (e.g. in the specification of
+      other International Standards).
+      </blockquote>
+

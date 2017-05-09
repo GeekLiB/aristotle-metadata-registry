@@ -1,0 +1,50 @@
+{% extends "aristotle_mdr/create/de_template_wrapper.html" %}
+{% load aristotle_tags i18n %}
+
+{% block formarea %}
+    {% if wizard.form.errors %}
+        <div class="alert alert-danger">
+        There were errors saving your {{ model_name }}, please review the errors shown below.
+        {{ wizard.form.errors }}
+            {% if duplicate_items or similar_items %}
+                {% if wizard.form.fields.make_new_item.errors %}
+                    <strong>There were similar items shown on the previous page.
+                    To save this item acknowledge that none of these are suitable or press back to review them again.</strong>
+                    <div class="panel-footer">
+                        {{ wizard.form.make_new_item }}
+                        {{ wizard.form.make_new_item.label }}
+                        {{ wizard.form.make_new_item.errors }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endif %}
+    {% if dec_matches %}
+        <p>
+            Standard items based on "<em>{{ objectClass.name }}</em>" and "<em>{{ property.name }}</em>" <strong>were found</strong>,
+            but you are electing to create a new one.
+        </p>
+    {% elif oc_match and pr_match %}
+        <p>
+            No standard items based on "<em>{{ objectClass.name }}</em>" and "<em>{{ property.name }}</em>" were found,
+            so a new one will be created.
+        </p>
+    {% elif oc_match %}
+        <p>
+            You've elected to create a new Property, so you will need to create a new Data Element Concept as well.
+        </p>
+    {% elif pr_match %}
+        <p>
+            You've elected to create a new Object Class, so you will need to create a new Data Element Concept as well.
+        </p>
+    {% else %}
+        <p>
+            You've elected to create a new Object Class and Property, so you will need to create a new Data Element Concept as well.
+        </p>
+    {% endif %}
+    <div class="row">
+        <div class="col-sm-10">
+            {% include "aristotle_mdr/create/concept_editor.html" with form=wizard.form %}
+        </div>
+    </div>
+{% endblock %}

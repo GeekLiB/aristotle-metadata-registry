@@ -1,0 +1,76 @@
+{% load i18n aristotle_tags %}
+<form action="#" method="get">
+    <label for="filter">{% trans 'Filter workgroups by name and description' %}</label>
+    <input name="filter" value="{{filter}}">
+    <input name="sort" type="hidden" value="{{sort}}">
+</form>
+
+{% if page.has_other_pages %}
+Showing {{ page.start_index }} - {{ page.end_index }} of {{ page.paginator.count }} results.
+{% else %}
+Showing {{ page.paginator.count }} results.
+{% endif %}
+<table class="table">
+<thead>
+    <tr>
+        <th>{% trans 'Workgroup' %}
+            {% if sort == "name_asc" %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_desc"><i class="fa fa-sort-asc"></i></a>
+            {% elif sort == "name_desc" %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_asc"><i class="fa fa-sort-desc"></i></a>
+            {% else %}
+            <a href="?{% paginator_get request page.number pop='sort' %}&sort=name_desc"><i class="fa fa-sort"></i></a>
+            {% endif %}
+        </th>
+        <th>{% trans 'Ownership' %}
+        </th>
+        <th>{% trans 'Registration Authorities' %}
+        </th>
+        <th>
+        {% if sort == "users_asc" %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=users_desc"><i class="fa fa-sort-asc"></i></a>
+        {% elif sort == "users_desc" %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=users_asc"><i class="fa fa-sort-desc"></i></a>
+        {% else %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=users_desc"><i class="fa fa-sort"></i></a>
+        {% endif %}
+            <i class="fa fa-users" title="{% trans 'Number of members' %}"></i>
+        </th>
+        <th>
+        {% if sort == "items_asc" %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=items_desc"><i class="fa fa-sort-asc"></i></a>
+        {% elif sort == "items_desc" %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=items_asc"><i class="fa fa-sort-desc"></i></a>
+        {% else %}
+        <a href="?{% paginator_get request page.number pop='sort' %}&sort=items_desc"><i class="fa fa-sort"></i></a>
+        {% endif %}
+            <i class="fa fa-file" title="{% trans 'Number of items' %}"></i>
+        </th>
+
+    </tr>
+</thead>
+<tbody>
+    {% for item in page %}
+    <tr>
+        <td>
+            <a href="{% url 'aristotle:workgroup' item.id %}">{{ item.name }}</a>
+            <span>{{ item.definition|striptags|safe|truncatewords:15 }}</span>
+        </td>
+        <td>{{ item.get_ownership_display }}</td>
+        <td>{% if item.registrationAuthorities %}
+            <ul>{% for ra in item.registrationAuthorities.all %}
+            <li>{{ ra.name }}</li>
+            {% endfor %}</ul>
+            {% else %}
+            <em>{% trans 'None' %}</em>
+            {% endif %}</td>
+        <td>{{ item.members.count }}</td>
+        <td>{{ item.items.count }}</td>
+    </tr>
+    {% endfor %}
+
+</tbody>
+</table>
+
+{% include "aristotle_mdr/helpers/paginator.html" with page=page %}
+

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: {% url 'aristotle:search' %}/
+Disallow: {% url 'aristotle:create_list' %}/*
+Disallow: /action/*
+Disallow: /account/*

@@ -1,0 +1,24 @@
+{% load humanize i18n %}
+{% load aristotle_tags %}
+
+<h1 id="objectTitle"  class="pull-left">
+    <a href="#">{{ item.name }}</a>
+    {% if item.version %}
+    <em class="version" title="{% trans 'Version'%} {{ item.version }}">
+        {{ item.version }}
+    </em>
+    {% endif %}
+    <small>
+        (<a href="{% url 'aristotle_help:concept_help' item.meta.app_label item.meta.model_name %}"
+            title="{% trans 'Learn about this metadata type' %}"
+            data-toggle="modal" data-target="#infobox_modal"
+        >{{ item.get_verbose_name }}</a>)
+    </small>
+
+    {# Screen reader quick links #}
+    {% if item|can_edit:request.user and request.user.is_staff %}
+        <a class="sr-only" accesskey="p" href="{% adminEdit item %}">{% trans 'Edit in admin'%}</a>
+    {% elif item|can_edit:request.user %}
+        <a class="sr-only" accesskey="e" href="{% url 'aristotle:edit_item' item.id %}">{% trans 'Open item editor'%}</a>
+    {% endif %}
+</h1>

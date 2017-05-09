@@ -1,0 +1,28 @@
+{% extends "aristotle_mdr/actions/bulk_actions/base.html" %}
+
+{% block title %}Move multiple items to workgroup{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'aristotle:bulk_action' %}?next={{next}}">{% csrf_token %}
+    <input type="hidden" name="bulkaction" value="add_slots"/>
+    <div class="modal-body">
+        <header>This form allows you to attach a slot and assign a value to multiple metadata items.<br>
+        Select a slot below and assign a value.<br>
+        <strong>Note:</strong> any items that are not able to be assign the particular slot type
+        will not have values stored.
+        </header>
+        <div>
+            {% if form.errors %}
+                {{ form.errors }}
+            {% endif %}
+            <table>
+            {{ form.as_table }}
+            </table>
+        </div>
+    </div>
+    <div>
+        <a class="btn btn-default" href="{{ next }}">Cancel</a>
+        <button type="submit" name="confirmed" class="btn btn-primary" value="Change">Add slots</button>
+    </div>
+</form>
+{% endblock %}

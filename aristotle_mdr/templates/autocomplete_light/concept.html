@@ -1,0 +1,38 @@
+{% load i18n l10n %}
+{% load static %}
+{% with choice=result %}
+<span class="autocomplete-item block" data-value="{{ choice.pk|unlocalize }}">
+    <strong class="title" data-name="{{ choice.name }}" >
+    {{ choice }} <small>(id: {{ choice.id }}) </small>
+    {% with choice.get_absolute_url as url %}
+        {% if url %}
+        <a class="ac_preview_link" href="{{ url }}" target="preview" class="choice-"
+        title="{% trans 'Open in a new window' %}"
+        onclick="window.open('{{url}}', 'preview', 'height=600,width=595');return false;"
+        >
+            <i class="fa fa-external-link-square"></i> 
+        </a>
+        {% endif %}
+    {% endwith %}
+    </strong>
+    <div class="details">
+    <small>Statuses:
+    {% for s in choice.current_statuses.all %}
+        [{{ s.registrationAuthority }}: {{ s.state_name }}]
+    {% empty %}<strong>None</strong>
+    {% endfor %}</small>
+        <br>
+        <p>
+        {{ choice.definition|truncatewords:20|striptags }}
+        </p>
+    </div>
+
+    {% with choice.get_absolute_update_url  as url %}
+        {% if url %}
+        <a href="{{ url }}" target="_blank" class="choice-update">
+            <img src="{% static 'admin/img/icon_changelink.gif' %}" />
+        </a>
+        {% endif %}
+    {% endwith %}
+</span>
+{% endwith %}

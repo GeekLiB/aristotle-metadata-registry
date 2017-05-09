@@ -1,0 +1,47 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+{% load compile_static i18n %}
+{% load aristotle_tags %}
+
+{% block title %}Reject review for {{ item.name }}{% endblock %}
+{% block content %}
+{{ form.media }}
+<form method="post" action="{% url 'aristotle:userReviewReject' review.id %}">{% csrf_token %}
+    <div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:userReadyForReview' %}">Review list</a></li>
+          <li class="active">Reject review request</li>
+        </ol>
+
+
+        <header>This form allows you to close a review, this will not change the status or visibility of any of the listed metadata items.
+        </header>
+        <div class="well">
+            <strong>The original message for this request:</strong>
+            <p>{{ review.message }}</p>
+            <strong>The items in this request are listed below:</strong>
+            <ul>
+                {% for item in review.concepts.all %}
+                    <li>
+        {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="status_change_description">
+            <label for='id_response'>{{ form.response.label }}:</label> Leave comments below if you wish to explain why this request was rejected
+            {{ form.response }}
+        </div>
+        {% block save %}
+        {% endblock %}
+        </section>
+    </div>
+    <div class="modal-footer">
+        {% if request.is_ajax %}
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'aristotle:userReadyForReview' %}">Cancel</a>
+        {% endif %}
+        <input type="submit" class="btn btn-danger" value="Reject review" />
+    </div>
+</form>
+{% endblock %}

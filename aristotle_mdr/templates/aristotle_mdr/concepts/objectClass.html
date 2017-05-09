@@ -1,0 +1,30 @@
+{% extends "aristotle_mdr/concepts/managedContent.html" %}
+
+{% load aristotle_tags %}
+
+{% block type %}objectclass{% endblock %}
+{% block includes %}
+    <dd>
+        {% with total=item.dataelementconcept_set.count %}
+        {% if total > 10 %}<a href="{{ request.path }}/related">{% endif %}
+        {{ total }} Data Element Concept{{ total|pluralize }}
+        {% if total > 10 %}</a>{% endif %}
+        {% endwith %}
+    </dd>
+{% endblock %}
+
+{% block objSpecific %}
+{% endblock %}
+
+{% block relationships %}
+    {% with total=item.dataelementconcept_set.count %}
+            <h3>Data Element Concepts implementing this Object Class</h3>
+            <ul>
+            {% for dec in item.dataelementconcept_set.all|can_view_iter:request.user %}
+                <li>
+                    {% include "aristotle_mdr/helpers/inlineDetails.html" with item=dec %}
+                </li>
+            {% endfor %}
+            </ul>
+    {% endwith %}
+{% endblock %}

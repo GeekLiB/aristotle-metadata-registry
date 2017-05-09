@@ -1,0 +1,73 @@
+{% extends "aristotle_mdr/user/userHome.html" %}
+
+{% block collapse-link%}
+    <i class="fa fa-users fa-fw"></i> Registry Administrator tools</a>
+{% endblock %}
+{% block sidebar %}
+    {% include "aristotle_mdr/user/userSideBar.html" with activeTab='adminTools' %}
+{% endblock %}
+
+{% block page %}
+<h1>{% block title %}Registry Administrator tools{% endblock %}</h1>
+<aside>
+<section id="members">
+</section>
+</aside>
+<header>This is a selection of quick links that allow registry administrators to quickly perform actions.</header>
+
+<ul>
+    <li>
+        <a href="{% url 'admin:aristotle_mdr_workgroup_add'%}">Add Workgroup</a>
+    </li>
+    <li>
+        <a href="{% url 'admin:aristotle_mdr_registrationauthority_add'%}">Add Registration Authority</a>
+    </li>
+    <li>
+        <a href="{% url 'admin:auth_user_add'%}">Add User</a>
+    </li>
+</ul>
+<ul>
+    <li>
+        <a href="{% url 'admin:aristotle_mdr_workgroup_changelist'%}">View all Workgroups</a>
+    </li>
+    <li>
+        <a href="{% url 'admin:aristotle_mdr_registrationauthority_changelist'%}">View all Registration Authorities</a>
+    </li>
+    <li>
+        <a href="{% url 'admin:auth_user_changelist'%}">View all Users</a>
+    </li>
+</ul>
+
+<h2>Basic item statistics</h2>
+<p>Below is a table of the various concepts managed within this registry.
+These values are updated approximately twice a day,
+therefore the counts below may be out of date due to caching.
+
+<br>For live updates, visit the <a href="{% url 'aristotle:userAdminStats' %}">Advanced concept statistics page</a>.
+</p>
+<table class='table'>
+    <thead>
+    <tr>
+        <th>Extension name</th>
+        <th>Concept type</th>
+        <th>#</th>
+    </thead>
+{% for app,app_models in models.items %}
+    <tbody>
+    {% for model,count,adminlink in app_models.models %}
+    <tr>
+        {% if forloop.first %}
+            <td rowspan="{{app_models.models|length }}">{{ app_models.app }}</td>
+        {% endif %}
+        <td>
+            <a href="{{ adminlink }}">
+                {{ model.get_verbose_name }}
+            </a>
+        </td>
+        <td>{{ count }}</td>
+    </tr>
+    {% endfor %}
+    <tbody>
+{% endfor %}
+</table>
+{% endblock %}

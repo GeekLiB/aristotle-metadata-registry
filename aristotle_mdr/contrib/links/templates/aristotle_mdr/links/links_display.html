@@ -1,0 +1,141 @@
+{% load i18n util_tags link_tags %}
+{% block extra_scripts_head %}
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js" type="text/javascript"></script>
+{% endblock %}
+
+{% if True %}
+{# % if item.linkend_set.exists % #}
+
+<div>
+<h2>Relationships</h2>
+<p>
+    Click on the name of any relationship to learn more about the different roles available for links
+    that implement these relations.
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                {% trans 'Relationship' %}
+            </th>
+            <th>
+                {% trans 'Role' %}
+            </th>
+            <th>
+                {% trans 'Concept' %}
+            </th>
+            <td><span class='sr-only'>Actions</span></td>
+        </tr>
+    </thead>
+        {% for link in item|get_links %}
+        <tbody>
+            {% for e in link.linkend_set.all %}
+            <tr>
+                {% with linkend_count=link.linkend_set.count %}
+                {% if forloop.first %}
+                <td rowspan="{{ linkend_count }}">
+                    <a href="{{ e.link.relation.get_absolute_url }}">{{ e.link.relation.name }}</a>
+                    <div>
+                        {{ e.link.relation.definition|striptags }}
+                    </div>
+                </td>
+                {% endif %}
+                <td title="{{e.role.definition}}">
+                    <a href="{{ e.link.relation.get_absolute_url }}#role_{{e.role.pk}}">{{ e.role.name }}</a>
+                </td>
+                <td>
+                    {% if e.concept.concept == item.concept %}
+                        <strong class="active_link" title="">{{ e.concept.name }}</strong>
+                    {% else %}
+                        <a href="{{ e.concept.get_absolute_url }}">{{ e.concept.name }}</a>
+                    {% endif %}
+                </td>
+                {% if forloop.first %}
+                <td rowspan="{{ linkend_count }}">
+                    {% if request.user|can_edit_link:link %}
+                    <a href="{% url 'aristotle_mdr_links:edit_link' link.pk %}?next={{item.get_absolute_url}}">
+                        <span>Edit link</span>
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                    {% endif %}
+                </td>
+                {% endif %}
+                {% endwith %}
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% endfor %}
+</table>
+</div>
+
+{% endif %}
+
+{% if item|get_links %}
+
+<div class="panel panel-default" style="margin:0 10%;">
+    <div class="panel-heading">
+        <h3 class="panel-title">Graphical representation</h3>
+    </div>
+    <div id="network" class="panel-body" style="height:450px;"></div>
+    <div id="legend" class="panel-footer">
+        <ul>
+        <li>Ovals indicate instances of different relationships, Rectangles indicate different
+        metadata objects within a link.</li>
+        <li>Select a relationship to see all metadata objects in that relationship.</li>
+        <li>Hover over a line to see the role a metadata item fills within a relationship</li>
+    </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+  // create an array with nodes
+  
+  $.getJSON("{% url 'aristotle_mdr_links:link_json_for_item' iid=item.id %}", function( data ) {
+
+      var nodes = new vis.DataSet(data['nodes']);
+      var edges = new vis.DataSet(data['edges']);
+    
+      // create a network
+      var container = document.getElementById('network');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+          "clickToUse": true,
+          "nodes": {
+            "shape": 'box'
+  
+          },
+        "interaction": {
+        },
+          "groups": {
+            "active": {
+                "color": {border:'black'},
+                "font": {size:18},
+                "shape": 'box'
+            },
+            "regular": {
+                "font": {size:15},
+                "shape": 'box'
+            },
+            "relation": {
+                "font": {size:15},
+                "shape": 'ellipse'
+            },
+        },
+          'layout': {
+              'hierarchical': {
+                'enabled': true,
+                'direction': 'LR',
+                'sortMethod': 'directed'
+              }
+          }
+      };
+      var network = new vis.Network(container, data, options);
+
+    });
+
+</script>
+{% endif %}

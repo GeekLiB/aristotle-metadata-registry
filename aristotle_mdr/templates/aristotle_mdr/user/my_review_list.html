@@ -1,0 +1,26 @@
+{% extends "aristotle_mdr/user/userHome.html" %}
+
+
+{% block collapse-link %}
+    <i class="fa fa-institution fa-fw"></i> Registrar tools </a>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "aristotle_mdr/user/userSideBar.html" with activeTab='myreviewrequests' %}
+{% endblock %}
+
+{% block page %}
+<h1>{% block title %}Review list{% endblock %}</h1>
+<p>
+    The following are collections of items that have been requested for review.
+    Once reviewed, if accepted, they may become visible.
+</p>
+{% if page %}
+    <form action="{% url 'aristotle:bulk_action' %}?next={{ request.path }}" method="POST">
+    {% csrf_token %}
+    {% include "aristotle_mdr/helpers/paginated_review_list.html" with page=page actions='user' %}
+    </form>
+{% else %}
+    <strong>You currently have reviews outstanding.</strong>
+{% endif %}
+{% endblock %}

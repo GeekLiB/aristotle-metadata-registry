@@ -1,0 +1,46 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: Registry Roles
+    language: en
+    body: >
+        <h2>Workgroup roles</h2>
+        <dl>
+            <dt>Workgroup Manager</dt>
+            <dd>Managers are in charge of the operation and membership of a workgroup. They can add users to a workgroup
+                and assign them roles. Unless a manager grants themself additional roles, such as steward or
+                submitter roles, they do no have the rights to edit items. Workgroup managers can also close or remove
+                discussions within a workgroup.
+            </dd>
+            <dt>Steward</dt>
+            <dd>Stewards are based on the 11179 role of the same name, and are in charge of the
+                ongoing maintainance of items as they are registered. Stewards are trusted users
+                who have additional priviliges to edit locked items within their workgroup.
+            </dd>
+            <dt>Submitter</dt>
+            <dd>Submitters are based on the 11179 role of the same name, and can submit new items for registration
+                within the registry within the workgroups of which they are a member. They are also able to edit
+                unlocked items managed within a workgroup.
+            </dd>
+            <dt>Viewer</dt>
+            <dd>A viewer can be assigned to a workgroup to monitor the items within managed within it, but cannot edit any items.
+            </dd>
+        </dl>
+        <h2>Registration Authority roles</h2>
+        <dl>
+            <dt>Registrar</dt>
+            <dd></dd>
+            <dt>Registration Authority Manager</dt>
+            <dd>Managers are in charge of the operation and membership of a registration authority,
+                they can assign registrars within their registration authority
+                Unless a manager grants themself additional roles, such as steward or
+                submitter roles, they do no have the rights to edit items.
+            </dd>
+        </dl>
+        <h2>Registry roles</h2>
+        <dl>
+            <dt>Registry administrator <small> (superuser)</small></dt>
+            <dd>Registry administrators are responsible for the management
+                of the entire registry and are the only users able to add or remove users to the registry.
+                Registry adminsitrators are also able to add certain "unmmanaged" items.
+            </dd>
+        </dl>

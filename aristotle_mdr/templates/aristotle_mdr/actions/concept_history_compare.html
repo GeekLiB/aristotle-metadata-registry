@@ -1,0 +1,34 @@
+{% extends 'aristotle_mdr/base.html' %}
+{% load aristotle_tags i18n %}
+{% load compile_static %}
+{% load static from staticfiles %}
+
+{% block title %}Version history of {{ object.item.name }}{% endblock %}
+
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.compare.less'|compile %}" />
+{% endblock %}
+
+{% block content %}{% with item=object.item %}
+<h1>
+    Version history of
+    {{ item.name }}
+    ({{ item.get_verbose_name }})
+</h1>
+<ol class="breadcrumb">
+    <li><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></li>
+    <li><a href="{% url 'aristotle_mdr:item_history' item.id %}">{% trans "Version history" %}</a></li>
+    {% if request.GET.version_id1 %}
+        <li><a href="#" class="active">{% trans 'Compare' %}</a></li>
+    {% endif %}
+</ol>
+
+{% if request.GET.version_id1 %}
+    <p>The details below show only the content that has changed between saves.</p>
+    {% include "reversion-compare/compare_partial.html"  %}
+    {% include "reversion-compare/compare_links_partial.html"  %}
+{% else %}
+    {% include "reversion-compare/action_list_partial.html"  %}
+{% endif %}
+
+{% endwith %}{% endblock %}

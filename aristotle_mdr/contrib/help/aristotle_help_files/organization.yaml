@@ -1,0 +1,15 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: Registration Authorities
+    language: en
+    body: >
+        <blockquote>
+        <cite><a href="[[h|about-isoiec-11179|u]]">ISO/IEC 11179-6 : Section 3.9.2 </a></cite>
+        Unique framework of authority within which individuals (3.2.65) act, or are designated to act, towards some purpose.
+        </blockquote>
+        
+        <blockquote>Organization is a class each instance of which 
+        models an organization (3.2.90), a unique framework of authority 
+        within which individuals (3.2.65) act, or are designated to act, towards some purpose.
+        <cite></cite>
+        </blockquote>

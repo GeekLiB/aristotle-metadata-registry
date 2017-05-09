@@ -1,0 +1,72 @@
+{% extends "aristotle_mdr/create/concept_wizard_wrapper.html" %}
+{% load aristotle_help %}
+
+{% block steps %}
+    <li role="presentation" class="active">Search</li>
+    <li role="presentation">Refine</li>
+    <li role="presentation">Create</li>
+    <li role="presentation">Complete</li>
+{% endblock %}
+
+{% block formarea %}
+<div class="col-sm-8">
+<strong>The key to good metadata is reuse.</strong>
+
+<p>
+Enter a name and short description for the what you would like to create, and
+Aristotle will do a quick search to see if similar objects exist for reuse.
+
+<p>
+If no items with similar terms exist, your search terms will be used to
+pre-populate any new items you create.
+
+    <div class="fancy_name_version">
+        <div class="wizard_field name">
+            <span>{{ wizard.form.name.label_tag }}</span>
+            {% if wizard.form.name.errors %}
+            <span class="alert alert-danger">
+                {{ wizard.form.name.errors }}
+            {% endif %}
+                {{ wizard.form.name }}
+                <div>
+             What would be the <em>name</em> of this type of object?
+                </div>
+            {% if wizard.form.name.errors %}
+                </span>
+            {% endif %}
+        </div>
+        <div class="wizard_field version">
+            <span>{{ wizard.form.version.label_tag }}</span>
+            {% if wizard.form.version.errors %}
+            <span class="alert alert-danger">
+                {{ wizard.form.version.errors }}
+            {% endif %}
+            {{ wizard.form.version }}
+            <div>
+             {{ wizard.form.version.help_text }}
+            </div>
+            {% if wizard.form.version.errors %}
+                </span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="wizard_field">
+        <span>{{ wizard.form.definition.label_tag }} Add a brief definition of the item you'd like to create (optional)</span>
+        {% if wizard.form.definition.errors %}
+        <span class="alert alert-danger">
+            {{ wizard.form.definition.errors }}
+        {% endif %}
+        {{ wizard.form.definition }}
+        {% if wizard.form.definition.errors %}
+            </span>
+        {% endif %}
+    </div>
+</div>
+<aside class="creationTips col-sm-4">
+{% if help %}
+    <p>
+        {% relink help 'creation_tip' %}
+    </p>
+{% endif %}
+</aside>
+{% endblock %}

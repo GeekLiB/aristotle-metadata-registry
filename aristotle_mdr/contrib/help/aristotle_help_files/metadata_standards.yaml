@@ -1,0 +1,54 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: About metadata standards
+    app_label: aristotle_mdr
+    language: en
+    body: >
+        <p>
+        When discussing metadata the term "standard" can be used in two different ways with subtle
+        differences.
+        <ul>
+          <li>
+          A "metadata standard" can be a standard way for describing a metadata format that can be
+          used by other people across different contexts or between different systems. These will
+          usually dictate the fields and relationships which are required to ensure accompanying
+          data is understood. Usually such formats are defined by technical bodies to allow the
+          communication of computer systems with a goal to reduce information loss.
+          When these are defined such that they constitute a technical format or sysntax relationshps
+          they can also be called a metadata format:<br>
+          Examples include:
+          <ul><li>standardised information models such as ISO/IEC 11179, ANZLIC or Dublin Core
+              <li>standardised metadata formats such as Data Documentation Initiative (DDI) XML, Statistical Data and Metadata Exchange (SDMX) or DHIS2
+          </ul>
+          In context, Aristotle Metadata Registry implements the ISO/IEC 11179 standard to model how to record metadata and can be configured to communicate between system using standard metadata formats such as those listed above.
+          </li>
+          <li>
+          Metadata standards can also be agreed types of information that are agreed to by registration
+          authorities. These will usually be agreed upon definitions of details about specific subject
+          for recording in data collections in well-defined ways.
+          These agreements ensure consistency in data collection and reduce data errors and improve the
+          speed for data cleansing and collection by adhering to well-defined and predicatable data formats.
+          Examples include agreement on the definition of:
+          <ul><li>"Person-Sex" and an agreement to store this as a single character field using the lower-case letters <code>m/f/o</code>
+              <li>"Person-Age" and an agreement to store this as a year, stored in a 2 number wide field with ages over 98 censored to the number <code>99</code>
+          </ul>
+          
+          In context, Aristotle Metadata Registry implements the ISO/IEC 11179 standard to allow stewards and registrars to record standard metadata items such as those above for use in data collection and data cleansing.
+          </li>
+        </ul>
+        </p>
+
+        The below text from Australian Institute of Health and Welfare gives more detail on the reasons
+        for the use and reuse of metadata standards.
+        <blockquote>
+        <cite><a href="http://meteor.aihw.gov.au/content/index.phtml/itemId/276533">Source: Australian Institute of Health and Welfare</a></cite>
+        <p>The development of metadata standards improves quality, relevance, consistency and the availability of national information about the health and welfare of Australians. The drivers for standard development arise from the need for better information - whether it is statistical, administrative, clinical or other information.</p>
+
+        <p>Metadata standards describe the expected meaning and acceptable representation of data for use within a defined context. The need for consistency of meaning is vital to facilitate information sharing among primary and secondary users of the data. Much of the work involved in establishing a data collection is in the development of metadata standards to ensure comparability and consistency of the data collected and produced from the collection. Other benefits include:</p>
+        <h3>Consistency of content and definition</h3>
+        <p>If we never have to share data then there is no need to standardise. If we share data then we need to ensure that all those who need to use the data can clearly understand the meaning regardless of how the data is collected or stored. </p>
+        <h3>Avoid duplication and diversity of solutions</h3>
+        <p>Metadata standards are generally required when excessive diversity creates inefficiencies or impedes effectiveness. Metadata standards offer a means of narrowing the variety of ways information is exchanged among different groups, allowing synergy between multiple development efforts. </p>
+        <h3>Reduction in cost of data development</h3>
+        <p>Metadata standards provide a way to solve a problem that other people can use without having to start from scratch. Metadata standards provide a common and consistent platform for organisations to work, thereby simplifying adoption and implementation at the local and national levels.</p>
+        </blockquote>

@@ -1,0 +1,36 @@
+{% extends 'aristotle_mdr/base.html' %}
+{% load aristotle_tags %}
+
+{% block title %}{{ item.name }}{% endblock %}
+{% block content %}
+
+<header class="unmanaged row">
+    <h1 id="objectTitle"  class="pull-left">
+        <a href="#">{{ item.name }}</a>
+        <span>({{ item.get_verbose_name }})</span>
+    </h1>
+    <div class="btn-group pull-right" >
+        {% if item|can_edit:request.user %}
+        <a class="btn btn-default hidden-xs" href="{% adminEdit item %}">
+            <i class="fa fa-sliders"></i> Edit in admin
+        </a>
+        {% endif %}
+    </div>
+</header>
+<section class="unmanaged row">
+<div>
+    <div class="definition" id="definition">
+        <h2 class="sr-only">Definition</h2>
+        {{ item.definition | safe }}
+    </div>
+    <div>
+        {% block objSpecific %}
+        {% endblock %}
+    </div>
+        {% for extension in config.CONTENT_EXTENSIONS %}
+            {% extra_content extension item request.user %}
+        {% endfor %}
+</div>
+</section>
+
+{% endblock %}

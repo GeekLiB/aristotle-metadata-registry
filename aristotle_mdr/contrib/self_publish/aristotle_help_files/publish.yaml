@@ -1,0 +1,29 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: How do I publically publish metadata?
+    language: en
+    body: >
+        <p>
+        In some cases you can publish metadata you have made without
+        submitting it for registration or endorsement. This is useful for information
+        that may not be ready for standardisation, but is ready for sharing.
+        </p>
+        <p>
+        If you are the original author of metadata, on the item page you will
+        see a "Publish" option in the the top right action bar.
+        Clicking this will give you options on when and how to publish metadata.
+        </p>
+        <p>
+            When publishing, the following visibility options are available:
+            <ul>
+                <li>Public - allow anyone with permission to access the registry view this metadata.</li>
+                <li>Active users - allow logged in users of the registry view the metadata</li>
+                <li>Unpublish - remove the publication of the item to disallow access. This metadata may still be made visible via submitting for review.</li>
+            </ul>
+        </p>
+        <p>
+        It is important to note that the purpose of a metadata registry is
+        to expose 'standard' information that is endorsed for specific use.
+        As such, it is advised that publication of metadata should be done 
+        through the endorsement process by submitting it for review.
+        </p>

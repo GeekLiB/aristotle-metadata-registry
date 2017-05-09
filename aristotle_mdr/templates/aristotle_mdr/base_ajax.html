@@ -1,0 +1,28 @@
+{% load i18n %}
+{% load bootstrap3 %}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">
+        <i class="fa fa-fw fa-times"></i>
+    </span><span class="sr-only">Close popover</span></button>
+    <a title="Expand" class="exapnd close" href="{{request.get_full_path}}">
+        <span>
+        <i class="fa fa-fw fa-expand"></i>
+        </span><span class="sr-only">Expand popover</span>
+    </a>
+    <h4 class="modal-title">{% block title %}{% endblock %}
+    </h4>
+</div>
+
+{% block content %}
+<div class="modal-body">
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+</div>
+{% endblock %}
+
+{% block extra_head_scripts %}
+{{ form.media }}
+{% endblock %}

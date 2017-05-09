@@ -1,0 +1,31 @@
+.select2-selection {
+    overflow: hidden;
+}
+.yourlabs-autocomplete {
+    width:450px;
+    max-height:250px;
+    overflow-x:auto;
+    overflow-y:auto;
+}
+
+input[type='text'].autocomplete {
+    width:300px;
+}
+
+.autocomplete-item {
+    display:block;
+}
+
+.autocomplete-item .title small {
+    display:inline-block;
+    font-weight:normal;
+}
+
+.autocomplete-item .details {
+    padding-left:20px;
+}
+
+.autocomplete-item * {
+    white-space:normal;
+}
+

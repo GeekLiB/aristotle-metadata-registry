@@ -1,0 +1,32 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: Registration Authorities
+    language: en
+    body: >
+        <blockquote>
+        <cite><a href="[[h|about-isoiec-11179|u]]">ISO/IEC 11179-6 : Section 4.4.2 </a></cite>
+        An organization responsible for maintaining a register.
+        </blockquote>
+        
+        <blockquote>An autonomous body that operates and manages a Metadata Registry based upon the
+        ISO/IEC 11179 Metadata Registry standard, for the purpose of registering metadata items.
+        A Registration Authority should encourage consistent processes within the metadata registry,
+        through the development and disemination of formal guidelines and procedures.
+        <p>A Registration Authority should also faciliate the process of metadata item registration
+        within its domain of responsibility by receiving and processing submissions from suitable
+        Submitting Organisations.
+        </p>
+        <cite></cite>
+        </blockquote>
+        <p>Registration authorities are groups of people that have some authority to state
+        registration status levels for metadata. These may be committees or agencies with 
+        particular goverance arrangements or business units with specific domain knowledge.
+        In all cases, Registration Authorities should be groups that have both the expertise
+        and governance to approve the correctness and currency of metadata to inform users of the
+        metadata registry of the correct standards for use in data collection and discovery.
+        </p>
+        <p>Within a registry, Registration authorities will have registrars who are tasked with
+        performing day-to-day tasks such as reviewing and updating metadata status levels and
+        advicing. Within Aristotle-MDR-based registries, Registration Authorities will also have
+        a number of managers responsible for adding registrars and assigning their tasks.
+        </p>

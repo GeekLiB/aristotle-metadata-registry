@@ -1,0 +1,16 @@
+{% load aristotle_tags i18n %}
+<a class="btn btn-default favourite" href="{% url 'aristotle:toggleFavourite' item.id %}"
+    title="{% ternary isFavourite 'Remove from my favourite items' 'Add to my favourite items' %}">
+    {% if isFavourite %}
+        <i class="fa fa-bookmark "></i>
+    {% else %}
+        <i class="fa fa-bookmark-o "></i>
+    {% endif %}
+    {% if request.user.is_superuser %}
+      {% with count=item.favourited_by.count %}
+      <span class='badge' title='{% blocktrans %}Favourited by {{count}} users {% endblocktrans %}'>
+          {{count}}
+      </span>
+      {% endwith %}
+    {% endif %}
+</a>

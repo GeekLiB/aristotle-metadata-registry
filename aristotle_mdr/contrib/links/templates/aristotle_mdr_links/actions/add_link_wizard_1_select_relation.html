@@ -1,0 +1,33 @@
+{% extends 'aristotle_mdr_links/actions/add_link_wizard_0_base.html' %}
+{% load compile_static i18n %}
+{% load static from staticfiles %}
+
+{% block title %}Add new link - Step 1: Select a relationship{% endblock %}
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.wizard.less'|compile %}" />
+{% endblock %}
+
+{% block form_title %}Step 1: Select a relationship{% endblock %}
+
+{% block wizard_content %}
+    <div class="alert alert-info">
+        {% blocktrans %}
+        Add a new link 
+        {% endblocktrans %}
+        <p>
+            Select the relationship type that this link will match.
+            Click the blue link icon (<i class="fa fa-external-link-square"></i>) in the drop down to get
+            view the relation definition in a new window.
+        </p>
+        <p>
+            <a href="{% url 'aristotle_help:concept_help' app='aristotle_mdr' model='relation' %}">
+                Read more about relationships
+            </a>
+        </p>
+    </div>
+    <div>
+        <table>
+        {{ form.as_table }}
+        </table>
+    </div>
+{% endblock %}

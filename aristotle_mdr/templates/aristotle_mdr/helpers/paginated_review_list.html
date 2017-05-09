@@ -1,0 +1,97 @@
+{% load i18n aristotle_tags humanize %}
+
+{% if page.has_other_pages %}
+Showing {{ page.start_index }} - {{ page.end_index }} of {{ page.paginator.count }} results.
+{% else %}
+Showing {{ page.paginator.count }} results.
+{% endif %}
+
+<table class="table">
+<thead>
+    <tr>
+        <th title="{% trans 'Number of items' %}">#</th>
+        <th>{% trans 'Status' %}</th>
+        <th>{% trans 'Message' %}</th>
+        <th>{% trans 'Close reason' %}</th>
+        <th>
+            {% if sort == "mod_asc" %}
+            <a href="?{% paginator_get request page.number %}&sort=mod_desc"><i class="fa fa-sort-asc"></i></a>
+            {% elif sort == "mod_desc" %}
+            <a href="?{% paginator_get request page.number %}&sort=mod_asc"><i class="fa fa-sort-desc"></i></a>
+            {% else %}
+            <a href="?{% paginator_get request page.number %}&sort=mod_desc"><i class="fa fa-sort"></i></a>
+            {% endif %}
+            {% trans 'Last modified' %}
+        </th>
+        <th>
+            {% if sort == "cre_asc" %}
+            <a href="?{% paginator_get request page.number %}&sort=cre_desc"><i class="fa fa-sort-asc"></i></a>
+            {% elif sort == "cre_desc" %}
+            <a href="?{% paginator_get request page.number %}&sort=cre_asc"><i class="fa fa-sort-desc"></i></a>
+            {% else %}
+            <a href="?{% paginator_get request page.number %}&sort=cre_desc"><i class="fa fa-sort"></i></a>
+            {% endif %}
+            {% trans 'Submitted' %}
+        </th>
+        <th>{% trans 'Actions' %}</th>
+    </tr>
+</thead>
+<tbody>
+    {% for item in page %}
+    <tr>
+        <td>{{ item.concepts.count }}</td>
+        <td>{{ item.get_status_display }}
+        </td>
+        <td>
+            <a href="{% url 'aristotle:userReviewDetails' item.id %}" data-toggle="modal" data-target="#review_box">
+                {% if item.message %}
+                    {{ item.message }}
+                {% else %}
+                    {% trans "No message given" %}
+                {% endif %}
+            </a>
+        </td>
+        <td>{% if item.response %}
+            {{ item.response }}
+            {% endif %}
+        </td>
+        <td>
+            <time title="{{ item.modified|date:'o-m-d H:i e' }}" datetime="{{ item.modified|date:'c' }}">
+                {{item.modified|naturaltime}}
+            </time>
+        </td>
+        <td>
+            <time title="{{ item.created|date:'o-m-d H:i e' }}" datetime="{{ item.created|date:'c' }}">
+                {{item.created|naturaltime}}
+            </time>
+        </td>
+        <td>
+        {% if actions == 'user' %}
+            {% if item.status == 0 %} {# submitted #}
+              <a class="btn btn-warning btn-xs" title="Cancel request"
+                href="{% url 'aristotle:userReviewCancel' review_id=item.pk %}"
+                data-toggle="modal" data-target="#review_box"
+                ><i class="fa fa-ban"></i></a>
+            {% endif %}
+        {% else %}
+        {% if item.status == 0 %} {# submitted #}
+        <div class="btn-group" role="group" aria-label="">
+          <a class="btn btn-success btn-xs" title="Accept"
+            href="{% url 'aristotle:userReviewAccept' review_id=item.pk %}"
+            data-toggle="modal" data-target="#review_box"
+            ><i class="fa fa-check"></i></a>
+          <a class="btn btn-danger  btn-xs" title="Reject"
+            href="{% url 'aristotle:userReviewReject' review_id=item.pk %}"
+            data-toggle="modal" data-target="#review_box"
+            ><i class="fa fa-times"></i></a>
+        </div>
+        {% endif %}
+        {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+{% include "aristotle_mdr/helpers/paginator.html" with page=page %}
+

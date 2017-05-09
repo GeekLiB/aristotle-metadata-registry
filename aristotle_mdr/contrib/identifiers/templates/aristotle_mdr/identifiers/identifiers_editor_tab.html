@@ -1,0 +1,40 @@
+{% load compile_static i18n %}
+
+{% block content %}
+
+{% with formset=identifier_FormSet %}
+
+    {{ formset.management_form }}
+    <table id="identifierTable" class="form table  table-hover">
+      <thead>
+          <tr>
+            <th>{% trans 'Namespace' %}</th>
+            <th>{% trans 'Identifier' %}</th>
+            <th>{% trans 'Version' %}</th>
+            <th>{% trans 'Delete' %}</th>
+          </tr>
+      </thead>
+    <tbody id="table">
+    {% for id_form in formset.forms %}
+      <tr class="">
+          {% for field in id_form.visible_fields %}
+            <td>
+            {# Include the hidden fields in the form #}
+            {% if forloop.first %}
+              {% for hidden in id_form.hidden_fields %}
+              {{ hidden }}
+              {% endfor %}
+            {% endif %}
+              {{ field.errors.as_ul }}
+              {{ field }}
+            </td>
+          {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <a class="btn btn-primary" onclick="addRow('#identifierTable', '#identifierTable', 'identifier')">
+        <i class="fa fa-plus-circle"></i> Add a identifier</a>
+
+{% endwith %}
+{% endblock %}

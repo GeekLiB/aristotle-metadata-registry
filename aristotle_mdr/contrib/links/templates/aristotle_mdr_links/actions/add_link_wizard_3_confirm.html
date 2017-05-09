@@ -1,0 +1,50 @@
+{% extends 'aristotle_mdr_links/actions/add_link_wizard_0_base.html' %}
+{% load compile_static i18n util_tags %}
+{% load static from staticfiles %}
+
+{% block title %}Create link - confirm{% endblock %}
+{% block extra_head_scripts %}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.wizard.less'|compile %}" />
+{% endblock %}
+
+{% block form_title %}Step 3: Confirm link details{% endblock %}
+
+{% block wizard_content %}
+    <div>
+        {% blocktrans %}
+        You are about to add concepts to the roles for relation
+            <a href='{{ relation.get_absolute_url }}'>{{ relation.name }}</a> for this link.
+        {% endblocktrans %}
+        <div class='well'>
+        {{ relation.definition|safe }}
+        </div>
+        <strong>The concepts in this relationship are:</strong>
+        <table class="table">
+            <thead><tr>
+            <th>Role</th>
+            <th>Concepts</th>
+            </tr></thead>
+            <tbody>
+            {% for role, concepts in role_concepts %}
+                <tr>
+                    <td>{{role.name}}</td>
+                    <td>
+                        <ul>
+                        {% for concept in concepts %}
+                        <li>
+                            <a href="{{concept.get_absolute_url}}">
+                            {{concept.name}}
+                            </a>
+                        </li>
+                        {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
+
+{% block form_save_text %}Save{% endblock %}

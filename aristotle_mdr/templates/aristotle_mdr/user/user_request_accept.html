@@ -1,0 +1,56 @@
+{% extends request.is_ajax|yesno:"aristotle_mdr/base_ajax.html,aristotle_mdr/base.html" %}
+{% load compile_static i18n %}
+{% load aristotle_tags %}
+
+{% block title %}Approve review request{% endblock %}
+{% block content %}
+{{ form.media }}
+<form method="post" action="{% url 'aristotle:userReviewAccept' review.id %}">{% csrf_token %}
+    <div class="modal-body">
+        <ol class="breadcrumb">
+          <li><a href="{% url 'aristotle:userReadyForReview' %}">Review list</a></li>
+          <li class="active">Approve review request</li>
+        </ol>
+
+
+        <header>By approving this review, this form will change the status of the listed items in your registration authorities.
+        </header>
+        <div>Requested registration status:
+            <em>{{review.get_state_display}}</em> in <a href="{{review.registration_authority.get_absolute_url }}">{{review.registration_authority.name }}</a>
+        </div>
+        <div class="well">
+            {{ form.errors }}
+            <strong>The original message for this request:</strong>
+            <p>{{ review.message }}</p>
+            <strong>The items in this request are listed below:</strong>
+            <ul>
+                {% for item in review.concepts.all %}
+                    <li>
+        {% include "aristotle_mdr/helpers/inlineDetails.html" with item=item %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>  
+        <div id="visibilty">
+            
+        </div>
+        <section>
+        <div class="status_change_description">
+            <label for='id_response'>{{ form.response.label }}:</label> {{ form.response.help_text }} 
+            {{ form.response }}
+        </div>
+        {% block save %}
+        {% endblock %}
+        </section>
+    </div>
+    <div class="modal-footer">
+        {% if request.is_ajax %}
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        {% else %}
+            <a class="btn btn-default" href="{% url 'aristotle:userReadyForReview' %}">Cancel</a>
+        {% endif %}
+        <input type="submit" class="btn btn-primary" value="Update Status" />
+    </div>
+</form>
+
+{% endblock %}

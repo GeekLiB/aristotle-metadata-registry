@@ -1,0 +1,15 @@
+{% extends "aristotle_mdr/base.html" %}
+
+{% block content %}
+    <h2>{% block title %}Browsing {{ model.get_verbose_name_plural }}{% endblock %}</h2>
+
+    <ul class="breadcrumb">
+    {% block breadcumbs %}
+        <li class="active">Metadata browser</li>
+    {% endblock %}
+    </ul>
+
+    {% block object_list %}
+    {% endblock %}
+    
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends "aristotle_mdr/base.html" %} {# no ajax for this one #}
+{% load i18n compile_static %}
+{% load static from staticfiles %}
+
+{% block extra_head_scripts %}
+    {{ form.media }}
+    <link rel="stylesheet" href="{% static 'aristotle_mdr/aristotle.compare.less'|compile %}" />
+{% endblock %}
+
+{% block title %}Concept comparator {{ item.name }}{% endblock %}
+{% block content %}
+<h1>Concept comparator</h1>
+<form method="get" action="{% url 'aristotle:compare_concepts' %}">
+    <input type="submit" class="btn btn-primary" value="Compare" />
+    <p>
+        This form allows you to compare items.
+        Text in green below is present only in the item in that column, text in red is
+        present only in the opposite column and text in white is similar across both items.
+    </p>
+    <table class="table table-bordered compare">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>
+                    {{ form.item_a.label }}<br>
+                    {{ form.item_a }}
+                </th>
+                <th>
+                    {{ form.item_b.label }}<br>
+                    {{ form.item_b }}
+                </th>
+            </tr>
+        </thead>
+        <tbody class="compare_diff">
+            {% if form.errors %}
+            <tr>
+                <td></td>
+                <td>{{form.item_a.errors}}</td>
+                <td>{{form.item_b.errors}}</td>
+            </tr>
+            {% endif %}
+            {% for name,diffs in comparison %}
+                <tr>
+                    {% with field=diffs.field %}
+                    <th>{% firstof field.verbose_name field.related_name %}{% if field_diff.is_related and not field_diff.follow %}<sup class="follow">*</sup>{% endif %}
+                    {% if field.help_text %}<span class="help">{{ field.help_text }}</span>{% endif %}
+                    </th>
+                    {% endwith %}
+                    <td>
+                        {{ diffs.a }}
+                    </td>
+                    <td>
+                        {{ diffs.b }}
+                    </td>
+                {% empty %}
+                    <th colspan=3>
+                        <em>{% trans "There are no differences." %}</em>
+                    </th>
+                </tr>
+            {% endfor %}
+        </tbody>
+        {% if same %}
+        <tbody class="compare_same">
+            <tr>
+                <th colspan=3><em>{% trans 'Fields below are identical for both items.'%}</em></th>
+            </tr>
+            {% for name,values in same.items %}
+                <tr>
+                    {% with field=values.field %}
+                    <th>{% firstof field.verbose_name field.related_name %}{% if field_diff.is_related and not field_diff.follow %}<sup class="follow">*</sup>{% endif %}
+                    {% if field.help_text %}<p class="help">{{ field.help_text }}</p>{% endif %}
+                    </th>
+                    {% endwith %}
+                    <td colspan=2>
+                        {% if values.value == "" or values.value == None %}
+                            <em>{% trans 'Blank for both items' %}</em>
+                        {% else %}
+                            {{ values.value }}
+                        {% endif %}
+                    </td>
+                {% empty %}
+                    <td>
+                        <strong>{% trans "There are no similarities." %}</strong>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+
+    
+        {% if only_a %}
+        <tbody class="">
+            <tr>
+                <th colspan=3><em>{% trans 'Fields below are only on '%}"{{item_a.name}}"</em></th>
+            </tr>
+            {% for name,values in only_a.items %}
+                <tr>
+                    {% with field=values.field %}
+                    <th>{% firstof field.verbose_name field.related_name %}{% if field_diff.is_related and not field_diff.follow %}<sup class="follow">*</sup>{% endif %}
+                    {% if field.help_text %}<p class="help">{{ field.help_text }}</p>{% endif %}
+                    </th>
+                    {% endwith %}
+                    <td>
+                        {% if values.value == "" or values.value == None %}
+                            <em>{% trans 'Blank' %}</em>
+                        {% else %}
+                            {{ values.value }}
+                        {% endif %}
+                    </td>
+                    <td>-</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+        
+        {% if only_b %}
+        <tbody class="">
+            <tr>
+                <th colspan=3><em>{% trans 'Fields below are only on '%}"{{item_b.name}}"</em></th>
+            </tr>
+            {% for name,values in only_b.items %}
+                <tr>
+                    {% with field=values.field %}
+                    <th>{% firstof field.verbose_name field.related_name %}{% if field_diff.is_related and not field_diff.follow %}<sup class="follow">*</sup>{% endif %}
+                    {% if field.help_text %}<p class="help">{{ field.help_text }}</p>{% endif %}
+                    </th>
+                    {% endwith %}
+                    <td>-</td>
+                    <td>
+                        {% if values.value == "" or values.value == None %}
+                            <em>{% trans 'Blank' %}</em>
+                        {% else %}
+                            {{ values.value }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+    
+
+    </table>
+</form>
+
+{% endblock %}

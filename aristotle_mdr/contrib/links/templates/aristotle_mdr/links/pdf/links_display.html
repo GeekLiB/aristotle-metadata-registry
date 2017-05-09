@@ -1,0 +1,38 @@
+{% load i18n slot_tags util_tags %}
+{% if item.slots.exists %}
+<div>
+<h1>Additional Attributes</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                {% trans 'Slot name' %}
+            </th>
+            <th>
+                {% trans 'Details' %}
+            </th>
+            <th>
+                {% trans 'Cardinality' %}
+            </th>
+            <th>
+                {% trans 'Value' %}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for slot in item.slots.all|order_by:'type__slot_name' %}
+        <tr>
+            <td>
+                {{ slot.type.slot_name }}
+            </td>
+            <td>{{slot.type.help_text}}</td>
+            <td>{{slot.type.get_cardinality_display}}</td>
+            <td>
+                {{ slot.value|linebreaks }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endif %}

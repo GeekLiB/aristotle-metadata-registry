@@ -1,0 +1,57 @@
+{% load i18n bootstrap3 compile_static aristotle_tags %}
+{% load static from staticfiles %}
+
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      {# Android web-app #}
+      <meta name="mobile-web-app-capable" content="yes">
+      <link rel="manifest" href="/manifest.json">
+      <meta name="theme-color" content="#4e8382">
+
+      {# Apple web-app #}
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-title" content="{{ config.SITE_NAME }}">
+
+	  <link rel="sitemap" type="application/xml" title="Sitemap" href="{% url 'aristotle:sitemap_xml' %}" />
+      <link rel="icon" type="image/png" href="{% static 'aristotle_mdr/images/favicon.png' %}"/>
+      <title>{% block title %}{% endblock %} - {{ config.SITE_NAME }}</title>
+
+    {% include 'aristotle_mdr/scripts.html' %}
+
+    {% block extra_head_scripts %}
+        {% comment %}
+            Only for scripts that need to be inserted for other special templates
+            For example: look ups in supersedes, login, search, etc...
+        {% endcomment %}
+    {% endblock %}
+   </head>
+
+   <body>
+   {% block header %}
+    {% include 'aristotle_mdr/header.html' %}
+   {% endblock %}
+        {% if messages %}
+        <div class="row">
+        <div class="alert alert-info" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        </div>
+        {% endif %}
+   <div id='content' class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% include 'aristotle_mdr/footer.html' %}
+    <div class="well hidden" id="loading_indicator"><i class="fa fa-spinner fa-spin"></i> {% trans 'Loading' %}</div>
+   </body>
+</html>
+

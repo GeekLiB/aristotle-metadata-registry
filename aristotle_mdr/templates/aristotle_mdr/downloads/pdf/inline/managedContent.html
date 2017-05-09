@@ -1,0 +1,23 @@
+{% block content %}
+<section>
+    <header>
+    <h2 id="objectTitle">
+        {{ item.name }}
+    </h2>
+    <small>Item id: {{item.id}}
+        {% if item.version %}v {{item.version}}{% endif %}
+        </small>
+</header>
+<div class="definition">
+    {{ item.definition | safe }}
+</div>
+<div class="status">
+    {% include "aristotle_mdr/statuses.html" with statuses=item.current_statuses only %}
+</div>
+<div class="objectSpecific">
+    {% block objSpecific %}
+    {% endblock %}
+</div>
+</section>
+
+{% endblock %}

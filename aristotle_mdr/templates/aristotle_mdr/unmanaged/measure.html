@@ -1,0 +1,25 @@
+{% extends "aristotle_mdr/unmanagedContent.html" %}
+{% load aristotle_tags %}
+
+{% block title %}{{ item.name }} {% endblock %}
+
+{% block objSpecific %}
+    <div>
+        {{ item.measure.definition|safe }}
+    </div>
+    <div><strong>Note:</strong> Due to their fundamental nature, measures are unmanaged and do not need to be registered. Instead they are controlled by the registry administrators.
+    For more information, see ISO/IEC 11179-3:2013, section 11.4 "Measurement metamodel region".
+    </div>
+
+    {% if item.unitofmeasure_set.all %}
+        <h3>Units of Measure using this measure</h3>
+        <ul>
+        {% for uom in item.unitofmeasure_set.all|can_view_iter:request.user %}
+            <li>
+                {% include "aristotle_mdr/helpers/inlineDetails.html" with item=uom %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
+

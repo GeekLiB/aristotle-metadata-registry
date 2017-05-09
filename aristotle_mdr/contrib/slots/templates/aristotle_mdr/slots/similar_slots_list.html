@@ -1,0 +1,70 @@
+{% extends "aristotle_mdr/base.html" %}
+{% load aristotle_tags i18n slot_tags util_tags %}
+{% block title %}Slots - Metadata Items related to '{{slot_type.slot_name}}'{% endblock %}
+
+{% block content %}
+{% block object_list %}
+    <p>
+        Below is a list of all visible metadata objects with values for the Slot 
+        <em>{{ slot_name }}</em>. This slot is only available on 
+        items of type
+        {% with item_type=slot_type.model_class %}
+        <a href='{#% url "aristotle_help:concept_help" item_type.app_label item_type.model %#}'>[[{{ item_type }}]]</a>.
+        {% if slot_type.help_text %}
+        <p class='slot_help'>
+            {{ slot_type.help_text }}
+        </p>
+        {% endif %}
+        {% endwith %}
+        {% if value %}
+            <p>
+                This list is restricted to just metadata items where this slot 
+                has a value of <tt>{{value}}</tt>.
+            </p>
+        {% endif %}
+        <form>
+            <label for='value'>Restrict to value:</label>
+            <input name='value' value='{% firstof value '' %}'>
+            <button type='submit'>Go</button>
+            or <a href="{% url 'aristotle_slots:similar_slots' slot_name %}">Show all items</a>
+        </form>
+    </p>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Metadata item</th>
+            <th>Values</th>
+        </tr>
+        </thead>
+        <tbody>
+      {% for obj in object_list.all|order_by:'name' %}
+        <tr>
+            <td>
+                {% include "aristotle_mdr/helpers/inlineDetails.html" with item=obj %}
+            </td>
+            <td>
+                <ul>
+                {% for slot in obj|slots_by_type:slot_name %}
+                <li>
+                    {{slot.value}}
+                </li>
+                {% endfor %}
+                </ul>
+            </td>
+        </tr>
+      {% empty %}
+        <tr>
+            <td>
+                {% trans 'No metadata items have this slot type' %}
+                {% if value %}
+                    {% trans 'with the specified value' %}
+                {% endif %}
+                .
+            </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}
+{% endblock %}

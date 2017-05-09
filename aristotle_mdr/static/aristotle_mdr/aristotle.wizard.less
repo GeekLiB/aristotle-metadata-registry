@@ -1,0 +1,94 @@
+.wizard_field {
+    margin-top:15px;
+    &>span {
+        display:block;
+    }
+    input, select,textarea {
+        width:100%;
+    }
+    label.required {
+        color:red;
+    }
+}
+
+.fancy_name_version {
+    width:100%;
+    display:table;
+    .wizard_field {
+        display:table-cell;
+    }
+    .name {
+        width:70%;
+        padding-right:5px;
+    }
+    .version {
+        width:30%;
+        padding-right:5px;
+    }
+}
+small.example {
+    display:block;
+    font-size:10pt;
+    color:gray;
+}
+
+fieldset.wizard {
+    padding-bottom:10px;
+    legend {
+        border: none;
+    }
+    div {
+        border-left: 1px solid #e5e5e5;
+    }
+    label {
+        display:block;
+        font-weight:normal;
+        em {
+            font-weight:bold;
+        }
+    }
+    input {
+        width:90%;
+        font-size: 125%;
+    }
+    textarea {
+        height:4em;
+        width:90%;
+        resize: none;
+    }
+}
+
+.dec_choice {
+    li {
+        list-display-type:none;
+        label {
+            font-weight:normal;
+        }
+    }
+}
+
+.searchResults {
+    li {
+        list-display-type:none;
+        label {
+            font-weight:normal;
+        }
+    }
+}
+
+.tab-content {
+    padding:5px;
+    border-left:1px solid lightgray;
+    border-right:1px solid lightgray;
+    border-bottom:1px solid lightgray;
+}
+
+#slotsTable textarea {
+    width:100%;
+    height:50px;
+    resize:vertical;
+}
+
+.django-ckeditor-widget {
+    width:100%
+}

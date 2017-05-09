@@ -1,0 +1,20 @@
+{% extends "aristotle_mdr/base.html" %}
+
+{% block title %}Delete items{% endblock %}
+{% block content %}
+{{ form.media }}
+<form method="post" action="{% url 'aristotle:bulk_action' %}?next={{next}}">{% csrf_token %}
+    <p>
+        Use this page to confirm you wish to delete the following items.
+    </p>
+    <input type="hidden" name="bulkaction" value="{{action}}"/>
+    <table>
+        {{ form.as_table }}
+    </table>
+    <div>
+        <a class="btn btn-default" href="{{ next }}">Cancel</a>
+        <button type="submit" name="confirmed" class="btn btn-primary" value="Delete">Delete</button>
+    </div>
+</form>
+{% include 'autocomplete_light/static.html' %}
+{% endblock %}

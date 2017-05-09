@@ -1,0 +1,52 @@
+- model: aristotle_mdr_help.helppage
+  fields:
+    title: How does metadata become visible?
+    language: en
+    body: >
+        <p>Before metadata has been registered, it is only visible to certain authorised members of the metadata registry.
+        As content is edited and shared different groups of users will have access to view or edit metadata. Once metadata
+        is registered with an authority, more members of the registry and even public users of the site may be able to
+        view items.
+        </p>
+
+        <h2>Before registration</h2>
+
+        <h3>Private items</h3>
+        <p>
+        Any user may create items in their private "Sandbox" that are only visible to themselves.
+        This is done by not specifying a workgroup when the item is created.
+        </p>
+        
+        <h3>Shared items</h3>
+        <p>
+        Any user may submit an item to any workgroup they are a member to allow collaborative authoring.
+        Once it is submitted to a workgroup any member of that workgroup can view, and in some cases edit, the item.
+        </p>
+        
+        <h3>Requesting review and registration of items</h3>
+        <p>
+        Any person who can view and edit an item may submit it for review with a registration authority.
+        This makes the item visible to every registrar of that authority, who can then approve and register the metadata,
+        or decline the request and leave comments suggesting further action.
+        </p>
+        <p>
+            Each registration authority can specify which registration state will make an item publically visible, and
+            registration state will lock an item limiting further editing.
+        </p>
+        <p>
+            Each user and workgroup has the ability to request registration by a particular registration authority.
+            During this process, they will be adviced if registration at that status level will either lock editing or make metadata visible.
+        </p>
+
+
+        <h2>After registration</h2>
+        
+        <p>Once an item is registered it may become visible to users outside the workgroup or to the wider public.
+        By default, <strong>Registration is the <em>only</em> way for a metadata item to become publically visible.</strong></p>
+
+        <p>
+            Once an item is registered, registrars can only apply new statuses if they recieve a registration request,
+            or the item has already been made public.
+        </p>
+        
+

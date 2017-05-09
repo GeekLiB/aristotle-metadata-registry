@@ -1,0 +1,54 @@
+{% extends "aristotle_mdr/user/userHome.html" %}
+
+{% block collapse-link%}
+    <i class="fa bar-chart fa-fw"></i> Registry Statistics</a>
+{% endblock %}
+{% block sidebar %}
+    {% include "aristotle_mdr/user/userSideBar.html" with activeTab='adminTools' adminSub='stats' %}
+{% endblock %}
+
+{% block page %}
+<h1>{% block title %}Registry statistics{% endblock %}</h1>
+
+<h2>Advanced item statistics</h2>
+<table class='table'>
+    <thead>
+    <tr>
+        <th>Extension name</th>
+        <th>Concept type</th>
+        <th>7 days</th>
+        <th>30 days</th>
+        <th>All time</th>
+        <th>#</th>
+    </thead>
+{% for app,app_models in model_stats.items %}
+    <tbody>
+    {% for model,count,adminlink in app_models.models %}
+    <tr>
+        {% if forloop.first %}
+            <td rowspan="{{app_models.models|length }}">{{ app_models.app }}</td>
+        {% endif %}
+        <td>
+            <a href="{{ adminlink }}">
+                {{ model.get_verbose_name }}
+            </a>
+        </td>
+        <td>{{ count.t7 }}</td>
+        <td>{{ count.t30 }}</td>
+        <td>{{ count.all_time }}</td>
+        <td>    
+            <div class="progress" style="width:75px;margin:0px">
+                <div class="progress-bar" role="progressbar"
+                    aria-valuenow="{{ count.alltime }}"
+                    aria-valuemin="0"
+                    aria-valuemax="{{ model_max }}"
+                    style="width: {% widthratio count.all_time model_max 100 %}%;">
+                </div>
+            </div>
+        </td>
+    </tr>
+    {% endfor %}
+    <tbody>
+{% endfor %}
+</table>
+{% endblock %}

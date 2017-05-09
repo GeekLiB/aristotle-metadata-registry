@@ -1,0 +1,46 @@
+{% extends 'aristotle_mdr/base.html' %}
+{% load aristotle_tags i18n %}
+{% block title %}Registration History of {{ item.name }}{% endblock %}
+
+{% block content %}
+<h1>
+    Registration History of
+    {{ item.name }}
+    ({{ item.item.get_verbose_name }})
+</h1>
+<ol class="breadcrumb">
+    <li><a href="{% url 'aristotle:item' item.id %}">{{ item.name }}</a></li>
+    <li><a href="#">Registration History</a></li>
+</ol>
+{% if history %}
+    {% for ra, states in history.items %}
+        <h2>History for <em><a href="{% url 'aristotle:registrationAuthority' ra.id %}">{{ ra.name }}</a></em></h2>
+        <table class="table">
+            <thead>
+                <th>{% trans 'Date registration effective' %}</th>
+                <th>{% trans 'Date registration expires' %}</th>
+                <th>{% trans 'State' %}</th>
+                <th>Comments</th>
+                {% comment %}
+                {% if item|can_edit:request.user %}
+                    <th>Who</th>
+                {% endif %}
+                {% endcomment %}
+            </thead>
+            <tbody>
+            {% for status in states %}
+                <tr>
+                    <td>{{ status.registrationDate }}</td>
+                    <td>{{ status.until_date }}</td>
+                    <td><a title='' href='{% url 'aristotle:registrationAuthority' ra.id %}#state_{{ status.state }}'>{{ status.state|stateToText }}</a></td>
+                    <td>{{ status.changeDetails }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+{% else %}
+    <strong>{% trans 'This item has not yet been registered by any authority' %}</strong>
+{% endif %}
+
+{% endblock %}

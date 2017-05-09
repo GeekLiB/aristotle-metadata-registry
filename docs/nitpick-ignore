@@ -1,0 +1,14 @@
+py:obj AutoCreatedField 
+py:obj AutoField 
+py:obj AutoLastModifiedField 
+py:obj AutoSlugField
+py:obj BooleanField
+py:obj CharField
+py:obj ForeignKey
+py:obj OneToOneField
+py:obj RichTextUploadingField
+py:obj TextField
+py:obj URLField
+py:obj UUIDField
+py:obj boolean
+py:obj list

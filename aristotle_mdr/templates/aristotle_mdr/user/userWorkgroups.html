@@ -1,0 +1,20 @@
+{% extends "aristotle_mdr/user/userHome.html" %}
+{% load i18n %}
+
+{% block collapse-link %}
+    <i class="fa fa-users fa-fw"></i> My Workgroups </a>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "aristotle_mdr/user/userSideBar.html" with activeTab='workgroups' subWorkgroups=user.profile.myWorkgroups.all %}
+{% endblock %}
+
+{% block page %}
+<h1>{% block title %}My Workgroups{% endblock %}</h1>
+    <section id="workgroups">
+        <p>This is a list of active workgroups of which you are a member. To see a list of inactive workgroups,
+        go to <a href="{% url 'aristotle:user_workgroups_archives'%}">Archived Workgroups.</a></p>
+
+        {% include "aristotle_mdr/helpers/paginated_workgroup_list.html" with page=page %}
+</section>
+{% endblock %}

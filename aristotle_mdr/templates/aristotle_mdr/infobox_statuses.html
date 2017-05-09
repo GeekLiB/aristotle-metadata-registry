@@ -1,0 +1,36 @@
+{% load i18n aristotle_tags %}
+
+<dt class="large">
+    <span>{% trans 'Endorsed by' %}</span>
+    {% if user.profile.is_registrar %}
+        <a class="inline_action" href="{% url 'aristotle:changeStatus' item.id %}"
+            data-toggle="modal" data-target="#statusChange">Change</a>
+            {% bootstrap_modal "statusChange" size='lg' %}
+    
+    {% endif %}
+</dt>
+<dd class="large">
+    <ul>
+        {% if statuses.all %}
+            {% for status in statuses.all %}
+            <li>
+                <a href="{% url 'aristotle:registrationAuthority' status.registrationAuthority.id status.registrationAuthority.name|slugify %}">{{ status.registrationAuthority }}</a>
+                : {% trans status.state_name %} on {{ status.registrationDate }}
+                </li>
+            {% endfor %}
+        {% else %}
+            {% for status in statuses %}
+            <li>
+               <a href="{% url 'aristotle:registrationAuthority' status.registrationAuthority.id status.registrationAuthority.name|slugify %}">{{ status.registrationAuthority }}</a>
+                : {% trans status.state_name %} on {{ status.registrationDate }}
+                </li>
+            {% empty %}
+                <li><em>{% trans 'Not endorsed' %}</em>
+                </li>
+            {% endfor %}
+        {% endif %}
+        {% if statuses and item %}
+        <li class="viewHistory"><strong><a href="{% url 'aristotle:registrationHistory' item.id %}">{% trans 'View registration history'%}</a></strong></li>
+        {% endif %}
+    </ul>
+</dd>
